@@ -1,0 +1,291 @@
+// compileOnSave: true
+
+// these need to be defined before the animation import
+$textinput-bgcolor: #171920;
+$invalid-opacity: 0.9;
+$invalid-bgcolor: mix($textinput-bgcolor, #ff0000); // USED multiply in LESS
+@import "_animations.scss";
+// $invalid-bgcolor: #ff0000;
+// $invalid-opacity: 0.3;
+
+$textinput-shade: mix($textinput-bgcolor, #000000, 10%);
+$textinput-highlight: mix($textinput-bgcolor, #ffffff, 90%);
+
+
+$main-bg-dark: #2f313b;
+$main-bg-dark2: darken($main-bg-dark, 4%);
+$overlay-bg-dark: #20232d;
+
+$alertBgColour: #00009c;
+$alertBgColourFaded: mix($alertBgColour, $overlay-bg-dark, 40%);
+$textColourMain: #cbcfd2;
+// $textColourStrong: #7f99b2;
+$textColourStrong: #8fa7bf;
+$textColourStrong2: #b8cdff;
+$textColourAlt: #68b4ff;
+
+$textDimmedMain: mix($textColourMain, $main-bg-dark, 40%);
+$textDimmedAlt: mix($textColourAlt, $main-bg-dark, 30%);
+$textDimmedOverlay: mix($textColourMain, $overlay-bg-dark, 60%);
+
+$button-bg-colour: #161720;
+$button-bg-colour-strong: #007ffe;
+$button-bg-colour-stronger: #009bff;
+$button-highlight-color: #000;
+
+
+
+
+
+
+body {
+  // background-color:$main-bg-dark;
+  color:$textColourMain;
+  // font-size:0.8em;
+  #bodyWrapper {
+    background: linear-gradient(165deg, $main-bg-dark 0%, $main-bg-dark2);
+  }
+}
+footer.fgfooter  { background-image: url(/images/dark/footer_adorn.png); }
+.footerMid { color: $textDimmedMain; }
+
+#mainItemDetails,.captionedImage,.mainMessage{background-color:$overlay-bg-dark;}
+#flashContainer{background-color:#5a596e;border-color:$overlay-bg-dark;}
+
+#noflashLayer{background: #07061c;}
+ul#linksGroup,#mainArticle{background-color:$overlay-bg-dark;}
+
+
+
+#mainArticle .captionedImage,.boxLeft,.boxRight{background-color:$overlay-bg-dark;}
+
+
+#articlesGroup, #linksGroup {
+  a {
+    &.boxLeft { background-color: $button-bg-colour; color: $textColourStrong2; }
+  }
+  li {
+    &:hover {
+      a { background-color: $button-highlight-color; }
+      a, h1, h2 { background-color: $button-highlight-color; color: $textColourStrong2; }
+    }
+    &.selected {
+      a, h1, h2 { background-color: $button-highlight-color; color: $textColourStrong2; }
+    }
+  }
+}
+
+
+
+h1,h2,h3,label,.disclaimer strong,.price{color:$textColourStrong;}
+/* h2, */cite{color:$textColourAlt;}
+strong,.adminUserName{color:$textColourStrong2;}
+a {
+  color:$textColourAlt;background-color:$button-bg-colour;
+  &:hover { background-color: $button-highlight-color; color: $textColourStrong2; }
+}
+#mainArticle hr{border-color:$overlay-bg-dark;}
+
+#stumbleUponImageButton,
+#facebookImageButton,
+#googlePlusImageButton,
+#twitterImageButton,
+#pinterestImageButton {
+  background-image: url(/images/dark/socialSprite.png);
+}
+.shareThis{ background-image: url(/images/dark/shareThis_anim.gif); }
+
+#itemImageMain img,
+#itemImageMainClickable img {
+  background-color: $button-bg-colour; border-color: $button-bg-colour;
+}
+#itemImageMainClickable:hover a >img{background-color:$button-highlight-color;border-color: $button-highlight-color;}
+
+a {
+  &.homeBanner, &.homeBanner:hover, &.homeBanner:active { background-image:url(/images/light/fg_logo_mini.png); }
+}
+#homeBannerGroup {
+  .captionedImage {
+    a.homeBanner { background-color: $button-bg-colour; border-color: $button-bg-colour; }
+  }
+}
+.homeImageMain {
+  &:link, &:hover, &:active {
+    border-color: $button-bg-colour;
+  }
+}
+a, a:hover, a:active {
+  &#titleImage {
+    background-image:url(/images/dark/gf_logo_mini.png);
+  }
+}
+
+.itemContainer {
+  .captionedImage {
+    a {
+      img { border-color: $button-bg-colour; }
+    }
+    a:hover {
+      img { border-color: $button-highlight-color; }
+    }
+    p { color: $textColourMain; }
+    h3 { color: $textColourStrong; }
+  }
+}
+#priceInfo {
+  background-color: $alertBgColour;
+  // #FGPrintPrice, #deliveryFeedback { color: #fff; }
+  // background-color: $overlay-bg-dark;
+}
+#printInfo {
+  color: $textDimmedMain;
+}
+#printHeading {
+  color: $textDimmedAlt;
+  em { color: $textDimmedMain; }
+}
+.contactFormCol {
+  p {
+    color: $textColourMain;
+  }
+}
+#mailyDress{background-image:url(/images/dark/mailyDress.png);}
+
+::selection{ background: $textColourStrong2; color: $button-bg-colour;/* Safari */}
+::-moz-selection { background: $textColourStrong2; color: $button-bg-colour;/* Firefox */}
+
+
+textArea.text, input.text, select, #commentBody,
+.comments-area .comment-form textArea,
+.comments-area .comment-form input,
+input.search-field {
+  background: $textinput-bgcolor; color: #bdbdc5;
+  border-bottom-color:$textinput-highlight;border-right-color:$textinput-highlight;border-top-color:$textinput-shade;border-left-color:$textinput-shade;
+}
+.replyMessage{background-color:#14151a;}
+.captcha{background-color:$main-bg-dark;}
+
+.button, .buttonSelected,
+.button:hover, .buttonSelected:hover,
+.button.pressed, .buttonSelected.pressed,
+.comments-area .comment-form .form-submit input[type='submit'],
+input[type='submit'].search-submit,
+.comments-area .comment-form .form-submit input[type='submit']:hover,
+input[type='submit'].search-submit:hover {
+  background-color:$button-bg-colour;color:$textColourAlt;
+  &.inverted {
+    background-color: $button-bg-colour-strong; color: $button-highlight-color;
+    span {
+      background-color:$button-highlight-color; color:$textColourStrong;
+    }
+    &:hover { background-color: $button-bg-colour-stronger; color: $button-highlight-color; }
+  }
+}
+.buttonSelected,
+.buttonSelected:hover.transparent,
+.comments-area .comment-form .form-submit input[type='submit'],
+input[type='submit'].search-submit  {
+  background-color: $button-bg-colour-strong; color: $button-highlight-color;
+}
+.buttonSelected:hover, .buttonSelected.pressed,
+.comments-area .comment-form .form-submit input[type='submit']:hover,
+input[type='submit'].search-submit:hover { background-color: $button-bg-colour-stronger; color: $button-highlight-color; }
+.button:hover { color: $textColourStrong2; background-color: $button-highlight-color; }
+
+
+
+
+.highlighted,.alert{background-color:$alertBgColour;color:$textColourStrong}
+
+
+
+
+
+
+.alert {
+  span { background-color: $button-highlight-color; }
+}
+
+.starEmpty,.starHalf,.starFull,
+a.starEmpty,a.starHalf,a.starFull,
+a:hover.starEmpty,a:hover.starHalf,a:hover.starFull {
+  background-image:url(/images/dark/ratingStar_small.png);
+}
+
+#itemRating h2, #itemRating p { color: $textColourStrong; }
+
+#mag{background-image:url(/images/dark/magEmptyBg.png);border-color:#232527;}
+#mag img{border:none;background:none;}
+#loupe{background-image:url(/images/dark/loupeBg.png)}
+
+#printNav a.logoTiny{background-image:url(/images/dark/gf_logo_tiny.png);}
+
+
+#printOptions {
+  p#maxSizeText, p#printedAreaText { color: $textDimmedOverlay; }
+}
+
+#printOptions,
+#paymentForm {
+  .alert {
+    background-color: $alertBgColourFaded;
+  }
+};
+#countrySelector input, #countrySelector > label,
+#printOptions input, #printOptions label {
+  background-color: $button-bg-colour-strong;
+  color: $button-highlight-color;
+  &:hover { background-color: $button-bg-colour-stronger; }
+}
+.printList {
+  list-style-image: url(/images/dark/bullet.png);
+}
+#paymentForm,
+#printOptions #customSize {
+  label {
+    p { color: $textColourMain; }
+  }
+}
+#printOptions #customSize {
+  input[type="text"] { background-color: $textinput-bgcolor; color: $textColourMain; }
+  label {
+    color: $textColourStrong;
+  }
+}
+
+input.text.invalid {
+  @include animation(invalid-flash $transition-speed-main $transition-style-main);
+  @include rgbaBackground($invalid-bgcolor, $invalid-opacity);
+}
+
+
+#printOptions input[type="radio"] + label,
+#countrySelector input[type="radio"] + label {
+  border-color: $overlay-bg-dark;
+}
+#printOptions input[type="radio"]:checked + label,
+#countrySelector input[type="radio"]:checked + label {
+  border-color: $textColourAlt;
+}
+
+#deliveryFeedback { color: $textColourStrong; }
+
+
+@media only screen and (min-width: 500px) {
+  .starEmpty,.starHalf,.starFull,
+  a.starEmpty,a.starHalf,a.starFull,
+  a:hover.starEmpty,a:hover.starHalf,a:hover.starFull {
+    background-image:url(/images/dark/ratingStar.png);
+    width:36px;height:34px;
+  }
+}
+
+
+
+@media only screen and (min-width: 880px) {
+  a, a:hover, a:active {
+    &#titleImage {
+      background-image:url(/images/dark/firmgently.png);
+    }
+  }
+}

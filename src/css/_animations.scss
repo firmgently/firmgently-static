@@ -1,0 +1,130 @@
+$transition-speed-main: 150ms;
+$transition-style-main: ease-in;
+$transition-speed-bounce: 250ms;
+$transition-style-bounce: ease-out;
+$transition-speed-spin: 3000ms;
+$transition-style-spin: linear;
+$transition-style-sink: ease-out;
+
+
+@mixin rgbaBackground($colour, $alpha) {
+  $alphaColour: hsla(hue($colour), saturation($colour), lightness($colour), $alpha);
+  $ieAlphaColour: argb($alphaColour);
+
+  background-color: $colour; // Fallback for older browsers
+  background-color: $alphaColour;
+
+  // IE hacks
+  // zoom: 1; // hasLayout
+  // background-color: transparent\9;
+  // -ms-filter:  "progid:DXImageTransform.Microsoft.gradient(startColorstr=${ieAlphaColour}, endColorstr=${ieAlphaColour})"; // IE 8+
+      // filter: ~"progid:DXImageTransform.Microsoft.gradient(startColorstr=${ieAlphaColour}, endColorstr=${ieAlphaColour})"; // IE 6 & 7
+}
+
+@mixin rotate($deg: 90, $origin: 0% 0%) {
+  -webkit-transform: rotate($deg * 1deg);
+  -webkit-transform-origin:  $origin;
+
+  -moz-transform: rotate($deg * 1deg);
+  -moz-transform-origin: $origin;
+
+  transform: rotate($deg * 1deg);
+  transform-origin:  $origin;
+
+  -o-transform: rotate($deg * 1deg);
+  -o-transform-origin: $origin;
+
+  -ms-transform: rotate($deg * 1deg);
+  -ms-transform-origin: $origin;
+
+  $IEdeg: round($deg / 90);
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=$IEdeg);
+}
+
+
+@mixin animation($args) {
+  -webkit-animation:  $args;
+  -moz-animation:     $args;
+  -o-animation:       $args;
+  animation:          $args;
+}
+
+
+
+/* ////////////////////////////////////////////////////////////////////////// */
+/*KEYFRAME ANIMATIONS*/
+/*
+.fade-colour-frames() {
+  0% { @include rgbaBackground(#ffffff, 1); }
+  100% { @include rgbaBackground(#ff0000, 1); }
+}
+@-webkit-keyframes fade-colour {
+  .fade-colour-frames;
+}
+@-moz-keyframes fade-colour {
+  .fade-colour-frames;
+}
+@-o-keyframes fade-colour {
+  .fade-colour-frames;
+}
+@keyframes fade-colour {
+  .fade-colour-frames;
+} */
+
+@mixin invalid-flash-frames() {
+  0% { @include rgbaBackground($textinput-bgcolor, 0); }
+  33% { @include rgbaBackground($invalid-bgcolor, $invalid-opacity * 2); }
+  66% { @include rgbaBackground($textinput-bgcolor, 0); }
+  100% { @include rgbaBackground($invalid-bgcolor, $invalid-opacity); }
+}
+@-webkit-keyframes invalid-flash {
+  @include invalid-flash-frames;
+}
+@-moz-keyframes invalid-flash {
+  @include invalid-flash-frames;
+}
+@-o-keyframes invalid-flash {
+  @include invalid-flash-frames;
+}
+@keyframes invalid-flash {
+  @include invalid-flash-frames;
+}
+
+@mixin press-and-bounce-frames() {
+  0% { transform: scaleX(0.9) scaleY(0.9); }
+  40% { transform: scaleX(0.7) scaleY(0.7); }
+  80% { transform: scaleX(1.1) scaleY(1.1); }
+  100% { transform: scaleX(1) scaleY(1); }
+}
+@-webkit-keyframes press-and-bounce {
+  @include press-and-bounce-frames;
+}
+@-moz-keyframes press-and-bounce {
+  @include press-and-bounce-frames;
+}
+@-o-keyframes press-and-bounce {
+  @include press-and-bounce-frames;
+}
+@keyframes press-and-bounce {
+  @include press-and-bounce-frames;
+}
+
+
+
+@mixin centred-spin-frames() {
+  from { @include rotate(0, 50% 50%); }
+  // 50% { @include rotate(180, 50% 50%); }
+  to { @include rotate(359, 50% 50%); }
+}
+@-webkit-keyframes centred-spin {
+  @include centred-spin-frames;
+}
+@-moz-keyframes centred-spin {
+  @include centred-spin-frames;
+}
+@-o-keyframes centred-spin {
+  @include centred-spin-frames;
+}
+@keyframes centred-spin {
+  @include centred-spin-frames;
+}

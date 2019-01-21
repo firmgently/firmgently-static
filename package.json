@@ -1,0 +1,23 @@
+{
+  "name": "Firm_Gently",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "node ./build.js",
+    "debug": "DEBUG=metalsmith-in-place,metalsmith-layouts,metalsmith-beautify,metalsmith-rename node ./build.js",
+    "css": "sass src/css/*.scss build/css/"
+  },
+  "author": "Mark Mayes",
+  "dependencies": {
+    "jstransformer-markdown": "^1.2.1",
+    "jstransformer-nunjucks": "^0.5.0",
+    "metalsmith": "^2.3.0",
+    "metalsmith-beautify": "^0.2.0",
+    "metalsmith-data": "^0.3.0",
+    "metalsmith-in-place": "^4.1.1",
+    "metalsmith-layouts": "^2.1.0",
+    "metalsmith-rename": "^1.0.0",
+    "metalsmith-rewrite": "^0.1.2",
+    "sass": "^1.15.2"
+  }
+}
