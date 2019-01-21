@@ -58,7 +58,7 @@
         <li><a href="https://plus.google.com/share?url={{ url_tidied }}&amp;title={{ title_escaped }}" title="Post this on Google+"><img id="googlePlusImageButton" title="Post this on Google+" src="/images/shim.png" alt="Post this on Google+"></a></li>
         <li><a href="http://twitter.com/share?url={{ url_tidied }}&amp;text={{ desc_escaped }}" title="Tweet this"><img id="twitterImageButton" title="Tweet this" src="/images/shim.png" alt="Tweet this"></a></li>
         <li><a href="http://www.stumbleupon.com/submit?url={{ url_tidied }}&amp;title={{ title_escaped }}" title="Share this on StumbleUpon"><img id="stumbleUponImageButton" title="Share this on StumbleUpon" src="/images/shim.png" alt="Share this on StumbleUpon"></a></li>
-        <li>{{ sitedata.share_attract }}</li>
+        <li>{{ sitedata.share_attract | safe }}</li>
       </ul>
 
     </div><!-- main -->
@@ -67,10 +67,10 @@
   </div><!-- bodyWrapper -->
   
   <footer class="fgfooter row">
-    <span class="footerLeft col">{{ sitedata.footer_altsite }}
+    <span class="footerLeft col">{{ sitedata.footer_altsite | safe }}
       <span class="footerMid col">Content and site&nbsp;<span class="copyright">&copy;</span>&nbsp;Mark Mayes</span>
     </span>
-    <span class="footerRight col">{{ sitedata.footer_quote }}</span>
+    <span class="footerRight col">{{ sitedata.footer_quote | safe }}</span>
   </footer>
   
   {{ body_end_scripts }}
