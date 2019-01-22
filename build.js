@@ -33,10 +33,15 @@ const shuffle = function(a) {
 	return a;
 };
 
+const stripTags = function(string) {
+  return string.replace(/<\/?[^>]+(>|$)/g, "");
+};
+
 const engineOptions = {
 	filters: {
 		shuffle: shuffle,
 		toUpper: toUpper,
+		stripTags: stripTags,
 		spaceToDash: spaceToDash
 	}
 };

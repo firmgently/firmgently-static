@@ -4,6 +4,13 @@
 #}
 
 
+{% set title_stripped = (title + sitedata.title_suffix) | stripTags %}
+{% set desc = desc | default(sitedata.site_desc) %}
+{% set share_thumbnail = share_thumbnail | default(sitedata.share_thumbnail) %}
+{% set desc_stripped = desc | stripTags %}
+{% set url_tidied = url %}
+
+
 <!doctype html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://www.facebook.com/2008/fbml" xmlns:firmgently="{{ sitedata.domain }}/ns#">
 
@@ -18,7 +25,7 @@
   <meta property="og:url" content="{{ url_tidied }}">
   <meta property="og:image" content="{{ sitedata.domain }}/images/{{ share_thumbnail }}">
   <meta property="og:site_name" content="{{ sitedata.site_name }}">
-  <meta property="og:description" content="{{ sitedata.site_desc }}">
+  <meta property="og:description" content="{{ desc }}">
   <meta property="fb:app_id" content="{{ sitedata.fb_appID }}">
   <meta property="fb:admins" content="{{ sitedata.fb_admins }}">
 

@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "start": "node ./build.js",
+    "start": "node ./build.js ; sass ./src/css/:./build/css/",
     "debug": "DEBUG=metalsmith-in-place,metalsmith-layouts,metalsmith-beautify,metalsmith-rename node ./build.js",
-    "css": "sass src/css/*.scss build/css/"
+    "css": "sass ./src/css/:./build/css/"
   },
   "author": "Mark Mayes",
   "dependencies": {
@@ -18,6 +18,6 @@
     "metalsmith-layouts": "^2.1.0",
     "metalsmith-rename": "^1.0.0",
     "metalsmith-rewrite": "^0.1.2",
-    "sass": "^1.15.2"
+    "sass": "^1.16.1"
   }
 }

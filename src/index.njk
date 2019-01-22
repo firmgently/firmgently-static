@@ -3,6 +3,7 @@ layout: fg-template.njk
 desc_stripped: What a hullaballooooo!
 title: Home
 bodyClass: home
+og_type: website
 ---
 
 
@@ -16,7 +17,7 @@ bodyClass: home
 {%- else -%}
   {% set details = item.w + "x" + item.h + "cm / " + item.materials + " / " + item.year %}
 {%- endif -%}
-      <h2>{{ title }}</h2><em>{{ details }}</em>
+      <h2>{{ item.title }}</h2><em>{{ details }}</em>
     </figcaption>
   </figure>
 </a>
