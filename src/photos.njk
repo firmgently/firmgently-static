@@ -1,0 +1,10 @@
+---
+layout: fg-template.njk
+title: Photos
+bodyClass: photos
+og_type: http://www.schema.org/Photograph
+---
+
+{% import "./layouts/itemList.njk" as itemList %}
+
+{{ itemList.create(data.items, "PHOTOS") }}

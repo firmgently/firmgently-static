@@ -1,0 +1,10 @@
+---
+layout: fg-template.njk
+title: Art
+bodyClass: art
+og_type: http://www.schema.org/Painting
+---
+
+{% import "./layouts/itemList.njk" as itemList %}
+
+{{ itemList.create(data.items, "ART") }}

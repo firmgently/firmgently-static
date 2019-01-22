@@ -1,0 +1,10 @@
+---
+layout: fg-template.njk
+title: Web
+bodyClass: web
+og_type: http://www.schema.org/WebSite
+---
+
+{% import "./layouts/itemList.njk" as itemList %}
+
+{{ itemList.create(data.items, "WEB") }}

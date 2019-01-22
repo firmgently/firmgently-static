@@ -1,0 +1,17 @@
+{% macro create(items, section) %}
+
+<ul class="itemContainer">
+	<li><ul class="boxRight">
+			<h1>BUILDINGS in <strong>{{ section }}</strong></h1>
+
+{% for item in items | filterItemsByType(section) %}
+<li><span class="captionedImage" style="max-width:76%;">
+	<a href="/items/{{ item.id }}&amp;type=ART&amp;group=BUILDINGS&amp;root={{ section }}"><img alt="VIEW DETAILS: {{ item.title }}" title="VIEW DETAILS: {{ item.title }}" src="/images/items/thumbs/{{ item.id }}.jpg"></a>
+	<h3>{{ item.title }} (2010)</h3>
+</span></li>
+{% endfor %}
+
+		</ul></li>
+</ul><!-- itemContainer(1) -->
+
+{% endmacro %}

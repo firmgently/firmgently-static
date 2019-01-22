@@ -4,10 +4,11 @@
 #}
 
 
-{% set title_stripped = (title + sitedata.title_suffix) | stripTags %}
+{% set title = title + sitedata.title_suffix %}
+{% set title_stripped = title | striptags %}
 {% set desc = desc | default(sitedata.site_desc) %}
 {% set share_thumbnail = share_thumbnail | default(sitedata.share_thumbnail) %}
-{% set desc_stripped = desc | stripTags %}
+{% set desc_stripped = desc | striptags %}
 {% set url_tidied = url %}
 
 

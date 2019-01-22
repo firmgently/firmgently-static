@@ -33,15 +33,17 @@ const shuffle = function(a) {
 	return a;
 };
 
-const stripTags = function(string) {
-  return string.replace(/<\/?[^>]+(>|$)/g, "");
+const filterItemsByType = function(items, type) {
+  return items.filter(function(item) {
+    return item.type === type;
+  });
 };
 
 const engineOptions = {
 	filters: {
 		shuffle: shuffle,
 		toUpper: toUpper,
-		stripTags: stripTags,
+		filterItemsByType: filterItemsByType,
 		spaceToDash: spaceToDash
 	}
 };
@@ -52,6 +54,7 @@ metalsmith(__dirname)
 	.destination('./build/')
 	.use(data({
 		config: './data/config.json',
+		stuckism: './data/stuckism.json',
 		items: './data/items.json'
 	}))
 	.use(inplace({

@@ -1,0 +1,10 @@
+---
+layout: fg-template.njk
+title: Objects
+bodyClass: objects
+og_type: http://www.schema.org/Sculpture
+---
+
+{% import "./layouts/itemList.njk" as itemList %}
+
+{{ itemList.create(data.items, "OBJECTS") }}
