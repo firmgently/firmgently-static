@@ -1,7 +1,12 @@
 [ ] sections (art, words, photos etc) all need titles and descriptions set in config and used in metadata
 [ ] stuckism quote on home page needs to be randomised client-side
 [ ] dark CSS - link text is unreadable (low contrast)
-[ ] create list pages and template (art, photos, web etc)
-[ ] create item pages
+[x] create list pages and template (art, photos, web etc)
+[x] create item pages
 [ ] add permalinks
-
+[ ] contact page
+[ ] select nav correctly
+[ ] list pages grouping make work correctly
+[ ] filter item list by fg/gf
+[ ] item list set max-width on portrait images
+[ ] add words page and set up first post using markdown

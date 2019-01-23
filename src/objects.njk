@@ -3,8 +3,12 @@ layout: fg-template.njk
 title: Objects
 bodyClass: objects
 og_type: http://www.schema.org/Sculpture
+json_files:
+    source_file: items
+    filename_pattern: :data.type/:data.title
+    layout: item.njk
 ---
 
 {% import "./layouts/itemList.njk" as itemList %}
 
-{{ itemList.create(data.items, "OBJECTS") }}
+{{ itemList.create(collections.objects, "objects") }}

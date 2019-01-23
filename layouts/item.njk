@@ -1,0 +1,26 @@
+
+        <div class="sideColumn col">
+          <div id="prevNextButtons">
+            <a class="itemNextBtn button" title="Next: {{ next.title }}" href="/{{ next.path }}">NEXT &gt;</a>
+            <a class="itemPrevBtn button" title="Previous: {{ previous.title }}" href="/{{ previous.path }}">&lt; PREVIOUS</a>&nbsp;&nbsp;&nbsp;
+          </div>
+          <section id="mainItemDetails" class="lowered boxLeft">
+            <h1 itemprop="http://www.schema.org/name">{{ data.title }}</h1>
+            <h3>{{ data.year }}</h3>
+            <h2>Acrylic on canvas, 158&nbsp;x&nbsp;100cm</h2>
+            <span itemprop="http://www.schema.org/description">{{ data.desc }}</span>
+          </section>
+        </div>
+        <div class="mainColumn col">
+            <div id="itemImageMain">
+              <img id="magnifiableImage" alt="Click to magnify" src="/images/items/main/fabric.jpg">
+            </div>
+            <p class="alert boxLeft magnifyPrompt">mouse or slide over the picture to magnify it</p>
+            <a href="/downloadImage.php?id=fabric" class="buttonSelected boxLeft downloadWallpaperBtn">download wallpaper</a>
+        </div><!-- mainColumn -->
+  
+
+  <script src="/js/FGMagnify_min.js"></script>
+  <script>
+    uk.co.firmgently.FGMagnify.create("/images/items/hi_res/fabric.jpg", "magnifiableImage", "1");
+  </script>

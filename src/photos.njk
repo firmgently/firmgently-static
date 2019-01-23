@@ -3,8 +3,12 @@ layout: fg-template.njk
 title: Photos
 bodyClass: photos
 og_type: http://www.schema.org/Photograph
+json_files:
+    source_file: items
+    filename_pattern: :data.type/:data.title
+    layout: item.njk
 ---
 
 {% import "./layouts/itemList.njk" as itemList %}
 
-{{ itemList.create(data.items, "PHOTOS") }}
+{{ itemList.create(collections.photos, "photos") }}

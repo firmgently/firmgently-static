@@ -3,8 +3,13 @@ layout: fg-template.njk
 title: Art
 bodyClass: art
 og_type: http://www.schema.org/Painting
+json_files:
+    source_file: items
+    filename_pattern: :data.type/:data.title
+    layout: item.njk
 ---
 
 {% import "./layouts/itemList.njk" as itemList %}
 
-{{ itemList.create(data.items, "ART") }}
+{{ itemList.create(collections.art, "art") }}
+
