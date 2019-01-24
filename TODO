@@ -1,5 +1,6 @@
 [ ] sections (art, words, photos etc) all need titles and descriptions set in config and used in metadata
 [ ] stuckism quote on home page needs to be randomised client-side
+[ ] homepage items need to get url from collections object somwhow
 [ ] dark CSS - link text is unreadable (low contrast)
 [x] create list pages and template (art, photos, web etc)
 [x] create item pages

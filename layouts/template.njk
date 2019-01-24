@@ -36,8 +36,7 @@
   <link rel="image_src" href="{{ sitedata.domain }}/images/{{ share_thumbnail }}">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="stylesheet" href="/css/darken.css">
-  {{ extra_css }}
+  {% block extraCSS %}{% endblock %}
 </head>
 
 
@@ -58,7 +57,7 @@
         </nav>
       </header>
       
-      <section itemscope itemtype="{{ microdata_type }}" id="content" class="row col">{{ contents | safe }}</section><!-- content -->
+      <section itemscope itemtype="{{ microdata_type }}" id="content" class="row col">{% block main %}{% endblock %}</section><!-- content -->
       
       <ul id="socialImageButtons">
         <li><a href="http://pinterest.com/pin/create/button/?url={{ url_tidied }}&amp;description={{ desc_escaped }}&amp;media={{ sitedata.domain }}/images/{{ share_thumbnail }}" title="Pin it"><img id="pinterestImageButton" title="Pin it" src="/images/shim.png" alt="Pin it"></a></li>
@@ -81,8 +80,8 @@
     <span class="footerRight col">{{ sitedata.footer_quote | safe }}</span>
   </footer>
   
-  {{ body_end_scripts }}
-  {{ analytics }}
+  {% block bodyEndScripts %}{% endblock %}
+  {% block analytics %}{% endblock %}
   
 </body>
 

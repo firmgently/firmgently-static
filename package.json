@@ -1,10 +1,15 @@
 {
-  "name": "Firm_Gently",
+  "name": "firm-gently-website",
   "version": "1.0.0",
-  "description": "",
+  "description": "Website showing the creative works of Mark Mayes.",
+  "repository": {
+    "type": "git",
+    "url": "git@gitlab.com:firmgently/fg-site-static.git"
+  },
+  "license": "GPL-3.0-only",
   "scripts": {
-    "start": "node ./build.js ; sass ./src/css/:./build/css/",
-    "debug": "DEBUG=metalsmith-in-place,metalsmith-layouts,metalsmith-json-to-files,metalsmith-permalinks,metalsmith-beautify,metalsmith-rename,metalsmith-collections node ./build.js",
+    "start": "DEBUG=metalsmith-timer node ./build.js ; sass ./src/css/:./build/css/",
+    "debug": "DEBUG=metalsmith,metalsmith-in-place,metalsmith-layouts,metalsmith-rewrite,metalsmith-data,metalsmith-json-to-files,metalsmith-permalinks,metalsmith-beautify,metalsmith-rename,metalsmith-collections node ./build.js",
     "css": "sass ./src/css/:./build/css/"
   },
   "author": "Mark Mayes",
@@ -18,9 +23,10 @@
     "metalsmith-in-place": "^4.1.1",
     "metalsmith-json-to-files": "^1.0.0",
     "metalsmith-layouts": "^2.1.0",
+    "metalsmith-linkcheck": "^0.3.4",
     "metalsmith-permalinks": "^2.0.0",
     "metalsmith-rename": "^1.0.0",
-    "metalsmith-rewrite": "^0.1.2",
+    "metalsmith-timer": "0.0.2",
     "sass": "^1.16.1"
   }
 }
