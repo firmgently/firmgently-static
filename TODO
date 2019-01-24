@@ -11,3 +11,5 @@
 [ ] filter item list by fg/gf
 [ ] item list set max-width on portrait images
 [ ] add words page and set up first post using markdown
+[ ] check priority of meta data (is item before collection before site ??)
+[ ] sitedata is still not getting pulled into item pages

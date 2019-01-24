@@ -4,13 +4,20 @@
 #}
 
 
-{% set title = title + sitedata.title_suffix %}
+{#% set title = title + sitedata.title_suffix %}
 {% set title_stripped = title | striptags %}
 {% set desc = desc | default(sitedata.site_desc) %}
 {% set share_thumbnail = share_thumbnail | default(sitedata.share_thumbnail) %}
 {% set desc_stripped = desc | striptags %}
-{% set url_tidied = url %}
+{% set url_tidied = url %#}
 
+{% set title = (title | default(data.title)) + sitedata.title_suffix %}
+{% set title_stripped = title | striptags %}
+{% set title_stripped = title %}
+{% set desc = desc | default(data.desc) | default(sitedata.site_desc) %}
+{% set share_thumbnail = share_thumbnail | default(sitedata.share_thumbnail) %}
+{% set desc_stripped = desc | striptags %}
+{% set url_tidied = url %}
 
 <!doctype html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://www.facebook.com/2008/fbml" xmlns:firmgently="{{ sitedata.domain }}/ns#">
@@ -57,7 +64,9 @@
         </nav>
       </header>
       
-      <section itemscope itemtype="{{ microdata_type }}" id="content" class="row col">{% block main %}{% endblock %}</section><!-- content -->
+      <section itemscope itemtype="{{ microdata_type }}" id="content" class="row col">
+			{% block main %}{{ contents | safe }}{% endblock %}
+			</section><!-- content -->
       
       <ul id="socialImageButtons">
         <li><a href="http://pinterest.com/pin/create/button/?url={{ url_tidied }}&amp;description={{ desc_escaped }}&amp;media={{ sitedata.domain }}/images/{{ share_thumbnail }}" title="Pin it"><img id="pinterestImageButton" title="Pin it" src="/images/shim.png" alt="Pin it"></a></li>
@@ -81,6 +90,7 @@
   </footer>
   
   {% block bodyEndScripts %}{% endblock %}
+
   {% block analytics %}{% endblock %}
   
 </body>

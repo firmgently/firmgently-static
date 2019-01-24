@@ -1,3 +1,8 @@
 {% set sitedata = data.config[data.config.consts.GENTLYFIRM_SITEDATA_ID] %}
 {% extends "template.njk" %}
+
+{% block extraCSS -%}
+<link rel="stylesheet" href="/css/darken.css">
+{%- endblock %}
+
 {% block main %}{{ contents | safe }}{% endblock %}
