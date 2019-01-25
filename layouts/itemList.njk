@@ -4,8 +4,14 @@
 	<li><ul class="boxRight">
 		<h1>BUILDINGS in <strong>{{ section }}</strong></h1>
 		{% for item in items %}
+      item.path: {{ item.path }}<br />
+      item.data.path: {{ item.data.path }}<br />
+      item.title: {{ item.title }}<br />
+      item.data.title: {{ item.data.title }}<br />
+      this.path: {{ this.path }}<br />
+      next.path: {{ next.path }}<br />
 			<li><span class="captionedImage" style="max-width:76%;">
-				<a href="{{ item.path }}"><img alt="VIEW DETAILS: {{ item.data.title }}" title="VIEW DETAILS: {{ item.data.title }}" src="/images/items/thumbs/{{ item.data.id }}.jpg"></a>
+				<a href="/{{ item.path | stripIndexFromPath }}"><img alt="VIEW DETAILS: {{ item.data.title }}" title="VIEW DETAILS: {{ item.data.title }}" src="/images/items/thumbs/{{ item.data.id }}.jpg"></a>
 				<h3>{{ item.data.title }} ({{ item.data.added }})</h3>
 			</span></li>
 		{% endfor %}

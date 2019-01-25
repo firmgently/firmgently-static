@@ -1,0 +1,16 @@
+---
+title: Post Two
+layout: post.njk
+synopsis: This is a synopsis.
+date: 2019-01-25
+---
+
+
+## Interpretation for today's world
+
+Even this 'modern' version requires a lot of work on the reader's part to make use of it today. Being aimed at ancient Chinese Emperors the language is all very male and talks a lot about being a leader, warfare and 'controlling your population' and so on. But the concepts covered are much broader than that, you just have to work out how to convert them into modern ideas and goals.
+
+The original book was compiled and refined over centuries by some of the wisest people around. A lot of cultural changes have taken place since it was written. I don't think human nature has changed at all in that time.
+
+_To be inwardly firm and outwardly gentle is the way of true joy._
+	

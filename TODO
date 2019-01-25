@@ -13,3 +13,5 @@
 [ ] add words page and set up first post using markdown
 [ ] check priority of meta data (is item before collection before site ??)
 [ ] sitedata is still not getting pulled into item pages
+[ ] fix og_type for all pages... list page should not be the same as item pages should not be the same as main site/homepage
+[ ] set bodyClass metadata for all itemList pages

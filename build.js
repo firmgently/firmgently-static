@@ -41,12 +41,28 @@ const filterItemsByType = function(items, type) {
   });
 };
 
+// vanity function to keep the URL clean - when linking
+// into a directory the index.html can be ommitted
+const stripIndexFromPath = function(path) {
+  // list of index files to strip -
+  // include the $ to only match at the end of a string
+  var indexRegExp_ar = [
+    "index.html$",
+    "index.htm$",
+    "index.php$"
+  ];
+  // join all regexps into a single expression separated by |
+  var regExp = new RegExp(indexRegExp_ar.join("|"), "i");
+  return path.replace(regExp, '');
+};
+
 // wrapper to save repetition when passing options
 // into `use` functions
 const engineOptions = {
 	filters: {
 		toLower: toLower,
 		toUpper: toUpper,
+		stripIndexFromPath: stripIndexFromPath,
 		filterItemsByType: filterItemsByType,
 		spaceToDash: spaceToDash
 	}
@@ -61,41 +77,68 @@ metalsmith(__dirname)
 	.source('./src/')
 	.destination('./build/')
 	.use(timer("init"))
-	.use(data({
+
+  .use(data({
 		config: './data/config.json',
 		stuckism: './data/stuckism.json',
 		items: './data/items.json'
 	}))
 	.use(timer("data (JSON imported)"))
-	.use(json_to_files({ source_path: './data/' }))
+
+  .use(json_to_files({ source_path: './data/' }))
 	.use(timer("JSON to files"))
-	.use(collections({
-    all: ['art/*/*.html', 'photos/*/*.html', 'objects/*/*.html', 'web/*/*.html'],
+
+  .use(collections({
+    all: [
+			'words/*.*',
+			'art/*/*.html',
+			'photos/*/*.html',
+			'objects/*/*.html',
+			'web/*/*.html'
+		],
+		words: 'words/*.*',
 		art: 'art/*/*.html',
 		photos: 'photos/*/*.html',
 		objects: 'objects/*/*.html',
 		web: 'web/*/*.html'
 	}))
 	.use(timer("collections"))
-	.use(permalinks({ pattern: ':title' }))
-	.use(timer("permalinks"))
-	.use(inplace({
+
+  // inplace processes markdown and
+  // converts njk to html
+  .use(inplace({ 
+    pattern: [
+      '**/*.md',
+      '**/*.njk'
+    ],
 		engine: 'markdown',
 		engineOptions: engineOptions
 	}))
 	.use(timer("markdown"))
-	.use(layouts({ // won't touch templating syntax in src and doesn't support extends
+
+  .use(permalinks({ pattern: ':title' }))
+	.use(timer("permalinks"))
+
+  .use(layouts({ // won't touch templating syntax in src and doesn't support extends
+    pattern: [
+      '**/*.html'
+    ],
 		engine: 'nunjucks',
 		default: 'template.njk',
 		engineOptions: engineOptions
 	}))
 	.use(timer("layouts / Nunjucks"))
-	.use(beautify())
+
+  .use(beautify())
 	.use(timer("beautify"))
-	.use(rename([ [/\.html$/, ".htm"] ]))
-	.use(timer("rename"))
-///	.use(linkcheck({ verbose: true }))
-	.use(timer("links checked"))
+
+//  .use(rename([
+//    [/\.html$/, ".htm"]
+//  ]))
+//	.use(timer("rename"))
+
+  //	.use(linkcheck({ verbose: true }))
+  //	.use(timer("links checked"))
 	.build(function (err) {
 		if (err) { throw err; }
 		console.log('Build finished!');
