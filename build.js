@@ -20,14 +20,6 @@ const json_to_files = require('metalsmith-json-to-files'); // create files from 
 const timer = require('metalsmith-timer'); // for debugging, lists time between use() calls
 const linkcheck = require('metalsmith-linkcheck'); // check internal/external links are still working
 
-
-let monitor = () => {
-  return (files, metalsmith, done) => {
-    console.log(files)
-    done()
-  }
-}
-
  
  // string-manipulation functions
 const toLower = function(string) {
@@ -76,17 +68,14 @@ metalsmith(__dirname)
 	}))
 	.use(timer("data (JSON imported)"))
 	.use(json_to_files({ source_path: './data/' }))
-  //.use(monitor())
-  .use(debug())
 	.use(timer("JSON to files"))
 	.use(collections({
-		art: { pattern: 'art/*/*.html' },
-		photos: { pattern: 'photos/*/*.html' },
-		objects: { pattern: 'objects/*/*.html' },
-		web: { pattern: 'web/*/*.html' }
+    all: ['art/*/*.html', 'photos/*/*.html', 'objects/*/*.html', 'web/*/*.html'],
+		art: 'art/*/*.html',
+		photos: 'photos/*/*.html',
+		objects: 'objects/*/*.html',
+		web: 'web/*/*.html'
 	}))
-  //.use(monitor())
-  .use(debug())
 	.use(timer("collections"))
 	.use(permalinks({ pattern: ':title' }))
 	.use(timer("permalinks"))
@@ -95,8 +84,6 @@ metalsmith(__dirname)
 		engineOptions: engineOptions
 	}))
 	.use(timer("markdown"))
-  //.use(monitor())
-  .use(debug())
 	.use(layouts({ // won't touch templating syntax in src and doesn't support extends
 		engine: 'nunjucks',
 		default: 'template.njk',

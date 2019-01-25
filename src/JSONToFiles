@@ -2,9 +2,10 @@
 layout: false
 json_files:
     source_file: items
-    filename_pattern: :data.type/:data.title
+    filename_pattern: :itemData.type/:itemData.title
     as_permalink: true
     layout: item.njk
+    rename_data_to: itemData
 ---
 
 {#

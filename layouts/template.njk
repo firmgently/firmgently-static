@@ -1,23 +1,17 @@
 {#
+  NOTE -
   some data (eg sitedata{}) is imported from config.json by metalsmith-data
   (see build.json)
 #}
 
 
-{#% set title = title + sitedata.title_suffix %}
+{% set title = (itemData.title | default(data.title)) + sitedata.title_suffix %}
 {% set title_stripped = title | striptags %}
-{% set desc = desc | default(sitedata.site_desc) %}
-{% set share_thumbnail = share_thumbnail | default(sitedata.share_thumbnail) %}
+{% set desc = itemData.desc | default(data.desc) | default(sitedata.site_desc) %}
 {% set desc_stripped = desc | striptags %}
-{% set url_tidied = url %#}
-
-{% set title = (title | default(data.title)) + sitedata.title_suffix %}
-{% set title_stripped = title | striptags %}
-{% set title_stripped = title %}
-{% set desc = desc | default(data.desc) | default(sitedata.site_desc) %}
-{% set share_thumbnail = share_thumbnail | default(sitedata.share_thumbnail) %}
-{% set desc_stripped = desc | striptags %}
+{% set share_thumbnail = itemData.share_thumbnail | default(data.share_thumbnail) | default(sitedata.share_thumbnail) %}
 {% set url_tidied = url %}
+
 
 <!doctype html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://www.facebook.com/2008/fbml" xmlns:firmgently="{{ sitedata.domain }}/ns#">
