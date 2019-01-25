@@ -5,11 +5,11 @@
 #}
 
 
-{% set title = (itemData.title | default(data.title)) + sitedata.title_suffix %}
+{% set title = (itemData.title | default(title) | default(sitedata.site_name)) + sitedata.title_suffix %}
 {% set title_stripped = title | striptags %}
-{% set desc = itemData.desc | default(data.desc) | default(sitedata.site_desc) %}
+{% set desc = itemData.desc | default(desc) | default(sitedata.site_desc) %}
 {% set desc_stripped = desc | striptags %}
-{% set share_thumbnail = itemData.share_thumbnail | default(data.share_thumbnail) | default(sitedata.share_thumbnail) %}
+{% set share_thumbnail = itemData.share_thumbnail | default(share_thumbnail) | default(sitedata.share_thumbnail) %}
 {% set url_tidied = url %}
 
 
@@ -27,7 +27,7 @@
   <meta property="og:url" content="{{ url_tidied }}">
   <meta property="og:image" content="{{ sitedata.domain }}/images/{{ share_thumbnail }}">
   <meta property="og:site_name" content="{{ sitedata.site_name }}">
-  <meta property="og:description" content="{{ desc }}">
+  <meta property="og:description" content="{{ desc_stripped }}">
   <meta property="fb:app_id" content="{{ sitedata.fb_appID }}">
   <meta property="fb:admins" content="{{ sitedata.fb_admins }}">
 
