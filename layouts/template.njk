@@ -1,37 +1,40 @@
 {#
+
   NOTE -
   some data (eg sitedata{}) is imported from config.json by metalsmith-data
   (see build.json)
+  
 #}
-
-
-{% set title = (itemData.title | default(title) | default(sitedata.site_name)) + sitedata.title_suffix %}
-{% set title_stripped = title | striptags %}
+{% set pageTitle = (itemData.title | default(title) | default(sitedata.site_name)) + sitedata.title_suffix %}
+{% set pageTitle_stripped = pageTitle | striptags %}
+{% set pageTitle_urlEncoded = pageTitle_stripped | urlencode %}
 {% set desc = itemData.desc | default(desc) | default(sitedata.site_desc) %}
 {% set desc_stripped = desc | striptags %}
 {% set share_thumbnail = itemData.share_thumbnail | default(share_thumbnail) | default(sitedata.share_thumbnail) %}
-{% set url_tidied = url %}
-
-
+{% set url = sitedata.domain + "/" + path %}
+{#
+#}
 <!doctype html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://www.facebook.com/2008/fbml" xmlns:firmgently="{{ sitedata.domain }}/ns#">
 
 <head>
   <meta charset="utf-8">
-  <meta name="title" content="{{ title_stripped }}">
+ 
+  <meta name="title" content="{{ pageTitle_stripped }}">
   <meta name="description" content="{{ desc_stripped }}">
   <meta name="robots" content="noodp,noydir">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta property="og:title" content="{{ title_stripped }}">
+
+  <meta property="og:title" content="{{ pageTitle_stripped }}">
   <meta property="og:type" content="{{ og_type }}">
-  <meta property="og:url" content="{{ url_tidied }}">
+  <meta property="og:url" content="{{ url }}">
   <meta property="og:image" content="{{ sitedata.domain }}/images/{{ share_thumbnail }}">
   <meta property="og:site_name" content="{{ sitedata.site_name }}">
   <meta property="og:description" content="{{ desc_stripped }}">
   <meta property="fb:app_id" content="{{ sitedata.fb_appID }}">
   <meta property="fb:admins" content="{{ sitedata.fb_admins }}">
 
-  <title>{{ title }}</title>
+  <title>{{ pageTitle }}</title>
 
   <link rel="shortcut icon" href="{{ sitedata.favicon }}">
   <link rel="image_src" href="{{ sitedata.domain }}/images/{{ share_thumbnail }}">
@@ -64,11 +67,11 @@
 			</section><!-- content -->
       
       <ul id="socialImageButtons">
-        <li><a href="http://pinterest.com/pin/create/button/?url={{ url_tidied }}&amp;description={{ desc_escaped }}&amp;media={{ sitedata.domain }}/images/{{ share_thumbnail }}" title="Pin it"><img id="pinterestImageButton" title="Pin it" src="/images/shim.png" alt="Pin it"></a></li>
-        <li><a href="http://www.facebook.com/sharer.php?u={{ url_tidied }}&amp;t={{ desc_escaped }}" title="Share this on Facebook"><img id="facebookImageButton" title="Share this on Facebook" src="/images/shim.png" alt="Share this on Facebook"></a></li>
-        <li><a href="https://plus.google.com/share?url={{ url_tidied }}&amp;title={{ title_escaped }}" title="Post this on Google+"><img id="googlePlusImageButton" title="Post this on Google+" src="/images/shim.png" alt="Post this on Google+"></a></li>
-        <li><a href="http://twitter.com/share?url={{ url_tidied }}&amp;text={{ desc_escaped }}" title="Tweet this"><img id="twitterImageButton" title="Tweet this" src="/images/shim.png" alt="Tweet this"></a></li>
-        <li><a href="http://www.stumbleupon.com/submit?url={{ url_tidied }}&amp;title={{ title_escaped }}" title="Share this on StumbleUpon"><img id="stumbleUponImageButton" title="Share this on StumbleUpon" src="/images/shim.png" alt="Share this on StumbleUpon"></a></li>
+        <li><a href="http://pinterest.com/pin/create/button/?url={{ url }}&amp;description={{ desc_escaped }}&amp;media={{ sitedata.domain }}/images/{{ share_thumbnail }}" title="Pin it"><img id="pinterestImageButton" title="Pin it" src="/images/shim.png" alt="Pin it"></a></li>
+        <li><a href="http://www.facebook.com/sharer.php?u={{ url }}&amp;t={{ desc_escaped }}" title="Share this on Facebook"><img id="facebookImageButton" title="Share this on Facebook" src="/images/shim.png" alt="Share this on Facebook"></a></li>
+        <li><a href="https://plus.google.com/share?url={{ url }}&amp;title={{ pageTitle_urlEncoded }}" title="Post this on Google+"><img id="googlePlusImageButton" title="Post this on Google+" src="/images/shim.png" alt="Post this on Google+"></a></li>
+        <li><a href="http://twitter.com/share?url={{ url }}&amp;text={{ desc_escaped }}" title="Tweet this"><img id="twitterImageButton" title="Tweet this" src="/images/shim.png" alt="Tweet this"></a></li>
+        <li><a href="http://www.stumbleupon.com/submit?url={{ url }}&amp;title={{ pageTitle_urlEncoded }}" title="Share this on StumbleUpon"><img id="stumbleUponImageButton" title="Share this on StumbleUpon" src="/images/shim.png" alt="Share this on StumbleUpon"></a></li>
         <li>{{ sitedata.share_attract | safe }}</li>
       </ul>
 

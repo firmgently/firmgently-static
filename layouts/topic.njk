@@ -1,0 +1,10 @@
+{% extends "fg-template.njk" %}
+
+
+{% block main %}
+  <h2>Pages in the <strong>{{ tag }}</strong> category</h2>
+  {% for page in pagination.files %}
+    <a  title="{{ page.title }}" href="/{{ page.path }}">{{ page.title }}</a>
+    {{ page.type }}
+  {% endfor %}
+{% endblock %}

@@ -1,17 +1,21 @@
 [ ] sections (art, words, photos etc) all need titles and descriptions set in config and used in metadata
 [ ] stuckism quote on home page needs to be randomised client-side
-[ ] homepage items need to get url from collections object somwhow
+[x] homepage items need to get url from collections object somwhow
 [ ] dark CSS - link text is unreadable (low contrast)
 [x] create list pages and template (art, photos, web etc)
 [x] create item pages
-[ ] add permalinks
+[x] add permalinks
 [ ] contact page
 [ ] select nav correctly
 [ ] list pages grouping make work correctly
 [ ] filter item list by fg/gf
 [ ] item list set max-width on portrait images
-[ ] add words page and set up first post using markdown
-[ ] check priority of meta data (is item before collection before site ??)
+[x] add words page and set up first post using markdown
+[x] check priority of meta data (is item before collection before site ??)
 [ ] sitedata is still not getting pulled into item pages
 [ ] fix og_type for all pages... list page should not be the same as item pages should not be the same as main site/homepage
 [ ] set bodyClass metadata for all itemList pages
+[ ] set 'url' and 'url_tidied' in tamplate.njk
+[ ] look into html tags time/datetime etc, is it worth adding to posts?
+[ ] add comments under posts? decide
+[ ] create collection `all` programatically rather than duplicating in build.js

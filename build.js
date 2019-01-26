@@ -20,6 +20,7 @@ const json_to_files = require('metalsmith-json-to-files'); // create files from 
 const timer = require('metalsmith-timer'); // for debugging, lists time between use() calls
 const linkcheck = require('metalsmith-linkcheck'); // check internal/external links are still working
 const slug = require('metalsmith-slug'); // rename files based on certain data
+const tags = require('metalsmith-tags'); // tagging/categories for pages
 const move_remove = require('metalsmith-move-remove'); // move/remove files
 
  
@@ -121,13 +122,12 @@ metalsmith(__dirname)
   // create collection lists
   .use(collections({
     all: [
-			'words/*.*',
 			'art/*/*.html',
 			'photos/*/*.html',
 			'objects/*/*.html',
 			'web/*/*.html'
 		],
-		words: 'words/*.*',
+		words: '', // add posts to this collection with metadata `collection: words`
 		art: 'art/*/*.html',
 		photos: 'photos/*/*.html',
 		objects: 'objects/*/*.html',
@@ -143,6 +143,18 @@ metalsmith(__dirname)
 		engineOptions: engineOptions
 	})).use(timer('convert njk to html'))
 
+  // analyse tags and create tag pages
+  .use(tags({
+    handle: 'tags', // yaml key for tag list in you pages
+    path:'topics/:tag.html', // path for result pages
+    layout:'topic.njk',
+    sortBy: 'date',
+    reverse: true,
+    skipMetadata: false, // skip updating metalsmith's metadata object. useful for improving performance on large blogs
+    metadataKey: "tags", // default: `tags`
+    slug: {mode: 'rfc3986'}
+  })).use(timer("tag analysis and tag page creation"))
+
   // web.html => web/index.html
   .use(permalinks({ pattern: ':title' })).use(timer('permalinks (all)'))
 
@@ -157,6 +169,7 @@ metalsmith(__dirname)
 
   // tidy up outputted markup
   .use(beautify()).use(timer('tidy markup'))
+
 
 //  .use(rename([
 //    [/\.html$/, '.htm']
