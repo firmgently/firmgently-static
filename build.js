@@ -21,6 +21,7 @@ const timer = require('metalsmith-timer'); // for debugging, lists time between 
 const linkcheck = require('metalsmith-linkcheck'); // check internal/external links are still working
 const slug = require('metalsmith-slug'); // rename files based on certain data
 const tags = require('metalsmith-tags'); // tagging/categories for pages
+const excerpts = require('metalsmith-excerpts'); // grabs first <p> from rendered page
 const move_remove = require('metalsmith-move-remove'); // move/remove files
 
  
@@ -157,6 +158,9 @@ metalsmith(__dirname)
 
   // web.html => web/index.html
   .use(permalinks({ pattern: ':title' })).use(timer('permalinks (all)'))
+
+  //
+  .use(excerpts()).use(timer("grabbed excerpts"))
 
   // fill in Nunjucks templates
   // ??? processes template inheritance ???

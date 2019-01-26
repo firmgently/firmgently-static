@@ -21,6 +21,7 @@
     "metalsmith-collections": "^0.9.0",
     "metalsmith-data": "^0.3.0",
     "metalsmith-debug": "^1.2.0",
+    "metalsmith-excerpts": "^1.2.0",
     "metalsmith-in-place": "^4.1.1",
     "metalsmith-json-to-files": "https://github.com/firmgently/metalsmith-json-to-files.git#data-renamer-patch",
     "metalsmith-layouts": "^2.1.0",

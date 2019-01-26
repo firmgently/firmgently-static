@@ -19,3 +19,4 @@
 [ ] look into html tags time/datetime etc, is it worth adding to posts?
 [ ] add comments under posts? decide
 [ ] create collection `all` programatically rather than duplicating in build.js
+[ ] look into screenreader /accessibility, especially for words/posts

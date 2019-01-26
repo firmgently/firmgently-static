@@ -3,75 +3,66 @@
 
 {% block main %}
 
-<div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+  <div id="page" class="site">
+    {#   <a class="skip-link screen-reader-text" href="#content">Skip to content</a>
 
 
-  <header id="masthead" class="site-header">
-    <nav id="site-navigation" class="main-navigation">
-      <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">Primary Menu</button>
-      <div class="menu-words-container">
-        <ul id="primary-menu" class="menu">
-          {% for tag in tags %}
-            <li class="boxLeft"><a href="/topics/{{ tag.slug }}">{{ tag.name }}</a></li>
+    <header id="masthead" class="site-header">
+      <nav id="site-navigation" class="main-navigation">
+        <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">Primary Menu</button>
+        <div class="menu-words-container">
+          <ul id="primary-menu" class="menu">
+            {% for tag in tags %}
+              <li class="boxLeft"><a href="/topics/{{ tag.slug }}">{{ tag.name }}</a></li>
+            {% endfor %}
+          </ul>
+        </div>
+      </nav><!-- #site-navigation -->
+    </header><!-- #masthead --> #}
+
+
+    <article class="boxRight">
+      <header class="entry-header">
+        <h1 class="entry-title">{{ title }}</h1>
+        <div class="entry-meta">
+          <span class="posted-on">Posted on <a href="{{ url }}" rel="bookmark"><time class="entry-date published" datetime="{{ date }}">{{ date }}</time></a></span>
+          <p>({{ contents | striptags | wordcount }} words)</p>
+        </div><!-- .entry-meta -->
+      </header><!-- .entry-header -->
+
+
+      <div class="entry-content">{{ contents | safe }}</div><!-- .entry-content -->
+
+
+      <footer class="entry-footer">
+        {% set comma = joiner(", ") %}
+        <span class="cat-links">Posted in {% for tag in tags %}{{ comma() }}<a href="/topics/{{ tag.slug }}" rel="category tag">{{ tag.name }}</a> {% endfor %}</span>
+      </footer><!-- .entry-footer -->
+    </article><!-- #post-220 -->
+
+
+    <nav class="navigation post-navigation" role="navigation">
+      <h2 class="screen-reader-text">Post navigation</h2>
+      <div class="nav-links">
+        {% if previous %}<div class="nav-previous">next post <a href="/{{ previous.path }}" rel="prev">{{ previous.title }}</a></div>{% endif %}
+        {% if next %}<div class="nav-next">previous post <a href="/{{ next.path }}" rel="next">{{ next.title }}</a></div>{% endif %}
+      </div>
+    </nav>
+
+
+    <aside id="secondary" class="widget-area">
+      <section id="recent-posts-2" class="widget widget_recent_entries">
+        <h3 class="widget-title">Recent Posts</h3>
+        <ul>
+          {% for post in (collections.words) %}
+            {% if loop.index0 < data.config.consts.RECENT_POSTS_NUM_TO_SHOW %}
+              <li><a href="/{{ post.path | stripIndexFromPath }}">{{ post.title }}</a></li>
+            {% endif %}
           {% endfor %}
         </ul>
-      </div>
-    </nav><!-- #site-navigation -->
-  </header><!-- #masthead -->
-
-		
-<article class="boxRight">
-	<header class="entry-header">
-    <h1 class="entry-title">{{ title }}</h1>
-    <div class="entry-meta">
-      <span class="posted-on">Posted on <a href="{{ url }}" rel="bookmark"><time class="entry-date published" >{{ date }}</time></a></span>
-    </div><!-- .entry-meta -->
-	</header><!-- .entry-header -->
-
-
-	<div class="entry-content">{{ contents | safe }}</div><!-- .entry-content -->
-
-
-	<footer class="entry-footer">
-    <span class="cat-links">Posted in {% for tag in tags %}<a href="/topics/{{ tag.slug }}" rel="category tag">{{ tag.name }}</a> {% endfor %}</span>
-  </footer><!-- .entry-footer -->
-</article><!-- #post-220 -->
-
-
-	<nav class="navigation post-navigation" role="navigation">
-		<h2 class="screen-reader-text">Post navigation</h2>
-    <div class="nav-links">
-      {% if previous %}<div class="nav-previous"><a href="/{{ previous.path }}" rel="prev">{{ previous.title }}</a></div>{% endif %}
-      {% if next %}<div class="nav-next"><a href="/{{ next.path }}" rel="next">{{ next.title }}</a></div>{% endif %}
-    </div>
-	</nav>
-
-
-<aside id="secondary" class="widget-area">
-			<section id="recent-posts-2" class="widget widget_recent_entries">		<h3 class="widget-title">Recent Posts</h3>		<ul>
-											<li>
-					<a href="https://gentlyfirm.co.uk/words/van-tech/dumping-my-butane-soldering-iron-for-a-ts100-no-more-hands-of-flame/">Dumping My Butane Soldering Iron for a TS100 (No More Hands of Flame)</a>
-									</li>
-											<li>
-					<a href="https://gentlyfirm.co.uk/words/confabulations/other-chilli-shop-ocalypse/">Other-Chilli-Shop-Ocalypse</a>
-									</li>
-											<li>
-					<a href="https://gentlyfirm.co.uk/words/van-life/fermenting-aka-micro-gardening/">Fermenting (AKA Micro-Gardening)</a>
-									</li>
-											<li>
-					<a href="https://gentlyfirm.co.uk/words/van-life/velcro-hooks-and-rubber-bands/">Velcro, Hooks and Rubber Bands</a>
-									</li>
-											<li>
-					<a href="https://gentlyfirm.co.uk/words/van-life/lowest-power-lighting/">Lowest Power Lighting</a>
-									</li>
-					</ul>
       </section>
-</aside><!-- #secondary -->
+    </aside><!-- #secondary -->
 
 
-
-
-
-</div><!-- #page -->
+  </div><!-- #page -->
 {% endblock %}
