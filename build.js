@@ -19,6 +19,8 @@ const permalinks = require('metalsmith-permalinks'); // names and locates files 
 const json_to_files = require('metalsmith-json-to-files'); // create files from JSON
 const timer = require('metalsmith-timer'); // for debugging, lists time between use() calls
 const linkcheck = require('metalsmith-linkcheck'); // check internal/external links are still working
+const slug = require('metalsmith-slug'); // rename files based on certain data
+const move_remove = require('metalsmith-move-remove'); // move/remove files
 
  
  // string-manipulation functions
@@ -29,7 +31,7 @@ const toUpper = function(string) {
 	return string.toUpperCase();
 };
 const spaceToDash = function(string) {
-	return string.replace(/\s+/g, "-");
+	return string.replace(/\s+/g, '-');
 };
 
 // JSON contains pieces of work with `type` properties
@@ -47,12 +49,12 @@ const stripIndexFromPath = function(path) {
   // list of index files to strip -
   // include the $ to only match at the end of a string
   var indexRegExp_ar = [
-    "index.html$",
-    "index.htm$",
-    "index.php$"
+    'index.html$',
+    'index.htm$',
+    'index.php$'
   ];
   // join all regexps into a single expression separated by |
-  var regExp = new RegExp(indexRegExp_ar.join("|"), "i");
+  var regExp = new RegExp(indexRegExp_ar.join('|'), 'i');
   return path.replace(regExp, '');
 };
 
@@ -69,6 +71,7 @@ const engineOptions = {
 };
 
 metalsmith(__dirname)
+	.use(timer('begin'))
 	.ignore([
 		'**/src/images/**',
 		'**/src/css/**'
@@ -76,18 +79,46 @@ metalsmith(__dirname)
 	.clean(true)
 	.source('./src/')
 	.destination('./build/')
-	.use(timer("init"))
+	.use(timer('initialised')) // timer measures build process
 
+  // import JSON
+  // creates data.config, data.items etc
   .use(data({
 		config: './data/config.json',
 		stuckism: './data/stuckism.json',
 		items: './data/items.json'
 	}))
-	.use(timer("data (JSON imported)"))
+  .use(timer('data (JSON imported)'))
 
+  // create files from JSON (eg. art/cat/index.html)
+  // although using some of the same JSON files as metalsmith-data (above),
+  // this is a separate unrelated plugin
   .use(json_to_files({ source_path: './data/' }))
-	.use(timer("JSON to files"))
+  .use(timer('JSON to files'))
+  // remove redundant file left over by json_to_files
+  .use(move_remove({ remove: [/JSONToFiles/] }))
 
+  // process markdown
+  .use(inplace({ 
+    pattern: ['**/*.md*'],
+		engine: 'markdown',
+		engineOptions: engineOptions
+	}))
+  .use(timer('converted markdown'))
+
+  // rename markdown posts according to title
+  .use(slug({
+    pattern: ['words/*.html'],
+    property: 'title',
+    mode: 'rfc3986',
+    renameFiles: true
+  })).use(timer('slug'))
+  // words/post-title.html => words/post-title/index.html
+  .use(permalinks({ pattern: ':title' })).use(timer('permalinks (posts)'))
+  // permalinks here leaves a load of redundant '.njk' files, remove them
+  .use(move_remove({ remove: [/\/.njk/] }))
+
+  // create collection lists
   .use(collections({
     all: [
 			'words/*.*',
@@ -101,45 +132,41 @@ metalsmith(__dirname)
 		photos: 'photos/*/*.html',
 		objects: 'objects/*/*.html',
 		web: 'web/*/*.html'
-	}))
-	.use(timer("collections"))
+	})).use(timer('created collections'))
 
-  // inplace processes markdown and
-  // converts njk to html
+  // convert njk to html
+  // ??? processes internal template syntax ???
   .use(inplace({ 
-    pattern: [
-      '**/*.md',
-      '**/*.njk'
-    ],
-		engine: 'markdown',
-		engineOptions: engineOptions
-	}))
-	.use(timer("markdown"))
-
-  .use(permalinks({ pattern: ':title' }))
-	.use(timer("permalinks"))
-
-  .use(layouts({ // won't touch templating syntax in src and doesn't support extends
-    pattern: [
-      '**/*.html'
-    ],
+    pattern: ['**/*.njk'],
 		engine: 'nunjucks',
 		default: 'template.njk',
 		engineOptions: engineOptions
-	}))
-	.use(timer("layouts / Nunjucks"))
+	})).use(timer('convert njk to html'))
 
-  .use(beautify())
-	.use(timer("beautify"))
+  // web.html => web/index.html
+  .use(permalinks({ pattern: ':title' })).use(timer('permalinks (all)'))
+
+  // fill in Nunjucks templates
+  // ??? processes template inheritance ???
+  .use(layouts({ 
+    pattern: ['**/*.html'],
+		engine: 'nunjucks',
+		default: 'template.njk',
+		engineOptions: engineOptions
+	})).use(timer('Nunjucks inheritance'))
+
+  // tidy up outputted markup
+  .use(beautify()).use(timer('tidy markup'))
 
 //  .use(rename([
-//    [/\.html$/, ".htm"]
+//    [/\.html$/, '.htm']
 //  ]))
-//	.use(timer("rename"))
+//	.use(timer('rename'))
 
   //	.use(linkcheck({ verbose: true }))
-  //	.use(timer("links checked"))
-	.build(function (err) {
+  //	.use(timer('links checked'))
+
+  .build(function (err) {
 		if (err) { throw err; }
 		console.log('Build finished!');
 	})
