@@ -45,6 +45,23 @@ const filterItemsByType = function(items, type) {
   });
 };
 
+// calculate a rough estimate on time to read an article
+// based on the number of words it contains
+const averageReadTime = function(numWords) {
+  var lowAverageWPM = 200,
+    highAverageWPM = 300,
+    slowMins = Math.round(numWords / lowAverageWPM),
+    fastMins = Math.round(numWords / highAverageWPM),
+    estimate;
+
+  if (fastMins < 1) {
+    estimate = "less than a minute";
+  } else {
+    estimate = fastMins + "-" + slowMins + " minutes";
+  }
+  return estimate;
+};
+
 // vanity function to keep the URL clean - when linking
 // into a directory the index.html can be ommitted
 const stripIndexFromPath = function(path) {
@@ -68,6 +85,7 @@ const engineOptions = {
 		toUpper: toUpper,
 		stripIndexFromPath: stripIndexFromPath,
 		filterItemsByType: filterItemsByType,
+		averageReadTime: averageReadTime,
 		spaceToDash: spaceToDash
 	}
 };

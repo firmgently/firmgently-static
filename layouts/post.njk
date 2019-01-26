@@ -24,9 +24,9 @@
     <article class="boxRight">
       <header class="entry-header">
         <h1 class="entry-title">{{ title }}</h1>
+        <em>reading time: {{ contents | striptags | wordcount | averageReadTime }}</em>
         <div class="entry-meta">
           <span class="posted-on">Posted on <a href="{{ url }}" rel="bookmark"><time class="entry-date published" datetime="{{ date }}">{{ date }}</time></a></span>
-          <p>({{ contents | striptags | wordcount }} words)</p>
         </div><!-- .entry-meta -->
       </header><!-- .entry-header -->
 
