@@ -17,7 +17,7 @@
 
 	<div class="mainColumn col">
 		<div id="itemImageMain">
-			<img id="magnifiableImage" alt="Click to magnify" src="/images/items/main/fabric.jpg">
+			<img id="magnifiableImage" alt="Click to magnify" src="/images/items/main/{{ itemData.id }}.jpg">
 		</div>
 		<p class="alert boxLeft magnifyPrompt">mouse or slide over the picture to magnify it</p>
 		<a href="/downloadImage.php?id=fabric" class="buttonSelected boxLeft downloadWallpaperBtn">download wallpaper</a>
@@ -28,6 +28,6 @@
 {% block bodyEndScripts %}
 <script src="/js/FGMagnify_min.js"></script>
 <script>
-	uk.co.firmgently.FGMagnify.create("/images/items/hi_res/fabric.jpg", "magnifiableImage", "1");
+	uk.co.firmgently.FGMagnify.create("/images/items/hi_res/{{ itemData.id }}.jpg", "magnifiableImage", "1");
 </script>
 {% endblock %}

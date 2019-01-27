@@ -26,16 +26,16 @@ const move_remove = require('metalsmith-move-remove'); // move/remove files
 const sharp = require('metalsmith-sharp'); // image processing
 const sass = require('metalsmith-sass'); // SASS compilation
 
- 
- // string-manipulation functions
+
+// string-manipulation functions
 const toLower = function(string) {
-	return string.toLowerCase();
+  return string.toLowerCase();
 };
 const toUpper = function(string) {
-	return string.toUpperCase();
+  return string.toUpperCase();
 };
 const spaceToDash = function(string) {
-	return string.replace(/\s+/g, '-');
+  return string.replace(/\s+/g, '-');
 };
 
 // JSON contains pieces of work with `type` properties
@@ -82,91 +82,96 @@ const stripIndexFromPath = function(path) {
 // wrapper to save repetition when passing options
 // into `use` functions
 const engineOptions = {
-	filters: {
-		toLower: toLower,
-		toUpper: toUpper,
-		stripIndexFromPath: stripIndexFromPath,
-		filterItemsByType: filterItemsByType,
-		averageReadTime: averageReadTime,
-		spaceToDash: spaceToDash
-	}
+  filters: {
+    toLower: toLower,
+    toUpper: toUpper,
+    stripIndexFromPath: stripIndexFromPath,
+    filterItemsByType: filterItemsByType,
+    averageReadTime: averageReadTime,
+    spaceToDash: spaceToDash
+  }
 };
 
 metalsmith(__dirname)
-	.use(timer('begin'))
-	.ignore([
-		'**/src/images/**'
-	])
-	.clean(true)
-	.source('./src/')
-	.destination('./build/')
-	.use(timer('initialised')) // timer measures build process
+//.ignore([
+//  '**/src/images/**'
+//])
+  .clean(true)
+  .source('./src/')
+  .destination('./build/')
+  .use(timer('initialising'))
 
-  // import JSON
-  // creates data.config, data.items etc
+// import JSON
+// creates data.config, data.items etc
   .use(data({
-		config: './data/config.json',
-		stuckism: './data/stuckism.json',
-		items: './data/items.json'
-	}))
-  .use(timer('data (JSON imported)'))
+    config: './data/config.json',
+    stuckism: './data/stuckism.json',
+    items: './data/items.json'
+  }))
+  .use(timer('importing JSON data'))
 
-  // create files from JSON (eg. art/cat/index.html)
-  // although using some of the same JSON files as metalsmith-data (above),
-  // this is a separate unrelated plugin
+// create files from JSON (eg. art/cat/index.html)
+// although using some of the same JSON files as metalsmith-data (above),
+// this is a separate unrelated plugin
   .use(json_to_files({ source_path: './data/' }))
-  .use(timer('JSON to files'))
-  // remove redundant file left over by json_to_files
+// remove redundant file left over by json_to_files
   .use(move_remove({ remove: [/JSONToFiles/] }))
+  .use(timer('creating files from JSON'))
 
-  // process markdown
+// process markdown
   .use(inplace({ 
     pattern: ['**/*.md*'],
-		engine: 'markdown',
-		engineOptions: engineOptions
-	}))
-  .use(timer('converted markdown'))
+    engine: 'markdown',
+    engineOptions: engineOptions
+  }))
+  .use(timer('converting markdown'))
 
-  // rename markdown posts according to title
+// rename markdown posts according to title
   .use(slug({
     pattern: ['words/*.html'],
     property: 'title',
     mode: 'rfc3986',
     renameFiles: true
-  })).use(timer('slug'))
-  // words/post-title.html => words/post-title/index.html
-  .use(permalinks({ pattern: ':title' })).use(timer('permalinks (posts)'))
-  // permalinks here leaves a load of redundant '.njk' files, remove them
+  }))
+  .use(timer('making slugs for posts and renaming them'))
+
+// words/post-title.html => words/post-title/index.html
+  .use(permalinks({ pattern: ':title' }))
+// permalinks here leaves a load of redundant '.njk' files, remove them
   .use(move_remove({ remove: [/\/.njk/] }))
+  .use(timer('permalinks (posts)'))
 
-  //
-  .use(excerpts()).use(timer("grabbed excerpts"))
+//
+  .use(excerpts())
+  .use(timer("grabbing excerpts"))
 
-  // create collection lists
+// create collection lists
   .use(collections({
     all: [
-			'art/*/*.html',
-			'photos/*/*.html',
-			'objects/*/*.html',
-			'web/*/*.html'
-		],
-		words: '', // add posts to this collection with metadata `collection: words`
-		art: 'art/*/*.html',
-		photos: 'photos/*/*.html',
-		objects: 'objects/*/*.html',
-		web: 'web/*/*.html'
-	})).use(timer('created collections'))
+      'art/*/*.html',
+      'photos/*/*.html',
+      'objects/*/*.html',
+      'web/*/*.html'
+    ],
+    words: '', // add posts to this collection with metadata `collection: words`
+    art: 'art/*/*.html',
+    photos: 'photos/*/*.html',
+    objects: 'objects/*/*.html',
+    web: 'web/*/*.html'
+  }))
+  .use(timer('created collections'))
 
-  // convert njk to html
-  // ??? processes internal template syntax ???
+// convert njk to html
+// ??? processes internal template syntax ???
   .use(inplace({ 
     pattern: ['**/*.njk'],
-		engine: 'nunjucks',
-		default: 'template.njk',
-		engineOptions: engineOptions
-	})).use(timer('convert njk to html'))
+    engine: 'nunjucks',
+    default: 'template.njk',
+    engineOptions: engineOptions
+  }))
+  .use(timer('converting njk to html'))
 
-  // analyse tags and create tag pages
+// analyse tags and create tag pages
   .use(tags({
     handle: 'tags', // yaml key for tag list in you pages
     path:'topics/:tag.html', // path for result pages
@@ -176,50 +181,78 @@ metalsmith(__dirname)
     skipMetadata: false, // skip updating metalsmith's metadata object. useful for improving performance on large blogs
     metadataKey: "tags", // default: `tags`
     slug: {mode: 'rfc3986'}
-  })).use(timer("tag analysis and tag page creation"))
+  }))
+  .use(timer("analysing tags and creating tag pages"))
 
-  // web.html => web/index.html
-  .use(permalinks({ pattern: ':title' })).use(timer('permalinks (all)'))
+// web.html => web/index.html
+  .use(permalinks({ pattern: ':title' }))
+  .use(timer('permalinking (all)'))
 
-  // fill in Nunjucks templates
-  // ??? processes template inheritance ???
+// fill in Nunjucks templates
+// ??? processes template inheritance ???
   .use(layouts({ 
     pattern: ['**/*.html'],
-		engine: 'nunjucks',
-		default: 'template.njk',
-		engineOptions: engineOptions
-	})).use(timer('Nunjucks inheritance'))
+    engine: 'nunjucks',
+    default: 'template.njk',
+    engineOptions: engineOptions
+  }))
+  .use(timer('inheriting templates'))
 
-  // tidy up outputted markup
-  .use(beautify()).use(timer('tidy markup'))
+// tidy up outputted markup
+  .use(beautify())
+  .use(timer('tidying markup'))
 
-  // process images
-  .use(sharp({
-    namingPattern: 'images/safeDirection.jpg',
-    methods: [ {
-        name: 'resize',
-        args: [200, 200]
-      }, {
-        name: 'resize',
-        args: { fit: 'inside' }
-      }, {
-        name: 'toFormat',
-        args: ['jpeg']
-      } ]
-  })).use(timer('process images'))
+// process images
+  .use(sharp([
+    {
+      src: 'images/items/hi_res/*.jpg',
+      namingPattern: 'images/items/main/{name}{ext}',
+      methods: [ {
+          name: 'resize',
+          args: [960, 960]
+        }, {
+          name: 'resize',
+          args: { fit: 'inside' }
+        }, {
+          name: 'toFormat',
+          args: ['jpeg']
+        }, {
+          name: 'sharpen'
+        } ]
+    }, {
+      src: 'images/items/hi_res/*.jpg',
+      namingPattern: 'images/items/thumbs/{name}{ext}',
+      methods: [ {
+          name: 'resize',
+          args: [200, 200]
+        }, {
+          name: 'resize',
+          args: { fit: 'inside' }
+        }, {
+          name: 'toFormat',
+          args: ['jpeg']
+        }, {
+          name: 'sharpen'
+        } ]
+    }
+  ]))
+  .use(timer('processing images'))
+
   .use(sass({
     includePaths: ['css']
-  })).use(timer('SASS compilation'))
+  }))
+  .use(timer('compiling SASS'))
+
 //  .use(rename([
 //    [/\.html$/, '.htm']
 //  ]))
-//	.use(timer('rename'))
+//  .use(timer('rename'))
 
-  //	.use(linkcheck({ verbose: true }))
-  //	.use(timer('links checked'))
+//  .use(linkcheck({ verbose: true }))
+//  .use(timer('links checked'))
 
   .build(function (err) {
-		if (err) { throw err; }
-		console.log('Build finished!');
-	})
+    if (err) { throw err; }
+    console.log('Build finished!');
+  })
 
