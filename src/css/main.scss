@@ -5,6 +5,7 @@
 $textinput-bgcolor: #f6f3f1;
 $invalid-opacity: 0.3;
 $invalid-bgcolor: mix($textinput-bgcolor, #ff0000); // USED multiply in LESS
+
 @import "_animations.scss";
 
 

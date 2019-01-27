@@ -23,6 +23,8 @@ const slug = require('metalsmith-slug'); // rename files based on certain data
 const tags = require('metalsmith-tags'); // tagging/categories for pages
 const excerpts = require('metalsmith-excerpts'); // grabs first <p> from rendered page
 const move_remove = require('metalsmith-move-remove'); // move/remove files
+const sharp = require('metalsmith-sharp'); // image processing
+const sass = require('metalsmith-sass'); // SASS compilation
 
  
  // string-manipulation functions
@@ -92,9 +94,9 @@ const engineOptions = {
 
 metalsmith(__dirname)
 	.use(timer('begin'))
-//.ignore([
-//	'**/src/images/**'
-//])
+	.ignore([
+		'**/src/images/**'
+	])
 	.clean(true)
 	.source('./src/')
 	.destination('./build/')
@@ -191,7 +193,23 @@ metalsmith(__dirname)
   // tidy up outputted markup
   .use(beautify()).use(timer('tidy markup'))
 
-
+  // process images
+  .use(sharp({
+    namingPattern: 'images/safeDirection.jpg',
+    methods: [ {
+        name: 'resize',
+        args: [200, 200]
+      }, {
+        name: 'resize',
+        args: { fit: 'inside' }
+      }, {
+        name: 'toFormat',
+        args: ['jpeg']
+      } ]
+  })).use(timer('process images'))
+  .use(sass({
+    includePaths: ['css']
+  })).use(timer('SASS compilation'))
 //  .use(rename([
 //    [/\.html$/, '.htm']
 //  ]))

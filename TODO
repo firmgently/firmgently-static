@@ -22,9 +22,12 @@
 [ ] add comments under posts? decide
 [ ] create collection `all` programatically rather than duplicating in build.js
 [ ] look into screenreader /accessibility, especially for words/posts
+[ ] images in blog posts use srcset and think about https://bitsofco.de/the-srcset-and-sizes-attributes/
 
 
 ## CSS STYLING
 
 [ ] style blockquotes (use bob ross article to test)
 [ ] markdown captioned images http://sparkandshine.net/en/insert-images-with-captions-in-markdown/
+[ ] use more modern sticky footer
+[ ] simplify layout columns and blocks
