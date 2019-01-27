@@ -11,7 +11,7 @@
 			<h1 itemprop="http://www.schema.org/name">{{ itemData.title }}</h1>
 			<h3>{{ itemData.year }}</h3>
 			<h2>Acrylic on canvas, 158&nbsp;x&nbsp;100cm</h2>
-			<span itemprop="http://www.schema.org/description">{{ itemData.desc }}</span>
+			<span itemprop="http://www.schema.org/description">{{ itemData.desc | safe }}</span>
 		</section>
 	</div>
 
