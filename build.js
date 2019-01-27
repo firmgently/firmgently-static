@@ -92,10 +92,9 @@ const engineOptions = {
 
 metalsmith(__dirname)
 	.use(timer('begin'))
-	.ignore([
-		'**/src/images/**',
-		'**/src/css/**'
-	])
+//.ignore([
+//	'**/src/images/**'
+//])
 	.clean(true)
 	.source('./src/')
 	.destination('./build/')
@@ -138,6 +137,9 @@ metalsmith(__dirname)
   // permalinks here leaves a load of redundant '.njk' files, remove them
   .use(move_remove({ remove: [/\/.njk/] }))
 
+  //
+  .use(excerpts()).use(timer("grabbed excerpts"))
+
   // create collection lists
   .use(collections({
     all: [
@@ -176,9 +178,6 @@ metalsmith(__dirname)
 
   // web.html => web/index.html
   .use(permalinks({ pattern: ':title' })).use(timer('permalinks (all)'))
-
-  //
-  .use(excerpts()).use(timer("grabbed excerpts"))
 
   // fill in Nunjucks templates
   // ??? processes template inheritance ???

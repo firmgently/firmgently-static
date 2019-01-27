@@ -1,3 +1,5 @@
+## GENERAL
+
 [ ] sections (art, words, photos etc) all need titles and descriptions set in config and used in metadata
 [ ] stuckism quote on home page needs to be randomised client-side
 [x] homepage items need to get url from collections object somwhow
@@ -20,3 +22,9 @@
 [ ] add comments under posts? decide
 [ ] create collection `all` programatically rather than duplicating in build.js
 [ ] look into screenreader /accessibility, especially for words/posts
+
+
+## CSS STYLING
+
+[ ] style blockquotes (use bob ross article to test)
+[ ] markdown captioned images http://sparkandshine.net/en/insert-images-with-captions-in-markdown/

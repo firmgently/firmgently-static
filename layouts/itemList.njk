@@ -1,16 +1,35 @@
-{% macro create(items, section) %}
+{# 
+
+  Although `data` is defined globally (by metalsmith-data) it doesn't exist
+  in this scope.
+
+  This seems to be a known issue with Nunjucks at time of writing -
+  the combo of macro and block hides global variables
+  https://github.com/mozilla/nunjucks/issues/912
+
+  To get around this we pass `data` in as an argument to the macro
+
+#}
+
+{% macro create(items, section, data) %}
 {% block main %}
-<ul class="itemContainer">
-	<li><ul class="boxRight">
-		<h1>BUILDINGS in <strong>{{ section }}</strong></h1>
-		{% for item in items %}
-			<li><span class="captionedImage" style="max-width:76%;">
-				<a href="/{{ item.path | stripIndexFromPath }}"><img alt="VIEW DETAILS: {{ item.title }}" title="VIEW DETAILS: {{ item.title }}" src="/images/items/thumbs/{{ item.id }}.jpg"></a>
-				<h3>{{ item.title }} ({{ item.added }})</h3>
-        {% if bodyClass == "words" %}{{ item.excerpt }}{% endif %}
-			</span></li>
-		{% endfor %}
-	</ul></li>
-</ul><!-- itemContainer -->
+  <ul class="itemContainer">
+    <li><ul class="boxRight"><!-- group wrapper --!>
+    <h1>BUILDINGS in <strong>{{ section }}</strong></h1>
+    {%- for item in items %}
+      <li><a href="/{{ item.path | stripIndexFromPath  }}">
+      {%- if item.itemData -%} {# if item.itemData exists then this is a standard item (art/web/photo/object) #}
+        <span class="captionedImage">
+          <img alt="VIEW DETAILS: {{ item.itemData.title }}" title="VIEW DETAILS: {{ item.itemData.title }}" src="/images/items/thumbs/{{ item.itemData.id }}.jpg">
+          <h3>{{ item.itemData.title }} ({{ item.itemData.added }})</h3>
+        </span>
+      {%- else -%} {# no itemData means this is a post in 'words' #}
+        <h3>{{ item.title }} ({{ item.date }})</h3>
+        <p>{{ item.excerpt | safe | truncate(data.config.consts.TRUNCATE_EXCERPT_CHARS) }}</p>
+      {%- endif -%}
+      </a></li>
+    {%- endfor %}
+    </ul></li><!-- group wrapper --!>
+  </ul><!-- itemContainer -->
 {% endblock %}
 {% endmacro %}
