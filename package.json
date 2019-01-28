@@ -18,6 +18,7 @@
     "jstransformer-nunjucks": "^0.5.0",
     "metalsmith": "^2.3.0",
     "metalsmith-beautify": "^0.2.0",
+    "metalsmith-changed": "^3.1.1",
     "metalsmith-collections": "^0.9.0",
     "metalsmith-data": "^0.3.0",
     "metalsmith-debug": "^1.2.0",
@@ -34,6 +35,7 @@
     "metalsmith-slug": "^0.2.1",
     "metalsmith-tags": "^2.0.0",
     "metalsmith-timer": "0.0.2",
+    "metalsmith-wordcloud": "0.0.4",
     "sass": "^1.16.1"
   }
 }

@@ -25,6 +25,8 @@ const excerpts = require('metalsmith-excerpts'); // grabs first <p> from rendere
 const move_remove = require('metalsmith-move-remove'); // move/remove files
 const sharp = require('metalsmith-sharp'); // image processing
 const sass = require('metalsmith-sass'); // SASS compilation
+const changed = require('metalsmith-changed'); // only process changed files
+const wordcloud = require('metalsmith-wordcloud'); // create wordcloud data from tags
 
 
 // string-manipulation functions
@@ -93,12 +95,15 @@ const engineOptions = {
 };
 
 metalsmith(__dirname)
-//.ignore([
-//  '**/src/images/**'
-//])
-  .clean(true)
+.ignore([
+  '**/src/images/**'
+])
   .source('./src/')
   .destination('./build/')
+  .clean(true)
+  //.use(changed({
+   // force: true // uncomment when JSON data changes
+  //}))
   .use(timer('initialising'))
 
 // import JSON
@@ -122,6 +127,7 @@ metalsmith(__dirname)
   .use(inplace({ 
     pattern: ['**/*.md*'],
     engine: 'markdown',
+    suppressNoFilesError: true, // as we're using clean()
     engineOptions: engineOptions
   }))
   .use(timer('converting markdown'))
@@ -153,7 +159,7 @@ metalsmith(__dirname)
       'objects/*/*.html',
       'web/*/*.html'
     ],
-    words: '', // add posts to this collection with metadata `collection: words`
+    words: '', // posts with metadata `collection: words` will be added
     art: 'art/*/*.html',
     photos: 'photos/*/*.html',
     objects: 'objects/*/*.html',
@@ -167,9 +173,21 @@ metalsmith(__dirname)
     pattern: ['**/*.njk'],
     engine: 'nunjucks',
     default: 'template.njk',
+    suppressNoFilesError: true, // as we're using changed()
     engineOptions: engineOptions
   }))
   .use(timer('converting njk to html'))
+
+// I'd have expected that `wordcloud` would need to come after `tags`
+// in the pipeline as it uses the tags. I was wrong.`tags` turns the
+// comma separated string of tags that `wordcloud` needs into an array
+// of objects containing a name and slug for each tag.
+  .use(wordcloud({
+    category: 'tags', // optional, default is tags
+    reverse: false, // optional sort value on category, default is false
+    path: '/topics' // <- Notice that path is prefixed with slash for absolute path 
+  }))
+  .use(timer("creating word clouds"))
 
 // analyse tags and create tag pages
   .use(tags({
@@ -180,7 +198,7 @@ metalsmith(__dirname)
     reverse: true,
     skipMetadata: false, // skip updating metalsmith's metadata object. useful for improving performance on large blogs
     metadataKey: "tags", // default: `tags`
-    slug: {mode: 'rfc3986'}
+    slug: { mode: 'rfc3986' }
   }))
   .use(timer("analysing tags and creating tag pages"))
 
@@ -194,6 +212,7 @@ metalsmith(__dirname)
     pattern: ['**/*.html'],
     engine: 'nunjucks',
     default: 'template.njk',
+    suppressNoFilesError: true, // as we're using changed()
     engineOptions: engineOptions
   }))
   .use(timer('inheriting templates'))

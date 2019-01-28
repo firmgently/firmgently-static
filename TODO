@@ -23,6 +23,9 @@
 [ ] create collection `all` programatically rather than duplicating in build.js
 [ ] look into screenreader /accessibility, especially for words/posts
 [ ] images in blog posts use srcset and think about https://bitsofco.de/the-srcset-and-sizes-attributes/
+[ ] add RSS feed for posts, abstract, figurative
+[ ] use tag clouds at side of page on landscape or top/bottom on portrait
+[ ] make hire me animation match colours of site, constrain size
 
 
 ## CSS STYLING
@@ -31,3 +34,6 @@
 [ ] markdown captioned images http://sparkandshine.net/en/insert-images-with-captions-in-markdown/
 [ ] use more modern sticky footer
 [ ] simplify layout columns and blocks
+[ ] art item thumbnails broken
+[ ] improve layout for words page
+[ ] remove too many selectors, use cascades etc instead
