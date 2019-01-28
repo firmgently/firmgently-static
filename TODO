@@ -1,5 +1,6 @@
 ## GENERAL
 
+[ ] metalsmith-json-to-files formalise passing of tags into proper PR
 [ ] sections (art, words, photos etc) all need titles and descriptions set in config and used in metadata
 [ ] stuckism quote on home page needs to be randomised client-side
 [x] homepage items need to get url from collections object somwhow

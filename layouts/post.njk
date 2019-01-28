@@ -20,11 +20,9 @@
       </nav><!-- #site-navigation -->
     </header><!-- #masthead --> #}
 
-      {% for cl in cloud %}
-          <a href="{{ cl.pth }}">
-                    {{ cl.ctg }}({{ cl.wght }})
-              </a>
-              {% endfor %}
+    {% for tag in cloud %}
+      <a style="font-size: {{ tag.wght | fontsizeFromTagWeight }}rem" href="{{ tag.pth }}">{{ tag.ctg }}</a>
+    {% endfor %}
 
     <article class="boxRight">
       <header class="entry-header">

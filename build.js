@@ -40,9 +40,18 @@ const spaceToDash = function(string) {
   return string.replace(/\s+/g, '-');
 };
 
+// caclulate CSS font size for tag cloud
+const fontsizeFromTagWeight = function(weight) {
+  const divisor = 13; // unscientific number to affect scale
+  var minSize = 1, maxSize = 3, size;
+  size = minSize + (weight / divisor);
+  if (size > maxSize) { size = maxSize; }
+  return size;
+};
+
 // JSON contains pieces of work with `type` properties
 // (WEB / PHOTO / ART etc). This function returns a filtered
-// list to be used on eg. the art index page
+// list of those items to be used on eg. the art index page
 const filterItemsByType = function(items, type) {
   return items.filter(function(item) {
     return item.type === type;
@@ -87,6 +96,7 @@ const engineOptions = {
   filters: {
     toLower: toLower,
     toUpper: toUpper,
+    fontsizeFromTagWeight: fontsizeFromTagWeight,
     stripIndexFromPath: stripIndexFromPath,
     filterItemsByType: filterItemsByType,
     averageReadTime: averageReadTime,
@@ -96,7 +106,7 @@ const engineOptions = {
 
 metalsmith(__dirname)
 .ignore([
-  '**/src/images/**'
+ // '**/src/images/**'
 ])
   .source('./src/')
   .destination('./build/')
@@ -167,17 +177,6 @@ metalsmith(__dirname)
   }))
   .use(timer('created collections'))
 
-// convert njk to html
-// ??? processes internal template syntax ???
-  .use(inplace({ 
-    pattern: ['**/*.njk'],
-    engine: 'nunjucks',
-    default: 'template.njk',
-    suppressNoFilesError: true, // as we're using changed()
-    engineOptions: engineOptions
-  }))
-  .use(timer('converting njk to html'))
-
 // I'd have expected that `wordcloud` would need to come after `tags`
 // in the pipeline as it uses the tags. I was wrong.`tags` turns the
 // comma separated string of tags that `wordcloud` needs into an array
@@ -201,6 +200,17 @@ metalsmith(__dirname)
     slug: { mode: 'rfc3986' }
   }))
   .use(timer("analysing tags and creating tag pages"))
+
+// convert njk to html
+// ??? processes internal template syntax ???
+  .use(inplace({ 
+    pattern: ['**/*.njk'],
+    engine: 'nunjucks',
+    default: 'template.njk',
+    suppressNoFilesError: true, // as we're using changed()
+    engineOptions: engineOptions
+  }))
+  .use(timer('converting njk to html'))
 
 // web.html => web/index.html
   .use(permalinks({ pattern: ':title' }))

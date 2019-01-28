@@ -5,10 +5,14 @@
   <h2>Pages in the <strong>{{ tag }}</strong> category</h2>
   <ul>
     {% for page in pagination.files %}
-    <li>
-    <a  title="{{ page.title }}" href="/{{ page.path }}">{{ page.title }}</a>
-    {{ page.excerpt | safe }}
-    </li>
-  {% endfor %}
+      <li>
+        {% if page.itemData %}{# standard item -  art, photo etc #} 
+          <a  title="{{ page.itemData.title }}" href="/{{ page.path }}">{{ page.itemData.title }} ({{ page.itemData.type }})</a>
+        {% else %}{# post #}
+          <a  title="{{ page.title }}" href="/{{ page.path }}">{{ page.title }}</a>
+          {{ page.excerpt | safe }}
+        {% endif %}
+      </li>
+    {% endfor %}
   </ul>
 {% endblock %}
