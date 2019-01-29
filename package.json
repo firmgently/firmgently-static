@@ -24,7 +24,7 @@
     "metalsmith-debug": "^1.2.0",
     "metalsmith-excerpts": "^1.2.0",
     "metalsmith-in-place": "^4.1.1",
-    "metalsmith-json-to-files": "https://github.com/firmgently/metalsmith-json-to-files.git#data-renamer-patch",
+    "metalsmith-json-to-files": "https://github.com/firmgently/metalsmith-json-to-files.git#data-renamer-and-passthrough-patch",
     "metalsmith-layouts": "^2.1.0",
     "metalsmith-linkcheck": "^0.3.4",
     "metalsmith-move-remove": "0.0.1",

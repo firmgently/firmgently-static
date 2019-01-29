@@ -27,6 +27,10 @@
 [ ] add RSS feed for posts, abstract, figurative
 [ ] use tag clouds at side of page on landscape or top/bottom on portrait
 [ ] make hire me animation match colours of site, constrain size
+[ ] add gitlab link
+[ ] replace share bar with invert colours (links to same url on gentlyfirm/firmgently)
+[ ] add item types to tags
+
 
 
 ## CSS STYLING
@@ -38,3 +42,4 @@
 [ ] art item thumbnails broken
 [ ] improve layout for words page
 [ ] remove too many selectors, use cascades etc instead
+[ ] remove title from logos

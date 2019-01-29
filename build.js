@@ -106,7 +106,7 @@ const engineOptions = {
 
 metalsmith(__dirname)
 .ignore([
- // '**/src/images/**'
+  '**/src/images/**'
 ])
   .source('./src/')
   .destination('./build/')
