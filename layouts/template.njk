@@ -52,12 +52,22 @@
         <a id="titleImage" alt="{{ sitedata.simple_domain }}" title="{{ sitedata.simple_domain }}" href="/">{{ sitedata.simple_domain }}</a>
         <nav id="fg-nav-main">
           <ul>
-            <li id="nav_words"><a class="button" href="/words">Words</a></li>
+         {#   <li id="nav_words"><a class="button" href="/words">Words</a></li>
             <li id="nav_art"><a class="button" href="/art">Art</a></li>
             <li id="nav_photos"><a class="button" href="/photos">Photos</a></li>
             <li id="nav_objects"><a class="button" href="/objects">Objects</a></li>
             <li id="nav_web"><a class="button" href="/web">Web</a></li>
-            <li id="nav_contact"><a class="button" href="/contact">Contact</a></li>
+            <li id="nav_contact"><a class="button" href="/contact">Contact</a></li> #}
+    {% for tag in cloud -%}
+      {#
+        fontsizeFromTagWeight() filter:
+        weight of tag is piped in as the first parameter
+        bracket params are (minSize, maxSize, numSizes)
+        minSize, maxSize represent min/max values that can be returned
+        numSizes is how many different sizes will be available
+      #}
+<li><a style="font-size: {{ tag.wght | fontsizeFromTagWeight(0.75, 2.5, 50) }}rem" href="{{ tag.pth }}">{{ tag.ctg }}</a></li>
+    {%- endfor %}
          </ul>
         </nav>
       </header>
