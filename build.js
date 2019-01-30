@@ -106,17 +106,70 @@ const engineOptions = {
   }
 };
 
+// if NOIMAGES then ignore image directory and dont clean build dir
+// else IMAGES (default) so ignore none and clean 
+
+var ignore_ar;
+var clean;
+if (process.env.REBUILDIMAGES === "true") {
+  ignore_ar = [];
+  clean = true;
+} else {
+  ignore_ar = [ '**/src/images/**' ];
+  clean = false;
+}
+
+
 metalsmith(__dirname)
-.ignore([
-  '**/src/images/**'
-])
+  .ignore(ignore_ar)
   .source('./src/')
   .destination('./build/')
-  .clean(true)
+  .clean(clean)
   //.use(changed({
    // force: true // uncomment when JSON data changes
   //}))
   .use(timer('initialising'))
+
+// process images
+  .use(sharp([
+    {
+      src: 'images/items/hi_res/*.jpg',
+      namingPattern: 'images/items/main/{name}{ext}',
+      methods: [ {
+          name: 'resize',
+          args: [960, 960]
+        }, {
+          name: 'resize',
+          args: { fit: 'inside' }
+        }, {
+          name: 'toFormat',
+          args: ['jpeg']
+        }, {
+          name: 'sharpen'
+        } ]
+    }, {
+      src: 'images/items/hi_res/*.jpg',
+      namingPattern: 'images/items/thumbs/{name}{ext}',
+      methods: [ {
+          name: 'resize',
+          args: [200, 200]
+        }, {
+          name: 'resize',
+          args: { fit: 'inside' }
+        }, {
+          name: 'toFormat',
+          args: ['jpeg']
+        }, {
+          name: 'sharpen'
+        } ]
+    }
+  ]))
+  .use(timer('processing images'))
+
+  .use(sass({
+    includePaths: ['css']
+  }))
+  .use(timer('compiling SASS'))
 
 // import JSON
 // creates data.config, data.items etc
@@ -232,47 +285,6 @@ metalsmith(__dirname)
 // tidy up outputted markup
   .use(beautify())
   .use(timer('tidying markup'))
-
-// process images
-  .use(sharp([
-    {
-      src: 'images/items/hi_res/*.jpg',
-      namingPattern: 'images/items/main/{name}{ext}',
-      methods: [ {
-          name: 'resize',
-          args: [960, 960]
-        }, {
-          name: 'resize',
-          args: { fit: 'inside' }
-        }, {
-          name: 'toFormat',
-          args: ['jpeg']
-        }, {
-          name: 'sharpen'
-        } ]
-    }, {
-      src: 'images/items/hi_res/*.jpg',
-      namingPattern: 'images/items/thumbs/{name}{ext}',
-      methods: [ {
-          name: 'resize',
-          args: [200, 200]
-        }, {
-          name: 'resize',
-          args: { fit: 'inside' }
-        }, {
-          name: 'toFormat',
-          args: ['jpeg']
-        }, {
-          name: 'sharpen'
-        } ]
-    }
-  ]))
-  .use(timer('processing images'))
-
-  .use(sass({
-    includePaths: ['css']
-  }))
-  .use(timer('compiling SASS'))
 
 //  .use(rename([
 //    [/\.html$/, '.htm']

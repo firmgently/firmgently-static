@@ -8,7 +8,8 @@
   },
   "license": "GPL-3.0-only",
   "scripts": {
-    "start": "DEBUG=metalsmith-timer node ./build.js",
+    "start": "DEBUG=metalsmith-timer REBUILDIMAGES=true node ./build.js",
+    "noimages": "DEBUG=metalsmith-timer REBUILDIMAGES=false node ./build.js",
     "debug": "DEBUG=metalsmith:*,metalsmith-slug,metalsmith-in-place,metalsmith-layouts,metalsmith-rewrite,metalsmith-data,metalsmith-json-to-files,metalsmith-permalinks,metalsmith-beautify,metalsmith-rename,metalsmith-collections node ./build.js",
     "css": "sass ./src/css/:./build/css/"
   },
