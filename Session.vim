@@ -41,6 +41,7 @@ imap  <Plug>Isurround
 let &cpo=s:cpo_save
 unlet s:cpo_save
 set autoindent
+set background=dark
 set backspace=indent,eol,start
 set cindent
 set cinkeys=0{,0},0),:,!^F,o,O,e
@@ -69,6 +70,7 @@ set ttimeoutlen=100
 set undodir=~/.vim/undo
 set undofile
 set viminfo='100,<50,s10,h,n~/.vim/.viminfo/.viminfo
+set window=40
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
 silent only
@@ -84,30 +86,35 @@ badd +1 layouts/item.njk
 badd +23 layouts/post.njk
 badd +1 layouts/template.njk
 badd +1 layouts/topic.njk
-badd +194 build.js
-badd +62 node_modules/metalsmith-wordcloud/lib/index.js
+badd +104 build.js
 badd +1 src/words/post1.md.njk
 badd +1 src/words/post2.md.njk
 badd +1 src/words/post3.md.njk
 badd +1 src/words/post4.md.njk
-badd +0 src/words/post5.md.njk
+badd +1 src/words/post5.md.njk
+badd +32 TODO
+badd +179 node_modules/metalsmith-json-to-files/lib/index.js
+badd +1 src/art.njk
+badd +25 src/JSONToFiles
+badd +27 package.json
+badd +0 data/items.json
 argglobal
 silent! argdel *
 argadd layouts/fg-template.njk
-argadd layouts/gf-template.njk
-argadd layouts/itemList.njk
-argadd layouts/item.njk
-argadd layouts/post.njk
-argadd layouts/template.njk
 argadd layouts/topic.njk
-edit src/words/post5.md.njk
+argadd layouts/template.njk
+argadd layouts/post.njk
+argadd layouts/item.njk
+argadd layouts/itemList.njk
+argadd layouts/gf-template.njk
+edit data/items.json
 set splitbelow splitright
 set nosplitbelow
 set nosplitright
 wincmd t
 set winheight=1 winwidth=1
 argglobal
-edit src/words/post5.md.njk
+edit data/items.json
 setlocal keymap=
 setlocal noarabic
 setlocal autoindent
@@ -120,11 +127,11 @@ setlocal buflisted
 setlocal buftype=
 setlocal cindent
 setlocal cinkeys=0{,0},0),:,!^F,o,O,e
-setlocal cinoptions=j1,J1
+setlocal cinoptions=
 setlocal cinwords=if,else,while,do,for,switch
 setlocal colorcolumn=
-setlocal comments=s1:/*,mb:*,ex:*/,://,b:#,:%,:XCOMM,n:>,fb:-
-setlocal commentstring=/*%s*/
+setlocal comments=
+setlocal commentstring=
 setlocal complete=.,w,b,u,t,i
 setlocal concealcursor=
 setlocal conceallevel=0
@@ -140,8 +147,8 @@ setlocal nodiff
 setlocal equalprg=
 setlocal errorformat=
 setlocal expandtab
-if &filetype != 'jinja'
-setlocal filetype=jinja
+if &filetype != 'json'
+setlocal filetype=json
 endif
 setlocal fixendofline
 setlocal foldcolumn=0
@@ -155,7 +162,7 @@ setlocal foldminlines=1
 setlocal foldnestmax=20
 setlocal foldtext=foldtext()
 setlocal formatexpr=
-setlocal formatoptions=tq
+setlocal formatoptions=cq
 setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
 setlocal formatprg=
 setlocal grepprg=
@@ -163,8 +170,8 @@ setlocal iminsert=0
 setlocal imsearch=0
 setlocal include=
 setlocal includeexpr=
-setlocal indentexpr=GetDjangoIndent()
-setlocal indentkeys=o,O,*<Return>,{,},o,O,!^F,<>>
+setlocal indentexpr=GetJSONIndent()
+setlocal indentkeys=0{,0},0),0[,0],!^F,o,O,e
 setlocal noinfercase
 setlocal iskeyword=@,48-57,_,192-255,-,$
 setlocal keywordprg=
@@ -173,7 +180,7 @@ setlocal nolisp
 setlocal lispwords=
 setlocal nolist
 setlocal makeprg=
-setlocal matchpairs=(:),{:},[:],<:>
+setlocal matchpairs=(:),{:},[:]
 setlocal nomodeline
 setlocal modifiable
 setlocal nrformats=bin,octal,hex
@@ -204,8 +211,8 @@ setlocal statusline=%!airline#statusline(1)
 setlocal suffixesadd=
 setlocal swapfile
 setlocal synmaxcol=3000
-if &syntax != 'jinja'
-setlocal syntax=jinja
+if &syntax != 'json'
+setlocal syntax=json
 endif
 setlocal tabstop=2
 setlocal tagcase=
@@ -219,7 +226,7 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 21) / 42)
+let s:l = 1 - ((0 * winheight(0) + 19) / 39)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
