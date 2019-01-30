@@ -20,9 +20,16 @@
       </nav><!-- #site-navigation -->
     </header><!-- #masthead --> #}
 
-    {% for tag in cloud %}
-      <a style="font-size: {{ tag.wght | fontsizeFromTagWeight }}rem" href="{{ tag.pth }}">{{ tag.ctg }}</a>
-    {% endfor %}
+    {% for tag in cloud -%}
+      {#
+        fontsizeFromTagWeight:
+        weight of tag is automatically piped in as the first parameter
+        bracket params are (minSize, maxSize, numSizes)
+        minSize, maxSize represent min/max values that can be returned
+        numSizes is how many different sizes will be available
+      #}
+      <a style="font-size: {{ tag.wght | fontsizeFromTagWeight(0.5, 5, 20) }}rem" href="{{ tag.pth }}">{{ tag.ctg }}</a>
+    {%- endfor %}
 
     <article class="boxRight">
       <header class="entry-header">

@@ -41,10 +41,12 @@ const spaceToDash = function(string) {
 };
 
 // caclulate CSS font size for tag cloud
-const fontsizeFromTagWeight = function(weight) {
-  const divisor = 13; // unscientific number to affect scale
-  var minSize = 1, maxSize = 3, size;
-  size = minSize + (weight / divisor);
+const fontsizeFromTagWeight = function(weight, minSize, maxSize, numSizes) {
+  // numSize = number of descrete sizes available -
+  // can help aesthetically match various ranges of weights
+  var  stepSize = (maxSize - minSize) / numSizes,
+  size = minSize + (weight * stepSize);
+
   if (size > maxSize) { size = maxSize; }
   return size;
 };
