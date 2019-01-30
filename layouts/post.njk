@@ -28,7 +28,7 @@
         minSize, maxSize represent min/max values that can be returned
         numSizes is how many different sizes will be available
       #}
-      <a style="font-size: {{ tag.wght | fontsizeFromTagWeight(0.5, 5, 20) }}rem" href="{{ tag.pth }}">{{ tag.ctg }}</a>
+      <a style="font-size: {{ tag.wght | fontsizeFromTagWeight(0.8, 4, 20) }}rem" href="{{ tag.pth }}">{{ tag.ctg }}</a>
     {%- endfor %}
 
     <article class="boxRight">
@@ -54,15 +54,15 @@
     <nav class="navigation post-navigation" role="navigation">
       <h2 class="screen-reader-text">Post navigation</h2>
       <div class="nav-links">
-        {%- if previous %}<div class="nav-previous">next post <a href="/{{ previous.path }}" rel="prev">{{ previous.title }}</a></div>{% endif %}
-        {% if next %}<div class="nav-next">previous post <a href="/{{ next.path }}" rel="next">{{ next.title }}</a></div>{%- endif %}
+        {%- if previous %}<div class="nav-previous"><a href="/{{ previous.path }}" rel="prev">&lt;&lt;{{ previous.title }}</a></div>{% endif %}
+        {% if next %}<div class="nav-next"><a href="/{{ next.path }}" rel="next">{{ next.title }} &gt;&gt;</a></div>{%- endif %}
       </div>
     </nav>
 
 
     <aside id="secondary" class="widget-area">
       <section id="recent-posts-2" class="widget widget_recent_entries">
-        <h3 class="widget-title">Recent Posts</h3>
+        <h3 class="widget-title">Latest</h3>
         <ul>
           {%- for post in (collections.words) -%}
             {% if loop.index0 < data.config.consts.RECENT_POSTS_NUM_TO_SHOW -%}
