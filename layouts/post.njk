@@ -22,13 +22,13 @@
 
     {% for tag in cloud -%}
       {#
-        fontsizeFromTagWeight:
-        weight of tag is automatically piped in as the first parameter
+        fontsizeFromTagWeight() filter:
+        weight of tag is piped in as the first parameter
         bracket params are (minSize, maxSize, numSizes)
         minSize, maxSize represent min/max values that can be returned
         numSizes is how many different sizes will be available
       #}
-      <a style="font-size: {{ tag.wght | fontsizeFromTagWeight(0.8, 4, 20) }}rem" href="{{ tag.pth }}">{{ tag.ctg }}</a>
+      <a style="font-size: {{ tag.wght | fontsizeFromTagWeight(0.75, 2.5, 50) }}rem" href="{{ tag.pth }}">{{ tag.ctg }}</a>
     {%- endfor %}
 
     <article class="boxRight">
