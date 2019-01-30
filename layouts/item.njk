@@ -1,7 +1,30 @@
 {% extends "fg-template.njk" %}
 
 
+{# work out item details #}
+{% if itemData.size %}
+	{% set itemSize = itemData.size %}
+{% else %}
+	{% set itemSize = itemData.w + "&nbsp;x&nbsp;" + itemData.h + "cm" %}
+{% endif %}
+
+{% if (itemData.type == "ART" or itemData.type == "OBJECTS") %}
+	{% set detail1 = itemData.materials + ", " + itemSize %}
+	{% set detail2 = itemData.year %}
+{% elif itemData.type == "PHOTOS" %}
+	{% set detail1 = itemData.location + ", " + itemData.year %}
+	{% set detail2 = "Camera: " + itemData.camera %}
+{% else %} {# WEB #}
+	{% set detail1 = itemData.client %}
+	{% if itemData.agency %}
+		{% set detail1 = detail1 + " / " + itemData.agency %}
+	{% endif %}
+	{% set detail2 = itemData.year + ", " + itemSize %}
+{% endif %}
+
+
 {% block main %}
+
   <div class="sideColumn col">
 		<div id="prevNextButtons">
 			<a class="itemNextBtn button" title="Next: {{ next.title }}" href="/{{ next.path }}">NEXT &gt;</a>
@@ -9,8 +32,8 @@
 		</div>
 		<section id="mainItemDetails" class="lowered boxLeft">
 			<h1 itemprop="http://www.schema.org/name">{{ itemData.title }}</h1>
-			<h3>{{ itemData.year }}</h3>
-			<h2>Acrylic on canvas, 158&nbsp;x&nbsp;100cm</h2>
+			<h3>{{ detail1 | safe }}</h3>
+			<h2>{{ detail2 | safe }}</h2>
 			<span itemprop="http://www.schema.org/description">{{ itemData.desc | safe }}</span>
 		</section>
 	</div>
