@@ -106,9 +106,8 @@ const engineOptions = {
   }
 };
 
-// if NOIMAGES then ignore image directory and dont clean build dir
-// else IMAGES (default) so ignore none and clean 
-
+// if REBUILDIMAGES then include image directory and clean build dir
+// else (default) ignore image dir and don't clean build dir
 var ignore_ar;
 var clean;
 if (process.env.REBUILDIMAGES === "true") {
