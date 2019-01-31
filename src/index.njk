@@ -6,8 +6,6 @@ bodyClass: home
 
 {% macro getPathByCollectionID(id) -%}
 {%- for item in collections.all -%}
-i{{ item }}
-i{{ item.itemData }}
   {%- if item.itemData.id == id -%}
     {{ item.path }}
   {%- endif -%}
@@ -17,8 +15,6 @@ i{{ item.itemData }}
 
 {# draws a single image with text linking to a work item #}
 {% macro homepageItem(item) %}
-{{ item.id }}
-{{ item.path }}
 <a class="homeImageMain boxRight" href="/{{ getPathByCollectionID(item.id) | stripIndexFromPath }}">
 	<figure>
 		<img src="/images/shim.png" style="background-image: url('images/items/main/{{ item.id }}.jpg')" />
