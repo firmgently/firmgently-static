@@ -296,15 +296,15 @@ metalsmith(__dirname)
 	.use(
 		feed({
 			collection: 'all',
-		//	destination: 'rss.xml',
-		//	limit: 20, // include all items
+			destination: 'rss.xml',
+			limit: false, // include all items
 			//image_url: ,
 			preprocess: file => ({
 				...file,
 				// Make all titles uppercase
-				title: file.itemData.title,
+				title: file.title || file.itemData.title,
 				categories: file.tags,
-				description: file.itemData.desc
+				description:  (file.itemData ? file.itemData.desc : null) || file.contents
 			})
 		})
 	)
