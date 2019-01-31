@@ -2,7 +2,7 @@
 
 
 {% block main %}
-  <h2>Pages in the <strong>{{ tag }}</strong> category</h2>
+  <h2><strong>{{ tag }}</strong></h2>
   <ul>
     {% for page in pagination.files %}
       <li><a href="/{{ page.path | stripIndexFromPath  }}">

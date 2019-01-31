@@ -1,6 +1,8 @@
 ## BUGS
 
+[ ] bad (empty) link in word cloud
 [x] css/images/rss/js are all getting duplicated into every folder why?
+[ ] homepage item links not working collections problem?
 
 
 
@@ -9,9 +11,11 @@
 [x] metalsmith-json-to-files formalise passing of tags into proper PR
 [x] sections (art, words, photos etc) all need titles and descriptions set in config and used in metadata
 [ ] stuckism quote on home page needs to be randomised client-side
+[ ] integrate data/config with build.js metadata
 [x] homepage items need to get url from collections object somwhow
 [ ] dark CSS - link text is unreadable (low contrast)
 [x] create list pages and template (art, photos, web etc)
+[ ] add rss icon/link
 [x] create item pages
 [x] add permalinks
 [ ] contact page
@@ -36,7 +40,7 @@
 [ ] add gitlab link
 [ ] replace share bar with invert colours (links to same url on gentlyfirm/firmgently)
 [x] add item types to tags
-
+[ ] add images to items in rss feed
 
 
 ## CSS STYLING
