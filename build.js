@@ -116,6 +116,10 @@ if (process.env.REBUILDIMAGES === "true") {
   ignore_ar = [ '**/src/images/**' ];
   clean = false;
 }
+  ignore_ar = [ '**/src/images/**' ];
+  clean = true;
+
+const topicDir = "categories";
 
 
 metalsmith(__dirname)
@@ -249,14 +253,14 @@ metalsmith(__dirname)
   .use(wordcloud({
     category: 'tags', // optional, default is tags
     reverse: false, // optional sort value on category, default is false
-    path: '/in' // <- Notice that path is prefixed with slash for absolute path 
+    path: '/' + topicDir // <- Notice that path is prefixed with slash for absolute path 
   }))
   .use(timer("created word cloud data"))
 
 // analyse tags and create tag pages
   .use(tags({
     handle: 'tags', // yaml key for tag list in you pages
-    path:'in/:tag.html', // path for result pages
+    path: topicDir + '/:tag.html', // path for result pages
     layout:'topic.njk',
     sortBy: 'date',
     reverse: true,
@@ -265,6 +269,16 @@ metalsmith(__dirname)
     slug: { mode: 'rfc3986' }
   }))
   .use(timer("analysed tags and created topic pages"))
+  .use(permalinks({
+		relative: false,
+    linksets: [
+      {
+        match: topicDir + '/*',
+        pattern: topicDir + '/:title'
+      }
+    ]
+	}))
+  .use(timer('permalinked (all)'))
 
 // convert njk to html
 // ??? processes internal template syntax ???
