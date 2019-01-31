@@ -1,0 +1,33 @@
+{# 
+
+  Although `data` is defined globally (by metalsmith-data) it doesn't exist
+  in this scope.
+
+  This seems to be a known issue with Nunjucks at time of writing -
+  the combo of macro and block hides global variables
+  https://github.com/mozilla/nunjucks/issues/912
+
+  To get around this we pass `data` in as an argument to the macro
+
+#}
+
+{% macro create(items, section, data) %}
+{% block main %}
+  <ul class="itemContainer">
+    <h1>{{ section }}</h1>
+    {%- for item in items %}
+      <li><a href="/{{ item.path | stripIndexFromPath  }}">
+      {%- if item.itemData -%} {# if item.itemData exists then this is a standard item (art/web/photo/object) #}
+        <span class="captionedImage">
+          <img alt="VIEW DETAILS: {{ item.itemData.title }}" title="VIEW DETAILS: {{ item.itemData.title }}" src="/images/items/thumbs/{{ item.itemData.id }}.jpg">
+          <h3>{{ item.itemData.title }} ({{ item.itemData.added }})</h3>
+        </span>
+      {%- else -%} {# no itemData means this is a post in 'words' #}
+        <h3>{{ item.title }} ({{ item.date }})</h3>
+        <p>{{ item.excerpt | safe | truncate(data.config.consts.TRUNCATE_EXCERPT_CHARS) }}</p>
+      {%- endif -%}
+      </a></li>
+    {%- endfor %}
+  </ul><!-- itemContainer -->
+{% endblock %}
+{% endmacro %}
