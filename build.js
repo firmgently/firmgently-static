@@ -25,8 +25,8 @@ const excerpts = require('metalsmith-excerpts'); // grabs first <p> from rendere
 const move_remove = require('metalsmith-move-remove'); // move/remove files
 const sharp = require('metalsmith-sharp'); // image processing
 const sass = require('metalsmith-sass'); // SASS compilation
-const changed = require('metalsmith-changed'); // only process changed files
 const wordcloud = require('metalsmith-wordcloud'); // create wordcloud data from tags
+const feed = require('metalsmith-feed'); // create RSS feed
 
 
 // string-manipulation functions
@@ -124,10 +124,14 @@ metalsmith(__dirname)
   .source('./src/')
   .destination('./build/')
   .clean(clean)
-  //.use(changed({
-   // force: true // uncomment when JSON data changes
-  //}))
-  .use(timer('initialising'))
+  .metadata(
+    {site: {
+      title: 'Firm Gently',
+      url: 'https://firmgently.co.uk',
+      author: 'Mark Mayes'
+    }}
+  )
+  .use(timer('initialised'))
 
 // process images
   .use(sharp([
@@ -163,12 +167,12 @@ metalsmith(__dirname)
         } ]
     }
   ]))
-  .use(timer('processing images'))
+  .use(timer('processed images'))
 
   .use(sass({
     includePaths: ['css']
   }))
-  .use(timer('compiling SASS'))
+  .use(timer('compiled SASS'))
 
 // import JSON
 // creates data.config, data.items etc
@@ -177,7 +181,7 @@ metalsmith(__dirname)
     stuckism: './data/stuckism.json',
     items: './data/items.json'
   }))
-  .use(timer('importing JSON data'))
+  .use(timer('imported JSON data'))
 
 // create files from JSON (eg. art/cat/index.html)
 // although using some of the same JSON files as metalsmith-data (above),
@@ -185,7 +189,7 @@ metalsmith(__dirname)
   .use(json_to_files({ source_path: './data/' }))
 // remove redundant file left over by json_to_files
   .use(move_remove({ remove: [/JSONToFiles/] }))
-  .use(timer('creating files from JSON'))
+  .use(timer('created files from JSON'))
 
 // process markdown
   .use(inplace({ 
@@ -194,7 +198,7 @@ metalsmith(__dirname)
     suppressNoFilesError: true, // as we're using clean()
     engineOptions: engineOptions
   }))
-  .use(timer('converting markdown'))
+  .use(timer('converted markdown'))
 
 // rename markdown posts according to title
   .use(slug({
@@ -203,17 +207,25 @@ metalsmith(__dirname)
     mode: 'rfc3986',
     renameFiles: true
   }))
-  .use(timer('making slugs for posts and renaming them'))
+  .use(timer('made slugs for posts and renamed them'))
 
 // words/post-title.html => words/post-title/index.html
-  .use(permalinks({ pattern: ':title' }))
+//.use(permalinks({
+//	pattern: ':title',
+//  linksets: [
+//    {
+//      match: { collection: 'words' },
+//      pattern: 'words/:title'
+//    }
+//  ]
+//}))
 // permalinks here leaves a load of redundant '.njk' files, remove them
-  .use(move_remove({ remove: [/\/.njk/] }))
-  .use(timer('permalinks (posts)'))
+  //.use(move_remove({ remove: [/\/.njk/] }))
+  //.use(timer('permalinked (posts)'))
 
 //
   .use(excerpts())
-  .use(timer("grabbing excerpts"))
+  .use(timer("grabbed excerpts"))
 
 // create collection lists
   .use(collections({
@@ -240,7 +252,7 @@ metalsmith(__dirname)
     reverse: false, // optional sort value on category, default is false
     path: '/topics' // <- Notice that path is prefixed with slash for absolute path 
   }))
-  .use(timer("creating word clouds"))
+  .use(timer("created word cloud data"))
 
 // analyse tags and create tag pages
   .use(tags({
@@ -253,7 +265,25 @@ metalsmith(__dirname)
     metadataKey: "tags", // default: `tags`
     slug: { mode: 'rfc3986' }
   }))
-  .use(timer("analysing tags and creating tag pages"))
+  .use(timer("analysed tags and created topic pages"))
+
+// RSS feed
+	.use(
+		feed({
+			collection: 'all',
+			destination: 'rss.xml',
+			//limit: false, // include all items
+			//image_url: ,
+			preprocess: file => ({
+				...file,
+				// Make all titles uppercase
+				title: file.itemData.title,
+				categories: file.tags,
+				description: file.itemData.desc
+			})
+		})
+	)
+  .use(timer('RSS feed created'))
 
 // convert njk to html
 // ??? processes internal template syntax ???
@@ -264,11 +294,20 @@ metalsmith(__dirname)
     suppressNoFilesError: true, // as we're using changed()
     engineOptions: engineOptions
   }))
-  .use(timer('converting njk to html'))
+  .use(timer('converted njk to html'))
 
 // web.html => web/index.html
-  .use(permalinks({ pattern: ':title' }))
-  .use(timer('permalinking (all)'))
+  .use(permalinks({
+ 		pattern: ':title',
+		relative: false,
+    linksets: [
+      {
+        match: { collection: 'words' },
+        pattern: 'words/:title'
+      }
+    ]
+	}))
+  .use(timer('permalinked (all)'))
 
 // fill in Nunjucks templates
 // ??? processes template inheritance ???
@@ -279,16 +318,11 @@ metalsmith(__dirname)
     suppressNoFilesError: true, // as we're using changed()
     engineOptions: engineOptions
   }))
-  .use(timer('inheriting templates'))
+  .use(timer('inherited templates'))
 
 // tidy up outputted markup
   .use(beautify())
-  .use(timer('tidying markup'))
-
-//  .use(rename([
-//    [/\.html$/, '.htm']
-//  ]))
-//  .use(timer('rename'))
+  .use(timer('tidied markup'))
 
 //  .use(linkcheck({ verbose: true }))
 //  .use(timer('links checked'))

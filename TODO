@@ -1,7 +1,13 @@
+## BUGS
+
+[x] css/images/rss/js are all getting duplicated into every folder why?
+
+
+
 ## GENERAL
 
-[ ] metalsmith-json-to-files formalise passing of tags into proper PR
-[ ] sections (art, words, photos etc) all need titles and descriptions set in config and used in metadata
+[x] metalsmith-json-to-files formalise passing of tags into proper PR
+[x] sections (art, words, photos etc) all need titles and descriptions set in config and used in metadata
 [ ] stuckism quote on home page needs to be randomised client-side
 [x] homepage items need to get url from collections object somwhow
 [ ] dark CSS - link text is unreadable (low contrast)
@@ -10,12 +16,12 @@
 [x] add permalinks
 [ ] contact page
 [ ] select nav correctly
-[ ] list pages grouping make work correctly
-[ ] filter item list by fg/gf
+[x] list pages grouping make work correctly
+[x] filter item list by fg/gf
 [ ] item list set max-width on portrait images
 [x] add words page and set up first post using markdown
 [x] check priority of meta data (is item before collection before site ??)
-[ ] sitedata is still not getting pulled into item pages
+[x] sitedata is still not getting pulled into item pages
 [ ] fix og_type for all pages... list page should not be the same as item pages should not be the same as main site/homepage
 [ ] set bodyClass metadata for all itemList pages
 [ ] set 'url' and 'url_tidied' in tamplate.njk
@@ -24,12 +30,12 @@
 [ ] create collection `all` programatically rather than duplicating in build.js
 [ ] look into screenreader /accessibility, especially for words/posts
 [ ] images in blog posts use srcset and think about https://bitsofco.de/the-srcset-and-sizes-attributes/
-[ ] add RSS feed for posts, abstract, figurative
+[x] add RSS feed for posts, abstract, figurative
 [ ] use tag clouds at side of page on landscape or top/bottom on portrait
 [ ] make hire me animation match colours of site, constrain size
 [ ] add gitlab link
 [ ] replace share bar with invert colours (links to same url on gentlyfirm/firmgently)
-[ ] add item types to tags
+[x] add item types to tags
 
 
 
