@@ -12,7 +12,6 @@ const debug = require('metalsmith-debug'); // debugging
 const inplace = require('metalsmith-in-place'); // convert markdown
 const layouts = require('metalsmith-layouts'); // templating (using Nunjucks here)
 const beautify = require('metalsmith-beautify'); // format outputted markup
-const rename = require('metalsmith-rename'); // rename outputted files
 const data = require('metalsmith-data'); // import JSON data
 const collections = require('metalsmith-collections'); // groups files together into collections
 const permalinks = require('metalsmith-permalinks'); // names and locates files to match useful URL patterns
@@ -209,33 +208,33 @@ metalsmith(__dirname)
   }))
   .use(timer('made slugs for posts and renamed them'))
 
-// words/post-title.html => words/post-title/index.html
-//.use(permalinks({
-//	pattern: ':title',
-//  linksets: [
-//    {
-//      match: { collection: 'words' },
-//      pattern: 'words/:title'
-//    }
-//  ]
-//}))
-// permalinks here leaves a load of redundant '.njk' files, remove them
-  //.use(move_remove({ remove: [/\/.njk/] }))
-  //.use(timer('permalinked (posts)'))
-
 //
   .use(excerpts())
   .use(timer("grabbed excerpts"))
 
+// web.html => web/index.html
+  .use(permalinks({
+ 		pattern: ':title',
+		relative: false,
+    linksets: [
+      {
+        match: { collection: 'words' },
+        pattern: 'words/:title'
+      }
+    ]
+	}))
+  .use(timer('permalinked (all)'))
+
 // create collection lists
   .use(collections({
     all: [
+      'words/*/*.html',
       'art/*/*.html',
       'photos/*/*.html',
       'objects/*/*.html',
       'web/*/*.html'
     ],
-    words: '', // posts with metadata `collection: words` will be added
+    words: 'words/*/*.html', // posts with metadata `collection: words` will be added
     art: 'art/*/*.html',
     photos: 'photos/*/*.html',
     objects: 'objects/*/*.html',
@@ -250,14 +249,14 @@ metalsmith(__dirname)
   .use(wordcloud({
     category: 'tags', // optional, default is tags
     reverse: false, // optional sort value on category, default is false
-    path: '/topics' // <- Notice that path is prefixed with slash for absolute path 
+    path: '/in' // <- Notice that path is prefixed with slash for absolute path 
   }))
   .use(timer("created word cloud data"))
 
 // analyse tags and create tag pages
   .use(tags({
     handle: 'tags', // yaml key for tag list in you pages
-    path:'topics/:tag.html', // path for result pages
+    path:'in/:tag.html', // path for result pages
     layout:'topic.njk',
     sortBy: 'date',
     reverse: true,
@@ -266,24 +265,6 @@ metalsmith(__dirname)
     slug: { mode: 'rfc3986' }
   }))
   .use(timer("analysed tags and created topic pages"))
-
-// RSS feed
-	.use(
-		feed({
-			collection: 'all',
-			destination: 'rss.xml',
-			//limit: false, // include all items
-			//image_url: ,
-			preprocess: file => ({
-				...file,
-				// Make all titles uppercase
-				title: file.itemData.title,
-				categories: file.tags,
-				description: file.itemData.desc
-			})
-		})
-	)
-  .use(timer('RSS feed created'))
 
 // convert njk to html
 // ??? processes internal template syntax ???
@@ -295,19 +276,6 @@ metalsmith(__dirname)
     engineOptions: engineOptions
   }))
   .use(timer('converted njk to html'))
-
-// web.html => web/index.html
-  .use(permalinks({
- 		pattern: ':title',
-		relative: false,
-    linksets: [
-      {
-        match: { collection: 'words' },
-        pattern: 'words/:title'
-      }
-    ]
-	}))
-  .use(timer('permalinked (all)'))
 
 // fill in Nunjucks templates
 // ??? processes template inheritance ???
@@ -323,6 +291,24 @@ metalsmith(__dirname)
 // tidy up outputted markup
   .use(beautify())
   .use(timer('tidied markup'))
+
+// RSS feed
+	.use(
+		feed({
+			collection: 'all',
+		//	destination: 'rss.xml',
+		//	limit: 20, // include all items
+			//image_url: ,
+			preprocess: file => ({
+				...file,
+				// Make all titles uppercase
+				title: file.itemData.title,
+				categories: file.tags,
+				description: file.itemData.desc
+			})
+		})
+	)
+  .use(timer('RSS feed created'))
 
 //  .use(linkcheck({ verbose: true }))
 //  .use(timer('links checked'))
