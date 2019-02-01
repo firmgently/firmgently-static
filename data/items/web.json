@@ -1,0 +1,86 @@
+[
+  {
+    "id": "HKN",
+    "title": "HK Nutrition",
+    "tags": "web,websites",
+    "desc": "<p>I embraced WordPress to make this fully responsive content-managed site for a great nutritionist, who can now merrily upload recipes, testimonials etc without having to get a developer (me) involved.</p>",
+    "excludeFromHome": "true",
+    "client": "Helen Kempson",
+    "w": "1000",
+    "h": "732",
+    "d": "2",
+    "siteURL": "http://www.hknutrition.co.uk/",
+    "size": "3.5MB",
+    "year": "2014",
+    "added": "16/08/2016"
+  },
+  {
+    "id": "buzz",
+    "title": "Buzz Junior",
+    "tags": "web,websites",
+    "desc": "<p>Buzz Junior is the kid's version of the popular PlayStation game Buzz.</p><p>I assembled this Flash <a href=\"/sites/buzz/en_GB/index.html\">web site</a> and built the logic, while the crew at BLOC provided most of the animations (I accept responsibility for the spider and caterpillar though).</p>",
+    "client": "Sony (SCEE)",
+    "w": "845",
+    "h": "585",
+    "d": "2",
+    "siteURL": "/sites/buzz/en_GB/index.html",
+    "size": "300KB per page",
+    "year": "2007",
+    "agency": "BLOC&nbsp;Media",
+    "detailPic": [
+      {
+        "filename": "buzz1.jpg",
+        "desc": "This caterpillar appears periodically and crawls around the edge of the browser window."
+      }, {
+      "filename": "buzz2.jpg",
+      "desc": "A spider sometimes dangles in front of the page, if you click him his thread breaks and he falls."
+      }
+    ],
+    "added": "01/01/2008"
+  },
+  {
+    "id": "ALALA",
+    "title": "ALALA / All for Love and Love for All",
+    "tags": "web,websites",
+    "desc": "<p><a href=\"http://www.alala.org.uk/\">ALALA</a> is a charity supporting children orphaned by natural disaster. I built and carry out ongoing maintenance on their website.</p>",
+    "excludeFromHome": "true",
+    "client": "ALALA",
+    "w": "1000",
+    "h": "732",
+    "d": "2",
+    "siteURL": "http://www.alala.org.uk/",
+    "size": "4.8MB",
+    "year": "2015",
+    "added": "19/02/2015"
+  },
+  {
+    "id": "KGS",
+    "title": "Kempson Garden Services",
+    "tags": "web,websites",
+    "desc": "<p>Kempson Garden Services offer garden maintenance and design services, <a href=\"http://www.kempson-gardenservices.co.uk/\">this</a> is their site.</p>",
+    "excludeFromHome": "true",
+    "client": "Kempson Garden Services",
+    "w": "1000",
+    "h": "732",
+    "d": "2",
+    "siteURL": "http://www.kempson-gardenservices.co.uk/",
+    "size": "3.5MB",
+    "year": "2014",
+    "added": "27/11/2014"
+  },
+  {
+    "id": "trucktown",
+    "title": "Truck Town",
+    "tags": "web,websites",
+    "desc": "<p>Built to accompany a series of children's books, the <a href=\"/sites/trucktown/index.html\">Trucktown site</a> is aimed at young boys and is well noisy.<br><br>There are some really cute characters in the books (and cool animations and graphics from D.O. in the site).</p>",
+    "client": "Chorion",
+    "w": "1080",
+    "h": "692",
+    "d": "2",
+    "siteURL": "/sites/trucktown/index.html",
+    "size": "1.5MB",
+    "year": "2008",
+    "agency": "Digital&nbsp;Outlook",
+    "added": "01/01/2008"
+  }
+]

@@ -53,11 +53,11 @@ const fontsizeFromTagWeight = function(weight, minSize, maxSize, numSizes) {
 // JSON contains pieces of work with `type` properties
 // (WEB / PHOTO / ART etc). This function returns a filtered
 // list of those items to be used on eg. the art index page
-const filterItemsByType = function(items, type) {
-  return items.filter(function(item) {
-    return item.type === type;
-  });
-};
+//const filterItemsByType = function(items, type) {
+//  return items.filter(function(item) {
+//    return item.type === type;
+//  });
+//};
 
 // calculate a rough estimate on time to read an article
 // based on the number of words it contains
@@ -99,7 +99,7 @@ const engineOptions = {
     toUpper: toUpper,
     fontsizeFromTagWeight: fontsizeFromTagWeight,
     stripIndexFromPath: stripIndexFromPath,
-    filterItemsByType: filterItemsByType,
+    //filterItemsByType: filterItemsByType,
     averageReadTime: averageReadTime,
     spaceToDash: spaceToDash
   }
@@ -181,8 +181,8 @@ metalsmith(__dirname)
 // creates data.config, data.items etc
   .use(data({
     config: './data/config.json',
-    stuckism: './data/stuckism.json',
-    items: './data/items.json'
+    stuckism: './data/stuckism.json'//,
+    // items: './data/items.json'
   }))
   .use(timer('imported JSON data'))
 
@@ -191,7 +191,7 @@ metalsmith(__dirname)
 // this is a separate unrelated plugin
   .use(json_to_files({ source_path: './data/' }))
 // remove redundant file left over by json_to_files
-  .use(move_remove({ remove: [/JSONToFiles/] }))
+  .use(move_remove({ remove: [/json-to-files*/] }))
   .use(timer('created files from JSON'))
 
 // process markdown

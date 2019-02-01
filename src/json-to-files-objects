@@ -1,0 +1,43 @@
+---
+layout: false
+json_files:
+    source_file: items/objects
+    filename_pattern: objects/:itemData.title
+    layout: item.njk
+    rename_data_to: itemData
+    passthrough:
+      from: tags
+      to: tags
+---
+
+{#
+
+** all of the following happens via the `metalsmith-json-to-files` plugin **
+
+- Use the source file (./data/[source_file].json) to build corresponding files
+  for all `item`s contained in its JSON data
+
+- `filename_pattern` creates a path based on the item data. eg:
+  {
+    title: "painting1"
+  }
+  will create ./objects/painting1.html
+
+- Each created page recieves a `data` object containing the item's data
+  (`data` can be renamed via `rename_data_to` via front matter as above)
+
+- The created files will use the layout specified in the front-matter
+
+- `passthrough` specifies a property to be passed directly into the page,
+  so the following will pass tags to the page to that other plugins can
+  use them in the same manner as normal front matter tags
+  {
+    title: "painting1",
+    tags: "objects,painting,one"
+  }
+
+#}
+
+
+
+

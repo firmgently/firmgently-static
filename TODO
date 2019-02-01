@@ -8,6 +8,8 @@
 
 ## GENERAL
 
+[ ] nav slection for 'words' section
+[ ] remove target blank in links in items
 [x] metalsmith-json-to-files formalise passing of tags into proper PR
 [x] sections (art, words, photos etc) all need titles and descriptions set in config and used in metadata
 [ ] stuckism quote on home page needs to be randomised client-side

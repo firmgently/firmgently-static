@@ -31,8 +31,6 @@
   <meta property="og:image" content="{{ sitedata.domain }}/images/{{ share_thumbnail }}">
   <meta property="og:site_name" content="{{ sitedata.site_name }}">
   <meta property="og:description" content="{{ desc_stripped }}">
-  <meta property="fb:app_id" content="{{ sitedata.fb_appID }}">
-  <meta property="fb:admins" content="{{ sitedata.fb_admins }}">
 
   <title>{{ pageTitle }}</title>
 
@@ -59,25 +57,49 @@
         <a id="titleImage" alt="{{ sitedata.simple_domain }}" title="{{ sitedata.simple_domain }}" href="/">{{ sitedata.simple_domain }}</a>
         <nav id="fg-nav-main">
           <ul>
-    {%- for word in cloud -%}
-      {%- if word.ctg %}
-      {%- if (word.ctg == tag) or (itemData and word.ctg == itemData.type | toLower ) %}
+{%- for word in cloud -%}
+    
+  {%- if word.ctg %}
+
+    {% set matchFound = false %}
+
+    {%- if (word.ctg == tag) %}
+      {% set matchFound = true %}
+    {% endif %}
+
+    {%- if (itemData and (itemData.tags.indexOf(word.ctg) != -1)) %}
+      {% set matchFound = true %}
+    {% endif %}
+
+    {% if tags %}
+      {% for tag in tags %}
+        {% if tag.name == word.ctg %}
+          {% set matchFound = true %}
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+ 
+    {%- if matchFound %}
       {% set classattr = "class=\"selected\" " %}
     {% else %}
       {% set classattr = "" %}
     {% endif %}
-        
+   
     <li><a {{ classattr | safe }}style="font-size: {{ word.wght | fontsizeFromTagWeight(0.8, 2, 60) }}rem" href="{{ word.pth }}">{{ word.ctg }}</a></li>
-      {% endif %}
-    {%- endfor %}
+ 
+  {% endif %}
+
+{%- endfor %}
          </ul>
         </nav>
       </header>
       
-      <section itemscope itemtype="{{ microdata_type }}" id="content" class="row col">
+      
+      <section {% if microdata_type %}itemscope itemtype="{{ microdata_type }}" {% endif %}id="content" class="row col">
 			{% block main %}{{ contents | safe }}{% endblock %}
 			</section><!-- content -->
-      
+
+
       <ul id="socialImageButtons">
         <li><a href="http://pinterest.com/pin/create/button/?url={{ url }}&amp;description={{ desc_escaped }}&amp;media={{ sitedata.domain }}/images/{{ share_thumbnail }}" title="Pin it"><img id="pinterestImageButton" title="Pin it" src="/images/shim.png" alt="Pin it"></a></li>
         <li><a href="http://www.facebook.com/sharer.php?u={{ url }}&amp;t={{ desc_escaped }}" title="Share this on Facebook"><img id="facebookImageButton" title="Share this on Facebook" src="/images/shim.png" alt="Share this on Facebook"></a></li>
@@ -91,7 +113,8 @@
     
     <div id="push"></div>
   </div><!-- bodyWrapper -->
-  
+
+
   <footer class="fgfooter row">
     <span class="footerLeft col">{{ sitedata.footer_altsite | safe }}
       <span class="footerMid col">Content and site&nbsp;<span class="copyright">&copy;</span>&nbsp;Mark Mayes</span>

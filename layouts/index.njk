@@ -40,8 +40,10 @@
 
 <div class="mainColumn col">
 	{# draw images linking to work items #}
-	{% set homepageItems = data.items | rejectattr("excludeFromHome") %}
-	{% for i in range(0, data.config.consts.HOME_LATESTITEMS_TOTAL) -%}
+	{% set homepageItems = collections.all | rejectattr("excludeFromHome") %}
+	{#% set homepageItems = data.items | rejectattr("excludeFromHome") %}
+	{% for i in range(0, data.config.consts.HOME_LATESTITEMS_TOTAL) -%#}
+  {% for i in collections.all %}
 		{{ homepageItem(homepageItems[i]) }} 
 	{%- endfor %}
 </div><!-- mainColumn -->
