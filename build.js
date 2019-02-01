@@ -225,9 +225,9 @@ metalsmith(__dirname)
       'photos/*/*.html',
       'objects/*/*.html',
       'web/*/*.html'
-    ],
-            sortBy: 'date',
-            reverse: true
+      ],
+      sortBy: 'date',
+      reverse: true
     },
     words: 'words/*/*.html', // posts with metadata `collection: words` will be added
     art: 'art/*/*.html',

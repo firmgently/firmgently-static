@@ -1,0 +1,38 @@
+@charset "UTF-8";
+
+
+$main-bg: #2f313b
+$main-bg2: darken($main-bg, 4%);
+$overlay-bg: #20232d;
+
+$text-colour-main: #cbcfd2;
+$text-colour-alt: #68b4ff;
+$text-colour-strong: #8fa7bf;
+$text-colour-strong2: #b8cdff;
+
+$text-dimmed-main: mix($text-colour-main, $main-bg, 40%);
+
+$button-bg-colour: #161720;
+$button-bg-colour-strong: #007ffe;
+$button-bg-colour-stronger: #009bff;
+$button-highlight-color: #000;
+
+$textinput-bgcolor: #171920;
+$invalid-opacity: 0.9;
+$invalid-bgcolor: mix($textinput-bgcolor, #ff0000);
+
+$alert-bg-color: #ffff63;
+$alert-bg-color-faded: mix($alert-bg-color, $overlay-bg, 40%);
+
+$textinput-shade: mix($textinput-bgcolor, #000000, 10%);
+$textinput-highlight: mix($textinput-bgcolor, #ffffff, 90%);
+
+$footer-bg-image: url(/images/dark/footer_adorn.png); 
+$title-image: url(/images/light/gf_logo_mini.png);
+$home-banner-image: url(/images/light/fg_logo_mini.png);
+$magnifier-image: url(/images/dark/magEmptyBg.png);
+$loupe: url(/images/dark/loupeBg.png);
+$bullet-image: url(/images/dark/bullet.png);
+
+
+@import "_main.scss";

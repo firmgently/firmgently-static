@@ -19,9 +19,6 @@ $main-bg-light: #e2e1d8;
 $main-bg-light2: lighten($main-bg-light, 3%);
 $overlay-bg-light: #ededed;
 
-$footer-height-small: 11em;
-$footer-height-medium: 8em;
-
 $pad-big-big: 40px;
 $pad-big: 30px;
 $pad-med-big: 22px;
@@ -192,11 +189,12 @@ html {
 
 html,body{height:100%;font-size:100%;border:none;}
 body {
+  display: flex; flex-direction: column;
   color: $textColourMain;
   font-size:0.85em; line-height:1.6em; letter-spacing:0.2em; font-family:"FG_Medium","Tahoma","Arial","Nimbus Sans L";
   #bodyWrapper {
+    flex: 1 0 auto;
     background: linear-gradient(165deg, $main-bg-light 0%, $main-bg-light2);
-    min-height:100%; height:auto !important; height:100%; margin:0 auto (0 - $footer-height-small);
   }
 }
 #main { position: relative; }
@@ -1049,8 +1047,7 @@ nav#fg-nav-main {
 
 
 /*FOOTER*/
-footer.fgfooter, #push{height:$footer-height-small;clear:both; }
-footer.fgfooter{ position:relative; padding-left:$small-left-margin; padding-right: $small-right-margin;}
+footer.fgfooter{ position: relative; flex-shrink:0; padding-left:$small-left-margin; padding-right: $small-right-margin;}
 .footerLeft, .footerRight { position:absolute; top: $pad-med; bottom: $pad-med; width: 47%; }
 .footerMid{ color: $textDimmedMain; position:absolute; left: 0; bottom: 0; line-height:1.7em; text-transform:uppercase;font-size:0.6em;font-weight:bold;}
 .footerRight{text-align:right;font-style:italic;font-weight: bold; right: $small-right-margin; }
@@ -1156,8 +1153,6 @@ footer.fgfooter { background-image: url(/images/light/footer_adorn.png); backgro
 
   .footerLeft, .footerRight { font-size: 1em; width: 39%; line-height:1.5em; }
   .footerMid { font-size: 0.6em; }
-  body #bodyWrapper{ margin-bottom: (0 - $footer-height-medium); }
-  footer.fgfooter, #push{ height:$footer-height-medium; }
 
   #priceInfo { right: $print-options-width-medium; }
   #printOptionsPanel { left: (98% - $print-options-width-medium); width: $print-options-width-medium; }
