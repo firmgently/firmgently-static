@@ -303,7 +303,12 @@ metalsmith(__dirname)
   .use(timer('inherited templates'))
 
 // tidy up outputted markup
-  .use(beautify())
+  .use(beautify({
+    indent_size: 2,
+    indent_char: " ",
+    max_preserve_newlines: 0,
+    extra_liners: '[head,body,/body,/html,header,section,footer]'
+  }))
   .use(timer('tidied markup'))
 
 // RSS feed

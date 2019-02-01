@@ -42,7 +42,7 @@
 </head>
 
 
-<body class="{{ bodyClass }}">
+<body{% if bodyClass %} class="{{ bodyClass }}"{% endif %}>
   <div id="bodyWrapper">
     <div id="main">
 
