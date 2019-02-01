@@ -5,17 +5,7 @@
   <h2><strong>{{ tag }}</strong></h2>
   <ul>
     {% for page in pagination.files %}
-      <li><a href="/{{ page.path | stripIndexFromPath  }}">
-      {%- if page.itemData -%} {# if page.itemData exists then this is a standard item (art/web/photo/object) #}
-        <span class="captionedImage">
-          <img alt="VIEW DETAILS: {{ page.itemData.title }}" title="VIEW DETAILS: {{ page.itemData.title }}" src="/images/items/thumbs/{{ page.itemData.id }}.jpg">
-          <h3>{{ page.itemData.title }} ({{ page.itemData.added }})</h3>
-        </span>
-      {%- else -%} {# no itemData means this is a post in 'words' #}
-        <h3>{{ page.title }} ({{ page.date }})</h3>
-        <p>{{ page.excerpt | safe | truncate(data.config.consts.TRUNCATE_EXCERPT_CHARS) }}</p>
-      {%- endif -%}
-      </a></li>
+      {{ createItem(page) }}
     {% endfor %}
   </ul>
 {% endblock %}

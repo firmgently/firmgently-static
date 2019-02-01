@@ -5,6 +5,29 @@
   (see build.json)
   
 #}
+{#
+#}
+{% macro createItem(item) %}
+<a class="homeImageMain boxRight" href="/{{ item.path | stripIndexFromPath }}">
+{% if item.itemData %} {# standard item #}
+	<figure>
+		<img src="/images/shim.png" style="background-image: url('/images/items/main/{{ item.itemData.id }}.jpg')" />
+		<figcaption>
+			{%- if item.itemData.client -%}
+        {% set details = item.itemData.client + " / " + item.itemData.year %}
+			{%- else -%}
+        {% set details = item.itemData.w + "x" + item.itemData.h + "cm / " + item.itemData.materials + " / " + item.itemData.year %}
+			{%- endif -%}
+      <h2>{{ item.itemData.title }}</h2><em>{{ details }}</em>
+		</figcaption>
+  </figure>
+{% else %} {# post #}
+      <h2>{{ item.title }}</h2><em>{{ item.excerpt | safe }}</em>
+{% endif %}
+</a>
+{% endmacro %}
+{#
+#}
 {% set pageTitle = (itemData.title | default(title) | default(sitedata.site_name)) + sitedata.title_suffix %}
 {% set pageTitle_stripped = pageTitle | striptags %}
 {% set pageTitle_urlEncoded = pageTitle_stripped | urlencode %}
@@ -101,12 +124,7 @@
 
 
       <ul id="socialImageButtons">
-        <li><a href="http://pinterest.com/pin/create/button/?url={{ url }}&amp;description={{ desc_escaped }}&amp;media={{ sitedata.domain }}/images/{{ share_thumbnail }}" title="Pin it"><img id="pinterestImageButton" title="Pin it" src="/images/shim.png" alt="Pin it"></a></li>
-        <li><a href="http://www.facebook.com/sharer.php?u={{ url }}&amp;t={{ desc_escaped }}" title="Share this on Facebook"><img id="facebookImageButton" title="Share this on Facebook" src="/images/shim.png" alt="Share this on Facebook"></a></li>
-        <li><a href="https://plus.google.com/share?url={{ url }}&amp;title={{ pageTitle_urlEncoded }}" title="Post this on Google+"><img id="googlePlusImageButton" title="Post this on Google+" src="/images/shim.png" alt="Post this on Google+"></a></li>
-        <li><a href="http://twitter.com/share?url={{ url }}&amp;text={{ desc_escaped }}" title="Tweet this"><img id="twitterImageButton" title="Tweet this" src="/images/shim.png" alt="Tweet this"></a></li>
-        <li><a href="http://www.stumbleupon.com/submit?url={{ url }}&amp;title={{ pageTitle_urlEncoded }}" title="Share this on StumbleUpon"><img id="stumbleUponImageButton" title="Share this on StumbleUpon" src="/images/shim.png" alt="Share this on StumbleUpon"></a></li>
-        <li>{{ sitedata.share_attract | safe }}</li>
+        <li><img src="/images/yin-yang.svg" alt="Yin Yang symbol" class="icon"></li>
       </ul>
 
     </div><!-- main -->
@@ -116,7 +134,11 @@
 
 
   <footer class="fgfooter row">
-    <span class="footerLeft col">{{ sitedata.footer_altsite | safe }}
+    <span class="footerLeft col">
+      <ul>
+        <li><img src="/images/yin-yang.svg" alt="Yin Yang symbol" class="icon"></li>
+        <li><img src="/images/feed-icon.svg" alt="RSS Feed symbol" class="icon"></li>
+      </ul>
       <span class="footerMid col">Content and site&nbsp;<span class="copyright">&copy;</span>&nbsp;Mark Mayes</span>
     </span>
     <span class="footerRight col">{{ sitedata.footer_quote | safe }}</span>

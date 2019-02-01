@@ -74,51 +74,6 @@
     "added": "25/09/2014"
   },
   {
-    "id": "wroughtBenchReflections",
-    "title": "Wrought Bench Reflections",
-    "tags": "photos,abstract,weird",
-    "desc": "<p>The reflections caught my eye, I couldn't resist.</p>",
-    "excludeFromHome": "true",
-    "printsAvailable": "STANDARD",
-    "camera": "Pentax K5",
-    "location": "Hove, Sussex",
-    "w": "2045",
-    "h": "2045",
-    "d": "2",
-    "year": "2015",
-    "added": "10/03/2015"
-  },
-  {
-    "id": "isThatMe",
-    "title": "Is That Me?",
-    "tags": "photos,abstract,nature",
-    "desc": "<p>Would a spider be looking at his reflection?</p>",
-    "excludeFromHome": "true",
-    "printsAvailable": "STANDARD",
-    "camera": "Panasonic GF1",
-    "location": "My Kitchen, Brighton",
-    "w": "2090",
-    "h": "2090",
-    "d": "2",
-    "year": "2014",
-    "added": "30/05/2014"
-  },
-  {
-    "id": "spider1",
-    "title": "Spider #1",
-    "tags": "photos,figurative,nature",
-    "desc": "<p>Do you like it?</p>",
-    "excludeFromHome": "true",
-    "printsAvailable": "STANDARD",
-    "camera": "Panasonic GF1",
-    "location": "My Bathroom, Brighton",
-    "w": "2099",
-    "h": "1575",
-    "d": "2",
-    "year": "2012",
-    "added": "16/09/2012"
-  },
-  {
     "id": "gull1",
     "title": "Gull #1",
     "tags": "photos,figurative,nature",
@@ -224,21 +179,6 @@
     "added": "11/04/2012"
   },
   {
-    "id": "wastage",
-    "title": "Wastage",
-    "tags": "photos,abstract,weird",
-    "desc": "<p>Blotted.</p>",
-    "excludeFromHome": "true",
-    "printsAvailable": "STANDARD",
-    "camera": "Panasonic GF1",
-    "location": "Brighton, Sussex",
-    "w": "2899",
-    "h": "2175",
-    "d": "2",
-    "year": "2012",
-    "added": "10/08/2012"
-  },
-  {
     "id": "designedLitter",
     "title": "Designed Litter",
     "tags": "photos,abstract,weird",
@@ -296,21 +236,6 @@
     "d": "2",
     "year": "2013",
     "added": "24/06/2013"
-  },
-  {
-    "id": "path2",
-    "title": "Path #2",
-    "tags": "photos,figurative,nature",
-    "desc": "<p>...</p>",
-    "excludeFromHome": "true",
-    "printsAvailable": "STANDARD",
-    "camera": "Panasonic GF1",
-    "location": "Sussex",
-    "w": "4000",
-    "h": "2672",
-    "d": "2",
-    "year": "2014",
-    "added": "25/09/2014"
   },
   {
     "id": "industrialProcesses",
@@ -441,19 +366,6 @@
     "added": "01/01/2008"
   },
   {
-    "id": "benchWarrior",
-    "title": "Bench Warrior",
-    "tags": "photos,abstract,people",
-    "desc": "<p>I was walking one morning when I suddenly found myself surrounded by several of these beings.</p>",
-    "camera": "Panasonic GF1",
-    "location": "Brighton Seafront",
-    "w": "1000",
-    "h": "750",
-    "d": "2",
-    "year": "2012",
-    "added": "01/01/2008"
-  },
-  {
     "id": "stranglingSelfInRain",
     "title": "Strangling Self in the Rain",
     "tags": "photos,abstract,people",
@@ -521,19 +433,6 @@
     "d": "2",
     "year": "2004",
     "printsAvailable": "STANDARD",
-    "added": "01/01/2008"
-  },
-  {
-    "id": "lateriteMountain",
-    "title": "Laterite Mountain",
-    "tags": "photos,abstract,landscapes",
-    "desc": "<p>The earth around Goa is laterite soil, which is red due to its containing iron oxide. The man standing on top of this mound of mined material was handy as he gave my photo scale.</p>",
-    "camera": "Fuji FinePix F810",
-    "location": "Road to Tambdi Surla, Goa",
-    "w": "1000",
-    "h": "750",
-    "d": "2",
-    "year": "2004",
     "added": "01/01/2008"
   },
   {

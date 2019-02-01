@@ -1,31 +1,6 @@
 {% extends "fg-template.njk" %}
 
 
-{# draws a single image with text linking to a work item #}
-{% macro homepageItem(item) %}
-<a class="homeImageMain boxRight" href="/{{ item.path | stripIndexFromPath }}">
-{% if item.itemData %} {# standard item #}
-	<figure>
-		<img src="/images/shim.png" style="background-image: url('images/items/main/{{ item.itemData.id }}.jpg')" />
-		<figcaption>
-			{%- if item.itemData.client -%}
-        {% set details = item.itemData.client + " / " + item.itemData.year %}
-			{%- else -%}
-        {% set details = item.itemData.w + "x" + item.itemData.h + "cm / " + item.itemData.materials + " / " + item.itemData.year %}
-			{%- endif -%}
-      <h2>{{ item.itemData.title }}</h2><em>{{ details }}</em>
-		</figcaption>
-  </figure>
-{% else %} {# post #}
-      <h2>{{ item.title }}</h2><em>{{ item.excerpt | safe }}</em>
-{% endif %}
-</a>
-{% endmacro %}
-
-
-
-
-
 {% block main %}
 
 <div class="sideColumn col">
@@ -42,7 +17,7 @@
     {% if count < data.config.consts.HOME_LATESTITEMS_TOTAL %}
       {% if not item.itemData.excludeFromHome %}
         {% set count = count + 1 %}
-        {{ homepageItem(item) }}
+        {{ createItem(item) }}
       {% endif %}
     {% endif %}
 	{%- endfor %}

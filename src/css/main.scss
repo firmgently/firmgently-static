@@ -838,56 +838,6 @@ a:hover, a:active {
 }
 #paymentForm .row { text-align:left; margin-bottom: $empad-big; }
 
-/* ////////////////////////////////////////////////////////////////////////// */
-/*ITEM RATING*/
-#itemRating {
-  position:absolute;z-index:2;text-align:center;
-  left:0;width: 100%; min-width:270px;top:-25px;vertical-align:middle;
-  p {
-    visibility: hidden; color: $textColourStrong;
-    font-weight: 800; width: 100%; font-size: 0.9em; margin: 0; position: absolute; top:-19px;
-  }
-  &:hover {
-    p { visibility:visible; }
-  }
-}
-#mainArticle #itemRating{position:relative;margin-top:-$pad-med;margin-bottom:$pad-med-big;}
-#starHolder {
-  position: absolute; z-index: 1; overflow: hidden; display: inline-block;
-  width: 100%; height: 21px; left: 0;
-  margin: 0; padding: 0; line-height:0;
-  li { display: inline-block; height: 21px; padding: 0; margin: 0; line-height: 0; width: 22px; margin: 0 4px; }
-}
-.starEmpty,.starHalf,.starFull,
-a.starEmpty,a.starHalf,a.starFull,
-a:hover.starEmpty,a:hover.starHalf,a:hover.starFull{
-  background-color:inherit;background-image:url(/images/light/ratingStar_small.png);background-position:0 0;
-  display:inline-block;width:22px;height:21px;
-  border:0;text-indent:-999em;
-  padding:0;line-height:0;
-  overflow: hidden;
-}
-.starHalf,
-a.starHalf {
-  background-position: -22px -0;
-}
-.starFull,
-a.starFull {
-  background-position: -44px -0;
-}
-a:hover.starEmpty,a:active.starEmpty{background-position:0 -21px}
-a:hover.starHalf,a:active.starHalf{background-position:-22px -21px}
-a:hover.starFull,a:active.starFull{background-position:-44px -21px}
-#lowRating,
-#highRating {
-  position: absolute; top: $pad-sma; z-index: 0;
-  font-weight: bold; font-size: 0.9em; color: #ad4921; text-transform: uppercase;
-  width: 60px; overflow: hidden; text-align:center;
-  zoom:1;
-  @include opacity(0);
-}
-#highRating { left: 50%; margin-left: 138px; }
-#lowRating { right: 50%; margin-right: 138px; }
 
 ::selection{background:$textColourStrong2;color:$button-bg-colour;/*Safari */}
 ::-moz-selection{background:$textColourStrong2;color:$button-bg-colour;/*Firefox */}
@@ -975,7 +925,7 @@ input[type='submit'].search-submit:hover {
     &:hover { background-color: $button-bg-colour-stronger; color: $button-highlight-color; }
   }
 }
-.selected,
+.selected { color: #000; }
 .buttonSelected,
 .buttonSelected:hover.transparent,
 .comments-area .comment-form .form-submit input[type='submit'],
@@ -1019,41 +969,6 @@ nav#fg-nav-main {
 
 
 /* ////////////////////////////////////////////////////////////////////////// */
-/*COMMENTS*/
-#comments{clear:both;float:left;width:100%;padding-bottom:4em;margin-top:$pad-med;text-align:left;}
-#commentBody{width:100%}
-.mainMessage{
-  background-color: $overlay-bg-light; margin: 0 0 1em 0; padding: $pad-med;
-  h2 { padding-top: $empad-med; padding-left: $empad-big; }
-  p { margin:1em 2em 1em 1em; }
-}
-
-.replyMessage{background-color:#e7e3e2;padding:0 0 $empad-med 0;margin-bottom:$pad-med}
-.replyForm{display:none}
-.replyFormNew label{font-size:0.8em;}
-.replyFormNew{display:block}
-.replyMessage p{word-wrap:break-word;margin:0 0 2em 1em}
-
-.replyForm,.replyFormNew{margin-bottom:$pad-med-big;padding-left:0}
-.formBtn{right:0;cursor:pointer}
-.formHalf{width:47%;display:inline-block;margin:0 1.7% 0 0;vertical-align:top;}
-
-.contactFormCol {
-  max-width: 30em;
-  p {
-    margin-bottom: $empad-med; /* margin-left:$pad-med-sma;  */font-size: 0.8em; color: $textColourMain;
-  }
-}
-
-.verificationImage{float:left; margin:1em 1em 8px 0;@include border-radius($pad-med);}
-.captcha{background-color:$main-bg-light;display:inline-block;padding:10px;}
-.captcha label{font-size:0.9em;line-height:$empad-big;margin:8px 8px 8px 0}
-#picType{text-transform:uppercase;text-align:center;padding:10px;margin-right:10px;}
-.adminUserName{color:$textColourStrong2}
-
-
-
-/* ////////////////////////////////////////////////////////////////////////// */
 /*MAGNIFIER*/
 
 #magnifiableImage { width: $mainImageWidthSmall; cursor:zoom-in; }
@@ -1075,29 +990,18 @@ nav#fg-nav-main {
   margin-left: $pad-med-big; padding-left: 50px;
   position: relative;
   li { display: inline-block; }
-  // p { text-transform: uppercase; }
   a {
     padding:0;margin:0 12px 12px 2px;background-color:inherit;display:inline-block;
-    @include opacity(0.5);
   }
-  a:hover { @include opacity(1); }
 }
 
-#stumbleUponImageButton,
-#facebookImageButton,
-#googlePlusImageButton,
-#twitterImageButton,
-#pinterestImageButton {
-  background-image: url(/images/light/socialSprite.png);
-  width: 24px; height: 24px;
-  max-width: 24px; // needed to override max-width: 100% in WP styles.css 
+
+/* ////////////////////////////////////////////////////////////////////////// */
+.icon {
+  display: inline-block;
+  height: 2rem; width: 2rem;
 }
-#stumbleUponImageButton { background-position: 0 0; }
-#facebookImageButton { background-position: -24px 0; }
-#googlePlusImageButton { background-position: -48px 0; }
-#twitterImageButton { background-position: -72px 0; }
-#pinterestImageButton { background-position: -96px 0; }
-.shareThis { position: absolute; left: 0; bottom: 0; width:28px; height: 132px; }
+
 
 .specialField { display: none; }/* this field is hidden from spambots */
 .clickable { cursor: pointer; }
