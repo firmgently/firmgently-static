@@ -75,7 +75,7 @@
   {
     "id": "party",
     "title": "Party",
-    "tags": "art,figurative,landscapes",
+    "tags": "art,figurative",
     "desc": "<p>This is an image straight from the mind of my friend Jane.</p><p>The 3D aeroplanes are made from Toffo wrappers - another curly-haired clown of a friend made them and threw them at me while I was painting, so on they got stuck.</p>",
     "materials": "Acrylic, sweet wrappers",
     "w": "52.5",
@@ -297,7 +297,7 @@
   {
     "id": "safeDirection",
     "title": "Safe Direction",
-    "tags": "art,figurative,art,landscapes",
+    "tags": "art,figurative,art,seascapes",
     "desc": "<p>\"Art is a lie that makes us realise truth, at least the truth that is given us to understand.\" - Pablo P</p><p>I want you to think it looks real, then I want you to be disgusted by how messy it is. Magnify it if you don't believe me.</p>",
     "materials": "Acrylic on Canvas",
     "w": "102",
@@ -489,7 +489,7 @@
   {
     "id": "MontserratBlue",
     "title": "M. Blue",
-    "tags": "art,figurative,landscapes",
+    "tags": "art,figurative,seascapes",
     "desc": "<p>Something I like to do with my painting is draw attention to the way our perceptual systems work.</p><p>Sometimes the viewer sees the piece from a distance or in a small thumbnail and thinks it might be a photo, then is surprised when seeing the brush strokes up-close at how messy or 'painted' it looks. A miniscule lesson in how things are not always as they seem.</p>",
     "materials": "Acrylic on canvas",
     "w": "40",

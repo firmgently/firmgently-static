@@ -50,15 +50,6 @@ const fontsizeFromTagWeight = function(weight, minSize, maxSize, numSizes) {
   return size;
 };
 
-// JSON contains pieces of work with `type` properties
-// (WEB / PHOTO / ART etc). This function returns a filtered
-// list of those items to be used on eg. the art index page
-//const filterItemsByType = function(items, type) {
-//  return items.filter(function(item) {
-//    return item.type === type;
-//  });
-//};
-
 // calculate a rough estimate on time to read an article
 // based on the number of words it contains
 const averageReadTime = function(numWords) {
@@ -99,7 +90,6 @@ const engineOptions = {
     toUpper: toUpper,
     fontsizeFromTagWeight: fontsizeFromTagWeight,
     stripIndexFromPath: stripIndexFromPath,
-    //filterItemsByType: filterItemsByType,
     averageReadTime: averageReadTime,
     spaceToDash: spaceToDash
   }
@@ -150,7 +140,7 @@ metalsmith(__dirname)
       src: 'images/items/hi_res/*.jpg',
       namingPattern: 'images/items/thumbs/{name}{ext}',
       methods: [
-        { name: 'resize', args: [200, 200] },
+        { name: 'resize', args: [300, 300] },
         { name: 'resize', args: { fit: 'inside' } },
         { name: 'toFormat', args: ['jpeg'] },
         { name: 'sharpen' }
@@ -168,8 +158,7 @@ metalsmith(__dirname)
 // creates data.config, data.items etc
   .use(data({
     config: './data/config.json',
-    stuckism: './data/stuckism.json'//,
-    // items: './data/items.json'
+    stuckism: './data/stuckism.json'
   }))
   .use(timer('imported JSON data'))
 
@@ -207,12 +196,10 @@ metalsmith(__dirname)
   .use(permalinks({
  		pattern: ':title',
 		relative: false,
-    linksets: [
-      {
+    linksets: [ {
         match: { collection: 'words' },
         pattern: 'words/:title'
-      }
-    ]
+    } ]
 	}))
   .use(timer('permalinked (all)'))
 
@@ -262,12 +249,10 @@ metalsmith(__dirname)
   .use(timer("analysed tags and created topic pages"))
   .use(permalinks({
 		relative: false,
-    linksets: [
-      {
+    linksets: [ {
         match: topicDir + '/*',
         pattern: topicDir + '/:title'
-      }
-    ]
+    } ]
 	}))
   .use(timer('permalinked (all)'))
 

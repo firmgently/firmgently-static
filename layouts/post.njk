@@ -21,12 +21,10 @@
     </header><!-- #masthead --> #}
 
 
-    <nav class="navigation post-navigation" role="navigation">
+    <nav class="prev-next-btns" role="navigation">
       <h2 class="screen-reader-text">Post navigation</h2>
-      <div class="nav-links">
-        {%- if previous %}<div class="nav-previous"><a href="/{{ previous.path }}" rel="prev">&lt;&lt;{{ previous.title }}</a></div>{% endif %}
-        {% if next %}<div class="nav-next"><a href="/{{ next.path }}" rel="next">{{ next.title }} &gt;&gt;</a></div>{%- endif %}
-      </div>
+        {%- if previous %}<div class="prev-btn"><a href="/{{ previous.path }}" rel="prev">&lt;&lt;{{ previous.title }}</a></div>{% endif %}
+        {% if next %}<div class="next-btn"><a href="/{{ next.path }}" rel="next">{{ next.title }} &gt;&gt;</a></div>{%- endif %}
     </nav>
 
 
@@ -47,21 +45,19 @@
         {% set comma = joiner(", ") %}
         <span class="cat-links">Posted in {% for tag in tags %}{{ comma() }}<a href="/topics/{{ tag.slug }}" rel="category tag">{{ tag.name }}</a> {% endfor %}</span>
       </footer><!-- .entry-footer -->
-    </article><!-- #post-220 -->
+    </article>
 
 
-    <nav class="navigation post-navigation" role="navigation">
+    <nav class="prev-next-btns" role="navigation">
       <h2 class="screen-reader-text">Post navigation</h2>
-      <div class="nav-links">
-        {%- if previous %}<div class="nav-previous"><a href="/{{ previous.path }}" rel="prev">&lt;&lt;{{ previous.title }}</a></div>{% endif %}
-        {% if next %}<div class="nav-next"><a href="/{{ next.path }}" rel="next">{{ next.title }} &gt;&gt;</a></div>{%- endif %}
-      </div>
+        {%- if previous %}<div class="prev-btn"><a href="/{{ previous.path }}" rel="prev">&lt;&lt;{{ previous.title }}</a></div>{% endif %}
+        {% if next %}<div class="next-btn"><a href="/{{ next.path }}" rel="next">{{ next.title }} &gt;&gt;</a></div>{%- endif %}
     </nav>
 
 
-    <aside id="secondary" class="widget-area">
-      <section id="recent-posts-2" class="widget widget_recent_entries">
-        <h3 class="widget-title">Latest</h3>
+    <aside>
+      <section>
+        <h3>Latest</h3>
         <ul>
           {%- for post in (collections.words) -%}
             {% if loop.index0 < data.config.consts.RECENT_POSTS_NUM_TO_SHOW -%}

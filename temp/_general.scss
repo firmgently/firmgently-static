@@ -127,6 +127,21 @@ html {
 }
 
 
+
+
+.screen-reader-text { 
+  position:absolute !important;
+  left:-10000px !important;
+  top:auto !important;
+  width:1px !important;
+  height:1px !important;
+  overflow:hidden !important;
+}
+
+
+
+
+
 /* ////////////////////////////////////////////////////////////////////////// */
 /* CONTAINERS */
 
@@ -680,6 +695,11 @@ footer.fgfooter { background-image: $footer-bg-image; background-position: right
     ul {
       li { margin-right: $pad-big-big; }
     }
+  }
+  #socialImageButtons{
+    position: fixed; top: 37px; right: 0; width: 28px; overflow: hidden; z-index: 2;
+    right: $pad-med-big; left: auto;
+    padding-left: 0;
   }
 }
 

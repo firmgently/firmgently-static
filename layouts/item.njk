@@ -26,9 +26,9 @@
 {% block main %}
 
   <div class="sideColumn col">
-		<div id="prevNextButtons">
-			<a class="itemNextBtn button" title="Next: {{ next.title }}" href="/{{ next.path }}">NEXT &gt;</a>
-			<a class="itemPrevBtn button" title="Previous: {{ previous.title }}" href="/{{ previous.path }}">&lt; PREVIOUS</a>&nbsp;&nbsp;&nbsp;
+		<div class="prev-next-btns">
+			<a class="next-btn button" title="Next: {{ next.title }}" href="/{{ next.path }}">NEXT &gt;</a>
+			<a class="prev-btn button" title="Previous: {{ previous.title }}" href="/{{ previous.path }}">&lt; PREVIOUS</a>&nbsp;&nbsp;&nbsp;
 		</div>
 		<section id="mainItemDetails" class="lowered boxLeft">
 			<h1 itemprop="http://www.schema.org/name">{{ itemData.title }}</h1>
