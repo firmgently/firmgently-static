@@ -116,9 +116,8 @@ if (process.env.REBUILDIMAGES === "true") {
   ignore_ar = [ '**/src/images/**' ];
   clean = false;
 }
-  ignore_ar = [ '**/src/images/**' ];
-  clean = true;
 
+// used to name topic directory
 const topicDir = "categories";
 
 
@@ -126,7 +125,7 @@ metalsmith(__dirname)
   .ignore(ignore_ar)
   .source('./src/')
   .destination('./build/')
-  .clean(clean)
+  .clean(true)
   .metadata(
     {site: {
       title: 'Firm Gently',
@@ -141,33 +140,21 @@ metalsmith(__dirname)
     {
       src: 'images/items/hi_res/*.jpg',
       namingPattern: 'images/items/main/{name}{ext}',
-      methods: [ {
-          name: 'resize',
-          args: [960, 960]
-        }, {
-          name: 'resize',
-          args: { fit: 'inside' }
-        }, {
-          name: 'toFormat',
-          args: ['jpeg']
-        }, {
-          name: 'sharpen'
-        } ]
+      methods: [
+        { name: 'resize', args: [960, 960] },
+        { name: 'resize', args: { fit: 'inside' } },
+        { name: 'toFormat', args: ['jpeg'] },
+        { name: 'sharpen' }
+      ]
     }, {
       src: 'images/items/hi_res/*.jpg',
       namingPattern: 'images/items/thumbs/{name}{ext}',
-      methods: [ {
-          name: 'resize',
-          args: [200, 200]
-        }, {
-          name: 'resize',
-          args: { fit: 'inside' }
-        }, {
-          name: 'toFormat',
-          args: ['jpeg']
-        }, {
-          name: 'sharpen'
-        } ]
+      methods: [
+        { name: 'resize', args: [200, 200] },
+        { name: 'resize', args: { fit: 'inside' } },
+        { name: 'toFormat', args: ['jpeg'] },
+        { name: 'sharpen' }
+      ]
     }
   ]))
   .use(timer('processed images'))
