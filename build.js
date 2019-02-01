@@ -218,13 +218,17 @@ metalsmith(__dirname)
 
 // create collection lists
   .use(collections({
-    all: [
+    all: {
+     pattern: [
       'words/*/*.html',
       'art/*/*.html',
       'photos/*/*.html',
       'objects/*/*.html',
       'web/*/*.html'
     ],
+            sortBy: 'date',
+            reverse: true
+    },
     words: 'words/*/*.html', // posts with metadata `collection: words` will be added
     art: 'art/*/*.html',
     photos: 'photos/*/*.html',
