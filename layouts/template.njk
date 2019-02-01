@@ -48,17 +48,6 @@
   <div id="bodyWrapper">
     <div id="main">
 
-      <header id="fg-header">
-        <a id="titleImage" alt="{{ sitedata.simple_domain }}" title="{{ sitedata.simple_domain }}" href="/">{{ sitedata.simple_domain }}</a>
-        <nav id="fg-nav-main">
-          <ul>
-         {#   <li id="nav_words"><a class="button" href="/words">Words</a></li>
-            <li id="nav_art"><a class="button" href="/art">Art</a></li>
-            <li id="nav_photos"><a class="button" href="/photos">Photos</a></li>
-            <li id="nav_objects"><a class="button" href="/objects">Objects</a></li>
-            <li id="nav_web"><a class="button" href="/web">Web</a></li>
-            <li id="nav_contact"><a class="button" href="/contact">Contact</a></li> #}
-    {% for tag in cloud -%}
       {#
         fontsizeFromTagWeight() filter:
         weight of tag is piped in as the first parameter
@@ -66,7 +55,20 @@
         minSize, maxSize represent min/max values that can be returned
         numSizes is how many different sizes will be available
       #}
-<li><a style="font-size: {{ tag.wght | fontsizeFromTagWeight(0.8, 2, 60) }}rem" href="{{ tag.pth }}">{{ tag.ctg }}</a></li>
+      <header id="fg-header">
+        <a id="titleImage" alt="{{ sitedata.simple_domain }}" title="{{ sitedata.simple_domain }}" href="/">{{ sitedata.simple_domain }}</a>
+        <nav id="fg-nav-main">
+          <ul>
+    {%- for word in cloud -%}
+      {%- if word.ctg %}
+      {%- if (word.ctg == tag) or (itemData and word.ctg == itemData.type | toLower ) %}
+      {% set classattr = "class=\"selected\" " %}
+    {% else %}
+      {% set classattr = "" %}
+    {% endif %}
+        
+    <li><a {{ classattr | safe }}style="font-size: {{ word.wght | fontsizeFromTagWeight(0.8, 2, 60) }}rem" href="{{ word.pth }}">{{ word.ctg }}</a></li>
+      {% endif %}
     {%- endfor %}
          </ul>
         </nav>

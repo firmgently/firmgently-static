@@ -490,7 +490,7 @@ a, a:hover, a:active {
   &#titleImage {
     border:none;
     top:8px; text-indent:-999em;
-    width: 32%; height: 0;
+    width: 16%; height: 0;
     padding: 0 0 10% 0;
     position:relative;
     float:left;
@@ -975,6 +975,7 @@ input[type='submit'].search-submit:hover {
     &:hover { background-color: $button-bg-colour-stronger; color: $button-highlight-color; }
   }
 }
+.selected,
 .buttonSelected,
 .buttonSelected:hover.transparent,
 .comments-area .comment-form .form-submit input[type='submit'],
@@ -1002,12 +1003,12 @@ nav#fg-nav-main {
   ul {
     li {
       display: inline-block; position: relative; top:4px; margin-left: $empad-med;
-      a.button, a.buttonSelected,
-      a.button:hover, a.buttonSelected:hover {
-        font-family:"FG_Bold","Tahoma","Arial","Nimbus Sans L"; font-weight: bold; text-align: center; display: inline-block; line-height: 1em;
-        margin-bottom: $empad-med;
+      a, a.selected,
+      a:hover, a.selected:hover {
+       /* font-family:"FG_Bold","Tahoma","Arial","Nimbus Sans L"; font-weight: bold; text-align: center; display: inline-block; line-height: 1em;
+        margin-bottom: $empad-med; */
       }
-      a.buttonSelected {
+      a.selected {
         @include animation(press-and-bounce $transition-speed-bounce $transition-style-bounce 1);
         z-index: 999;
       }
@@ -1342,7 +1343,7 @@ footer.fgfooter { background-image: url(/images/light/footer_adorn.png); backgro
   .mainColumn{width: 75%;}
   .sideColumn, .sideColumn.right { width: 22%; }
   a, a:hover, a:active {
-    &#titleImage { width: 22%; }
+    &#titleImage { width: 11%; }
   }
 }
 
