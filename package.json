@@ -10,11 +10,10 @@
   "scripts": {
     "start": "DEBUG=metalsmith-timer REBUILDIMAGES=true node ./build.js",
     "noimages": "DEBUG=metalsmith-timer REBUILDIMAGES=false node ./build.js",
-    "debug": "DEBUG=metalsmith:*,metalsmith-slug,metalsmith-in-place,metalsmith-layouts,metalsmith-rewrite,metalsmith-data,metalsmith-json-to-files,metalsmith-permalinks,metalsmith-beautify,metalsmith-rename,metalsmith-collections node ./build.js"
+    "debug": "DEBUG=metalsmith:*,metalsmith-slug,metalsmith-layouts,metalsmith-rewrite,metalsmith-data,metalsmith-json-to-files,metalsmith-permalinks,metalsmith-beautify,metalsmith-rename,metalsmith-collections,metalsmith-markdown REBUILDIMAGES=false node ./build.js"
   },
   "author": "Mark Mayes",
   "dependencies": {
-    "jstransformer-markdown": "^1.2.1",
     "jstransformer-nunjucks": "^0.5.0",
     "metalsmith": "^2.3.0",
     "metalsmith-beautify": "^0.2.0",
@@ -23,10 +22,10 @@
     "metalsmith-debug": "^1.2.0",
     "metalsmith-excerpts": "^1.2.0",
     "metalsmith-feed": "^1.0.0",
-    "metalsmith-in-place": "^4.1.1",
     "metalsmith-json-to-files": "https://github.com/firmgently/metalsmith-json-to-files.git#data-renamer-and-passthrough-patch",
     "metalsmith-layouts": "^2.1.0",
     "metalsmith-linkcheck": "^0.3.4",
+    "metalsmith-markdown": "^1.1.0",
     "metalsmith-move-remove": "0.0.1",
     "metalsmith-permalinks": "^2.0.0",
     "metalsmith-sass": "^1.6.0",
@@ -34,7 +33,6 @@
     "metalsmith-slug": "^0.2.1",
     "metalsmith-tags": "^2.0.0",
     "metalsmith-timer": "0.0.2",
-    "metalsmith-wordcloud": "0.0.4",
-    "sass": "^1.16.1"
+    "metalsmith-wordcloud": "0.0.4"
   }
 }

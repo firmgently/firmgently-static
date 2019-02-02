@@ -1,6 +1,7 @@
 ---
 layout: index.njk
 bodyClass: home
+permalink: false
 ---
 ## This Site
 

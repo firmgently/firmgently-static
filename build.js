@@ -9,7 +9,7 @@
 
 const metalsmith = require('metalsmith'); // static site generator
 const debug = require('metalsmith-debug'); // debugging
-const inplace = require('metalsmith-in-place'); // convert markdown
+const markdown = require('metalsmith-markdown'); // convert markdown
 const layouts = require('metalsmith-layouts'); // templating (using Nunjucks here)
 const beautify = require('metalsmith-beautify'); // format outputted markup
 const data = require('metalsmith-data'); // import JSON data
@@ -26,6 +26,22 @@ const sharp = require('metalsmith-sharp'); // image processing
 const sass = require('metalsmith-sass'); // SASS compilation
 const wordcloud = require('metalsmith-wordcloud'); // create wordcloud data from tags
 const feed = require('metalsmith-feed'); // create RSS feed
+
+// Get reference
+/*var renderer = new myMarked.Renderer();
+
+// Override function
+renderer.heading = function (text, level) {
+  var escapedText = text.toLowerCase().replace(/[^\w]+/g, '-');
+
+  return `
+          <h${level}>
+            <a name="${escapedText}" class="anchor" href="#${escapedText}">
+              <span class="header-link"></span>
+            </a>
+            ${text}
+          </h${level}>`;
+};*/
 
 
 // string-manipulation functions
@@ -174,12 +190,12 @@ metalsmith(__dirname)
       ]
     }
   ]))
-  .use(timer('processed images'))
+  .use(timer('images processed'))
 
   .use(sass({
     includePaths: ['css']
   }))
-  .use(timer('compiled SASS'))
+  .use(timer('SASS compiled'))
 
 // import JSON
 // creates data.config, data.items etc
@@ -187,7 +203,7 @@ metalsmith(__dirname)
     config: './data/config.json',
     stuckism: './data/stuckism.json'
   }))
-  .use(timer('imported JSON data'))
+  .use(timer('JSON imported'))
 
 // create files from JSON (eg. art/cat/index.html)
 // although using some of the same JSON files as metalsmith-data (above),
@@ -195,16 +211,23 @@ metalsmith(__dirname)
   .use(json_to_files({ source_path: './data/' }))
 // remove redundant file left over by json_to_files
   .use(move_remove({ remove: [/json-to-files*/] }))
-  .use(timer('created files from JSON'))
+  .use(timer('files created from JSON'))
 
-// process markdown
-  .use(inplace({ 
-    pattern: ['**/*.md*'],
-    engine: 'markdown',
-    suppressNoFilesError: true, // as we're using clean()
-    engineOptions: engineOptions
-  }))
-  .use(timer('converted markdown'))
+	.use(markdown({
+	//renderer: new myMarked.Renderer(),
+	//highlight: function(code) {
+	//  return require('highlight.js').highlightAuto(code).value;
+	//},
+		pedantic: false,
+		gfm: false,
+		tables: true,
+		breaks: false,
+		sanitize: false,
+		smartLists: true,
+		smartypants: false,
+		xhtml: false
+	}))
+	.use(timer('markdown converted'))
 
 // rename markdown posts according to title
   .use(slug({
@@ -213,22 +236,22 @@ metalsmith(__dirname)
     mode: 'rfc3986',
     renameFiles: true
   }))
-  .use(timer('made slugs for posts and renamed them'))
+  .use(timer('posts slugged and renamed'))
 
 //
   .use(excerpts())
-  .use(timer("grabbed excerpts"))
+  .use(timer("excerpts grabbed"))
 
 // web.html => web/index.html
   .use(permalinks({
- 		pattern: ':title',
+ 		//pattern: ':title',
 		relative: false,
-    linksets: [ {
-        match: { collection: 'words' },
-        pattern: 'words/:title'
-    } ]
+    linksets: [{
+			match: { collection: 'words' },
+			pattern: 'words/:title'
+    }]
 	}))
-  .use(timer('permalinked (all)'))
+  .use(timer('permalinked * posts *'))
 
 // create collection lists
   .use(collections({
@@ -249,7 +272,7 @@ metalsmith(__dirname)
     objects: 'objects/*/*.html',
     web: 'web/*/*.html'
   }))
-  .use(timer('created collections'))
+  .use(timer('collections created'))
 
 // I'd have expected that `wordcloud` would need to come after `tags`
 // in the pipeline as it uses the tags. I was wrong.`tags` turns the
@@ -260,7 +283,7 @@ metalsmith(__dirname)
     reverse: false, // optional sort value on category, default is false
     path: '/' + topicDir // <- Notice that path is prefixed with slash for absolute path 
   }))
-  .use(timer("created word cloud data"))
+  .use(timer("tag cloud analysed/created"))
 
 // analyse tags and create tag pages
   .use(tags({
@@ -273,26 +296,15 @@ metalsmith(__dirname)
     metadataKey: "tags", // default: `tags`
     slug: { mode: 'rfc3986' }
   }))
-  .use(timer("analysed tags and created topic pages"))
+  .use(timer("topic pages created from tags"))
   .use(permalinks({
 		relative: false,
-    linksets: [ {
-        match: topicDir + '/*',
-        pattern: topicDir + '/:title'
-    } ]
+    linksets: [{
+			match: topicDir + '/*',
+			pattern: topicDir + '/:title'
+    }]
 	}))
-  .use(timer('permalinked (all)'))
-
-// convert njk to html
-// ??? processes internal template syntax ???
-  .use(inplace({ 
-    pattern: ['**/*.njk'],
-    engine: 'nunjucks',
-    default: 'template.njk',
-    suppressNoFilesError: true, // as we're using changed()
-    engineOptions: engineOptions
-  }))
-  .use(timer('converted njk to html'))
+  .use(timer('permalinked * topics *'))
 
 // fill in Nunjucks templates
 // ??? processes template inheritance ???
@@ -303,7 +315,7 @@ metalsmith(__dirname)
     suppressNoFilesError: true, // as we're using changed()
     engineOptions: engineOptions
   }))
-  .use(timer('inherited templates'))
+  .use(timer('templates inherited'))
 
 // tidy up outputted markup
   .use(beautify({
@@ -312,7 +324,7 @@ metalsmith(__dirname)
     max_preserve_newlines: 0,
     extra_liners: '[head,body,/body,/html,header,section,footer]'
   }))
-  .use(timer('tidied markup'))
+  .use(timer('markup beautified'))
 
 // RSS feed
 	.use(
