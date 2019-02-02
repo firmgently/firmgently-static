@@ -18,9 +18,9 @@ body {
 body {
   display: flex;
   flex-direction: column;
-  /*
   background: linear-gradient(165deg, $main-bg 0%, $main-bg2);
   color: $text-colour-main;
+  /*
   font-family: 'FG_Medium', 'Tahoma', 'Arial', 'Nimbus Sans L';
   */
   .body-wrapper {
@@ -40,14 +40,11 @@ body {
       display: flex;
       flex-wrap: wrap;
       flex-direction: row;
-      background-color: grey;
       .side-column {
         flex: 1 0 $side-col-min-width;
-        background-color: orange;
       }
       .main-column {
         flex: 2 0 $main-col-min-width;
-        background-color: yellow;
       }
     }
   }
@@ -114,33 +111,29 @@ article > footer {
     float: right;
   }
 }
-/*#main {
+a,
+a:hover,
+a:active {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: $text-colour-alt;
+  background-color: $button-bg-colour;
+  padding-left: $pad-sma;
+  padding-right: $pad-sma;
   position: relative;
 }
-#content {
-  position: relative;
-  clear: both;
-  display: block;
-  padding: $pad-med-big $small-right-margin ($pad-big * 6) $small-left-margin;
-  z-index: 1;
+a:hover,
+a:active {
+  color: $text-colour-strong2;
+  background-color: $button-highlight-color;
 }
-header.page-header,
-aside#secondary.widget-area,
-nav.post-navigation,
-div.comments-area {
-  padding-left: $small-left-margin;
-  padding-right: $small-right-margin;
+a.selected,
+a.selected:hover,
+a.selected:active {
+	color: $text-colour-selected;
 }
-*/
 header.fg-header {
   position: relative;
-  /*
-  vertical-align: bottom;
-  padding-top: 0;
-  padding-bottom: $pad-sma;
-  padding-left: $small-left-margin;
-  padding-right: $small-right-margin;
-  */
 }
 /*
 #titleImageBuffer {
@@ -163,20 +156,6 @@ header.fg-header {
   }
 }
 
-.mainColumn {
-  float: right;
-}
-.sideColumn {
-  padding-bottom: $empad-verybig;
-  position: relative;
-}
-.sideColumn.right {
-  width: auto;
-  text-align: left;
-}
-
-.prev-next-btns {
-  display: block;
   position: absolute;
   margin: 0 0 0;
   z-index: 3;
