@@ -6,6 +6,8 @@
 ## GENERAL
 
 
+[ ] for item listings use proper captioned images with alt text and titles like the md stuff
+[ ] choose proper sizes and styles for srcset images
 [ ] metalsmith-sitemap
 [ ] html tag xmlns for opengraph and other data
 [ ] download post images from WP

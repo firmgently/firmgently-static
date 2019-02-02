@@ -105,6 +105,7 @@ article > footer {
 }
 .prev-next-btns {
   display: block;
+	margin-bottom: $pad-big;
   overflow: auto; /* clear floated children */
   a:first-of-type {
     float: left;

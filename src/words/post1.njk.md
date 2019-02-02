@@ -7,27 +7,27 @@ layout: post.njk
 collection: words
 ---
 
-![Yin Yang lines](/images/words/yin-yang-lines.jpg)
-*Yang (unbroken line) and Yin (broken line)*
+![Yin Yang lines](/images/words/yin-yang-lines.jpg "Yang (unbroken line) and Yin (broken line)")
 
-Ok, _originally_ I found the phrase "please firm gently" on the back of a packet of seeds. I loved the juxtaposition of concepts (**firm it!**.. _but gently_!). And I liked the yin-yang nature of it too.
+
+Ok, *originally* I found the phrase "please firm gently" on the back of a packet of seeds. I loved the juxtaposition of concepts (**firm it!**.. *but gently*!). And I liked the yin-yang nature of it too.
 
 
 ## I Ching / The Classic of Changes
 
-I use the _I Ching_, an ancient Chinese book full of deep insight, wisdom and observations on nature, especially human nature. The name translates to _Classic of Changes_ and at 3,000 years old it's the oldest of the Chinese classics and one of the oldest books in the world. This book knows a _lot_. [Taoism](https://en.wikipedia.org/wiki/Taoism) and the concept of [Yin/Yang](https://en.wikipedia.org/wiki/Yin_and_yang) come from the I Ching.
+I use the *I Ching*, an ancient Chinese book full of deep insight, wisdom and observations on nature, especially human nature. The name translates to *Classic of Changes* and at 3,000 years old it's the oldest of the Chinese classics and one of the oldest books in the world. This book knows a *lot*. [Taoism](https://en.wikipedia.org/wiki/Taoism) and the concept of [Yin/Yang](https://en.wikipedia.org/wiki/Yin_and_yang) come from the I Ching.
 
 The version I use has been translated as follows:
 
-_Chinese > German > English > shortened/simplified English._
+*Chinese > German > English > shortened/simplified English.*
 
 So a lot will have been lost from the original. It keeps it short and sweet though and as you have to interpret the meaning of the text in your own way I like the distilled version, uncluttered by other people's interpretations.
 
-!['Inner Truth' hexagram from the I Ching](/images/words/inner-truth-hexagram-tattoo.jpg)
-*Inner Truth hexagram, the first tattoo I ever had. It reminds me to do the right thing, to not be selfish. Of course it doesn't always work, I'm human. But whenever I see it I am reminded.*
+!['Inner Truth' hexagram from the I Ching](/images/words/inner-truth-hexagram-tattoo.jpg "
+Inner Truth hexagram, the first tattoo I ever had. It reminds me to do the right thing, to not be selfish. Of course it doesn't always work, I'm human. But whenever I see it I am reminded.")
 
-!['The Joyous' hexagram from the I Ching](/images/words/the-joyous-trigram.jpg)
-*The Joyous: A trigram representing joyousness and the image of a lake.*
+!['The Joyous' hexagram from the I Ching](/images/words/the-joyous-trigram.jpg "The Joyous: A trigram representing joyousness and the image of a lake.")
+
 
 
 The I Ching is a book of 64 pages, each based on one of 64 **hexagrams** ('6-lines').
@@ -50,11 +50,11 @@ There are eight trigrams, each represents a base concept (shown below) and when 
 
 So the Firm Gently logo is made up of the trigrams for KEEPING STILL (firm, a fist) and THE GENTLE (the open hand), reading from right to left to keep it Chinese. The Gently Firm logo has the trigrams in opposite positions.
 
-!['Fist element' from logo](/images/words/firm-fist.jpg)
-*KEEPING STILL (firm, a fist)*
+!['Fist element' from logo](/images/words/firm-fist.jpg "KEEPING STILL (firm, a fist)
+")
 
-!['Open hand' element from logo](/images/words/gentle-open.jpg)
-*THE GENTLE (the open hand)*
+!['Open hand' element from logo](/images/words/gentle-open.jpg "THE GENTLE (the open hand)")
+
 
 
 ## 8 x 8 = 64 pages of wise words.
@@ -65,8 +65,8 @@ I use the 3-coin method. You take 3 coins, toss them and the results (how many h
 
 Do this another 5 times to get your 6 lines for your hexagram. Look up the hexagram on the contents page and it tells you which page in the book to read.
 
-![I Ching book and coins](/images/words/i-ching-reading.jpg)
-*"I threw the I Ching yesterday... it said there'd be some thunder at the well..."*
+![I Ching book and coins](/images/words/i-ching-reading.jpg "'I threw the I Ching yesterday... it said there'd be some thunder at the well...'")
+
 
 
 ## Interpretation for today's world
@@ -75,5 +75,5 @@ Even this 'modern' version requires a lot of work on the reader's part to make u
 
 The original book was compiled and refined over centuries by some of the wisest people around. A lot of cultural changes have taken place since it was written. I don't think human nature has changed at all in that time.
 
-_To be inwardly firm and outwardly gentle is the way of true joy._
+*To be inwardly firm and outwardly gentle is the way of true joy.*
 	

@@ -10,6 +10,7 @@
 const metalsmith = require('metalsmith'); // static site generator
 const debug = require('metalsmith-debug'); // debugging
 const markdown = require('metalsmith-markdown'); // convert markdown
+const marked = require('marked'); // helps create custom md renderer
 const layouts = require('metalsmith-layouts'); // templating (using Nunjucks here)
 const beautify = require('metalsmith-beautify'); // format outputted markup
 const data = require('metalsmith-data'); // import JSON data
@@ -27,21 +28,46 @@ const sass = require('metalsmith-sass'); // SASS compilation
 const wordcloud = require('metalsmith-wordcloud'); // create wordcloud data from tags
 const feed = require('metalsmith-feed'); // create RSS feed
 
-// Get reference
-/*var renderer = new myMarked.Renderer();
 
-// Override function
-renderer.heading = function (text, level) {
-  var escapedText = text.toLowerCase().replace(/[^\w]+/g, '-');
+// metalsmith-markdown uses `marked` internally
+// get an instance of its renderer so we can customise it
+// to convert markdown images into figure/captions
+var markdownRenderer = new marked.Renderer();
+markdownRenderer.image = function (href, title, text) {
+	var suffix_ar = [ "_100w", "_500w", "_1000w" ],
+	dotIndex = href.lastIndexOf("."),
+	p1 = href.substr(0, dotIndex),
+	p2 = href.substr(dotIndex),
+	src_ar = [], i, markup;
 
-  return `
-          <h${level}>
-            <a name="${escapedText}" class="anchor" href="#${escapedText}">
-              <span class="header-link"></span>
-            </a>
-            ${text}
-          </h${level}>`;
-};*/
+	for (i = 0; i < suffix_ar.length; i++) {
+		src_ar[i] = p1 + suffix_ar[i] + p2;
+	}
+
+	if (text) {
+		markup = `<figure>
+			<img src="${href}" alt="${text}" title="${title}"
+				srcset="${src_ar[0]} 100w, ${src_ar[1]} 500w, ${src_ar[2]} 1000w"
+				sizes="(min-width: 900px) 1000px,
+					(max-width: 900px) and (min-width: 400px) 50em,
+					( not (orientation: portrait) ) 300px,
+					( (orientation: landscape) or (min-width: 1000px) ) 50vw, 
+					100vw">
+			<figcaption>
+				<p>${title}</p>
+			</figcaption>
+		</figure>`;
+	} else {
+		markup = `<img src="${href}" alt="${text}"
+			srcset="${src_ar[0]} 100w, ${src_ar[1]} 500w, ${src_ar[2]} 1000w"
+			sizes="(min-width: 900px) 1000px,
+				(max-width: 900px) and (min-width: 400px) 50em,
+				( not (orientation: portrait) ) 300px,
+				( (orientation: landscape) or (min-width: 1000px) ) 50vw, 
+				100vw">`;
+	}
+	return markup;
+};
 
 
 // string-manipulation functions
@@ -214,18 +240,8 @@ metalsmith(__dirname)
   .use(timer('files created from JSON'))
 
 	.use(markdown({
-	//renderer: new myMarked.Renderer(),
-	//highlight: function(code) {
-	//  return require('highlight.js').highlightAuto(code).value;
-	//},
-		pedantic: false,
-		gfm: false,
-		tables: true,
-		breaks: false,
-		sanitize: false,
-		smartLists: true,
-		smartypants: false,
-		xhtml: false
+		renderer: markdownRenderer,
+		headerIds: false // IMPORTANT essential otherwise build fails
 	}))
 	.use(timer('markdown converted'))
 
@@ -244,7 +260,6 @@ metalsmith(__dirname)
 
 // web.html => web/index.html
   .use(permalinks({
- 		//pattern: ':title',
 		relative: false,
     linksets: [{
 			match: { collection: 'words' },

@@ -10,11 +10,12 @@
   "scripts": {
     "start": "DEBUG=metalsmith-timer REBUILDIMAGES=true node ./build.js",
     "noimages": "DEBUG=metalsmith-timer REBUILDIMAGES=false node ./build.js",
-    "debug": "DEBUG=metalsmith:*,metalsmith-slug,metalsmith-layouts,metalsmith-rewrite,metalsmith-data,metalsmith-json-to-files,metalsmith-permalinks,metalsmith-beautify,metalsmith-rename,metalsmith-collections,metalsmith-markdown REBUILDIMAGES=false node ./build.js"
+    "debug": "DEBUG=metalsmith:*,marked,metalsmith-slug,metalsmith-layouts,metalsmith-rewrite,metalsmith-data,metalsmith-json-to-files,metalsmith-permalinks,metalsmith-beautify,metalsmith-rename,metalsmith-collections,metalsmith-markdown REBUILDIMAGES=false node ./build.js"
   },
   "author": "Mark Mayes",
   "dependencies": {
     "jstransformer-nunjucks": "^0.5.0",
+    "marked": "^0.6.0",
     "metalsmith": "^2.3.0",
     "metalsmith-beautify": "^0.2.0",
     "metalsmith-collections": "^0.9.0",
