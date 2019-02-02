@@ -145,6 +145,33 @@ metalsmith(__dirname)
         { name: 'toFormat', args: ['jpeg'] },
         { name: 'sharpen' }
       ]
+    }, {
+      src: 'images/words/**.jpg',
+      namingPattern: '{dir}{name}_100w{ext}',
+      methods: [
+        { name: 'resize', args: [300, 300] },
+        { name: 'resize', args: { fit: 'outside' } },
+        { name: 'toFormat', args: ['jpeg'] },
+        { name: 'sharpen' }
+      ]
+    }, {
+      src: 'images/words/**.jpg',
+      namingPattern: '{dir}{name}_500w{ext}',
+      methods: [
+        { name: 'resize', args: [600, 600] },
+        { name: 'resize', args: { fit: 'outside' } },
+        { name: 'toFormat', args: ['jpeg'] },
+        { name: 'sharpen' }
+      ]
+    }, {
+      src: 'images/words/**.jpg',
+      namingPattern: '{dir}{name}_1000w{ext}',
+      methods: [
+        { name: 'resize', args: [900, 900] },
+        { name: 'resize', args: { fit: 'outside' } },
+        { name: 'toFormat', args: ['jpeg'] },
+        { name: 'sharpen' }
+      ]
     }
   ]))
   .use(timer('processed images'))
