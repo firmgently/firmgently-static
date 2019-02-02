@@ -1,13 +1,50 @@
 {#
 
-  NOTE -
+  GENERAL NOTE -
   some data (eg sitedata{}) is imported from config.json by metalsmith-data
   (see build.json)
   
 #}
-{#
-#}
-{% macro createItem(item) %}
+
+
+
+{# makes clickable tag cloud from cloud data #}
+{% macro createTagCloud(cloud) %}
+<ul>
+  {%- for word in cloud -%}
+  {# look for data in this page which matches the tag #}
+  {%- if word.ctg %} {# skip empty categories #}
+    {% set matchFound = false %}
+    {%- if (word.ctg == tag) %}
+      {% set matchFound = true %}
+    {% endif %}
+    {%- if (itemData and (itemData.tags.indexOf(word.ctg) != -1)) %}
+      {% set matchFound = true %}
+    {% endif %}
+    {% if tags %}
+      {% for tag in tags %}
+        {% if tag.name == word.ctg %}
+          {% set matchFound = true %}
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+    {# class this tag as selected or not #}
+    {%- if matchFound %}
+      {% set classattr = "class=\"selected\" " %}
+    {% else %}
+      {% set classattr = "" %}
+    {% endif %}
+    {# create tag markup #}
+    <li><a {{ classattr | safe }}style="font-size: {{ word.wght | fontsizeFromTagWeight(0.8, 2, 60) }}rem" href="{{ word.pth }}">{{ word.ctg }}</a></li>
+  {% endif %}
+{%- endfor %}
+<ul>
+{% endmacro %}
+
+
+
+{# creates single item for list pages eg. home/topics #}
+{% macro createItem(item) -%}
 <a href="/{{ item.path | stripIndexFromPath }}">
 {% if item.itemData %} {# standard item #}
 	<figure>
@@ -25,9 +62,10 @@
       <h2>{{ item.title }}</h2><em>{{ item.excerpt | safe }}</em>
 {% endif %}
 </a>
-{% endmacro %}
-{#
-#}
+{%- endmacro %}
+
+
+
 {# receives collection items which have path/title properties #}
 {% macro insertPrevNextBtns(prev, next) %}
 <nav class="prev-next-btns" role="navigation">
@@ -36,8 +74,9 @@
   {% if next %}<a href="/{{ next.path }}" rel="next">{{ next.title }} &gt;&gt;</a>{%- endif %}
 </nav>
 {% endmacro %}
-{#
-#}
+
+
+
 {% set pageTitle = (itemData.title | default(title) | default(sitedata.site_name)) + sitedata.title_suffix %}
 {% set pageTitle_stripped = pageTitle | striptags %}
 {% set pageTitle_urlEncoded = pageTitle_stripped | urlencode %}
@@ -45,8 +84,8 @@
 {% set desc_stripped = desc | striptags %}
 {% set share_thumbnail = itemData.share_thumbnail | default(share_thumbnail) | default(sitedata.share_thumbnail) %}
 {% set url = sitedata.domain + "/" + path %}
-{#
-#}
+
+
 <!doctype html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://www.facebook.com/2008/fbml" xmlns:firmgently="{{ sitedata.domain }}/ns#">
 
@@ -87,43 +126,7 @@
       #}
       <header class="fg-header">
         <a class="title-image" alt="{{ sitedata.simple_domain }}" title="{{ sitedata.simple_domain }}" href="/">{{ sitedata.simple_domain }}</a>
-        <nav class="fg-nav-main">
-          <ul>
-{%- for word in cloud -%}
-    
-  {%- if word.ctg %}
-
-    {% set matchFound = false %}
-
-    {%- if (word.ctg == tag) %}
-      {% set matchFound = true %}
-    {% endif %}
-
-    {%- if (itemData and (itemData.tags.indexOf(word.ctg) != -1)) %}
-      {% set matchFound = true %}
-    {% endif %}
-
-    {% if tags %}
-      {% for tag in tags %}
-        {% if tag.name == word.ctg %}
-          {% set matchFound = true %}
-        {% endif %}
-      {% endfor %}
-    {% endif %}
- 
-    {%- if matchFound %}
-      {% set classattr = "class=\"selected\" " %}
-    {% else %}
-      {% set classattr = "" %}
-    {% endif %}
-   
-    <li><a {{ classattr | safe }}style="font-size: {{ word.wght | fontsizeFromTagWeight(0.8, 2, 60) }}rem" href="{{ word.pth }}">{{ word.ctg }}</a></li>
- 
-  {% endif %}
-
-{%- endfor %}
-         </ul>
-        </nav>
+        <nav class="fg-nav-main">{{ createTagCloud(cloud) }}</nav>
       </header>
       
       

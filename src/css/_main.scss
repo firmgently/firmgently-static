@@ -21,9 +21,6 @@ body {
   /*
   background: linear-gradient(165deg, $main-bg 0%, $main-bg2);
   color: $text-colour-main;
-  font-size: 0.85em;
-  line-height: 1.6em;
-  letter-spacing: 0.2em;
   font-family: 'FG_Medium', 'Tahoma', 'Arial', 'Nimbus Sans L';
   */
   .body-wrapper {
@@ -58,8 +55,29 @@ body {
   .main-column,
   .fg-footer,
   .fg-header {
-    padding: $pad-med $pad-big $pad-big $pad-med;
+    padding: $pad-med $main-padding-right $pad-big $pad-med;
   }
+}
+blockquote {
+  margin-bottom: $pad-huge;
+  padding: $pad-med $pad-med;
+  cite {
+    margin-top: $pad-med;
+    display: block;
+  }
+}
+p,
+h2,
+h3 {
+  margin-bottom: $pad-med;
+}
+article > header,
+article > footer,
+article + nav {
+  margin-bottom: $pad-huge;
+}
+article > footer {
+  margin-top: $pad-big;
 }
 .item-list-container {
   display: flex;
@@ -74,6 +92,24 @@ body {
     overflow: hidden;
     padding: $pad-med;
     margin: $pad-med;
+  }
+}
+.screen-reader-text {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+.prev-next-btns {
+  display: block;
+  overflow: auto; /* clear floated children */
+  a:first-of-type {
+    float: left;
+  }
+  a:last-of-type {
+    float: right;
   }
 }
 /*#main {
@@ -374,14 +410,6 @@ a:active {
   outline: none;
 }
 
-.screen-reader-text {
-  position: absolute;
-  left: -10000px;
-  top: auto;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-}
 i*/
 
 /* ////////////////////////////////////////////////////////////////////////// */
@@ -479,14 +507,6 @@ i*/
   text-align: left;
 }
 
-blockquote {
-  margin-bottom: $empad-huge;
-  cite {
-    margin-top: $empad-med;
-    font-size: 0.9em;
-    display: block;
-  }
-}
 
 a,
 a:hover,
@@ -770,19 +790,17 @@ nav.fg-nav-main {
 }
 */
 /* ////////////////////////////////////////////////////////////////////////// */
-/*a#invert-colours-btn {
-  background-color: inherit;
-  margin-left: $pad-med-big;
-  padding-left: 50px;
+a#invert-colours-btn {
+  /*background-color: inherit;
   position: relative;
-  @include opacity(0.4);
+  @include opacity(0.4);*/
 }
 .icon {
   display: inline-block;
-  height: 2rem;
-  width: 2rem;
+  height: $icon-size;
+  width: $icon-size;
 }
-*/
+
 /*FOOTER*/
 .fg-footer {
   position: relative;
