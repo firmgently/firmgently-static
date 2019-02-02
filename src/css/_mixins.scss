@@ -1,0 +1,86 @@
+
+/* ////////////////////////////////////////////////////////////////////////// */
+/* MIXINS */
+
+@mixin opacity($opacity) {
+  $opacity_int: $opacity * 100;
+  -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=$opacity_int)';
+  filter: alpha(opacity=$opacity_int);
+  opacity: $opacity;
+}
+
+@mixin border-radius($radius...) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius: $radius;
+  // IE8
+  behavior: url(/css/pie.htc);
+}
+
+@mixin box-shadow($shadow...) {
+  -webkit-box-shadow: $shadow;
+  -moz-box-shadow: $shadow;
+  box-shadow: $shadow;
+}
+
+@mixin transition($trans...) {
+  -webkit-transition: $trans;
+  -moz-transition: $trans;
+  -ms-transition: $trans;
+  -o-transition: $trans;
+  transition: $trans;
+}
+
+@mixin transition-delay($delay) {
+  -webkit-transition-delay: $delay;
+  -moz-transition-delay: $delay;
+  -o-transition-delay: $delay;
+  transition-delay: $delay;
+}
+
+@mixin starburst($size, $bgColour) {
+  width: $size;
+  height: $size;
+  background-color: $bgColour;
+  text-align: center;
+  display: box;
+  box-align: center;
+  box-pack: center;
+
+  span {
+    display: box;
+    box-align: center;
+    box-pack: center;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    @include rotate(45, 50% 50%);
+  }
+
+  &:before,
+  &:after,
+  span:before,
+  span:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: inherit;
+    @include rotate(30, 50% 50%);
+  }
+
+  &:after {
+    @include rotate(-30, 50% 50%);
+  }
+  span:after {
+    @include rotate(30, 50% 50%);
+  }
+  span:before {
+    @include rotate(-30, 50% 50%);
+  }
+}
+
+

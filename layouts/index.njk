@@ -3,55 +3,57 @@
 
 {% block main %}
 
-<div class="sideColumn col">
+<div class="side-column">
 	<div class="boxLeft">
 {{ contents | safe }}
 	</div>
-</div><!-- sideColumn -->
+  <div class="">
+    <div id="hireMe" class="boxRight">
+      <a id="hireMeAnim"><img src="/images/hireMeSun.png"><h2>Hire me</h2></a>
+      <ul>
+        <li><a href="/contact.php?about=Web%20Work">Front End Web Dev</a> (HTML/CSS/PHP/MySQL/JS)</li>
+        <li>Flash and HTML5 <a href="/contact.php?about=Games">games</a></li>
+        <li>Painting <a href="/contact.php?about=Painting%20Commission">commissions</a></li>
+        <li>Making <a href="/contact.php?about=Making%20Props">props</a></li>
+      </ul>
+    </div>
+  </div><!--  -->
+</div><!-- side-column -->
 
 
-<div class="mainColumn col">
+<div class="main-column">
+  <ul class="item-list-container">
 	{# draw images linking to work items #}
   {% set count = 0 %}
   {% for item in collections.all %}
     {% if count < data.config.consts.HOME_LATESTITEMS_TOTAL %}
       {% if not item.itemData.excludeFromHome %}
         {% set count = count + 1 %}
-        {{ createItem(item) }}
+        <li>{{ createItem(item) }}</li>
       {% endif %}
     {% endif %}
-	{%- endfor %}
-</div><!-- mainColumn -->
+    {%- endfor %}
+  </ul>
 
 
-<div class="sideColumn col">
-	<ul id="homeBannerGroup" class="boxRight col">
-		<li class="captionedImage boxLeft">
-			<a class="homeBanner" href="//www.gentlyfirm.co.uk">Gently Firm</a>
-			<p>This is the left-brain stuff.</p><p>For abstract paintings, photography or writing pop over to <a href="//www.gentlyfirm.co.uk">Gently Firm</a>.</p>
-		</li>
-	</ul><!-- homeBannerGroup -->
-</div><!-- sideColumn -->
+  <aside class="widget">
+    <ul id="homeBannerGroup" class="boxRight">
+      <li class="captionedImage boxLeft">
+        <a class="homeBanner" href="//www.gentlyfirm.co.uk">Gently Firm</a>
+        <p>This is the left-brain stuff.</p><p>For abstract paintings, photography or writing pop over to <a href="//www.gentlyfirm.co.uk">Gently Firm</a>.</p>
+      </li>
+    </ul><!-- homeBannerGroup -->
+  </aside><!-- side-column -->
 
 
-<div class="col">
-	<div class="stuckismBox boxRight">
+	<aside class="widget stuckismBox boxRight">
 		<p><a href="http://www.stuckism.com/stuckistmanifesto.html">The Stuckists Manifesto</a></p>
 		<p>"<strong>Stuckism proposes a model of art which is holistic.</strong> It is a meeting of the conscious and unconscious, thought and emotion, spiritual and material, private and public. Modernism is a school of fragmentation - one aspect of art is isolated and exaggerated to detriment of the whole. This is a fundamental distortion of the human experience and perpetrates an egocentric lie."</p>
-	</div>
-</div><!-- col -->
+	</aside>
+</div><!-- main-column -->
 
 
-<div class="col">
-	<div id="hireMe" class="boxRight col">
-		<a id="hireMeAnim"><img src="/images/hireMeSun.png"><h2>Hire me</h2></a>
-		<ul>
-			<li><a href="/contact.php?about=Web%20Work">Front End Web Dev</a> (HTML/CSS/PHP/MySQL/JS)</li>
-			<li>Flash and HTML5 <a href="/contact.php?about=Games">games</a></li>
-			<li>Painting <a href="/contact.php?about=Painting%20Commission">commissions</a></li>
-			<li>Making <a href="/contact.php?about=Making%20Props">props</a></li>
-		</ul>
-	</div>
-</div><!-- col -->
+
+
 
 {% endblock %}

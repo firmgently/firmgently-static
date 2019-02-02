@@ -8,7 +8,7 @@
 {#
 #}
 {% macro createItem(item) %}
-<a class="homeImageMain boxRight" href="/{{ item.path | stripIndexFromPath }}">
+<a href="/{{ item.path | stripIndexFromPath }}">
 {% if item.itemData %} {# standard item #}
 	<figure>
 		<img src="/images/shim.png" style="background-image: url('/images/items/thumbs/{{ item.itemData.id }}.jpg')" />
@@ -25,6 +25,16 @@
       <h2>{{ item.title }}</h2><em>{{ item.excerpt | safe }}</em>
 {% endif %}
 </a>
+{% endmacro %}
+{#
+#}
+{# receives collection items which have path/title properties #}
+{% macro insertPrevNextBtns(prev, next) %}
+<nav class="prev-next-btns" role="navigation">
+  <h2 class="screen-reader-text">Post navigation</h2>
+  {%- if previous %}<a href="/{{ previous.path }}" rel="prev">&lt;&lt;{{ previous.title }}</a>{% endif %}
+  {% if next %}<a href="/{{ next.path }}" rel="next">{{ next.title }} &gt;&gt;</a>{%- endif %}
+</nav>
 {% endmacro %}
 {#
 #}
@@ -65,8 +75,8 @@
 
 
 <body{% if bodyClass %} class="{{ bodyClass }}"{% endif %}>
-  <div id="bodyWrapper">
-    <div id="main">
+  <div class="body-wrapper">
+    {#    <div id="main"> #}
 
       {#
         fontsizeFromTagWeight() filter:
@@ -75,9 +85,9 @@
         minSize, maxSize represent min/max values that can be returned
         numSizes is how many different sizes will be available
       #}
-      <header id="fg-header">
-        <a id="titleImage" alt="{{ sitedata.simple_domain }}" title="{{ sitedata.simple_domain }}" href="/">{{ sitedata.simple_domain }}</a>
-        <nav id="fg-nav-main">
+      <header class="fg-header">
+        <a class="title-image" alt="{{ sitedata.simple_domain }}" title="{{ sitedata.simple_domain }}" href="/">{{ sitedata.simple_domain }}</a>
+        <nav class="fg-nav-main">
           <ul>
 {%- for word in cloud -%}
     
@@ -117,27 +127,27 @@
       </header>
       
       
-      <section {% if microdata_type %}itemscope itemtype="{{ microdata_type }}" {% endif %}id="content" class="row col">
+      <section {% if microdata_type %}itemscope itemtype="{{ microdata_type }}" {% endif %}class="content">
 			{% block main %}{{ contents | safe }}{% endblock %}
 			</section><!-- content -->
 
 
       <a id="invert-colours-btn" href=""><img src="/images/yin-yang.svg" alt="Yin Yang symbol" class="icon"></a>
 
-    </div><!-- main -->
+      {#  </div><!-- main --> #}
     
   </div><!-- bodyWrapper -->
 
 
-  <footer class="fgfooter row">
-    <span class="footerLeft col">
+  <footer class="fg-footer">
+    <span>
       <ul>
         <li><img src="/images/yin-yang.svg" alt="Yin Yang symbol" class="icon"></li>
         <li><img src="/images/feed-icon.svg" alt="RSS Feed symbol" class="icon"></li>
       </ul>
-      <span class="footerMid col">Content and site&nbsp;<span class="copyright">&copy;</span>&nbsp;Mark Mayes</span>
+      <span>Content and site&nbsp;<span class="copyright">&copy;</span>&nbsp;Mark Mayes</span>
     </span>
-    <span class="footerRight col">{{ sitedata.footer_quote | safe }}</span>
+    <span>{{ sitedata.footer_quote | safe }}</span>
   </footer>
   
   {% block bodyEndScripts %}{% endblock %}

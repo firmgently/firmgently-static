@@ -1,10 +1,14 @@
 ## BUGS
-
-
+[ ] read time 1-1 mins
+[ ] general item pages next/prev paths exist but not titles
 
 
 ## GENERAL
 
+
+
+[ ] html tag xmlns for opengraph and other data
+[ ] download post images from WP
 [ ] check image size/quality on home/topics pages
 [ ] remove target blank in links in items
 [ ] stuckism quote on home page needs to be randomised client-side
@@ -29,6 +33,7 @@
 
 ## CSS STYLING
 
+[ ] strip away styles and add them back one at a time
 [ ] style blockquotes (use bob ross article to test)
 [ ] markdown captioned images http://sparkandshine.net/en/insert-images-with-captions-in-markdown/
 [ ] simplify layout columns and blocks

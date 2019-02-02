@@ -25,11 +25,10 @@
 
 {% block main %}
 
-  <div class="sideColumn col">
-		<div class="prev-next-btns">
-			<a class="next-btn button" title="Next: {{ next.title }}" href="/{{ next.path }}">NEXT &gt;</a>
-			<a class="prev-btn button" title="Previous: {{ previous.title }}" href="/{{ previous.path }}">&lt; PREVIOUS</a>&nbsp;&nbsp;&nbsp;
-		</div>
+  <div class="side-column">
+
+    {{ insertPrevNextBtns(previous, next) }}
+
 		<section id="mainItemDetails" class="lowered boxLeft">
 			<h1 itemprop="http://www.schema.org/name">{{ itemData.title }}</h1>
 			<h3>{{ detail1 | safe }}</h3>
@@ -38,7 +37,7 @@
 		</section>
 	</div>
 
-	<div class="mainColumn col">
+	<div class="main-column">
 		<div id="itemImageMain">
 			<img id="magnifiableImage" alt="Click to magnify" src="/images/items/main/{{ itemData.id }}.jpg">
 		</div>

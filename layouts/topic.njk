@@ -2,10 +2,11 @@
 
 
 {% block main %}
-  <h2><strong>{{ tag }}</strong></h2>
-  <ul>
+  <div class="main-column">
+  <ul class="item-list-container">
     {% for page in pagination.files %}
-      {{ createItem(page) }}
+      <li>{{ createItem(page) }}</li>
     {% endfor %}
   </ul>
+  </div>
 {% endblock %}
