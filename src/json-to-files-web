@@ -10,6 +10,8 @@ json_files:
         to: tags
       - from: date
         to: date
+      - from: date
+        to: year
 ---
 
 {#
@@ -30,13 +32,25 @@ json_files:
 
 - The created files will use the layout specified in the front-matter
 
-- `passthrough` specifies a property to be passed directly into the page,
-  so the following will pass tags to the page to that other plugins can
+- `passthrough` specifies an array of properties to be passed directly into the page,
+  so the following will pass 'tags' and 'date' to the page to that other plugins can
   use them in the same manner as normal front matter tags
+
   {
     title: "painting1",
     tags: "web,painting,one"
+    date: "2018 07 22"
   }
+
+  ---
+  json_files:
+      source_file: items/web
+      passthrough:
+        - from: tags
+          to: tags
+        - from: date
+          to: date
+  ---
 
 #}
 

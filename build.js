@@ -337,14 +337,9 @@ metalsmith(__dirname)
 			{
 				key: 'date',
 				format: 'MMMM DD, YYYY'
-//		},
-//		{
-//			key: 'date',
-//			format: 'YYYY MM DD'
-//		},
-//		{
-//			key: 'year',
-//			format: 'YYYY'
+			}, {
+				key: 'year',
+				format: 'YYYY'
 			}
 		]
 	}))
