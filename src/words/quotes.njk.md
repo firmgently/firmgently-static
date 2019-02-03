@@ -2,8 +2,6 @@
 title: Quotes
 date: 2015/03/11 15:05:49
 tags: words
-layout: post.njk
-collection: words
 ---
 
 Words of Influence

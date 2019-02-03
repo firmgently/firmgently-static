@@ -2,8 +2,6 @@
 title: Why I do Art
 date: 2017/10/25 21:00:21
 tags: words,art
-layout: post.njk
-collection: words
 ---
 
 almost all of life has been moved into the intellect (list examples). The last reserves are mental imagery brought on by the sensual(synthaseasic arts arts (as in the arts of the senses).

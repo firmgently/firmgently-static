@@ -2,8 +2,6 @@
 title: Dumping My Butane Soldering Iron for a TS100 (No More Hands of Flame)
 date: 2018/07/21 18:59:47
 tags: words,van-tech
-layout: post.njk
-collection: words
 ---
 
 ## Iroda SolderPro 50

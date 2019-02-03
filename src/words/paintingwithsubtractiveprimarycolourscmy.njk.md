@@ -2,8 +2,6 @@
 title: Painting with Subtractive Primary Colours (CMY)
 date: 2012/10/13 15:00:13
 tags: words,figurative,art
-layout: post.njk
-collection: words
 ---
 
 How most of my paintings only use four colours  **Most of my paintings are made from a very small number of mainly primary colours.** As any child who has ever painted quickly learns red, yellow and blue can be mixed together to make secondary colours like orange and purple. With these colours and a couple of whites (titanium white for bright or opaque areas, zinc white for translucent mixes) pretty much any colour can be mixed up. [caption id="attachment_238" align="alignleft" width="200"]![Flor de Noche Buena Painting](/wp-content/uploads/2012/10/florDeNocheBuena.jpg) There's no black here[/caption]  ![](/images/articles/florDeNocheBuena.jpg) there's no black here   I rarely use black paint, for example this painting of the red and green-leaved poinsettia didn't involve the use of any blacks. The darkest areas are actually a deep purple but they look black. Actually one of my art teachers in school forbade us from using black, justified by it not appearing in nature (although I'm guessing black holes are pretty dark). She did have a point, but she applied it too bluntly. Since then I make my own point of using pure black in some paintings, one of my justifications being [Paul Cezanne](http://en.wikipedia.org/wiki/Paul_C%C3%A9zanne) (a major influence on my work) and his well-known use of blacks. In the main though, I stick to primaries and whites. 

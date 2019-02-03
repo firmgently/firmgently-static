@@ -2,8 +2,6 @@
 title: Low Power Computing
 date: 2017/12/02 12:00:53
 tags: words,van-tech
-layout: post.njk
-collection: words
 ---
 
 I spend a lot of time with computers. Despite having very small amounts of power at my disposal (especially during the winter months) I still need to be able to do some web development - both to earn money and as a hobby. I also like to spend time surfing the web of course. Making this happen is challenging and, like everything about this way of life, a constant work in progress with lots of room for improvement. 

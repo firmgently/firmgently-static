@@ -2,8 +2,6 @@
 title: Ovenless Cooking
 date: 2017/10/25 20:29:08
 tags: words,van-food
-layout: post.njk
-collection: words
 ---
 
 ![](/wp-content/uploads/2017/12/IMG_20170510_161652-1024x768.jpg)
