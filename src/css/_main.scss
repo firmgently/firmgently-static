@@ -16,35 +16,34 @@ body {
   border: none;
 }
 body {
-  display: flex;
-  flex-direction: column;
-  background: linear-gradient(165deg, $main-bg 0%, $main-bg2);
+  @include flexbox;
+  @include flex-flow(column);
+  /*background: linear-gradient(165deg, $main-bg 0%, $main-bg2);*/
+	background: $main-bg2;
   color: $text-colour-main;
-  /*
   font-family: 'FG_Medium', 'Tahoma', 'Arial', 'Nimbus Sans L';
-  */
   .body-wrapper {
-    flex: 1 0 auto;
+    @include flex(1 0 auto);
     .fg-header {
-      display: flex;
-      flex-direction: row wrap;
+      @include flexbox;
+      @include flex-flow(row nowrap);
       .title-image {
-        flex: 0 0 $title-image-width-mobile;
+				background-image: $title-image;
         width: $title-image-width-mobile;
+				height: $title-image-width-mobile;
       }
       .fg-nav-main {
-        flex: 1 1 $title-image-width-mobile;
+        @include flex-grow(1);
       }
     }
     .content {
-      display: flex;
-      flex-wrap: wrap;
-      flex-direction: row;
+      @include flexbox;
+      @include flex-flow(row wrap);
       .side-column {
-        flex: 1 0 $side-col-min-width;
+        @include flex(1 0 $side-col-min-width);
       }
       .main-column {
-        flex: 2 0 $main-col-min-width;
+        @include flex(2 0 $main-col-min-width);
       }
     }
   }
@@ -78,14 +77,14 @@ article > footer {
   margin-top: $pad-big;
 }
 .item-list-container {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  align-content: flex-start;
-  justify-content: flex-start;
+  @include flexbox;
+  @include flex-wrap(wrap);
+  @include flex-direction(row);
+  @include align-content(flex-start);
+  @include justify-content(flex-start);
   li {
     overflow-wrap: break-word;
-    flex: 0 1 $list-item-w;
+    @include flex(0 1 $list-item-w);
     height: $list-item-h;
     overflow: hidden;
     padding: $pad-med;
@@ -772,9 +771,13 @@ nav.fg-nav-main {
 */
 /* ////////////////////////////////////////////////////////////////////////// */
 a#invert-colours-btn {
-  /*background-color: inherit;
-  position: relative;
-  @include opacity(0.4);*/
+	@include opacity(0.5);
+	position: fixed;
+	top: 37px;
+	right: 0;
+	width: 28px;
+	right: $pad-med;
+	left: auto;
 }
 .icon {
   display: inline-block;
@@ -785,7 +788,7 @@ a#invert-colours-btn {
 /*FOOTER*/
 .fg-footer {
   position: relative;
-  flex-shrink: 0;
+  @include flex-shrink(0);
   /*
   padding-left: $small-left-margin;
   padding-right: $small-right-margin;

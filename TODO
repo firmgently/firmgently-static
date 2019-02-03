@@ -11,6 +11,7 @@
 [ ] metalsmith-sitemap
 [ ] html tag xmlns for opengraph and other data
 [ ] download post images from WP
+[ ] look into built-in dark mode (CSS/Apple?)
 [ ] check image size/quality on home/topics pages
 [ ] remove target blank in links in items
 [ ] stuckism quote on home page needs to be randomised client-side
