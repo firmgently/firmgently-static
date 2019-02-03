@@ -15,6 +15,7 @@ const layouts = require('metalsmith-layouts'); // templating (using Nunjucks her
 const beautify = require('metalsmith-beautify'); // format outputted markup
 const data = require('metalsmith-data'); // import JSON data
 const collections = require('metalsmith-collections'); // groups files together into collections
+const metadata = require('metalsmith-collection-metadata'); // add some defaults to collections
 const permalinks = require('metalsmith-permalinks'); // names and locates files to match useful URL patterns
 const json_to_files = require('metalsmith-json-to-files'); // create files from JSON
 const timer = require('metalsmith-timer'); // for debugging, lists time between use() calls
@@ -281,13 +282,21 @@ metalsmith(__dirname)
       sortBy: 'date',
       reverse: true
     },
-    words: 'words/*/*.html', // posts with metadata `collection: words` will be added
+    words: 'words/*/*.html',
     art: 'art/*/*.html',
     photos: 'photos/*/*.html',
     objects: 'objects/*/*.html',
     web: 'web/*/*.html'
   }))
   .use(timer('collections created'))
+
+	//
+  .use(metadata({
+    'collections.words': {
+      layout: 'post.njk'
+    }
+  }))
+  .use(timer('metadata added to posts'))
 
 // I'd have expected that `wordcloud` would need to come after `tags`
 // in the pipeline as it uses the tags. I was wrong.`tags` turns the

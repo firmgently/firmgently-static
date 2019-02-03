@@ -3,8 +3,6 @@ title: Firm Gently, Gently Firm and the I Ching
 excerpt: What's with the name?
 date: 2019-01-25
 tags: words,ideas,weird
-layout: post.njk
-collection: words
 ---
 
 ![Yin Yang lines](/images/words/yin-yang-lines.jpg "Yang (unbroken line) and Yin (broken line)")
