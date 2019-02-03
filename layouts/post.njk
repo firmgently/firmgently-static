@@ -39,7 +39,7 @@
 
       <footer>
         {% set comma = joiner(", ") %}
-        <span>Posted in {% for tag in tags %}{{ comma() }}<a href="/topics/{{ tag.slug }}" rel="category tag">{{ tag.name }}</a> {% endfor %}</span>
+        <span>Posted in {% for tag in tags -%}{{ comma() }}<a href="/topics/{{ tag.slug }}" rel="category tag">{{ tag.name }}</a>{% endfor %}</span>
       </footer>
     </article>
 
