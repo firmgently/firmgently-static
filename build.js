@@ -28,6 +28,8 @@ const sharp = require('metalsmith-sharp'); // image processing
 const sass = require('metalsmith-sass'); // SASS compilation
 const wordcloud = require('metalsmith-wordcloud'); // create wordcloud data from tags
 const feed = require('metalsmith-feed'); // create RSS feed
+const date_formatter = require('metalsmith-date-formatter'); // convert date formats for display
+
 
 
 // metalsmith-markdown uses `marked` internally
@@ -329,6 +331,23 @@ metalsmith(__dirname)
     }]
 	}))
   .use(timer('permalinked * topics *'))
+
+	.use(date_formatter({
+		dates: [
+			{
+				key: 'date',
+				format: 'MMMM DD, YYYY'
+//		},
+//		{
+//			key: 'date',
+//			format: 'YYYY MM DD'
+//		},
+//		{
+//			key: 'year',
+//			format: 'YYYY'
+			}
+		]
+	}))
 
 // fill in Nunjucks templates
 // ??? processes template inheritance ???

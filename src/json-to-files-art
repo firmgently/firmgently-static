@@ -6,8 +6,10 @@ json_files:
     layout: item.njk
     rename_data_to: itemData
     passthrough:
-      from: tags
-      to: tags
+      - from: tags
+        to: tags
+      - from: date
+        to: date
 ---
 
 {#

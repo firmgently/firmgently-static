@@ -11,8 +11,7 @@
     "d": "2",
     "siteURL": "http://www.hknutrition.co.uk/",
     "size": "3.5MB",
-    "year": "2014",
-    "date": "16/08/2016"
+    "date": "2016 08 16"
   },
   {
     "id": "buzz",
@@ -25,7 +24,6 @@
     "d": "2",
     "siteURL": "/sites/buzz/en_GB/index.html",
     "size": "300KB per page",
-    "year": "2007",
     "agency": "BLOC&nbsp;Media",
     "detailPic": [
       {
@@ -36,7 +34,7 @@
       "desc": "A spider sometimes dangles in front of the page, if you click him his thread breaks and he falls."
       }
     ],
-    "date": "01/01/2008"
+    "date": "2008 01 01"
   },
   {
     "id": "ALALA",
@@ -50,8 +48,7 @@
     "d": "2",
     "siteURL": "http://www.alala.org.uk/",
     "size": "4.8MB",
-    "year": "2015",
-    "date": "19/02/2015"
+    "date": "2015 02 19"
   },
   {
     "id": "KGS",
@@ -65,8 +62,7 @@
     "d": "2",
     "siteURL": "http://www.kempson-gardenservices.co.uk/",
     "size": "3.5MB",
-    "year": "2014",
-    "date": "27/11/2014"
+    "date": "2014 11 27"
   },
   {
     "id": "trucktown",
@@ -79,8 +75,7 @@
     "d": "2",
     "siteURL": "/sites/trucktown/index.html",
     "size": "1.5MB",
-    "year": "2008",
     "agency": "Digital&nbsp;Outlook",
-    "date": "01/01/2008"
+    "date": "2008 01 01"
   }
 ]

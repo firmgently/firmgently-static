@@ -9,8 +9,7 @@
     "h": "18",
     "d": "2",
     "size": "15&nbsp;x&nbsp;15&nbsp;x&nbsp;3cm",
-    "year": "1994",
-    "date": "01/01/2008"
+    "date": "2008 01 01"
   },
   {
     "id": "flower_2",
@@ -22,8 +21,7 @@
     "h": "18",
     "d": "2",
     "size": "15&nbsp;x&nbsp;15&nbsp;x&nbsp;3cm",
-    "year": "1994",
-    "date": "01/01/2008"
+    "date": "2008 01 01"
   },
   {
     "id": "shell",
@@ -34,8 +32,7 @@
     "w": "25",
     "h": "18",
     "d": "2",
-    "year": "1994",
-    "date": "01/01/2008"
+    "date": "2008 01 01"
   },
   {
     "id": "aztecBlueEagle",
@@ -48,8 +45,7 @@
     "h": "100",
     "d": "2",
     "size": "180&nbsp;x&nbsp;100cm",
-    "year": "2014",
-    "date": "09/10/2014"
+    "date": "2014 10 09"
   },
   {
     "id": "albi",
@@ -61,8 +57,7 @@
     "h": "24",
     "d": "2",
     "size": "45&nbsp;x&nbsp;32cm",
-    "year": "2015",
-    "date": "10/02/2015"
+    "date": "2015 02 10"
   },
   {
     "id": "tlaloc",
@@ -74,8 +69,7 @@
     "h": "6",
     "d": "2",
     "size": "2&frac12;&nbsp;x&nbsp;6cm",
-    "year": "2008",
-    "date": "01/01/2008"
+    "date": "2008 01 01"
   },
   {
     "id": "crystalline",
@@ -87,8 +81,7 @@
     "h": "20",
     "d": "2",
     "size": "20&nbsp;x&nbsp;25&nbsp;x&nbsp;10cm",
-    "year": "1996",
-    "date": "01/01/2008"
+    "date": "2008 01 01"
   },
   {
     "id": "lounge",
@@ -100,8 +93,7 @@
     "h": "25",
     "d": "2",
     "size": "20&nbsp;x&nbsp;20&nbsp;x&nbsp;20cm",
-    "year": "1997",
-    "date": "01/01/2008"
+    "date": "2008 01 01"
   },
   {
     "id": "man_and_woman",
@@ -113,8 +105,7 @@
     "h": "30",
     "d": "2",
     "size": "30&nbsp;x&nbsp;10&nbsp;x&nbsp;10cm",
-    "year": "1995",
-    "date": "01/01/2008"
+    "date": "2008 01 01"
   },
   {
     "id": "ladybird",
@@ -126,7 +117,6 @@
     "h": "18",
     "d": "2",
     "size": "25&nbsp;x&nbsp;10&nbsp;x&nbsp;13cm",
-    "year": "1996",
-    "date": "01/01/2008"
+    "date": "2008 01 01"
   }
 ]

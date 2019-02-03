@@ -1,7 +1,7 @@
 ---
 title: Firm Gently, Gently Firm and the I Ching
 excerpt: What's with the name?
-date: 2019-01-25
+date: 2019 01 25
 tags: words,ideas,weird
 ---
 
