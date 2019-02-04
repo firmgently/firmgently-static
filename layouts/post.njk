@@ -4,25 +4,10 @@
 {% block main %}
 
   <div class="main-column">
-    {#   <a class="skip-link screen-reader-text" href="#content">Skip to content</a>
-
-
-    <header id="masthead" class="site-header">
-      <nav id="site-navigation" class="main-navigation">
-        <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">Primary Menu</button>
-        <div class="menu-words-container">
-          <ul id="primary-menu" class="menu">
-            {% for tag in tags %}
-              <li class="boxLeft"><a href="/topics/{{ tag.slug }}">{{ tag.name }}</a></li>
-            {% endfor %}
-          </ul>
-        </div>
-      </nav>
-    </header> #}
+    {#   <a class="skip-link screen-reader-text" href="#content">Skip to content</a> #}
 
 
     {{ insertPrevNextBtns(previous, next) }}
-
 
     <article>
       <header>
@@ -33,16 +18,13 @@
         </div>
       </header>
 
-
       <div>{{ contents | safe }}</div>
-
 
       <footer>
         {% set comma = joiner(", ") %}
         <span>Posted in {% for tag in tags -%}{{ comma() }}<a href="/topics/{{ tag.slug }}" rel="category tag">{{ tag.name }}</a>{% endfor %}</span>
       </footer>
     </article>
-
 
     {{ insertPrevNextBtns(previous, next) }}
 

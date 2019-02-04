@@ -114,8 +114,7 @@
 
 
 <body{% if bodyClass %} class="{{ bodyClass }}"{% endif %}>
-  <div class="body-wrapper">
-    {#    <div id="main"> #}
+  <div class="wrapper">
 
       {#
         fontsizeFromTagWeight() filter:
@@ -137,9 +136,8 @@
 
       <a id="invert-colours-btn" href=""><img src="/images/yin-yang.svg" alt="Yin Yang symbol" class="icon"></a>
 
-      {#  </div><!-- main --> #}
     
-  </div><!-- bodyWrapper -->
+  </div><!-- wrapper -->
 
 
   <footer class="fg-footer">
@@ -154,8 +152,6 @@
   </footer>
   
   {% block bodyEndScripts %}{% endblock %}
-
-  {% block analytics %}{% endblock %}
   
 </body>
 
