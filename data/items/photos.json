@@ -16,7 +16,7 @@
   {
     "id": "poppies",
     "title": "Poppies",
-    "tags": "photos,abstract,nature",
+    "tags": "photos,abstract,plants",
     "desc": "<p>An impressionistic field of poppies.</p>",
     "excludeFromHome": "true",
     "printsAvailable": "STANDARD",
@@ -30,7 +30,7 @@
   {
     "id": "prettyYellowFlowers",
     "title": "Pretty Yellow Flowers",
-    "tags": "photos,figurative,nature",
+    "tags": "photos,figurative,plants",
     "desc": "<p>What can I say?</p>",
     "printsAvailable": "STANDARD",
     "camera": "Panasonic GF1",
@@ -57,7 +57,7 @@
   {
     "id": "leech",
     "title": "Leech",
-    "tags": "photos,figurative,nature",
+    "tags": "photos,figurative,animals",
     "desc": "<p>Look at how pretty and colourful it is.</p>",
     "excludeFromHome": "true",
     "printsAvailable": "STANDARD",
@@ -71,7 +71,7 @@
   {
     "id": "gull1",
     "title": "Gull #1",
-    "tags": "photos,figurative,nature",
+    "tags": "photos,figurative,animals",
     "desc": "<p>It's a seagull.</p>",
     "excludeFromHome": "true",
     "printsAvailable": "STANDARD",
@@ -99,7 +99,7 @@
   {
     "id": "measuredProgress",
     "title": "Measured Progress",
-    "tags": "photos,figurative,nature",
+    "tags": "photos,figurative,animals",
     "desc": "<p>About a hundred of these caterpillars lived in and around my flat for a while.</p>",
     "excludeFromHome": "true",
     "printsAvailable": "STANDARD",
@@ -113,7 +113,7 @@
   {
     "id": "burnUpAndAcross",
     "title": "Burn Up and Across",
-    "tags": "photos,abstract,nature",
+    "tags": "photos,abstract",
     "desc": "<p>It's all there.</p>",
     "excludeFromHome": "true",
     "printsAvailable": "STANDARD",
@@ -127,7 +127,7 @@
   {
     "id": "whatTimeIsIt",
     "title": "What Time Is It?",
-    "tags": "photos,abstract,nature",
+    "tags": "photos,abstract,plants",
     "desc": "<p>...</p>",
     "excludeFromHome": "true",
     "printsAvailable": "STANDARD",
@@ -141,7 +141,7 @@
   {
     "id": "capillaries",
     "title": "Capillaries",
-    "tags": "photos,abstract,nature",
+    "tags": "photos,abstract,plants",
     "desc": "<p>Just, draining.</p>",
     "excludeFromHome": "true",
     "printsAvailable": "STANDARD",
@@ -155,7 +155,7 @@
   {
     "id": "begets",
     "title": "Begets",
-    "tags": "photos,abstract,nature",
+    "tags": "photos,abstract,animals",
     "desc": "<p>Start as you mean to go on.</p>",
     "excludeFromHome": "true",
     "printsAvailable": "STANDARD",
@@ -196,7 +196,7 @@
   {
     "id": "eweAintFromRoundHereAreEweBaa",
     "title": "Ewe In't From Round Ear Are Ewe Baa?",
-    "tags": "photos,figurative,nature",
+    "tags": "photos,figurative,animals",
     "desc": "<p>I got out alive.</p>",
     "excludeFromHome": "true",
     "printsAvailable": "STANDARD",
@@ -238,7 +238,7 @@
   {
     "id": "cabbageKnowsAll",
     "title": "Cabbage Knows All",
-    "tags": "photos,figurative,nature",
+    "tags": "photos,figurative,plants",
     "desc": "<p>Fractals.</p>",
     "excludeFromHome": "true",
     "printsAvailable": "STANDARD",
@@ -382,7 +382,7 @@
   {
     "id": "paintedLeaf",
     "title": "Painted Leaf",
-    "tags": "photos,abstract,nature",
+    "tags": "photos,abstract,plants",
     "desc": "<p>This is a photograph but people often assume it's a painting.</p>",
     "camera": "Fuji FinePix F810",
     "location": "Boldeva, Cornwall",
@@ -395,7 +395,7 @@
   {
     "id": "leafCarpet",
     "title": "Leaf Carpet",
-    "tags": "photos,abstract,nature",
+    "tags": "photos,abstract,plants",
     "desc": "<p>These are the natural colours of the leaves. I'll be painting this soon as I love this photo.</p>",
     "camera": "Canon WEB IXUS 300",
     "location": "Kew, London",
@@ -458,7 +458,7 @@
   {
     "id": "flamingoBejewelled",
     "title": "Flaming Bejewelled",
-    "tags": "photos,abstract,nature",
+    "tags": "photos,abstract,plants",
     "desc": "<p>It's over-saturated, covered in lens-flare and totally garish, but it loves me.</p>",
     "camera": "Fuji FinePix F810",
     "location": "London",
@@ -471,7 +471,7 @@
   {
     "id": "puppetFish",
     "title": "Puppet Fish",
-    "tags": "photos,abstract,nature",
+    "tags": "photos,abstract,animals",
     "desc": "<p>\"I find his face amusing\". Yeah I hear that a lot.</p>",
     "camera": "Fuji FinePix F810",
     "location": "London",

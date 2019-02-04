@@ -35,7 +35,7 @@
       {% set classattr = "" %}
     {% endif %}
     {# create tag markup #}
-    <li><a {{ classattr | safe }}style="font-size: {{ word.wght | fontsizeFromTagWeight(0.8, 2, 60) }}rem" href="{{ word.pth }}">{{ word.ctg }}</a></li>
+    <li><a {{ classattr | safe }}style="font-size: {{ word.wght | fontsizeFromTagWeight(0.75, 1.6, 50) }}rem" href="{{ word.pth }}">{{ word.ctg }}</a></li>
   {% endif %}
 {%- endfor %}
 <ul>
@@ -50,16 +50,11 @@
 	<figure>
 		<img src="/images/shim.png" style="background-image: url('/images/items/thumbs/{{ item.itemData.id }}.jpg')" />
 		<figcaption>
-			{%- if item.itemData.client -%}
-        {% set details = item.itemData.client + " / " + item.itemData.year %}
-			{%- else -%}
-        {% set details = item.itemData.w + "x" + item.itemData.h + "cm / " + item.itemData.materials + " / " + item.itemData.year %}
-			{%- endif -%}
-      <h2>{{ item.itemData.title }}</h2><em>{{ details }}</em>
+      <h2>{{ item.itemData.title }}</h2>
 		</figcaption>
   </figure>
 {% else %} {# post #}
-      <h2>{{ item.title }}</h2><em>{{ item.excerpt | safe }}</em>
+  <h2>{{ item.title }}</h2><p>{{ item.excerpt | safe | striptags }}</p>
 {% endif %}
 </a>
 {%- endmacro %}

@@ -2,7 +2,7 @@
   {
     "id": "HKN",
     "title": "HK Nutrition",
-    "tags": "web,websites",
+    "tags": "web,dev",
     "desc": "<p>I embraced WordPress to make this fully responsive content-managed site for a great nutritionist, who can now merrily upload recipes, testimonials etc without having to get a developer (me) involved.</p>",
     "excludeFromHome": "true",
     "client": "Helen Kempson",
@@ -16,7 +16,7 @@
   {
     "id": "buzz",
     "title": "Buzz Junior",
-    "tags": "web,websites",
+    "tags": "web,dev",
     "desc": "<p>Buzz Junior is the kid's version of the popular PlayStation game Buzz.</p><p>I assembled this Flash <a href=\"/sites/buzz/en_GB/index.html\">web site</a> and built the logic, while the crew at BLOC provided most of the animations (I accept responsibility for the spider and caterpillar though).</p>",
     "client": "Sony (SCEE)",
     "w": "845",
@@ -39,7 +39,7 @@
   {
     "id": "ALALA",
     "title": "ALALA / All for Love and Love for All",
-    "tags": "web,websites",
+    "tags": "web,dev",
     "desc": "<p><a href=\"http://www.alala.org.uk/\">ALALA</a> is a charity supporting children orphaned by natural disaster. I built and carry out ongoing maintenance on their website.</p>",
     "excludeFromHome": "true",
     "client": "ALALA",
@@ -53,7 +53,7 @@
   {
     "id": "KGS",
     "title": "Kempson Garden Services",
-    "tags": "web,websites",
+    "tags": "web,dev",
     "desc": "<p>Kempson Garden Services offer garden maintenance and design services, <a href=\"http://www.kempson-gardenservices.co.uk/\">this</a> is their site.</p>",
     "excludeFromHome": "true",
     "client": "Kempson Garden Services",
@@ -67,7 +67,7 @@
   {
     "id": "trucktown",
     "title": "Truck Town",
-    "tags": "web,websites",
+    "tags": "web,dev",
     "desc": "<p>Built to accompany a series of children's books, the <a href=\"/sites/trucktown/index.html\">Trucktown site</a> is aimed at young boys and is well noisy.<br><br>There are some really cute characters in the books (and cool animations and graphics from D.O. in the site).</p>",
     "client": "Chorion",
     "w": "1080",
