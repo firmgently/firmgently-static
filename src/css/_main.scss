@@ -54,11 +54,6 @@ body {
       }
       .fg-nav-main {
         @include flex-grow(1);
-        ul {
-          @include flexbox;
-          @include flex-flow(row wrap);
-          @include justify-content(space-between);
-        }
       }
     }
     .content {
@@ -74,6 +69,17 @@ body {
   }
   .fg-footer {
     @include flex-shrink(0);
+    > span:first-of-type {
+      > ul {
+        li {
+          display: inline-block;
+          margin-right: $pad-med;
+        }
+      }
+    }
+    > span:last-of-type {
+      float: right;
+    }
   }
 }
 h1,
@@ -117,7 +123,7 @@ article > footer {
   @include flex-wrap(wrap);
   @include flex-direction(row);
   @include align-content(flex-start);
-  @include justify-content(space-between);
+  @include justify-content(space-around);
   li {
     overflow-wrap: break-word;
     @include flex(0, 1, $list-item-w);
