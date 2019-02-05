@@ -1,6 +1,6 @@
 ---
 title: Stop Saying Van - It's a Caravan!
-date: 2017/12/01 22:07:41
+date: 2017/12/01
 tags: words,van-life
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: Painting with Subtractive Primary Colours (CMY)
-date: 2012/10/13 15:00:13
+date: 2012/10/13
 tags: words,figurative,art
 ---
 

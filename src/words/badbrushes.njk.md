@@ -1,6 +1,6 @@
 ---
 title: Bad Brushes
-date: 2017/10/25 17:19:00
+date: 2017/10/25
 tags: words,art
 ---
 

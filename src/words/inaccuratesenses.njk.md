@@ -1,6 +1,6 @@
 ---
 title: Inaccurate Senses
-date: 2017/10/25 20:45:04
+date: 2017/10/25
 tags: words,ideas
 ---
 

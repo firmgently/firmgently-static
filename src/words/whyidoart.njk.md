@@ -1,6 +1,6 @@
 ---
 title: Why I do Art
-date: 2017/10/25 21:00:21
+date: 2017/10/25
 tags: words,art
 ---
 

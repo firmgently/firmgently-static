@@ -1,6 +1,6 @@
 ---
 title: What's THE Reason?
-date: 2017/10/25 20:59:19
+date: 2017/10/25
 tags: words,ideas
 ---
 

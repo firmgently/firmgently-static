@@ -1,6 +1,6 @@
 ---
 title: Naturally Man-made
-date: 2017/10/25 20:58:31
+date: 2017/10/25
 tags: words,ideas
 ---
 

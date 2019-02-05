@@ -1,6 +1,6 @@
 ---
 title: Quotes
-date: 2015/03/11 15:05:49
+date: 2015/03/11
 tags: words
 ---
 

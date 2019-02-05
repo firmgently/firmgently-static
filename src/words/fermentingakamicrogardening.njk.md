@@ -1,6 +1,6 @@
 ---
 title: Fermenting (AKA Micro-Gardening)
-date: 2017/12/02 00:01:58
+date: 2017/12/02
 tags: words,van-food
 ---
 

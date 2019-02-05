@@ -1,6 +1,6 @@
 ---
 title: Low Power Computing
-date: 2017/12/02 12:00:53
+date: 2017/12/02
 tags: words,van-tech
 ---
 

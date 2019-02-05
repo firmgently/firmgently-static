@@ -1,6 +1,6 @@
 ---
 title: Ovenless Cooking
-date: 2017/10/25 20:29:08
+date: 2017/10/25
 tags: words,van-food
 ---
 

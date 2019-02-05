@@ -1,6 +1,6 @@
 ---
 title: The Intellectual Fool
-date: 2017/10/25 20:46:02
+date: 2017/10/25
 tags: words,ideas
 ---
 

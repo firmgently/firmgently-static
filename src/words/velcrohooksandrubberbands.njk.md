@@ -1,6 +1,6 @@
 ---
 title: Velcro, Hooks and Rubber Bands
-date: 2017/12/01 23:39:19
+date: 2017/12/01
 tags: words,van-life
 ---
 

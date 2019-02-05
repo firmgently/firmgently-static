@@ -1,6 +1,6 @@
 ---
 title: Faith is Not Religion
-date: 2017/10/25 20:39:31
+date: 2017/10/25
 tags: words,ideas
 ---
 

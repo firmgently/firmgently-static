@@ -1,6 +1,6 @@
 ---
 title: Thought is not Experience
-date: 2017/10/25 20:33:52
+date: 2017/10/25
 tags: words,ideas
 ---
 

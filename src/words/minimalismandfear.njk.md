@@ -1,6 +1,6 @@
 ---
 title: Minimalism and Fear
-date: 2017/10/25 20:48:42
+date: 2017/10/25
 tags: words,ideas
 ---
 

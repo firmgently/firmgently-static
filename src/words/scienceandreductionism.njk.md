@@ -1,6 +1,6 @@
 ---
 title: Science and Reductionism
-date: 2017/10/25 20:52:26
+date: 2017/10/25
 tags: words,ideas
 ---
 

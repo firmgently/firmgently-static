@@ -1,6 +1,6 @@
 ---
 title: Tin-Pot Explorer
-date: 2017/10/25 17:23:31
+date: 2017/10/25
 tags: words,tales
 ---
 

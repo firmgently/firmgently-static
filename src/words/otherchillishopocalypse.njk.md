@@ -1,6 +1,6 @@
 ---
 title: Other-Chilli-Shop-Ocalypse
-date: 2017/12/27 18:26:21
+date: 2017/12/27
 tags: words,tales
 ---
 

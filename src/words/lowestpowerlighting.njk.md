@@ -1,6 +1,6 @@
 ---
 title: Lowest Power Lighting
-date: 2017/12/01 23:22:48
+date: 2017/12/01
 tags: words,van-tech
 ---
 

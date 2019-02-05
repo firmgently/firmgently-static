@@ -1,6 +1,6 @@
 ---
 title: Senses are Just Another Type of Feeling
-date: 2017/10/25 20:54:16
+date: 2017/10/25
 tags: words,ideas
 ---
 

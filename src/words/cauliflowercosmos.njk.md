@@ -1,6 +1,6 @@
 ---
 title: Cauliflower Cosmos
-date: 2017/12/21 21:40:08
+date: 2017/12/21
 tags: words,ideas,weird
 ---
 

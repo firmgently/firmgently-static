@@ -1,6 +1,6 @@
 ---
 title: The Maths Myth
-date: 2017/10/25 17:18:32
+date: 2017/10/25
 tags: words,ideas
 ---
 

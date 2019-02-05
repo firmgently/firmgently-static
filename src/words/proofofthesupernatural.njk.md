@@ -1,6 +1,6 @@
 ---
 title: Proof of the Supernatural
-date: 2017/10/25 15:53:17
+date: 2017/10/25
 tags: words,ideas
 ---
 
