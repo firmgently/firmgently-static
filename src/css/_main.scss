@@ -24,7 +24,7 @@ body {
 body {
   @include flexbox;
   @include flex-direction(column);
-  background: linear-gradient(165deg, $main-bg 0%, $main-bg2);
+  background-color: $main-bg2;
   color: $text-colour-main;
   font-family: 'FG_Medium', 'Tahoma', 'Arial', 'Nimbus Sans L';
   .wrapper {
@@ -33,13 +33,31 @@ body {
       @include flexbox;
       @include flex-flow(row nowrap);
       @include justify-content(flex-start);
-      @include align-items(stretch);
+      @include align-items(center);
       .title-image {
-        background-image: $title-image;
+        margin-left: $pad-sma;
         margin-right: $pad-med;
+        background: none;
+        img {
+          display: inline-block;
+          background-image: $title-image;
+          background-size: cover;
+          background-position: 0 0;
+          width: 8rem;
+          height: 0;
+          padding: calc(60 / 91 * 100%) 0 0 0;
+        }
+        &:hover img {
+          background-position: -100% 0;
+        }
       }
       .fg-nav-main {
         @include flex-grow(1);
+        ul {
+          @include flexbox;
+          @include flex-flow(row wrap);
+          @include justify-content(space-between);
+        }
       }
     }
     .content {
@@ -176,8 +194,6 @@ a:active {
   text-transform: uppercase;
   color: $text-colour-alt;
   background-color: $button-bg-colour;
-  padding-left: $pad-sma;
-  padding-right: $pad-sma;
   position: relative;
 }
 a:hover,
@@ -211,16 +227,40 @@ nav.fg-nav-main {
 }
 a#invert-colours-btn {
   @include opacity(0.5);
+  background: none;
   position: fixed;
   top: 37px;
   right: 0;
   width: 28px;
   right: $pad-med;
   left: auto;
+  &:hover {
+    @include opacity(1);
+  }
 }
 .icon {
   display: inline-block;
   height: $icon-size;
   width: $icon-size;
 }
+
+
+
+/* ////////////////////////////////////////////////////////////////////////// */
+/*MAGNIFIER*/
+
+#magnifiableImage { width: $main-image-width-small; cursor:zoom-in; }
+#mag {
+  z-index: 9999; border: solid 2px #b2b1a9; background-image: url(/images/light/magEmptyBg.png);
+  overflow: hidden; position: absolute; top: $pad-sma; left: $pad-sma;
+  img { border: none; background: none; }
+}
+#magInner{overflow:hidden;}
+#hiResImg{border:none;display:inline-block;position:relative;}
+#loupe{border:dotted 1px $text-colour-strong2;position:absolute;top:50px;left:50px;cursor:all-scroll;background-image:url(/images/light/loupeBg.png);}
+#magImgLdingMsg,#magLdingMsg{padding:$pad-med;position:absolute;line-height:1.2em;}
+#magImgLdingMsg{top:12px}
+
+
+
 

@@ -1,7 +1,7 @@
 ---
 title: Bob Ross Lorem Ipsum
 date: 2019-01-26
-tags: words,bobross,wordcount
+tags: words,bob-ross
 ---
 
 ## Lorem Ipsum?
