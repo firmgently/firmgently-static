@@ -1,6 +1,6 @@
 ---
 title: Why the Cosmos Might have been Created for Us
-date: 2017/10/25
+date: 2017 10 25
 tags: word,idea,weird
 ---
 

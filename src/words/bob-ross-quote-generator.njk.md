@@ -1,6 +1,6 @@
 ---
 title: Bob Ross Lorem Ipsum
-date: 2019-01-26
+date: 2019 01 26
 tags: word,bob-ross
 ---
 

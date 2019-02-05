@@ -69,6 +69,7 @@ body {
   }
   .fg-footer {
     @include flex-shrink(0);
+    padding-top: $pad-big;
     > span:first-of-type {
       > ul {
         li {
@@ -241,23 +242,24 @@ nav.fg-nav-main {
     }
   }
 }
-a#invert-colours-btn {
-  @include opacity(0.5);
-  background: none;
+.invert-colours-btn {
   position: fixed;
   top: 37px;
   right: 0;
-  width: 28px;
   right: $pad-med;
   left: auto;
+}
+a.icon.btn {
+  display: inline-block;
+  background: none;
+  @include opacity(0.5);
   &:hover {
     @include opacity(1);
   }
-}
-.icon {
-  display: inline-block;
-  height: $icon-size;
-  width: $icon-size;
+  img {
+    height: $icon-size;
+    width: $icon-size;
+  }
 }
 
 

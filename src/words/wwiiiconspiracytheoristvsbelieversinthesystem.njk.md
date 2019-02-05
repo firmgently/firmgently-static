@@ -1,6 +1,6 @@
 ---
 title: WWIII - Conspiracy Theorist vs Believers in the System?
-date: 2017/10/25
+date: 2017 10 25
 tags: word,idea,weird
 ---
 

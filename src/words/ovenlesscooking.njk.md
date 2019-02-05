@@ -1,7 +1,7 @@
 ---
 title: Ovenless Cooking
-date: 2017/10/25
-tags: word,van-food
+date: 2017 10 25
+tags: word,van,food
 ---
 
 ![](/wp-content/uploads/2017/12/IMG_20170510_161652-1024x768.jpg)

@@ -1,6 +1,6 @@
 ---
 title: En Plein Air
-date: 2012/10/13
+date: 2012 10 13
 tags: word,art
 ---
 

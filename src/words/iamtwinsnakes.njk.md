@@ -1,6 +1,6 @@
 ---
 title: I am Twin Snakes
-date: 2017/12/21
+date: 2017 12 21
 tags: word,idea,weird
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: Semiautonomous Painting (Splashy Messes)
-date: 2012/10/13
+date: 2012 10 13
 tags: word,abstract,art
 ---
 
