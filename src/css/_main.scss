@@ -27,6 +27,7 @@ body {
   background-color: $main-bg2;
   color: $text-colour-main;
   font-family: 'FG_Medium', 'Tahoma', 'Arial', 'Nimbus Sans L';
+  line-height: 1.5rem;
   .wrapper {
     @include flex(1, 0, auto);
     .fg-header {
@@ -129,7 +130,7 @@ article > footer {
       overflow: hidden;
       display: inline-block;
       position: absolute;
-      border: solid $pad-sma $button-bg-colour;
+      border: solid $pad-med $button-bg-colour;
       top: 0;
       bottom: 0;
       left: 0;
@@ -176,6 +177,7 @@ article > footer {
       > h2 {
         font-size: 2rem;
         font-style: italic;
+        padding-right: 2rem;
       }
       > p {
         color: $text-colour-main;

@@ -160,7 +160,7 @@ metalsmith(__dirname)
   .ignore(ignore_ar)
   .source('./src/')
   .destination('./build/')
-  .clean(true)
+  .clean(clean)
   .metadata(
     {site: {
       title: 'Firm Gently',
