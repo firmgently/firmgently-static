@@ -54,7 +54,7 @@
 		</figcaption>
   </figure>
 {% else %} {# post #}
-  <h2>{{ item.title }}</h2><p>{{ item.excerpt | safe | striptags }}</p>
+  <h2>{{ item.title }}</h2>&nbsp;<p>{{ item.excerpt | safe | striptags }}</p>
 {% endif %}
 </a>
 {%- endmacro %}

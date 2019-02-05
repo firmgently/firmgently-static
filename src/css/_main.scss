@@ -173,6 +173,14 @@ article > footer {
         padding: 0;
         display: inline;
       }
+      > h2 {
+        font-size: 2rem;
+        font-style: italic;
+      }
+      > p {
+        color: $text-colour-main;
+        font-size: 1.5rem;
+      }
     }
   }
 }
