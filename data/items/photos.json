@@ -2,7 +2,7 @@
   {
     "id": "yeastlings",
     "title": "Yeastlings",
-    "tags": "photos,abstract,weird",
+    "tags": "photo,abstract,weird",
     "desc": "<p>This is yeast proving.</p>",
     "excludeFromHome": "true",
     "printsAvailable": "STANDARD",
@@ -16,7 +16,7 @@
   {
     "id": "poppies",
     "title": "Poppies",
-    "tags": "photos,abstract,plants",
+    "tags": "photo,abstract,plant",
     "desc": "<p>An impressionistic field of poppies.</p>",
     "excludeFromHome": "true",
     "printsAvailable": "STANDARD",
@@ -30,7 +30,7 @@
   {
     "id": "prettyYellowFlowers",
     "title": "Pretty Yellow Flowers",
-    "tags": "photos,figurative,plants",
+    "tags": "photo,figurative,plant",
     "desc": "<p>What can I say?</p>",
     "printsAvailable": "STANDARD",
     "camera": "Panasonic GF1",
@@ -43,7 +43,7 @@
   {
     "id": "stardust",
     "title": "Star Dust",
-    "tags": "photos,abstract,weird",
+    "tags": "photo,abstract,weird",
     "desc": "<p>Somehow tiny stars got scattered around my home. This is from inside the Hoover/Dyson.</p>",
     "excludeFromHome": "true",
     "printsAvailable": "STANDARD",
@@ -57,7 +57,7 @@
   {
     "id": "leech",
     "title": "Leech",
-    "tags": "photos,figurative,animals",
+    "tags": "photo,figurative,animal",
     "desc": "<p>Look at how pretty and colourful it is.</p>",
     "excludeFromHome": "true",
     "printsAvailable": "STANDARD",
@@ -71,7 +71,7 @@
   {
     "id": "gull1",
     "title": "Gull #1",
-    "tags": "photos,figurative,animals",
+    "tags": "photo,figurative,animal",
     "desc": "<p>It's a seagull.</p>",
     "excludeFromHome": "true",
     "printsAvailable": "STANDARD",
@@ -85,7 +85,7 @@
   {
     "id": "mustard",
     "title": "Mustard",
-    "tags": "photos,abstract,weird",
+    "tags": "photo,abstract,weird",
     "desc": "<p>There's a lot of colour to be found here in something that at first glance can look quite bland.</p>",
     "excludeFromHome": "true",
     "printsAvailable": "STANDARD",
@@ -99,7 +99,7 @@
   {
     "id": "measuredProgress",
     "title": "Measured Progress",
-    "tags": "photos,figurative,animals",
+    "tags": "photo,figurative,animal",
     "desc": "<p>About a hundred of these caterpillars lived in and around my flat for a while.</p>",
     "excludeFromHome": "true",
     "printsAvailable": "STANDARD",
@@ -113,7 +113,7 @@
   {
     "id": "burnUpAndAcross",
     "title": "Burn Up and Across",
-    "tags": "photos,abstract",
+    "tags": "photo,abstract",
     "desc": "<p>It's all there.</p>",
     "excludeFromHome": "true",
     "printsAvailable": "STANDARD",
@@ -127,7 +127,7 @@
   {
     "id": "whatTimeIsIt",
     "title": "What Time Is It?",
-    "tags": "photos,abstract,plants",
+    "tags": "photo,abstract,plant",
     "desc": "<p>...</p>",
     "excludeFromHome": "true",
     "printsAvailable": "STANDARD",
@@ -141,7 +141,7 @@
   {
     "id": "capillaries",
     "title": "Capillaries",
-    "tags": "photos,abstract,plants",
+    "tags": "photo,abstract,plant",
     "desc": "<p>Just, draining.</p>",
     "excludeFromHome": "true",
     "printsAvailable": "STANDARD",
@@ -155,7 +155,7 @@
   {
     "id": "begets",
     "title": "Begets",
-    "tags": "photos,abstract,animals",
+    "tags": "photo,abstract,animal",
     "desc": "<p>Start as you mean to go on.</p>",
     "excludeFromHome": "true",
     "printsAvailable": "STANDARD",
@@ -169,7 +169,7 @@
   {
     "id": "designedLitter",
     "title": "Designed Litter",
-    "tags": "photos,abstract,weird",
+    "tags": "photo,abstract,weird",
     "desc": "<p>Looks good on the floor.</p>",
     "excludeFromHome": "true",
     "printsAvailable": "STANDARD",
@@ -183,7 +183,7 @@
   {
     "id": "JapaneseTreesAndStars",
     "title": "Japanese Trees and Stars",
-    "tags": "photos,abstract,weird",
+    "tags": "photo,abstract,weird",
     "desc": "<p>But they're not.</p>",
     "printsAvailable": "STANDARD",
     "camera": "Panasonic GF1",
@@ -196,7 +196,7 @@
   {
     "id": "eweAintFromRoundHereAreEweBaa",
     "title": "Ewe In't From Round Ear Are Ewe Baa?",
-    "tags": "photos,figurative,animals",
+    "tags": "photo,figurative,animal",
     "desc": "<p>I got out alive.</p>",
     "excludeFromHome": "true",
     "printsAvailable": "STANDARD",
@@ -210,7 +210,7 @@
   {
     "id": "enclosed",
     "title": "Enclosed",
-    "tags": "photos,abstract,weird",
+    "tags": "photo,abstract,weird",
     "desc": "<p>A place of happenings.</p>",
     "excludeFromHome": "true",
     "printsAvailable": "STANDARD",
@@ -224,7 +224,7 @@
   {
     "id": "industrialProcesses",
     "title": "Industrial Processes",
-    "tags": "photos,abstract,weird",
+    "tags": "photo,abstract,weird",
     "desc": "<p>Shiz happenz.</p>",
     "excludeFromHome": "true",
     "printsAvailable": "STANDARD",
@@ -238,7 +238,7 @@
   {
     "id": "cabbageKnowsAll",
     "title": "Cabbage Knows All",
-    "tags": "photos,figurative,plants",
+    "tags": "photo,figurative,plant",
     "desc": "<p>Fractals.</p>",
     "excludeFromHome": "true",
     "printsAvailable": "STANDARD",
@@ -252,7 +252,7 @@
   {
     "id": "doNotIgnoreMe",
     "title": "Do Not Ignore Me",
-    "tags": "photos,abstract,weird",
+    "tags": "photo,abstract,weird",
     "desc": "<p>Under the bridge.</p>",
     "excludeFromHome": "true",
     "printsAvailable": "STANDARD",
@@ -266,7 +266,7 @@
   {
     "id": "nightNotSwimming",
     "title": "Night Not Swimming",
-    "tags": "photos,abstract,landscapes",
+    "tags": "photo,abstract,land",
     "desc": "<p>Long exposure on an eerie night.</p>",
     "excludeFromHome": "true",
     "printsAvailable": "STANDARD",
@@ -280,7 +280,7 @@
   {
     "id": "gotToGetIn",
     "title": "Got to Get In",
-    "tags": "photos,abstract,weird",
+    "tags": "photo,abstract,weird",
     "desc": "<p>Coming up.</p>",
     "excludeFromHome": "true",
     "printsAvailable": "STANDARD",
@@ -294,7 +294,7 @@
   {
     "id": "bakedIce",
     "title": "Baked Ice",
-    "tags": "photos,abstract,weird",
+    "tags": "photo,abstract,weird",
     "desc": "<p>I finally found out how water is made.</p>",
     "printsAvailable": "STANDARD",
     "camera": "Pentax K5",
@@ -307,7 +307,7 @@
   {
     "id": "frozenCandle",
     "title": "Frozen Candle",
-    "tags": "photos,abstract,weird",
+    "tags": "photo,abstract,weird",
     "desc": "<p>A scientific experiment to find out if it was possible to freeze a flame. Yes it did work, totally.</p>",
     "camera": "Fuji FinePix F810",
     "location": "Bow, London",
@@ -319,7 +319,7 @@
   {
     "id": "morningInGold",
     "title": "Morning in Gold",
-    "tags": "photos,abstract,weird",
+    "tags": "photo,abstract,weird",
     "desc": "<p>Sin shining through net curtains. I love that typo, it's staying.</p>",
     "camera": "Fuji FinePix F810",
     "location": "Finsbury Park, London",
@@ -331,7 +331,7 @@
   {
     "id": "trolleyTrain",
     "title": "Trolley Train",
-    "tags": "photos,abstract,weird",
+    "tags": "photo,abstract,weird",
     "desc": "<p>I like the infinite grid effect.</p>",
     "camera": "Panasonic GF1",
     "location": "Lidl, Brighton",
@@ -343,7 +343,7 @@
   {
     "id": "stranglingSelfInRain",
     "title": "Strangling Self in the Rain",
-    "tags": "photos,abstract,people",
+    "tags": "photo,abstract,people",
     "desc": "<p>A see-through plastic drawer on its side. Contents: printer stuff, visible at the front are some lint-free towels splotched with pigment ink.</p><p>The dark spots for eyes and red mouth were easily enough to let my brain see a face.</p>",
     "camera": "Panasonic GF1",
     "location": "Brighton",
@@ -356,7 +356,7 @@
   {
     "id": "whiteboardGlue",
     "title": "Whiteboard Glue",
-    "tags": "photos,abstract,weird",
+    "tags": "photo,abstract,weird",
     "desc": "<p>I like to take things apart and keep the bits to prevent my flat from becoming too tidy. Peeling the thin metal sheet away from the wood of an old whiteboard revealed this filigree splendour.</p>",
     "camera": "Panasonic GF1",
     "location": "Brighton",
@@ -369,7 +369,7 @@
   {
     "id": "paperMotion",
     "title": "Paper Motion",
-    "tags": "photos,abstract,weird",
+    "tags": "photo,abstract,weird",
     "desc": "<p>Can you feel it? Can you feel it? Can you feel it?</p>",
     "camera": "Panasonic GF1",
     "location": "Brighton",
@@ -382,7 +382,7 @@
   {
     "id": "paintedLeaf",
     "title": "Painted Leaf",
-    "tags": "photos,abstract,plants",
+    "tags": "photo,abstract,plant",
     "desc": "<p>This is a photograph but people often assume it's a painting.</p>",
     "camera": "Fuji FinePix F810",
     "location": "Boldeva, Cornwall",
@@ -395,7 +395,7 @@
   {
     "id": "leafCarpet",
     "title": "Leaf Carpet",
-    "tags": "photos,abstract,plants",
+    "tags": "photo,abstract,plant",
     "desc": "<p>These are the natural colours of the leaves. I'll be painting this soon as I love this photo.</p>",
     "camera": "Canon WEB IXUS 300",
     "location": "Kew, London",
@@ -408,7 +408,7 @@
   {
     "id": "tinyBeachPeople",
     "title": "Tiny Beach People",
-    "tags": "photos,abstract,people",
+    "tags": "photo,abstract,people",
     "desc": "<p>I know this is a weird one, there's something I like about it though.</p><p>The people aren't really tiny, they're far away - just like in Father Ted (or the story I read years ago about a previously-undiscovered tribe who had under-developed depth perception due to their living in thick forest; upon being discovered and taken outside their homeland to an open hillside they remarked on the tiny goats on the neighbouring hill; allegedly).</p><p>See the man with the flat cap?</p>",
     "camera": "Fuji FinePix F810",
     "location": "Anjuna Beach, Goa",
@@ -420,7 +420,7 @@
   {
     "id": "londonBuses",
     "title": "London Buses",
-    "tags": "photos,figurative,buildings",
+    "tags": "photo,figurative,building",
     "desc": "<p>Caught this not long after the 7/7 London bombings, all the buses lined up outside the <a href=\"http://en.wikipedia.org/wiki/SIS_Building\">MI6 building</a></p>",
     "camera": "Fuji FinePix F810",
     "location": "Vauxhall, London",
@@ -433,7 +433,7 @@
   {
     "id": "deepSeaLurkins",
     "title": "Deep Sea Lurkins",
-    "tags": "photos,abstract,weird",
+    "tags": "photo,abstract,weird",
     "desc": "<p>Salty green gerkins.</p>",
     "camera": "Fuji FinePix F810",
     "location": "Finsbury Park, London",
@@ -446,7 +446,7 @@
   {
     "id": "alienFruit",
     "title": "Alien Fruit",
-    "tags": "photos,abstract,landscapes",
+    "tags": "photo,abstract,land",
     "desc": "<p>I'd love to know what it eventually hatched into.</p>",
     "camera": "Fuji FinePix F810",
     "location": "Goa",
@@ -458,7 +458,7 @@
   {
     "id": "flamingoBejewelled",
     "title": "Flaming Bejewelled",
-    "tags": "photos,abstract,plants",
+    "tags": "photo,abstract,plant",
     "desc": "<p>It's over-saturated, covered in lens-flare and totally garish, but it loves me.</p>",
     "camera": "Fuji FinePix F810",
     "location": "London",
@@ -471,7 +471,7 @@
   {
     "id": "puppetFish",
     "title": "Puppet Fish",
-    "tags": "photos,abstract,animals",
+    "tags": "photo,abstract,animal",
     "desc": "<p>\"I find his face amusing\". Yeah I hear that a lot.</p>",
     "camera": "Fuji FinePix F810",
     "location": "London",
@@ -484,7 +484,7 @@
   {
     "id": "eyeOfPanther",
     "title": "Eye of the Panther",
-    "tags": "photos,abstract,weird",
+    "tags": "photo,abstract,weird",
     "desc": "<p>Oh actually it's the froth on a cup of coffee.</p>",
     "camera": "Fuji FinePix F810",
     "location": "Bow, London",
@@ -497,7 +497,7 @@
   {
     "id": "oldElectronics",
     "title": "Ancient Electronics",
-    "tags": "photos,abstract,",
+    "tags": "photo,abstract,geek",
     "desc": "<p>I saw this over the door of a train, I like the old-style electronics with visible components, so much more interesting than silicon chips.</p>",
     "camera": "Fuji FinePix F810",
     "location": "Bury to Ipswich Train",
@@ -509,7 +509,7 @@
   {
     "id": "sunsetHairTentLongneckFliesOverhead",
     "title": "Sunset in Hair-tent, Longneck Flies Overhead",
-    "tags": "photos,abstract,weird",
+    "tags": "photo,abstract,weird",
     "desc": "<p>Yeah that's right, that's what I'm calling it.</p>",
     "camera": "Fuji FinePix F810",
     "location": "Edinburgh",
@@ -521,7 +521,7 @@
   {
     "id": "trapped",
     "title": "Agoraphobia",
-    "tags": "photos,abstract,weird",
+    "tags": "photo,abstract,weird",
     "desc": "<p>The outside world looks scary.</p>",
     "camera": "Fuji FinePix F810",
     "location": "London",
@@ -534,7 +534,7 @@
   {
     "id": "brightDungeon",
     "title": "Purgatory",
-    "tags": "photos,abstract,weird",
+    "tags": "photo,abstract,weird",
     "desc": "<p>Stuck outside the gates of hell. Annoying.</p>",
     "camera": "Fuji FinePix F810",
     "location": "London",
@@ -547,7 +547,7 @@
   {
     "id": "sun2",
     "title": "Sun #2",
-    "tags": "photos,abstract,weird",
+    "tags": "photo,abstract,weird",
     "desc": "<p>A hot drink of Swiss Bouillon.</p>",
     "camera": "Fuji FinePix F810",
     "location": "Finsbury Park, London",
@@ -560,7 +560,7 @@
   {
     "id": "sun3",
     "title": "Sun #3",
-    "tags": "photos,abstract,weird",
+    "tags": "photo,abstract,weird",
     "desc": "<p>A liquidiser half-full of liquidised persimmon (Sharon fruit) was placed on top of a lamp and a camera was aimed down into it. This made far more sense than eating the flavourless buggers.</p>",
     "camera": "Fuji FinePix F810",
     "location": "Finsbury Park, London",
@@ -573,7 +573,7 @@
   {
     "id": "moon1",
     "title": "Moon #1",
-    "tags": "photos,abstract,weird",
+    "tags": "photo,abstract,weird",
     "desc": "<p>This is the view looking down into an emptied cup of tea. The image was then inverted (like colour-reversal film or a negative effect) in Photoshop and the overall brightness levels were tweaked.</p>",
     "camera": "Fuji FinePix F810",
     "location": "Bow, London",
@@ -586,7 +586,7 @@
   {
     "id": "moon2",
     "title": "Moon #2",
-    "tags": "photos,abstract,weird",
+    "tags": "photo,abstract,weird",
     "desc": "<p>A hazy moon drifts over a sparsely-scrubbed hillside.</p><p>Well actually this is my sparsely-scrubbed chinny-chin-chin, colour-inverted in Photoshop. The moon is a smoke-detector on the ceiling, and the whole image is flipped vertically.</p>",
     "camera": "Fuji FinePix F810",
     "location": "Bow, London",
@@ -599,7 +599,7 @@
   {
     "id": "heatTint",
     "title": "Heat Tint",
-    "tags": "photos,abstract,weird",
+    "tags": "photo,abstract,weird",
     "desc": "<p>These excellent colours appeared on the bottom of a stainless steel pan, apparently it may have been caused by overheating.</p>",
     "camera": "Panasonic GF1",
     "location": "Brighton",
@@ -612,7 +612,7 @@
   {
     "id": "pixelCloth",
     "title": "Pixel Cloth",
-    "tags": "photos,abstract,weird",
+    "tags": "photo,abstract,weird",
     "desc": "<p>This patterned cloth, backlit by the sun reminds me of fire. If you use the magnifier to zoom in you'll see how the design is pixelated.</p><p>I associate pixels with computers but the loom brought them into the world a long time before that and is <a href=\"http://en.wikipedia.org/wiki/Jacquard_loom\">linked to early computers in other ways</a> too.</p>",
     "camera": "Panasonic GF1",
     "location": "Brighton",
@@ -624,7 +624,7 @@
   {
     "id": "intersection",
     "title": "Intersection",
-    "tags": "photos,abstract,weird",
+    "tags": "photo,abstract,weird",
     "desc": "<p>This is a hypothetical intersection between a black hole and a <a href=\"http://en.wikipedia.org/wiki/White_hole\">white hole</a>.</p><p>It's a greasy pan spattered with flour.</p>",
     "camera": "Fuji FinePix F810",
     "location": "Bow, London",
@@ -636,7 +636,7 @@
   {
     "id": "andGaneshCameDown",
     "title": "And Ganesh Came Down",
-    "tags": "photos,abstract,people",
+    "tags": "photo,abstract,people",
     "desc": "<p>I'm not sure if <a href=\"http://hinduism.about.com/od/lordganesha/a/ganesha.htm\">Ganesh</a> would object to being depicted in this Las Vegas manner but the taxi driver whose cab this effigy was in didn't seem to think he would.</p><p>Overblown LEDs are entirely intentional on my part, I like the pink corona it creates.</p>",
     "camera": "Fuji FinePix F810",
     "location": "Goa",
@@ -648,7 +648,7 @@
   {
     "id": "bulbousSquinteye",
     "title": "Bulbous Squinteye",
-    "tags": "photos,abstract,people,weird",
+    "tags": "photo,abstract,people,weird",
     "desc": "<p>Where some might see only a washing-up liquid bottle I see a hollow, transparent alien being, one eye bigger than the other, half filled with green life-giving fluid. So?",
     "camera": "Fuji FinePix F810",
     "location": "Brighton",

@@ -1,7 +1,7 @@
 ---
 title: Quotes
 date: 2015/03/11
-tags: words
+tags: word
 ---
 
 Words of Influence

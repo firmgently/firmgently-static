@@ -2,7 +2,7 @@
   {
     "id": "flower",
     "title": "Flower 1",
-    "tags": "objects,plants",
+    "tags": "object,plant",
     "desc": "<p>This is one of three that I originally made, I lost track of one of them. Materials used include card, acrylic paint, dirt and P.V.A. glue.</p>",
     "materials": "Card, paint, PVA glue",
     "w": "25",
@@ -14,7 +14,7 @@
   {
     "id": "flower_2",
     "title": "Flower 2",
-    "tags": "objects,plants",
+    "tags": "object,plant",
     "desc": "<p>The second of the original three.</p>",
     "materials": "Card, paint, PVA glue",
     "w": "25",
@@ -26,7 +26,7 @@
   {
     "id": "shell",
     "title": "Shell",
-    "tags": "objects",
+    "tags": "object",
     "desc": "<p>I built this study of a seashell from corrugated card and acrylic paint. The spiral ridges are the exposed corrugations of varying thicknesses of box cardboard, with the outer skin peeled off.</p>",
     "materials": "Corrugated card, acrylic",
     "w": "25",
@@ -37,7 +37,7 @@
   {
     "id": "aztecBlueEagle",
     "title": "Aztec Blue Eagle",
-    "tags": "objects,animals",
+    "tags": "object,animal",
     "desc": "<p>A bird was needed for a local event, I was told it might be nice if it was a bit Aztec. Next thing I knew this fella was flapping around my flat.</p><p>This isn't a great photo, it's a bit blurry. The eagle has flown and disappeared so it's the best I have.</p>",
     "excludeFromHome": "true",
     "materials": "Cardboard boxes, double-sided sticky pads",
@@ -50,7 +50,7 @@
   {
     "id": "albi",
     "title": "Albi the Alpaca",
-    "tags": "objects,animals",
+    "tags": "object,animal",
     "desc": "<p>This alpaca (plus unnatural horns) was created for utility - to cover up an ugly central heating controller on a friend's wall.</p>",
     "materials": "Corrugated card, squash balls, cable ties, acrylic paint",
     "w": "50",
@@ -62,7 +62,7 @@
   {
     "id": "tlaloc",
     "title": "Tlaloc",
-    "tags": "objects,people",
+    "tags": "object,people",
     "desc": "<p>This is my USB memory stick, I built it up with Miliput and carved this character into it, based on <a href=\"http://en.wikipedia.org/wiki/Tlaloc\">Tlaloc</a>, the Aztec god of rain and fertility.</p>",
     "materials": "Miliput",
     "w": "3",
@@ -74,7 +74,7 @@
   {
     "id": "crystalline",
     "title": "Crystalline City",
-    "tags": "objects,buildings",
+    "tags": "object,building",
     "desc": "<p>I had a college modelmaking brief to make an architectural model based on a natural structure - I chose a lead crystal (as viewed under an electron microscope).</p>",
     "materials": "Cast bronze, plaster, smashed windscreen",
     "w": "25",
@@ -86,7 +86,7 @@
   {
     "id": "lounge",
     "title": "Retro Lounge",
-    "tags": "objects,buildings",
+    "tags": "object,building",
     "desc": "<p>This tiny model was a project for my modelmaking college course.</p>",
     "materials": "Various materials",
     "w": "31",
@@ -98,7 +98,7 @@
   {
     "id": "man_and_woman",
     "title": "Man and Woman",
-    "tags": "objects,people",
+    "tags": "object,people",
     "desc": "<p>A tree formed from two intertwined figures, male and female. Don't feel bad if you can't see it, you aren't alone.</p><p>My favourite parts are the tiny transparent cubes. I found the spherical stone which stops the bottle in a field, I think it might be a musket ball.</p>",
     "materials": "Glass, stone, wire, glue gun",
     "w": "20",
@@ -110,7 +110,7 @@
   {
     "id": "ladybird",
     "title": "Ladybird",
-    "tags": "objects,animals",
+    "tags": "object,animal",
     "desc": "<p>Modelled in paper mache and fur.</p>",
     "materials": "Card, fur, paint, varnish",
     "w": "25",

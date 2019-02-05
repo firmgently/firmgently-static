@@ -47,7 +47,7 @@
   {
     "id": "abbey",
     "title": "The Abbey Gate",
-    "tags": "art,figurative,buildings",
+    "tags": "art,figurative,building",
     "desc": "<p>This was sort of for British Telecom. I painted it for a works raffle, when I worked for 192 Directory Enquiries just after leaving college.</p>",
     "materials": "Acrylic on board",
     "w": "58",
@@ -58,7 +58,7 @@
   {
     "id": "abbey2",
     "title": "The Abbey Gate",
-    "tags": "art,figurative,buildings",
+    "tags": "art,figurative,building",
     "desc": "<p>A commissioned revisit of Bury St. Edmunds' abbey gate painted twelve years previously</p><p>My favourite thing in this painting is the scene within a scene through the arch.</p>",
     "materials": "Acrylic on board",
     "w": "30",
@@ -117,7 +117,7 @@
   {
     "id": "public_transport_10",
     "title": "Public Transport #10",
-    "tags": "art,figurative,landscapes",
+    "tags": "art,figurative,land",
     "desc": "<p>Number 10 in a series of 12 views out of bus and train windows.</p>",
     "materials": "Acrylic on canvas",
     "commentPrompt": "Are landscape paintings boring?",
@@ -131,7 +131,7 @@
   {
     "id": "public_transport_11",
     "title": "Public Transport #11",
-    "tags": "art,figurative,landscapes",
+    "tags": "art,figurative,land",
     "desc": "<p>Number 11 in a series of 12 views out of bus and train windows.</p>",
     "materials": "Acrylic on canvas",
     "commentPrompt": "Are landscape paintings boring?",
@@ -145,7 +145,7 @@
   {
     "id": "public_transport_12",
     "title": "Public Transport #12",
-    "tags": "art,figurative,landscapes",
+    "tags": "art,figurative,land",
     "desc": "<p>Number 12 in a series of 12 views out of bus and train windows.</p>",
     "materials": "Acrylic on canvas",
     "commentPrompt": "Are landscape paintings boring?",
@@ -159,7 +159,7 @@
   {
     "id": "bish",
     "title": "Life Tips: 1. BISH: Open Your Eyes",
-    "tags": "art,figurative,plants",
+    "tags": "art,figurative,plant",
     "desc": "<p>Born in the woods, this is your first experience.</p>",
     "materials": "Acrylic on Canvas",
     "w": "102",
@@ -170,7 +170,7 @@
   {
     "id": "bash",
     "title": "Life Tips: 2. BASH: Focus on the Beauty",
-    "tags": "art,figurative,plants",
+    "tags": "art,figurative,plant",
     "desc": "<p>See both positive and negative, but focus on the positive so it stands out like the blue flowers.</p>",
     "materials": "Acrylic on Canvas",
     "w": "102",
@@ -181,7 +181,7 @@
   {
     "id": "bosh",
     "title": "Life Tips: 3. BOSH: Perspective",
-    "tags": "art,figurative,landscapes",
+    "tags": "art,figurative,land",
     "desc": "<p>A pebble that is bigger than a person who is bigger than a tractor. Sometimes the little things can seem like a big deal. Othertimes we miss obvious important things.</p>",
     "materials": "Acrylic on Canvas",
     "w": "102",
@@ -192,7 +192,7 @@
   {
     "id": "beLucky",
     "title": "Life Tips: 4. BE LUCKY!",
-    "tags": "art,figurative,plants",
+    "tags": "art,figurative,plant",
     "desc": "<p>Seems like useless advice but <a href=\"https://www.damninteresting.com/you-make-your-own-luck/\" target=\"_blank\">we make our own luck</a>...</p>",
     "materials": "Acrylic on Canvas",
     "w": "102",
@@ -203,7 +203,7 @@
   {
     "id": "peachesChance",
     "title": "Peaches, Chance",
-    "tags": "art,figurative,animals",
+    "tags": "art,figurative,animal",
     "desc": "<p>The painting is of beautiful Peaches but the painting is called \"Peaches, Chance\" and is about motherhood. Trust me this is more than a portrait to me, I cried twice while I painted this, once at the beginning when I started her eyes and once at the end when I had to finish her eyes. One time when I looked after her she was dehydrated and wouldn't drink because she was missing her owner, I proper felt her that day x miss her xx</p>",
     "materials": "Acrylic on Canvas",
     "w": "102",
@@ -214,7 +214,7 @@
   {
     "id": "drift",
     "title": "Drift",
-    "tags": "art,figurative,landscapes",
+    "tags": "art,figurative,land",
     "desc": "<p>Just...drift.</p><p>I used metallic paint to suggest reflected moonlight, there's an animated GIF to illustrate <a href=\"http://imgur.com/zumXilL\" target=\"_blank\">here</a>.</p>",
     "materials": "Acrylic on Canvas",
     "w": "76",
@@ -250,7 +250,7 @@
   {
     "id": "crawlTheCopse",
     "title": "Crawl the Copse (Eight Animals)",
-    "tags": "art,figurative,landscapes",
+    "tags": "art,figurative,land",
     "desc": "<p>I got into the detail and swirls in this piece. There are eight animals in the scene, you'll need to magnify to find them all.</p>",
     "materials": "Acrylic on Canvas",
     "w": "127",
@@ -262,7 +262,7 @@
   {
     "id": "limbo",
     "title": "Limbo: Painted or Unpainted",
-    "tags": "art,abstract,landscapes",
+    "tags": "art,abstract,land",
     "desc": "<p>I wasn't sure if I should put this in the artwork or the photography section but it's something I painted so this section seemed about right.</p><p>It's the plastic sheet I cover my wall and floor with to create my work area. Over the past few years it's become covered in paint that misses the canvas. So it's a subconscious acccidental background painting. I can definitely see a watery landscape here.</p>",
     "materials": "Acrylic on Plastic Tarp",
     "w": "80",
@@ -274,7 +274,7 @@
   {
     "id": "safeDirection",
     "title": "Safe Direction",
-    "tags": "art,figurative,seascapes",
+    "tags": "art,figurative,sea",
     "desc": "<p>\"Art is a lie that makes us realise truth, at least the truth that is given us to understand.\" - Pablo P</p><p>I want you to think it looks real, then I want you to be disgusted by how messy it is. Magnify it if you don't believe me.</p>",
     "materials": "Acrylic on Canvas",
     "w": "102",
@@ -285,7 +285,7 @@
   {
     "id": "winterIsComing",
     "title": "Circles and Spikes",
-    "tags": "art,figurative,landscapes",
+    "tags": "art,figurative,land",
     "desc": "<p>The branch growth was created using semi-autonomous techniques, letting gravity pull drips of paint down the canvas (held upside-down).</p><p>The general aim was to recreate the feeling of hectic, confusing snow that makes vision difficult. I like the repeating circles in the snowdrops, berries and sun.</p>",
     "materials": "Acrylic on Canvas",
     "w": "102",
@@ -319,7 +319,7 @@
   {
     "id": "bleurgh",
     "title": "Morning. Bleurgh.",
-    "tags": "art,figurative,landscapes",
+    "tags": "art,figurative,land",
     "desc": "<p>I made heavy use of blurring (using acrylic matt gel to help make flat but translucent colours) hoping to create a dreamy mystical feel in this painting.</p>",
     "materials": "Acrylic, Matt Gel on Canvas",
     "w": "126",
@@ -354,7 +354,7 @@
   {
     "id": "tarpLandscape",
     "title": "Tarp Landscape",
-    "tags": "art,abstract,landscapes",
+    "tags": "art,abstract,land",
     "desc": "<p>A digitally-manipulated crop of the tarpaulin I use as a portable painting studio.</p>",
     "materials": "Painters' Tarpaulin, Photoshop",
     "w": "57",
@@ -402,7 +402,7 @@
   {
     "id": "southDownsCows",
     "title": "South Downs Cows",
-    "tags": "art,figurative,landscapes",
+    "tags": "art,figurative,land",
     "desc": "<p>Some cows. On a hill.</p>",
     "materials": "Acrylic on Canvas",
     "commentPrompt": "Are landscape paintings boring?",
@@ -415,7 +415,7 @@
   {
     "id": "goneSun",
     "title": "Gone Sun",
-    "tags": "art,figurative,landscapes",
+    "tags": "art,figurative,land",
     "desc": "<p>Over the South Downs.</p>",
     "materials": "Acrylic on Canvas",
     "commentPrompt": "Are landscape paintings boring?",
@@ -439,7 +439,7 @@
   {
     "id": "holywell",
     "title": "Crab Tracks, Holywell",
-    "tags": "art,figurative,landscapes",
+    "tags": "art,figurative,land",
     "desc": "<p>The lonely path of a crab cuts through the serenery in this beach landscape.</p>",
     "materials": "Acrylic on Canvas",
     "commentPrompt": "Are landscape paintings boring?",
@@ -451,7 +451,7 @@
   {
     "id": "MontserratBlue",
     "title": "M. Blue",
-    "tags": "art,figurative,seascapes",
+    "tags": "art,figurative,sea",
     "desc": "<p>Something I like to do with my painting is draw attention to the way our perceptual systems work.</p><p>Sometimes the viewer sees the piece from a distance or in a small thumbnail and thinks it might be a photo, then is surprised when seeing the brush strokes up-close at how messy or 'painted' it looks. A miniscule lesson in how things are not always as they seem.</p>",
     "materials": "Acrylic on canvas",
     "w": "40",
@@ -463,7 +463,7 @@
   {
     "id": "beautifulPlace",
     "title": "A Beautiful Place to Meet Lucifer",
-    "tags": "art,figurative,landscapes",
+    "tags": "art,figurative,land",
     "desc": "<p>A sacred place with a mystical atmosphere. Some have speculated that it was once used to worship that Bringer of Light, the Morning Star, Intellectualism, Enlightenment: <a href=\"http://en.wikipedia.org/wiki/Lucifer\" target=\"blank\">Lucifer</a>.</p>",
     "materials": "Acrylic on canvas",
     "w": "70",
@@ -475,7 +475,7 @@
   {
     "id": "lookingAtShoreham",
     "title": "Looking At Shoreham",
-    "tags": "art,figurative,landscapes",
+    "tags": "art,figurative,land",
     "desc": "<p>Fairly loose rendering of this familiar view along Brighton seafront.</p><p>I'm particularly pleased with the red dot on the tower in the distance.</p>",
     "materials": "Acrylic on canvas",
     "w": "40",
@@ -487,7 +487,7 @@
   {
     "id": "path",
     "title": "Path #1",
-    "tags": "art,figurative,landscapes",
+    "tags": "art,figurative,land",
     "desc": "<p>This was painted on my computer using a digital pen and tablet, in an attempt to match the style I use in acrylic.</p>",
     "materials": "Wacom Tablet",
     "commentPrompt": "Are landscape paintings boring?",
@@ -501,7 +501,7 @@
   {
     "id": "foresty",
     "title": "Foresty",
-    "tags": "art,abstract,landscapes",
+    "tags": "art,abstract,land",
     "desc": "<p>I really tried to let go of my technique here.</p>",
     "materials": "Acrylic on MDF board",
     "commentPrompt": "Are landscape paintings boring?",
@@ -643,7 +643,7 @@
   {
     "id": "florDeNocheBuena",
     "title": "Flor De Noche Buena",
-    "tags": "art,figurative,plants",
+    "tags": "art,figurative,plant",
     "desc": "<p>The poinsettia is native to Mexico and Central America and is steeped in religious folklore. The title means <em>flower of the good night</em> and refers to Christmas Eve.</p><p>The Aztecs called it <em>Cuetlaxochitle</em> which roughly translates to shit-flower, possibly because birds ate the seeds and it grew from their droppings; good things can come from crap.</p>",
     "materials": "Acrylic on canvas",
     "w": "60",
@@ -655,7 +655,7 @@
   {
     "id": "inTheGrass",
     "title": "The Grass Sea Is Taller Than Me",
-    "tags": "art,figurative,plants",
+    "tags": "art,figurative,plant",
     "desc": "<p>When I was little there was a patch at the end of the garden which got really overgrown and had some tall grass, I remember walking into it and having the grass towering above my head, being completely hidden. I've tried to recreate that feeling in this painting.</p>",
     "materials": "Acrylic on wood",
     "w": "92",
@@ -667,7 +667,7 @@
   {
     "id": "building",
     "title": "Building",
-    "tags": "art,abstract,buildings",
+    "tags": "art,abstract,building",
     "desc": "<p>This looks like a pattern from a distance, but when you get close you look into the windows.</p>",
     "materials": "Acrylic on board",
     "w": "51",
@@ -679,7 +679,7 @@
   {
     "id": "leopard",
     "title": "Me in Smoke, Trying to Change Spots",
-    "tags": "art,figurative,animals",
+    "tags": "art,figurative,animal",
     "desc": "<p>Obviously not a literal self-portrait, this painting took more than a year to complete, spanning the time it took me to move out of London and resettle in Brighton.</p><p>It took me a long time to realise that I had been painting myself encaged in the city.</p><p>People often think this is a depressing painting but that was never the intention, to me it's just matter-of-fact.</p>",
     "materials": "Acrylic on canvas",
     "commentPrompt": "In what kind of places could this painting be hung?",
@@ -692,7 +692,7 @@
   {
     "id": "jagger",
     "title": "Jagger",
-    "tags": "art,figurative,animals",
+    "tags": "art,figurative,animal",
     "desc": "<p>I loved that fish. I seem to remember that the gold acrylic I used was made from real gold, but that sounds ridiculous so I'm probably befuddled. The fish does glimmer as light moves across it anyway, unless I'm befuddling that too.</p><p>This got re-worked in 2012 when I removed the terrible old frame I had nailed to it years ago and found it to be discoloured underneath. I ended up repainting the background and much prefer the new version.</p>",
     "materials": "Acrylic",
     "w": "97",
@@ -704,7 +704,7 @@
   {
     "id": "thornton",
     "title": "Thornton",
-    "tags": "art,figurative,animals",
+    "tags": "art,figurative,animal",
     "desc": "<p>Thornton is a <em>Lhasa Apso</em> which is a Tibetan breed named after the capital city. Apso is the Tibetan word for 'bearded'.</p>",
     "materials": "Acrylic on canvas",
     "w": "30",
@@ -715,7 +715,7 @@
   {
     "id": "dog",
     "title": "Dalmation",
-    "tags": "art,figurative,animals",
+    "tags": "art,figurative,animal",
     "desc": "<p>This commission came in response to a card advertising pet portraits I put in a post office window to earn extra cash while I was doing my art foundation course.</p>",
     "materials": "Acrylic",
     "w": "35",
@@ -727,7 +727,7 @@
   {
     "id": "cat",
     "title": "Cat",
-    "tags": "art,figurative,animals",
+    "tags": "art,figurative,animal",
     "desc": "<p>This was painted while I was in school studying for my A-Levels, it has a style I've not managed to repeat since.</p>",
     "materials": "Acrylic",
     "w": "16",
@@ -738,7 +738,7 @@
   {
     "id": "monkeys",
     "title": "Monkey Mother and Child",
-    "tags": "art,figurative,animals",
+    "tags": "art,figurative,animal",
     "desc": "<p>These are drawn/painted using brush-tipped pen on layout paper. The special wrinkled patina took 10 years of attic storage to achieve.</p>",
     "materials": "Brush-pen/Tipp-Ex pen",
     "w": "20",
@@ -751,7 +751,7 @@
   {
     "id": "chimps",
     "title": "Chimps Learning",
-    "tags": "art,figurative,animals",
+    "tags": "art,figurative,animal",
     "desc": "<p>The chimps are learning how to use a rock to crack a nut by observation, a significant act in that it was previously thought (by some) that only humans were able to learn through pure observation in this way.</p><p>The source photo is not my own, it was copied from a nature book when I was 16 years old, learning to paint (that process is ongoing). The name of the book is lost so if anybody wants acknowledgement please let me know or just send some balaclava-wearing lawyers through my window, Iranian-embassy-seige style.</p>",
     "materials": "Acrylic",
     "w": "37",
