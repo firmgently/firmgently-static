@@ -25,8 +25,35 @@
   <ul class="item-list-container">
 	{# draw images linking to work items #}
   {% set count = 0 %}
-  {% for item in collections.all %}
-    {% if count < data.config.consts.HOME_LATESTITEMS_TOTAL %}
+  {% for item in collections.art %}
+    {% if count < data.config.consts.HOME_LATESTITEMS_PER_COLLECTION %}
+      {% if not item.itemData.excludeFromHome %}
+        {% set count = count + 1 %}
+        <li>{{ createItem(item) }}</li>
+      {% endif %}
+    {% endif %}
+    {%- endfor %}
+  {% set count = 0 %}
+  {% for item in collections.words %}
+    {% if count < data.config.consts.HOME_LATESTITEMS_PER_COLLECTION %}
+      {% if not item.itemData.excludeFromHome %}
+        {% set count = count + 1 %}
+        <li>{{ createItem(item) }}</li>
+      {% endif %}
+    {% endif %}
+    {%- endfor %}
+  {% set count = 0 %}
+  {% for item in collections.photos %}
+    {% if count < data.config.consts.HOME_LATESTITEMS_PER_COLLECTION %}
+      {% if not item.itemData.excludeFromHome %}
+        {% set count = count + 1 %}
+        <li>{{ createItem(item) }}</li>
+      {% endif %}
+    {% endif %}
+    {%- endfor %}
+  {% set count = 0 %}
+  {% for item in collections.objects %}
+    {% if count < data.config.consts.HOME_LATESTITEMS_PER_COLLECTION %}
       {% if not item.itemData.excludeFromHome %}
         {% set count = count + 1 %}
         <li>{{ createItem(item) }}</li>

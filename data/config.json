@@ -5,6 +5,7 @@
     "FIRMGENTLY_SITEDATA_ID": "firmgently_sitedata",
     "GENTLYFIRM_SITEDATA_ID": "gentlyfirm_sitedata",
     "HOME_LATESTITEMS_TOTAL": 12,
+    "HOME_LATESTITEMS_PER_COLLECTION": 3,
     "RECENT_POSTS_NUM_TO_SHOW": 3,
     "TRUNCATE_EXCERPT_CHARS": 100
   },
