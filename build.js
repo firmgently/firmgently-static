@@ -155,7 +155,7 @@ if (process.env.REBUILDIMAGES === "true") {
 }
 
 // used to name topic directory
-const topicDir = "categories";
+const topicDir = "by";
 
 
 metalsmith(__dirname)
