@@ -106,7 +106,9 @@ const averageReadTime = function(numWords) {
 
   if (fastMins < 1) {
     estimate = "less than a minute";
-  } else {
+  } else if (fastMins === slowMins) {
+		estimate = "about a minute";
+	} else {
     estimate = fastMins + "-" + slowMins + " minutes";
   }
   return estimate;
