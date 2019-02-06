@@ -8,7 +8,7 @@
 	{% set itemSize = itemData.w + "&nbsp;x&nbsp;" + itemData.h + "cm" %}
 {% endif %}
 
-{% set datetimeMarkup = "<meta itemProp=\"datePublished\" content=\"" + datetime + "\"><time datetime=\"" + datetime + "\">" + year + "</time>" %}
+{% set datetimeMarkup = "<meta itemProp=\"datePublished\" content=\"" + dateTime + "\"><time datetime=\"" + dateTime + "\">" + dateYear + "</time>" %}
 
 {% if (itemType == "art") %}
   {% set microdata_type="https://schema.org/Painting" %}
@@ -36,7 +36,7 @@
 
   <div class="side-column">
 
-    {{ insertPrevNextBtns(previous, next) }}
+    {{ insertPrevNextBtns() }}
 
 		<section class="item-details">
 			<h1 itemprop="http://www.schema.org/name">{{ itemData.title }}</h1>

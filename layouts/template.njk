@@ -30,12 +30,12 @@
     {% endif %}
     {# class this tag as selected or not #}
     {%- if matchFound %}
-      {% set classattr = "class=\"selected\" " %}
+      {% set classattr = " class=\"selected\"" %}
     {% else %}
       {% set classattr = "" %}
     {% endif %}
     {# create tag markup #}
-    <li><a {{ classattr | safe }}style="font-size: {{ word.wght | fontsizeFromTagWeight(0.75, 1.6, 50) }}rem" href="{{ word.pth }}">{{ word.ctg }}</a></li>
+    <li><a style="font-size: {{ word.wght | fontsizeFromTagWeight(0.75, 1.6, 50) }}rem" href="{{ word.pth }}"{{ classattr | safe }}>{{ word.ctg }}</a></li>
   {% endif %}
 {%- endfor %}
 <ul>
@@ -62,7 +62,7 @@
 
 
 {# receives collection items which have path/title properties #}
-{% macro insertPrevNextBtns(prev, next) %}
+{% macro insertPrevNextBtns() %}
 <nav class="prev-next-btns">
   <h2 class="screen-reader-text">Post navigation</h2>
   {% if previous %}<a href="/{{ previous.path }}" rel="prev">&lt;&lt;&nbsp;{{ previous.title | default(previous.itemData.title) }}</a>{% endif %}
@@ -82,7 +82,7 @@
 
 
 <!doctype html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://www.facebook.com/2008/fbml" xmlns:firmgently="{{ sitedata.domain }}/ns#">
+<html>
 
 <head>
   <meta charset="utf-8">
@@ -103,7 +103,7 @@
 
 
 <body{% if bodyClass %} class="{{ bodyClass }}"{% endif %}>
-  <a href="#main-content" class="screen-reader-text">Skip to main content</a>
+  <a class="screen-reader-text" href="#main-content">Skip to main content</a>
   <div class="wrapper">
 
       {#

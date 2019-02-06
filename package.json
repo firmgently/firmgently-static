@@ -25,6 +25,7 @@
     "metalsmith-excerpts": "^1.2.0",
     "metalsmith-feed": "^1.0.0",
     "metalsmith-json-to-files": "https://github.com/firmgently/metalsmith-json-to-files.git#data-renamer-and-passthrough-patch",
+    "metalsmith-date-formatter": "https://github.com/firmgently/metalsmith-date-formatter.git#format-renamer-patch",
     "metalsmith-layouts": "^2.1.0",
     "metalsmith-linkcheck": "^0.3.4",
     "metalsmith-markdown": "^1.1.0",
@@ -37,7 +38,5 @@
     "metalsmith-timer": "0.0.2",
     "metalsmith-wordcloud": "0.0.4"
   },
-  "devDependencies": {
-    "metalsmith-date-formatter": "^1.0.2"
-  }
+  "devDependencies": {}
 }

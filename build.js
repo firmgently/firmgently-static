@@ -336,16 +336,20 @@ metalsmith(__dirname)
 		dates: [
 			{
 				key: 'date',
-				format: 'MMMM DD, YYYY'
+				format: 'MMMM DD, YYYY',
+				out_key: 'dateNice'
 			}, {
-				key: 'year',
-				format: 'YYYY'
+				key: 'date',
+				format: 'YYYY',
+				out_key: 'dateYear'
 			}, {
-				key: 'datetime',
-				format: 'YYYY-MM-DD'
+				key: 'date',
+				format: 'YYYY-MM-DD',
+				out_key: 'dateTime'
 			}
 		]
 	}))
+  .use(timer('dates formatted'))
 
 // fill in Nunjucks templates
 // ??? processes template inheritance ???

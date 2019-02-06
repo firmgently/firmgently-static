@@ -2,21 +2,20 @@
 
 {% set microdata_type="https://schema.org/Article" %}
 
-{% set datetime = date %}
 
 {% block main %}
 
   <div class="main-column">
 
 
-    {{ insertPrevNextBtns(previous, next) }}
+    {{ insertPrevNextBtns() }}
 
     <article>
       <header>
         <h1>{{ title }}</h1>
         <em>reading time: {{ contents | striptags | wordcount | averageReadTime }}</em>
         <div>
-          <span>Posted on <meta itemprop="datePublished" content="{{ datetime }}"><time datetime="{{ datetime }}">{{ date }}</time></span>
+          <span>Posted on <meta itemprop="datePublished" content="{{ dateTime }}"><time datetime="{{ dateTime }}">{{ dateNice }}</time></span>
         </div>
       </header>
 
@@ -28,7 +27,7 @@
       </footer>
     </article>
 
-    {{ insertPrevNextBtns(previous, next) }}
+    {{ insertPrevNextBtns() }}
 
 
     <aside>

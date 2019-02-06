@@ -11,10 +11,6 @@ json_files:
         to: tags
       - from: date
         to: date
-      - from: date
-        to: year
-      - from: date
-        to: datetime
 ---
 
 {#
