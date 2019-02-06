@@ -8,17 +8,19 @@
 	{% set itemSize = itemData.w + "&nbsp;x&nbsp;" + itemData.h + "cm" %}
 {% endif %}
 
+{% set datetimeMarkup = "<meta itemProp=\"datePublished\" content=\"" + datetime + "\"><time datetime=\"" + datetime + "\">" + year + "</time>" %}
+
 {% if (itemType == "art") %}
   {% set microdata_type="https://schema.org/Painting" %}
 	{% set detail1 = itemData.materials + ", " + itemSize %}
-  {% set detail2 = "<time datetime='" + datetime + "'>" + year + "</time>" %}
+  {% set detail2 = datetimeMarkup %}
 {% elif itemType == "object" %}
   {% set microdata_type="https://schema.org/Sculpture" %}
 	{% set detail1 = itemData.materials + ", " + itemSize %}
-  {% set detail2 = "<time datetime='" + datetime + "'>" + year + "</time>" %}
+  {% set detail2 = datetimeMarkup %}
 {% elif itemType == "photo" %}
   {% set microdata_type="https://schema.org/Photograph" %}
-  {% set detail1 = itemData.location + ", " + "<time datetime='" + datetime + "'>" + year + "</time>" %}
+  {% set detail1 = itemData.location + ", " + datetimeMarkup %}
 	{% set detail2 = "Camera: " + itemData.camera %}
 {% else %} {# WEB #}
   {% set microdata_type="https://schema.org/Website" %}
@@ -26,7 +28,7 @@
 	{% if itemData.agency %}
 		{% set detail1 = detail1 + " / " + itemData.agency %}
 	{% endif %}
-  {% set detail2 = "<time datetime='" + datetime + "'>" + year + "</time>, " + itemSize %}
+  {% set detail2 = datetimeMarkup + ", " + itemSize %}
 {% endif %}
 
 

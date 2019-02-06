@@ -16,7 +16,7 @@
         <h1>{{ title }}</h1>
         <em>reading time: {{ contents | striptags | wordcount | averageReadTime }}</em>
         <div>
-          <span>Posted on <time class="entry-date published" datetime="{{ datetime }}">{{ date }}</time></span>
+          <span>Posted on <meta itemprop="datePublished" content="{{ datetime }}"><time datetime="{{ datetime }}">{{ date }}</time></span>
         </div>
       </header>
 
