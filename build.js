@@ -340,6 +340,9 @@ metalsmith(__dirname)
 			}, {
 				key: 'year',
 				format: 'YYYY'
+			}, {
+				key: 'datetime',
+				format: 'YYYY-MM-DD'
 			}
 		]
 	}))

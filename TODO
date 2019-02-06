@@ -1,17 +1,16 @@
 ## BUGS
 [ ] read time 1-1 mins
-[ ] general item pages next/prev paths exist but not titles
-[ ] sticky footer not working
+[ ] data vs datetime, how to et duplicate into posts automatically
 
 
 ## GENERAL
 
 
-[ ] for item listings use proper captioned images with alt text and titles like the md stuff
+[ ] check robots meta tag
 [ ] choose proper sizes and styles for srcset images
 [ ] metalsmith-sitemap
+[ ] metalsmith-drafts
 [ ] html tag xmlns for opengraph and other data
-[ ] download post images from WP
 [ ] look into built-in dark mode (CSS/Apple?)
 [ ] check image size/quality on home/topics pages
 [ ] remove target blank in links in items
@@ -20,15 +19,9 @@
 [ ] dark CSS - link text is unreadable (low contrast)
 [ ] too many references to 'I' in item data
 [ ] contact page
-[ ] item list set max-width on portrait images
-[ ] fix og_type for all pages... list page should not be the same as item pages should not be the same as main site/homepage
 [ ] set bodyClass metadata for all itemList pages
-[ ] set 'url' and 'url_tidied' in tamplate.njk
-[ ] look into html tags time/datetime etc, is it worth adding to posts?
+[ ] set 'url' and 'url_tidied' in template.njk
 [ ] add comments under posts? decide
-[ ] create collection `all` programatically rather than duplicating in build.js
-[ ] look into screenreader /accessibility, especially for words/posts
-[ ] images in blog posts use srcset and think about https://bitsofco.de/the-srcset-and-sizes-attributes/
 [ ] make hire me animation match colours of site, constrain size
 [ ] add gitlab link
 [ ] replace share bar with invert colours (links to same url on gentlyfirm/firmgently)
@@ -37,9 +30,5 @@
 
 ## CSS STYLING
 
-[ ] strip away styles and add them back one at a time
 [ ] style blockquotes (use bob ross article to test)
 [ ] markdown captioned images http://sparkandshine.net/en/insert-images-with-captions-in-markdown/
-[ ] simplify layout columns and blocks
-[ ] remove too many selectors, use cascades etc instead
-[ ] remove title from logos

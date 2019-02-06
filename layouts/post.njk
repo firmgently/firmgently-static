@@ -1,10 +1,12 @@
 {% extends "fg-template.njk" %}
 
+{% set microdata_type="https://schema.org/Article" %}
+
+{% set datetime = date %}
 
 {% block main %}
 
   <div class="main-column">
-    {#   <a class="skip-link screen-reader-text" href="#content">Skip to content</a> #}
 
 
     {{ insertPrevNextBtns(previous, next) }}
@@ -14,7 +16,7 @@
         <h1>{{ title }}</h1>
         <em>reading time: {{ contents | striptags | wordcount | averageReadTime }}</em>
         <div>
-          <span>Posted on <time class="entry-date published" datetime="{{ date }}">{{ date }}</time></span>
+          <span>Posted on <time class="entry-date published" datetime="{{ datetime }}">{{ date }}</time></span>
         </div>
       </header>
 
@@ -30,16 +32,14 @@
 
 
     <aside>
-      <section>
-        <h3>Latest</h3>
-        <ul>
-          {%- for post in (collections.words) -%}
-            {% if loop.index0 < data.config.consts.RECENT_POSTS_NUM_TO_SHOW -%}
-              <li><a href="/{{ post.path | stripIndexFromPath }}">{{ post.title }}</a></li>
-            {%- endif %}
-          {%- endfor -%}
-        </ul>
-      </section>
+      <h3>Latest</h3>
+      <ul>
+        {%- for post in (collections.words) -%}
+          {% if loop.index0 < data.config.consts.RECENT_POSTS_NUM_TO_SHOW -%}
+            <li><a href="/{{ post.path | stripIndexFromPath }}">{{ post.title }}</a></li>
+          {%- endif %}
+        {%- endfor -%}
+      </ul>
     </aside>
 
 

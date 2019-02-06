@@ -63,9 +63,9 @@
 
 {# receives collection items which have path/title properties #}
 {% macro insertPrevNextBtns(prev, next) %}
-<nav class="prev-next-btns" role="navigation">
+<nav class="prev-next-btns">
   <h2 class="screen-reader-text">Post navigation</h2>
-  {%- if previous %}<a href="/{{ previous.path }}" rel="prev">&lt;&lt;&nbsp;{{ previous.title | default(previous.itemData.title) }}</a>{% endif %}
+  {% if previous %}<a href="/{{ previous.path }}" rel="prev">&lt;&lt;&nbsp;{{ previous.title | default(previous.itemData.title) }}</a>{% endif %}
   {% if next %}<a href="/{{ next.path }}" rel="next">{{ next.title  | default(next.itemData.title)}}&nbsp;&gt;&gt;</a>{%- endif %}
 </nav>
 {% endmacro %}
@@ -92,12 +92,6 @@
   <meta name="robots" content="noodp,noydir">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <meta property="og:title" content="{{ pageTitle_stripped }}">
-  <meta property="og:type" content="{{ og_type }}">
-  <meta property="og:url" content="{{ url }}">
-  <meta property="og:image" content="{{ sitedata.domain }}/images/{{ share_thumbnail }}">
-  <meta property="og:site_name" content="{{ sitedata.site_name }}">
-  <meta property="og:description" content="{{ desc_stripped }}">
 
   <title>{{ pageTitle }}</title>
 
@@ -109,6 +103,7 @@
 
 
 <body{% if bodyClass %} class="{{ bodyClass }}"{% endif %}>
+  <a href="#main-content" class="screen-reader-text">Skip to main content</a>
   <div class="wrapper">
 
       {#
@@ -124,7 +119,7 @@
       </header>
       
       
-      <section {% if microdata_type %}itemscope itemtype="{{ microdata_type }}" {% endif %}class="content">
+      <section id="main-content"{% if microdata_type %}itemscope itemtype="{{ microdata_type }}" {% endif %}class="content">
 			{% block main %}{{ contents | safe }}{% endblock %}
 			</section><!-- content -->
 

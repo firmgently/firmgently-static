@@ -8,18 +8,25 @@
 	{% set itemSize = itemData.w + "&nbsp;x&nbsp;" + itemData.h + "cm" %}
 {% endif %}
 
-{% if (itemData.type == "ART" or itemData.type == "OBJECTS") %}
+{% if (itemType == "art") %}
+  {% set microdata_type="https://schema.org/Painting" %}
 	{% set detail1 = itemData.materials + ", " + itemSize %}
-	{% set detail2 = itemData.year %}
-{% elif itemData.type == "PHOTOS" %}
-	{% set detail1 = itemData.location + ", " + itemData.year %}
+  {% set detail2 = "<time datetime='" + datetime + "'>" + year + "</time>" %}
+{% elif itemType == "object" %}
+  {% set microdata_type="https://schema.org/Sculpture" %}
+	{% set detail1 = itemData.materials + ", " + itemSize %}
+  {% set detail2 = "<time datetime='" + datetime + "'>" + year + "</time>" %}
+{% elif itemType == "photo" %}
+  {% set microdata_type="https://schema.org/Photograph" %}
+  {% set detail1 = itemData.location + ", " + "<time datetime='" + datetime + "'>" + year + "</time>" %}
 	{% set detail2 = "Camera: " + itemData.camera %}
 {% else %} {# WEB #}
+  {% set microdata_type="https://schema.org/Website" %}
 	{% set detail1 = itemData.client %}
 	{% if itemData.agency %}
 		{% set detail1 = detail1 + " / " + itemData.agency %}
 	{% endif %}
-	{% set detail2 = year + ", " + itemSize %}
+  {% set detail2 = "<time datetime='" + datetime + "'>" + year + "</time>, " + itemSize %}
 {% endif %}
 
 
@@ -29,7 +36,7 @@
 
     {{ insertPrevNextBtns(previous, next) }}
 
-		<section id="mainItemDetails" class="lowered boxLeft">
+		<section class="item-details">
 			<h1 itemprop="http://www.schema.org/name">{{ itemData.title }}</h1>
 			<h3>{{ detail1 | safe }}</h3>
 			<h2>{{ detail2 | safe }}</h2>
@@ -38,18 +45,18 @@
 	</div>
 
 	<div class="main-column">
-		<div id="itemImageMain">
-			<img id="magnifiableImage" alt="Click to magnify" src="/images/items/main/{{ itemData.id }}.jpg">
+		<div id="item-image">
+			<img id="magnifiable-image" alt="Click to magnify" src="/images/items/main/{{ itemData.id }}.jpg">
 		</div>
-		<p class="alert boxLeft magnifyPrompt">mouse or slide over the picture to magnify it</p>
-		<a href="/downloadImage.php?id=fabric" class="buttonSelected boxLeft downloadWallpaperBtn">download wallpaper</a>
-	</div><!-- mainColumn -->
+		<p class="alert magnify-prompt">mouse or slide over the picture to magnify it</p>
+		<a href="/downloadImage.php?id=fabric" class="download-wallpaper-btn">download wallpaper</a>
+	</div><!-- main-column -->
 {% endblock %}
 
 
 {% block bodyEndScripts %}
 <script src="/js/FGMagnify_min.js"></script>
 <script>
-	uk.co.firmgently.FGMagnify.create("/images/items/hi_res/{{ itemData.id }}.jpg", "magnifiableImage", "1");
+	uk.co.firmgently.FGMagnify.create("/images/items/hi_res/{{ itemData.id }}.jpg", "magnifiable-image", "1");
 </script>
 {% endblock %}

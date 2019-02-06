@@ -4,6 +4,7 @@ json_files:
     source_file: items/photos
     filename_pattern: photos/:itemData.title
     layout: item.njk
+    itemType: photo
     rename_data_to: itemData
     passthrough:
       - from: tags
@@ -12,6 +13,8 @@ json_files:
         to: date
       - from: date
         to: year
+      - from: date
+        to: datetime
 ---
 
 {#

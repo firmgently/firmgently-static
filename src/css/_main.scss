@@ -20,6 +20,11 @@ body {
   width: 1px;
   height: 1px;
   overflow: hidden;
+  &:focus {
+    left: $pad-med;
+    width: auto;
+    height: auto;
+  }
 }
 body {
   @include flexbox;

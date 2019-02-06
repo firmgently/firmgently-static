@@ -10,6 +10,7 @@ nnoremap  :bprev
 nnoremap K i
 xmap S <Plug>VSurround
 vmap [% [%m'gv``
+nmap \p <Plug>(Prettier)
 vmap ]% ]%m'gv``
 vmap a% [%v]%
 nmap cS <Plug>CSurround
@@ -26,6 +27,12 @@ nmap ys <Plug>Ysurround
 vnoremap <silent> <Plug>NetrwBrowseXVis :call netrw#BrowseXVis()
 nnoremap <silent> <Plug>NetrwBrowseX :call netrw#BrowseX(expand((exists("g:netrw_gx")? g:netrw_gx : '<cfile>')),netrw#CheckIfRemote())
 nnoremap <silent> <Plug>SurroundRepeat .
+nnoremap <silent> <Plug>(PrettierCliPath) :PrettierCliPath
+nnoremap <silent> <Plug>(PrettierCliVersion) :PrettierCliVersion
+nnoremap <silent> <Plug>(PrettierCli) :PrettierCli
+nnoremap <silent> <Plug>(PrettierVersion) :PrettierVersion
+nnoremap <silent> <Plug>(PrettierAsync) :PrettierAsync
+nnoremap <silent> <Plug>(Prettier) :Prettier
 nnoremap <silent> <C-F8> :RandomColorScheme
 nnoremap <silent> <S-F8> :PrevColorScheme
 nnoremap <silent> <F8> :NextColorScheme
@@ -45,24 +52,24 @@ set background=dark
 set backspace=indent,eol,start
 set cindent
 set cinkeys=0{,0},0),:,!^F,o,O,e
-set cryptmethod=blowfish2
 set directory=~/.vim/tmp//,.,~/tmp,/var/tmp,/tmp
 set expandtab
 set fileencodings=ucs-bom,utf-8,default,latin1
 set helplang=en
 set hidden
-set indentkeys=o,O,*<Return>,{,},o,O,!^F,<>>,0],0)
-set iskeyword=@,48-57,_,192-255,-,$
+set incsearch
+set indentkeys=0{,0},:,!^F,o,O,e
+set iskeyword=@,48-57,_,192-255,-
 set nojoinspaces
 set laststatus=2
 set lazyredraw
 set nomodeline
+set printoptions=paper:letter
 set ruler
-set runtimepath=~/.vim,~/.vim/bundle/lightline.vim,~/.vim/bundle/textutil,~/.vim/bundle/tsuquyomi,~/.vim/bundle/typescript-vim,~/.vim/bundle/vim-airline,~/.vim/bundle/vim-colors-solarized,~/.vim/bundle/vim-colorscheme-switcher,~/.vim/bundle/vim-javascript,~/.vim/bundle/vim-jinja,~/.vim/bundle/vim-misc,~/.vim/bundle/vim-obsession,~/.vim/bundle/vim-repeat,~/.vim/bundle/vim-surround,/var/lib/vim/addons,/usr/share/vim/vimfiles,/usr/share/vim/vim80,/usr/share/vim/vim80/pack/dist/opt/matchit,/usr/share/vim/vimfiles/after,/var/lib/vim/addons/after,~/.vim/bundle/vim-javascript/after,~/.vim/after
+set runtimepath=~/.vim,~/.vim/bundle/lightline.vim,~/.vim/bundle/textutil,~/.vim/bundle/tsuquyomi,~/.vim/bundle/typescript-vim,~/.vim/bundle/vim-airline,~/.vim/bundle/vim-colors-solarized,~/.vim/bundle/vim-colorscheme-switcher,~/.vim/bundle/vim-javascript,~/.vim/bundle/vim-jinja,~/.vim/bundle/vim-misc,~/.vim/bundle/vim-obsession,~/.vim/bundle/vim-prettier,~/.vim/bundle/vim-repeat,~/.vim/bundle/vim-surround,/var/lib/vim/addons,/usr/share/vim/vimfiles,/usr/share/vim/vim81,/usr/share/vim/vim81/pack/dist/opt/matchit,/usr/share/vim/vimfiles/after,/var/lib/vim/addons/after,~/.vim/bundle/vim-javascript/after,~/.vim/after
 set shiftwidth=2
 set showcmd
 set noshowmode
-set statusline=%<%1*===\ %5*%f%1*%(\ ===\ %4*%h%1*%)%(\ ===\ %4*%m%1*%)%(\ ===\ %4*%r%1*%)\ ===%====\ %2*%b(0x%B)%1*\ ===\ %3*%l,%c%V%1*\ ===\ %5*%P%1*\ ===%0*
 set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc
 set tabline=%!lightline#tabline()
 set tabstop=2
@@ -70,55 +77,58 @@ set ttimeoutlen=100
 set undodir=~/.vim/undo
 set undofile
 set viminfo='100,<50,s10,h,n~/.vim/.viminfo/.viminfo
-set window=40
+set wildmenu
+set wildmode=longest:full,full
+set window=54
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
 silent only
-cd ~/firmgently-static
+silent tabonly
+cd ~/0WORK/firmgently-static
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
 badd +1 layouts/fg-template.njk
 badd +1 layouts/gf-template.njk
-badd +1 layouts/itemList.njk
+badd +26 layouts/index.njk
 badd +1 layouts/item.njk
-badd +23 layouts/post.njk
-badd +1 layouts/template.njk
-badd +1 layouts/topic.njk
-badd +104 build.js
-badd +1 src/words/post1.md.njk
-badd +1 src/words/post2.md.njk
-badd +1 src/words/post3.md.njk
-badd +1 src/words/post4.md.njk
-badd +1 src/words/post5.md.njk
-badd +32 TODO
-badd +179 node_modules/metalsmith-json-to-files/lib/index.js
-badd +1 src/art.njk
-badd +25 src/JSONToFiles
-badd +27 package.json
-badd +0 data/items.json
+badd +1 layouts/post.njk
+badd +142 layouts/template.njk
+badd +7 layouts/topic.njk
+badd +38 src/json-to-files-art
+badd +504 data/items/art.json
+badd +163 build.js
+badd +39 src/json-to-files-objects
+badd +253 src/css/_main.scss
+badd +29 data/items/objects.json
+badd +449 data/items/photos.json
+badd +2 src/css/_sizes.scss
 argglobal
 silent! argdel *
-argadd layouts/fg-template.njk
-argadd layouts/topic.njk
-argadd layouts/template.njk
-argadd layouts/post.njk
-argadd layouts/item.njk
-argadd layouts/itemList.njk
-argadd layouts/gf-template.njk
-edit data/items.json
+$argadd layouts/fg-template.njk
+$argadd layouts/gf-template.njk
+$argadd layouts/index.njk
+$argadd layouts/item.njk
+$argadd layouts/post.njk
+$argadd layouts/template.njk
+$argadd layouts/topic.njk
+edit src/css/_main.scss
 set splitbelow splitright
 set nosplitbelow
 set nosplitright
 wincmd t
-set winheight=1 winwidth=1
+set winminheight=0
+set winheight=1
+set winminwidth=0
+set winwidth=1
 argglobal
-edit data/items.json
+if bufexists('src/css/_main.scss') | buffer src/css/_main.scss | else | edit src/css/_main.scss | endif
 setlocal keymap=
 setlocal noarabic
 setlocal autoindent
 setlocal backupcopy=
+setlocal balloonexpr=
 setlocal nobinary
 setlocal nobreakindent
 setlocal breakindentopt=
@@ -130,8 +140,8 @@ setlocal cinkeys=0{,0},0),:,!^F,o,O,e
 setlocal cinoptions=
 setlocal cinwords=if,else,while,do,for,switch
 setlocal colorcolumn=
-setlocal comments=
-setlocal commentstring=
+setlocal comments=s1:/*,mb:*,ex:*/,://
+setlocal commentstring=//\ %s
 setlocal complete=.,w,b,u,t,i
 setlocal concealcursor=
 setlocal conceallevel=0
@@ -141,14 +151,14 @@ setlocal cryptmethod=
 setlocal nocursorbind
 setlocal nocursorcolumn
 setlocal nocursorline
-setlocal define=
+setlocal define=^\\s*\\%(@mixin\\|=\\)
 setlocal dictionary=
 setlocal nodiff
 setlocal equalprg=
 setlocal errorformat=
 setlocal expandtab
-if &filetype != 'json'
-setlocal filetype=json
+if &filetype != 'scss'
+setlocal filetype=scss
 endif
 setlocal fixendofline
 setlocal foldcolumn=0
@@ -162,23 +172,24 @@ setlocal foldminlines=1
 setlocal foldnestmax=20
 setlocal foldtext=foldtext()
 setlocal formatexpr=
-setlocal formatoptions=cq
+setlocal formatoptions=tq
 setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
 setlocal formatprg=
 setlocal grepprg=
 setlocal iminsert=0
-setlocal imsearch=0
-setlocal include=
-setlocal includeexpr=
-setlocal indentexpr=GetJSONIndent()
-setlocal indentkeys=0{,0},0),0[,0],!^F,o,O,e
+setlocal imsearch=-1
+setlocal include=^\\s*@import\\s\\+\\%(url(\\)\\=[\"']\\=
+setlocal includeexpr=substitute(v:fname,'\\%(.*/\\|^\\)\\zs','_','')
+setlocal indentexpr=GetCSSIndent()
+setlocal indentkeys=0{,0},!^F,o,O
 setlocal noinfercase
-setlocal iskeyword=@,48-57,_,192-255,-,$
+setlocal iskeyword=@,48-57,_,192-255,-
 setlocal keywordprg=
 setlocal nolinebreak
 setlocal nolisp
 setlocal lispwords=
 setlocal nolist
+setlocal makeencoding=
 setlocal makeprg=
 setlocal matchpairs=(:),{:},[:]
 setlocal nomodeline
@@ -187,7 +198,7 @@ setlocal nrformats=bin,octal,hex
 set number
 setlocal number
 setlocal numberwidth=4
-setlocal omnifunc=
+setlocal omnifunc=csscomplete#CompleteCSS
 setlocal path=
 setlocal nopreserveindent
 setlocal nopreviewwindow
@@ -208,36 +219,42 @@ setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
 setlocal spellfile=
 setlocal spelllang=en
 setlocal statusline=%!airline#statusline(1)
-setlocal suffixesadd=
+setlocal suffixesadd=.sass,.scss,.css
 setlocal swapfile
 setlocal synmaxcol=3000
-if &syntax != 'json'
-setlocal syntax=json
+if &syntax != 'scss'
+setlocal syntax=scss
 endif
 setlocal tabstop=2
 setlocal tagcase=
 setlocal tags=
+setlocal termwinkey=
+setlocal termwinscroll=10000
+setlocal termwinsize=
 setlocal textwidth=0
 setlocal thesaurus=
 setlocal undofile
 setlocal undolevels=-123456
+setlocal varsofttabstop=
+setlocal vartabstop=
 setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 19) / 39)
+let s:l = 264 - ((37 * winheight(0) + 26) / 53)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-1
+264
 normal! 0
 tabnext 1
-if exists('s:wipebuf')
+if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0
   silent exe 'bwipe ' . s:wipebuf
 endif
 unlet! s:wipebuf
 set winheight=1 winwidth=20 shortmess=filnxtToO
+set winminheight=1 winminwidth=1
 let s:sx = expand("<sfile>:p:r")."x.vim"
 if file_readable(s:sx)
   exe "source " . fnameescape(s:sx)
