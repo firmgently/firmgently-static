@@ -2,7 +2,6 @@
 @import '_base.scss';
 @import '_sizes.scss';
 @import '_mixins.scss';
-@import '_media-queries.scss';
 @import '_font-face.scss';
 
 /* ////////////////////////////////////////////////////////////////////////// */
@@ -36,6 +35,7 @@ body {
   .wrapper {
     @include flex(1, 0, auto);
     .fg-header {
+			background-color: red;
       @include flexbox;
       @include flex-flow(row nowrap);
       @include justify-content(flex-start);
@@ -62,12 +62,15 @@ body {
       }
     }
     .content {
+			background-color: orange;
       @include flexbox;
       @include flex-flow(row wrap);
       .side-column {
+			background-color: blue;
         @include flex(1, 0, $side-col-min-width);
       }
       .main-column {
+			background-color: yellow;
         @include flex(2, 0, $main-col-min-width);
       }
     }
@@ -283,6 +286,14 @@ a.icon.btn {
 #loupe{border:dotted 1px $text-colour-strong2;position:absolute;top:50px;left:50px;cursor:all-scroll;background-image:url(/images/light/loupeBg.png);}
 #magImgLdingMsg,#magLdingMsg{padding:$pad-med;position:absolute;line-height:1.2em;}
 #magImgLdingMsg{top:12px}
+
+
+
+
+@import '_media-queries.scss';
+
+
+
 
 
 
