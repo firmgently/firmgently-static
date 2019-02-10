@@ -30,7 +30,7 @@
     {% endif %}
     {# class this tag as selected or not #}
     {%- if matchFound %}
-      {% set classattr = " class=\"selected\"" %}
+      {% set classattr = " class=\"is\"" %}
     {% else %}
       {% set classattr = "" %}
     {% endif %}
@@ -102,9 +102,8 @@
 </head>
 
 
-<body{% if bodyClass %} class="{{ bodyClass }}"{% endif %}>
+<body{% if bodyClass %} class="wrapper {{ bodyClass }}"{% endif %}>
   <a class="screen-reader-text" href="#main-content">Skip to main content</a>
-  <div class="wrapper">
 
       {#
         fontsizeFromTagWeight() filter:
@@ -113,9 +112,12 @@
         minSize, maxSize represent min/max values that can be returned
         numSizes is how many different sizes will be available
       #}
-      <header class="fg-header">
+      <header class="site-header">
         <a class="title-image" href="/"><img src="/images/shim.png" alt="{{ sitedata.simple_domain }}" title="{{ sitedata.simple_domain }}"></a>
-        <nav class="fg-nav-main">{{ createTagCloud(cloud) }}</nav>
+        <nav class="site-nav">
+					{{ createTagCloud(cloud) }}
+        <a class="invert-colour icon btn" href=""><img src="/images/yin-yang.svg" alt="Yin Yang symbol"></a>
+</nav>
       </header>
       
       
@@ -124,13 +126,7 @@
 			</section><!-- content -->
 
 
-      <a class="invert-colours-btn icon btn" href=""><img src="/images/yin-yang.svg" alt="Yin Yang symbol"></a>
-
-    
-  </div><!-- wrapper -->
-
-
-  <footer class="fg-footer">
+  <footer class="site-footer">
     <span>
       <ul>
         <li><a class="icon btn" href=""><img src="/images/yin-yang.svg" alt="Yin Yang symbol"></a></li>
