@@ -47,17 +47,14 @@ body.wrapper {
     @include flex-flow(row nowrap);
     @include justify-content(flex-start);
     @include align-items(center);
-    background-color: red;
     .title-image {
-      margin-left: $pad-sma;
-      margin-right: $pad-med;
       background: none;
       img {
         display: inline-block;
         background-image: $title-image;
         background-size: cover;
         background-position: 0 0;
-        width: 8rem;
+        width: 9rem;
         height: 0;
         padding: calc(60 / 91 * 100%) 0 0 0;
       }
@@ -69,28 +66,25 @@ body.wrapper {
   .content {
     @include flexbox;
     @include flex-flow(row wrap);
-    background-color: orange;
     .side-column {
-      background-color: blue;
       @include flex(1, 1, $side-col-min-width);
     }
     .main-column {
-      background-color: yellow;
       @include flex(2, 1, $main-col-min-width);
     }
     .widget {
-      background-color: pink;
-      @include flex(1, 1, $side-col-min-width);
+      @include flex(1, 0, $side-col-min-width);
     }
   }
   .site-footer {
     @include flexbox;
     @include flex-flow(row nowrap);
-    @include justify-content(flex-start);
+    @include justify-content(space-between);
     @include align-items(center);
     padding-top: $pad-big;
     > span:first-of-type {
       > ul {
+        margin-bottom: $pad-med;
         li {
           display: inline-block;
           margin-right: $pad-med;
@@ -99,6 +93,7 @@ body.wrapper {
     }
     > span:last-of-type {
       float: right;
+      @include align-self(flex-end);
     }
   }
 }
@@ -136,7 +131,6 @@ article > footer,
 article + nav {
   margin-bottom: $pad-huge;
 }
-.widget,
 article > footer {
   margin-top: $pad-big;
 }
@@ -252,26 +246,79 @@ em {
 }
 nav.site-nav {
   ul {
+    @include flexbox;
+    @include flex-wrap(wrap);
+    @include justify-content(flex-start);
+    @include align-items(center);
     li {
       display: inline-block;
-      position: relative;
+      &:first-of-type {
+        margin-bottom: $pad-sma;
+        margin-right: $pad-med;
+      }
+      &:last-of-type {
+        margin-top: $pad-med;
+        margin-bottom: 0-$pad-med;
+        margin-left: $pad-med;
+      }
+      &:nth-of-type(6n+1) {
+        a,
+        a:hover,
+        a:active {
+          transform: rotate(-8deg);
+        }
+      }
+      &:nth-of-type(6n+2) {
+        a,
+        a:hover,
+        a:active {
+          transform: rotate(-20deg);
+        }
+      }
+      &:nth-of-type(6n+3) {
+        a,
+        a:hover,
+        a:active {
+          transform: rotate(0deg);
+        }
+      }
+      &:nth-of-type(6n+4) {
+        a,
+        a:hover,
+        a:active {
+          transform: rotate(15deg);
+        }
+      }
+      &:nth-of-type(6n+5) {
+        a,
+        a:hover,
+        a:active {
+          transform: rotate(-10deg);
+        }
+      }
+      &:nth-of-type(6n+6) {
+        a,
+        a:hover,
+        a:active {
+          transform: rotate(-4deg);
+        }
+      }
       a,
       a:hover,
       a:active {
+        display: inline-block;
         padding: 0.25rem 0.5rem;
       }
     }
   }
 }
 .invert-colour {
-  bottom: $pad-med;
-  right: $pad-med;
   @include align-self(flex-end);
 }
 a.icon.btn {
   display: inline-block;
   background: none;
-  @include opacity(0.5);
+  @include opacity(0.8);
   &:hover {
     @include opacity(1);
   }

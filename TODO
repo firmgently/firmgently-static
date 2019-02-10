@@ -30,5 +30,7 @@
 
 ## CSS STYLING
 
+[ ] title image currently hard coded at 8rem
 [ ] style blockquotes (use bob ross article to test)
 [ ] markdown captioned images http://sparkandshine.net/en/insert-images-with-captions-in-markdown/
+[ ] remove outline from yinyang
