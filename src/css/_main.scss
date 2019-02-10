@@ -83,12 +83,8 @@ body.wrapper {
     @include align-items(center);
     padding-top: $pad-big;
     > span:first-of-type {
-      > ul {
-        margin-bottom: $pad-med;
-        li {
-          display: inline-block;
-          margin-right: $pad-med;
-        }
+      a {
+        clear: both;
       }
     }
     > span:last-of-type {
@@ -105,13 +101,13 @@ h5,
 h6 {
   font-weight: bold;
 }
-/* consistent page padding */
+/* consistent page padding (mobile) */
 .side-column,
 .main-column,
 .widget,
 .site-footer,
 .site-header {
-  padding: $pad-med $page-padding-right $pad-big $page-padding-left;
+  padding: $pad-med $small-page-padding-right $pad-big $small-page-padding-left;
 }
 blockquote {
   margin-bottom: $pad-huge;
@@ -233,11 +229,6 @@ a:active {
   color: $text-colour-strong2;
   background-color: $button-highlight-color;
 }
-a.is,
-a.is:hover,
-a.is:active {
-  color: $text-colour-selected;
-}
 strong {
   font-weight: 800;
 }
@@ -248,10 +239,11 @@ nav.site-nav {
   ul {
     @include flexbox;
     @include flex-wrap(wrap);
-    @include justify-content(flex-start);
+    @include justify-content(flex-end);
     @include align-items(center);
     li {
       display: inline-block;
+      margin: 0 $pad-sma;
       &:first-of-type {
         margin-bottom: $pad-sma;
         margin-right: $pad-med;
@@ -265,14 +257,14 @@ nav.site-nav {
         a,
         a:hover,
         a:active {
-          transform: rotate(-8deg);
+          transform: rotate(-4deg);
         }
       }
       &:nth-of-type(6n+2) {
         a,
         a:hover,
         a:active {
-          transform: rotate(-20deg);
+          transform: rotate(-13deg);
         }
       }
       &:nth-of-type(6n+3) {
@@ -286,7 +278,7 @@ nav.site-nav {
         a,
         a:hover,
         a:active {
-          transform: rotate(15deg);
+          transform: rotate(10deg);
         }
       }
       &:nth-of-type(6n+5) {
@@ -300,14 +292,27 @@ nav.site-nav {
         a,
         a:hover,
         a:active {
-          transform: rotate(-4deg);
+          transform: rotate(4deg);
         }
       }
       a,
       a:hover,
       a:active {
+        font-weight: bold;
         display: inline-block;
         padding: 0.25rem 0.5rem;
+        z-index: 0;
+      }
+      a:hover,
+      a:active {
+        z-index: 1;
+      }
+      a.is,
+      a.is:hover,
+      a.is:active {
+        color: $button-highlight-color;
+        background-color: $button-bg-colour-strong;
+        z-index: 1;
       }
     }
   }
@@ -373,5 +378,52 @@ a.icon.btn {
 #magImgLdingMsg {
   top: 12px;
 }
+/* ////////////////////////////////////////////////////////////////////////// */
+/*HIRE ME ANIMATION*/
+#hireMe {
+  min-width: side-col-w-medium; margin-bottom: $pad-big; float: right;
+  ul {
+    list-style-type: none;
+    list-style-image: url(/images/light/bullet.png);
+    padding: 0 $pad-big;
+  }
+  #hireMeAnim {
+    cursor: default;
+    line-height: 69px;
+    padding: 0;
+    width: 100%; height: 69px; display: inline-block; overflow: hidden; position: relative;
+    background-color: #6c898f;
+    background-image: url(/images/hireMeStars.png);
+    text-align: center;
+    @include border-radius($pad-sma);
+    @include transition(all $transition-speed-spin $transition-style-sink);
+    h2 {
+      font-family: "FG_HireMe","Tahoma","Arial","Nimbus Sans L";
+      color: #ffff63;
+      position: absolute; z-index: 3; width: 100%;
+      text-align: justify; word-spacing: -10px; padding: 0 1em; font-size: 4em; top: 0.1em;
+      @include transition(all $transition-speed-spin/6 ease-out);
+      &:after {
+        content: "";
+        display: inline-block;
+        width: 100%;
+      }
+    }
+    img {
+      position: absolute; top: 30px; left: 50%; margin-left: -88px;
+      @include transition(all $transition-speed-spin $transition-style-sink);
+    }
+    &:hover {
+      background-color: #ffffff;
+      h2 { color: $text-colour-alt; font-size: 5em; }
+      img {
+        top: -10px;
+        @include animation(centred-spin $transition-speed-spin $transition-style-spin infinite);
+      }
+    }
+  }
+}
 
+/* ////////////////////////////////////////////////////////////////////////// */
+/* */
 @import '_media-queries.scss';
