@@ -266,7 +266,7 @@
   {
     "id": "nightNotSwimming",
     "title": "Night Not Swimming",
-    "tags": "photo,abstract,land",
+    "tags": "photo,abstract,land,scape",
     "desc": "<p>Long exposure on an eerie night.</p>",
     "excludeFromHome": "true",
     "printsAvailable": "STANDARD",
@@ -446,7 +446,7 @@
   {
     "id": "alienFruit",
     "title": "Alien Fruit",
-    "tags": "photo,abstract,land",
+    "tags": "photo,abstract,land,scape",
     "desc": "<p>I'd love to know what it eventually hatched into.</p>",
     "camera": "Fuji FinePix F810",
     "location": "Goa",
