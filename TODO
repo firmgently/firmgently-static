@@ -1,11 +1,15 @@
 ## BUGS
 [ ] read time 1-1 mins
 [ ] data vs datetime, how to et duplicate into posts automatically
+[ ] Posted in WORD, SMALL-TEST <- links not working, 'topics/' hardcoded?
 
 
 ## GENERAL
 
 
+[ ] turn into proper function CSS rotating values for rotation @include cycle
+[ ] footer split/margin/padding when wrapping 
+[ ] use sass mixins for all grid stuff
 [ ] check robots meta tag
 [ ] choose proper sizes and styles for srcset images
 [ ] metalsmith-sitemap

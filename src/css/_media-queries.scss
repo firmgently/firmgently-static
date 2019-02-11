@@ -16,6 +16,13 @@
       }
     }
   }
+  nav.site-nav {
+    width: 100%;
+    ul {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(1rem, auto));
+    }
+  }
 }
 
 

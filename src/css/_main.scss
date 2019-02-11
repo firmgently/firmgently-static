@@ -32,7 +32,8 @@ body.wrapper {
   min-height: 100%;
   background-color: $main-bg2;
   color: $text-colour-main;
-  font-family: 'FG_Medium', 'Tahoma', 'Arial', 'Nimbus Sans L';
+  font-family: 'Tahoma', 'Arial', 'Nimbus Sans L';
+  /*font-family: 'FG_Medium', 'Tahoma', 'Arial', 'Nimbus Sans L';*/
   line-height: 1.5rem;
   .content {
     @include flex-grow(1);
@@ -81,13 +82,16 @@ body.wrapper {
     @include flex-flow(row nowrap);
     @include justify-content(space-between);
     @include align-items(center);
-    padding-top: $pad-big;
+    padding-top: $pad-footer-top;
     > span:first-of-type {
+      color: $text-dimmed-main;
       a {
         clear: both;
+        margin-right: $pad-big;
       }
     }
     > span:last-of-type {
+      color: $text-dimmed-less;
       float: right;
       @include align-self(flex-end);
     }
@@ -240,7 +244,7 @@ nav.site-nav {
     @include flexbox;
     @include flex-wrap(wrap);
     @include justify-content(flex-end);
-    @include align-items(center);
+    @include align-items(flex-end);
     li {
       display: inline-block;
       margin: 0 $pad-sma;

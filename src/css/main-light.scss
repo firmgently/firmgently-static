@@ -11,7 +11,8 @@ $text-colour-strong: #775f48;
 $text-colour-strong2: #3b1100;
 $text-colour-selected: #000;
 
-$text-dimmed-main: mix($text-colour-main, $main-bg, 40%);
+$text-dimmed-main: mix($text-colour-main, $main-bg2, 40%);
+$text-dimmed-less: mix($text-colour-main, $main-bg2, 60%);
 
 $button-bg-colour: #FBF8F7;
 $button-bg-colour-strong: #ff8001;
