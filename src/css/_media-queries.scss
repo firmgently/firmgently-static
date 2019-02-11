@@ -3,7 +3,7 @@
     display: grid;
     .content {
       display: grid;
-      grid-auto-columns: minmax(15rem, auto);
+      grid-auto-columns: minmax(19rem, auto);
       grid-auto-flow: column;
       .side-column {
         grid-column: span 2;
@@ -18,15 +18,42 @@
   }
 }
 
-
-
 @media only screen and (min-width: 500px) {
   /* consistent page padding */
   .side-column,
   .main-column,
-  .widget,
   .site-footer,
   .site-header {
     padding: $pad-med $page-padding-right $pad-big $page-padding-left;
+  }
+  body.wrapper {
+    .site-header {
+      .title-image {
+        img {
+        }
+        &:hover img {
+        }
+      }
+    }
+    .content {
+      .side-column {
+				text-align: right;
+				padding-right: 0;
+				padding-left: $page-padding-right;
+      }
+      .main-column {
+				padding-top: 0;
+      }
+      .widget {
+      }
+    }
+    .site-footer {
+      > span:first-of-type {
+        a {
+        }
+        > span {
+        }
+      }
+    }
   }
 }

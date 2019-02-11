@@ -34,7 +34,7 @@
       {% set classattr = "" %}
     {% endif %}
     {# create tag markup #}
-    <li><a style="font-size: {{ word.wght | fontsizeFromTagWeight(0.75, 1.6, 50) }}rem" href="{{ word.pth }}"{{ classattr | safe }}>{{ word.ctg }}</a></li>
+    <li><a style="font-size: {{ word.wght | fontsizeFromTagWeight(0.66, 1.8, 20) }}rem" href="{{ word.pth }}"{{ classattr | safe }}>{{ word.ctg }}</a></li>
   {% endif %}
 {%- endfor %}
 {% endmacro %}

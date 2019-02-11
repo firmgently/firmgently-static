@@ -30,7 +30,7 @@
   {
     "id": "prettyYellowFlowers",
     "title": "Pretty Yellow Flowers",
-    "tags": "photo,figurative,plant",
+    "tags": "photo,plant",
     "desc": "<p>What can I say?</p>",
     "printsAvailable": "STANDARD",
     "camera": "Panasonic GF1",
@@ -57,7 +57,7 @@
   {
     "id": "leech",
     "title": "Leech",
-    "tags": "photo,figurative,animal",
+    "tags": "photo,animal",
     "desc": "<p>Look at how pretty and colourful it is.</p>",
     "excludeFromHome": "true",
     "printsAvailable": "STANDARD",
@@ -85,7 +85,7 @@
   {
     "id": "measuredProgress",
     "title": "Measured Progress",
-    "tags": "photo,figurative,animal",
+    "tags": "photo,animal",
     "desc": "<p>About a hundred of these caterpillars lived in and around my flat for a while.</p>",
     "excludeFromHome": "true",
     "printsAvailable": "STANDARD",
@@ -182,7 +182,7 @@
   {
     "id": "eweAintFromRoundHereAreEweBaa",
     "title": "Ewe In't From Round Ear Are Ewe Baa?",
-    "tags": "photo,figurative,animal",
+    "tags": "photo,animal",
     "desc": "<p>I got out alive.</p>",
     "excludeFromHome": "true",
     "printsAvailable": "STANDARD",
@@ -224,7 +224,7 @@
   {
     "id": "cabbageKnowsAll",
     "title": "Cabbage Knows All",
-    "tags": "photo,figurative,plant",
+    "tags": "photo,plant",
     "desc": "<p>Fractals.</p>",
     "excludeFromHome": "true",
     "printsAvailable": "STANDARD",
@@ -406,7 +406,7 @@
   {
     "id": "londonBuses",
     "title": "London Buses",
-    "tags": "photo,figurative,building",
+    "tags": "photo,building",
     "desc": "<p>Caught this not long after the 7/7 London bombings, all the buses lined up outside the <a href=\"http://en.wikipedia.org/wiki/SIS_Building\">MI6 building</a></p>",
     "camera": "Fuji FinePix F810",
     "location": "Vauxhall, London",

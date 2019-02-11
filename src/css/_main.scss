@@ -88,7 +88,12 @@ body.wrapper {
       color: $text-dimmed-less;
       a {
         clear: both;
+				vertical-align: text-top;
         margin-right: $pad-big;
+				img {
+					.button {stroke: none; fill: red;}
+					.symbol {stroke: none; fill: black;}
+				}
       }
 			> span {
 				color: $text-dimmed-main;
@@ -109,7 +114,6 @@ h6 {
 /* consistent page padding (mobile) */
 .side-column,
 .main-column,
-.widget,
 .site-footer,
 .site-header {
   padding: $pad-med $small-page-padding-right $pad-big $small-page-padding-left;
@@ -139,8 +143,8 @@ article > footer {
   @include flexbox;
   @include flex-wrap(wrap);
   @include flex-direction(row);
-  @include align-content(flex-start);
-  @include justify-content(space-around);
+  @include align-content(center);
+  @include justify-content(space-between);
   li {
     overflow-wrap: break-word;
     @include flex(0, 1, $list-item-w);
@@ -268,7 +272,7 @@ nav.site-nav {
     @include align-items(flex-end);
 		margin-top: 0-$pad-big;
 		max-width: $nav-max-width;
-		transform: rotate(-5deg);
+		transform: rotate(-3deg);
     li {
       display: inline-block;
 			/*margin-bottom: 0-$pad-sma;*/
@@ -391,7 +395,6 @@ a.icon.btn {
 /* ////////////////////////////////////////////////////////////////////////// */
 /*HIRE ME ANIMATION*/
 #hireMe {
-  min-width: side-col-w-medium;
   margin-bottom: $pad-big;
   ul {
     list-style-type: none;
@@ -405,7 +408,7 @@ a.icon.btn {
     cursor: default;
     padding: 0;
     width: 100%;
-    padding-bottom: 40%;
+    padding-bottom: 60%;
     display: inline-block;
     overflow: hidden;
     position: relative;
