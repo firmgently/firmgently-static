@@ -69,20 +69,6 @@
     "date": "2014 09 25"
   },
   {
-    "id": "gull1",
-    "title": "Gull #1",
-    "tags": "photo,figurative,animal",
-    "desc": "<p>It's a seagull.</p>",
-    "excludeFromHome": "true",
-    "printsAvailable": "STANDARD",
-    "camera": "Panasonic GF1",
-    "location": "Queen's Park, Brighton",
-    "w": "2114",
-    "h": "1585",
-    "d": "2",
-    "date": "2012 07 19"
-  },
-  {
     "id": "mustard",
     "title": "Mustard",
     "tags": "photo,abstract,weird",

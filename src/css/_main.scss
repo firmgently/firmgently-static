@@ -197,13 +197,28 @@ article > footer {
         display: inline;
       }
       > h2 {
-        font-size: 2rem;
+        font-size: 1.66rem;
+				font-weight: lighter;
         font-style: italic;
-        padding-right: 2rem;
+        padding-right: 0.5rem;
+				line-height: 1.75rem;
       }
       > p {
         color: $text-colour-main;
-        font-size: 1.5rem;
+        font-size: 1.25rem;
+				&:after {
+					content: 'more >>';
+					text-align: right;
+					display: inline-block;
+					color: $text-colour-alt;
+					@include gradient(top, rgba($button-bg-colour, 0), $button-bg-colour, $button-bg-colour);
+					position: absolute;
+					left: 0;
+					right: 0;
+					bottom: -1px; /* 0 leaves a gap, this fixes it */
+					padding-top: 3rem;
+					z-index: 1;
+				}
       }
     }
   }
