@@ -173,6 +173,14 @@
 /* ////////////////////////////////////////////////////////////////////////// */
 /* CYCLE */
 
+@mixin cycle($prop, $values...) {
+	$tot: length($values);
+	@for $i from 1 through $tot {
+		&:nth-of-type(#{$tot}n+#{$i}) {
+			#{$prop}: nth($values, $i);
+		}
+	}
+}
 
 
 

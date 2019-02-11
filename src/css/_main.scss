@@ -248,63 +248,24 @@ nav.site-nav {
     li {
       display: inline-block;
       margin: 0 $pad-sma;
-      &:first-of-type {
+      &:first-of-type { /* title image */
         margin-bottom: $pad-sma;
         margin-right: $pad-med;
       }
-      &:last-of-type {
+      &:last-of-type { /* yin-yang symbol */
         margin-top: $pad-med;
         margin-bottom: 0-$pad-med;
         margin-left: $pad-med;
       }
-      &:nth-of-type(6n+1) {
-        a,
-        a:hover,
-        a:active {
-          transform: rotate(-4deg);
-        }
-      }
-      &:nth-of-type(6n+2) {
-        a,
-        a:hover,
-        a:active {
-          transform: rotate(-13deg);
-        }
-      }
-      &:nth-of-type(6n+3) {
-        a,
-        a:hover,
-        a:active {
-          transform: rotate(0deg);
-        }
-      }
-      &:nth-of-type(6n+4) {
-        a,
-        a:hover,
-        a:active {
-          transform: rotate(10deg);
-        }
-      }
-      &:nth-of-type(6n+5) {
-        a,
-        a:hover,
-        a:active {
-          transform: rotate(-10deg);
-        }
-      }
-      &:nth-of-type(6n+6) {
-        a,
-        a:hover,
-        a:active {
-          transform: rotate(4deg);
-        }
-      }
+			/* set up nth-of-type(?n+?) cycle, creates --r vars, usedto set rotation of inner <a> */
+			@include cycle(--r, -20deg, -10deg, 0deg, 10deg, 20deg, 30deg, 20deg, 10deg, 0deg, -10deg, -20deg, -30deg);
       a,
       a:hover,
       a:active {
         font-weight: bold;
         display: inline-block;
         padding: 0.25rem 0.5rem;
+        transform: rotate(var(--r));
         z-index: 0;
       }
       a:hover,
