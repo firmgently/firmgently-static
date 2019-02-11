@@ -173,6 +173,7 @@
 /* ////////////////////////////////////////////////////////////////////////// */
 /* CYCLE */
 
+/* This mixin creates multiple nth-of-type rules, setting $prop (evaluated property) to the nth of $values */
 @mixin cycle($prop, $values...) {
 	$tot: length($values);
 	@for $i from 1 through $tot {
