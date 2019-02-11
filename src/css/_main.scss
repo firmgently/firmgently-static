@@ -50,6 +50,7 @@ body.wrapper {
     @include align-items(center);
     .title-image {
       background: none;
+			margin-bottom: $pad-med;
       img {
         display: inline-block;
         background-image: $title-image;
@@ -80,20 +81,20 @@ body.wrapper {
   .site-footer {
     @include flexbox;
     @include flex-flow(row nowrap);
-    @include justify-content(space-between);
+    @include justify-content(flex-start);
     @include align-items(center);
     padding-top: $pad-footer-top;
     > span:first-of-type {
-      color: $text-dimmed-main;
+      color: $text-dimmed-less;
       a {
         clear: both;
         margin-right: $pad-big;
       }
-    }
-    > span:last-of-type {
-      color: $text-dimmed-less;
-      float: right;
-      @include align-self(flex-end);
+			> span {
+				color: $text-dimmed-main;
+				margin-left: $pad-big;
+				@include align-self(flex-start);
+			}
     }
   }
 }
@@ -164,6 +165,7 @@ article > footer {
         margin: 0;
         padding: 0;
         position: relative;
+				height: 100%;
         z-index: 1;
         > img {
           width: 100%;
@@ -175,7 +177,11 @@ article > footer {
         }
         > figcaption {
           padding: $pad-tiny;
-          vertical-align: bottom;
+					position: absolute;
+					left: 0;
+					right: 0;
+					height: 1.5rem;
+					bottom: calc(1rem + (#{$pad-tiny}*2));
           > h2 {
             padding: $pad-sma;
             margin-bottom: $pad-sma;
@@ -259,13 +265,15 @@ nav.site-nav {
     @include flexbox;
     @include flex-wrap(wrap);
     @include justify-content(flex-end);
-    @include align-items(center);
+    @include align-items(flex-end);
 		margin-top: 0-$pad-big;
 		max-width: $nav-max-width;
+		transform: rotate(-5deg);
     li {
       display: inline-block;
-			margin-bottom: 0-$pad-big;
-			margin-top: $pad-big;
+			/*margin-bottom: 0-$pad-sma;*/
+			margin-top: $pad-sma;
+      margin-right: $pad-med;
       &:first-of-type {
         /* title image */
         margin-bottom: 0-$pad-med;
@@ -273,13 +281,13 @@ nav.site-nav {
       }
       &:last-of-type {
         /* yin-yang symbol */
-        margin-bottom: 0-$pad-med;
-        margin-left: $pad-med;
+        /*margin-bottom: 0-$pad-med;*/
+        /*margin-left: $pad-med;*/
       }
       /* set up nth-of-type(?n+?) cycle, creates --r vars, used to set rotation of inner <a> */
       @include cycle(
         --r,
-        -10deg,
+        13deg,
         4deg,
         -7deg,
         0deg,
@@ -385,18 +393,19 @@ a.icon.btn {
 #hireMe {
   min-width: side-col-w-medium;
   margin-bottom: $pad-big;
-  float: right;
   ul {
     list-style-type: none;
     list-style-image: url(/images/light/bullet.png);
     padding: 0 $pad-big;
+		li {
+			display: inline-block;
+		}
   }
   #hireMeAnim {
     cursor: default;
-    line-height: 69px;
     padding: 0;
     width: 100%;
-    height: 69px;
+    padding-bottom: 40%;
     display: inline-block;
     overflow: hidden;
     position: relative;

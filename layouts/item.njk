@@ -10,6 +10,8 @@
 
 {% set datetimeMarkup = "<meta itemProp=\"datePublished\" content=\"" + dateTime + "\"><time datetime=\"" + dateTime + "\">" + dateYear + "</time>" %}
 
+{% set bodyClass = itemType %}
+
 {% if (itemType == "art") %}
   {% set microdata_type="https://schema.org/Painting" %}
 	{% set detail1 = itemData.materials + ", " + itemSize %}
