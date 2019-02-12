@@ -95,6 +95,10 @@ body.wrapper {
     .main-column {
       @include flex(2, 1, $main-col-min-width);
 			> article {
+				h2 {
+					margin-top: $pad-med;
+					color: $text-dimmed-less;
+				}
 				figure {
 					max-width: 33%;
 					float: left;
