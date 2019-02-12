@@ -8,9 +8,9 @@
 /* ////////////////////////////////////////////////////////////////////////// */
 /* COLOURS */
 
-$text-dimmed-main: mix($text-colour-main, $main-bg2, 40%);
-$text-dimmed-less: mix($text-colour-main, $main-bg2, 60%);
-$text-dimmed-slight: mix($text-colour-main, $main-bg2, 90%);
+$text-dimmed-main: mix($text-colour-main, $main-bg, 40%);
+$text-dimmed-less: mix($text-colour-main, $main-bg, 60%);
+$text-dimmed-slight: mix($text-colour-main, $main-bg, 90%);
 
 
 
@@ -44,7 +44,7 @@ body.wrapper {
   color: $text-colour-main;
   font-family: 'Tahoma', 'Arial', 'Nimbus Sans L';
   /*font-family: 'FG_Medium', 'Tahoma', 'Arial', 'Nimbus Sans L';*/
-  line-height: 1.5rem;
+  line-height: 2rem;
   .content {
     @include flex-grow(1);
   }
@@ -96,19 +96,25 @@ body.wrapper {
       @include flex(2, 1, $main-col-min-width);
 			> article {
 				h2 {
-					margin-top: $pad-med;
+					margin-top: $pad-big;
 					color: $text-dimmed-less;
 				}
+				> img,
+				> p > img,
 				figure {
 					max-width: 33%;
 					float: left;
 					clear: both;
 					padding-left: 0;
 					padding-right: $pad-med;
+				}
+				figure {
 					img {
 						width: 100%;
 					}
 					figcaption {
+						padding: $pad-med;
+						text-align: center;
 						color: $text-dimmed-less;
 					}
 				}
@@ -300,6 +306,12 @@ article > footer {
   display: block;
   margin-bottom: $pad-big;
   overflow: auto; /* clear floated children */
+	a {
+		max-width: 45%;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
   a:first-of-type {
     float: left;
   }
@@ -336,6 +348,7 @@ nav.site-nav {
     margin-top: 0-$pad-big;
     max-width: $nav-max-width;
     transform: rotate(-3deg);
+    margin-right: -2rem; /* fixes offset from twist/rotation */
     li {
       display: inline-block;
       margin-top: $pad-sma;

@@ -21,8 +21,7 @@ The version I use has been translated as follows:
 
 So a lot will have been lost from the original. It keeps it short and sweet though and as you have to interpret the meaning of the text in your own way I like the distilled version, uncluttered by other people's interpretations.
 
-!['Inner Truth' hexagram from the I Ching](/images/words/inner-truth-hexagram-tattoo.jpg "
-Inner Truth hexagram, the first tattoo I ever had. It reminds me to do the right thing, to not be selfish. Of course it doesn't always work, I'm human. But whenever I see it I am reminded.")
+!['Inner Truth' hexagram from the I Ching](/images/words/inner-truth-hexagram-tattoo.jpg "Inner Truth hexagram, the first tattoo I ever had. It reminds me to do the right thing, to not be selfish. Of course it doesn't always work, I'm human. But whenever I see it I am reminded.")
 
 !['The Joyous' hexagram from the I Ching](/images/words/the-joyous-trigram.jpg "The Joyous: A trigram representing joyousness and the image of a lake.")
 
