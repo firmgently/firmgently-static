@@ -44,7 +44,6 @@ body.wrapper {
   color: $text-colour-main;
   font-family: 'Tahoma', 'Arial', 'Nimbus Sans L';
   /*font-family: 'FG_Medium', 'Tahoma', 'Arial', 'Nimbus Sans L';*/
-  line-height: 2rem;
   .content {
     @include flex-grow(1);
   }
@@ -80,7 +79,7 @@ body.wrapper {
     @include flex-flow(row wrap);
     margin-top: $pad-big;
     font-size: 1.5rem;
-    line-height: 2rem;
+    line-height: 2.25rem;
     .side-column {
       @include flex(1, 1, $side-col-min-width);
       h2 {
@@ -89,7 +88,6 @@ body.wrapper {
         &:first-of-type {
           margin-top: $pad-med;
         }
-        color: $text-dimmed-slight;
       }
     }
     .main-column {
@@ -97,7 +95,6 @@ body.wrapper {
 			> article {
 				h2 {
 					margin-top: $pad-big;
-					color: $text-dimmed-less;
 				}
 				> img,
 				> p > img,
@@ -163,6 +160,7 @@ h5,
 h6 {
   font-weight: bold;
 	text-transform: uppercase;
+	color: $text-dimmed-less;
 }
 /* consistent page padding (mobile) */
 .side-column,
@@ -189,9 +187,27 @@ article > footer,
 article + nav {
   margin-bottom: $pad-huge;
 }
+article > header {
+	margin-top: $pad-huge;
+	h1 {
+		font-size: 2rem;
+	}
+	span,
+	em {
+	/*	color: $text-dimmed-less;*/
+	}
+	span { /* date */
+		float: right;
+	}
+	em { /* reading time */
+	}
+}
 article > footer {
   margin-top: $pad-big;
 	clear: both;
+}
+aside.latest-posts {
+	margin-top: $pad-huge;
 }
 .item-list-container {
   @include flexbox;

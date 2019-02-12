@@ -13,22 +13,22 @@
     <article>
       <header>
         <h1>{{ title }}</h1>
-        <em>reading time: {{ contents | striptags | wordcount | averageReadTime }}</em>
-				<span>Posted on <meta itemprop="datePublished" content="{{ dateTime }}"><time datetime="{{ dateTime }}">{{ dateNice }}</time></span>
+        <em>{{ contents | striptags | wordcount | averageReadTime }} read time</em>
+				<span><meta itemprop="datePublished" content="{{ dateTime }}"><time datetime="{{ dateTime }}">{{ dateNice }}</time></span>
       </header>
 
       {{ contents | safe }}
 
       <footer>
         {% set comma = joiner(", ") %}
-        <span>Posted in {% for tag in tags -%}{{ comma() }}<a href="/topics/{{ tag.slug }}" rel="category tag">{{ tag.name }}</a>{% endfor %}</span>
+        <span>tags {% for tag in tags -%}{{ comma() }}<a href="/topics/{{ tag.slug }}" rel="category tag">{{ tag.name }}</a>{% endfor %}</span>
       </footer>
     </article>
 
     {{ insertPrevNextBtns() }}
 
 
-    <aside>
+    <aside class="latest-posts">
       <h3>Latest</h3>
       <ul>
         {%- for post in (collections.words) -%}
