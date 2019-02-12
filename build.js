@@ -28,6 +28,7 @@ const sharp = require('metalsmith-sharp'); // image processing
 const sass = require('metalsmith-sass'); // SASS compilation
 const wordcloud = require('metalsmith-wordcloud'); // create wordcloud data from tags
 const feed = require('metalsmith-feed'); // create RSS feed
+const drafts = require('metalsmith-drafts'); // ignore posts marked as drafts
 const date_formatter = require('metalsmith-date-formatter'); // convert date formats for display
 
 
@@ -262,6 +263,10 @@ metalsmith(__dirname)
 //
   .use(excerpts())
   .use(timer("excerpts grabbed"))
+
+  //
+  .use(drafts())
+  .use(timer('drafts ignored'))
 
 // web.html => web/index.html
   .use(permalinks({
