@@ -94,6 +94,21 @@ body.wrapper {
     }
     .main-column {
       @include flex(2, 1, $main-col-min-width);
+			> article {
+				figure {
+					max-width: 33%;
+					float: left;
+					clear: both;
+					padding-left: 0;
+					padding-right: $pad-med;
+					img {
+						width: 100%;
+					}
+					figcaption {
+						color: $text-dimmed-less;
+					}
+				}
+			}
     }
     .widget {
       @include flex(1, 0, $side-col-min-width);
@@ -166,6 +181,7 @@ article + nav {
 }
 article > footer {
   margin-top: $pad-big;
+	clear: both;
 }
 .item-list-container {
   @include flexbox;
