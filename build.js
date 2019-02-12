@@ -48,7 +48,7 @@ markdownRenderer.image = function (href, title, text) {
 		src_ar[i] = p1 + suffix_ar[i] + p2;
 	}
 
-	if (text) {
+	if (title) {
 		markup = `<figure>
 			<img src="${href}" alt="${text}" title="${title}"
 				srcset="${src_ar[0]} 100w, ${src_ar[1]} 500w, ${src_ar[2]} 1000w"
@@ -110,7 +110,7 @@ const averageReadTime = function(numWords) {
   } else if (fastMins === slowMins) {
 		estimate = "about a minute";
 	} else {
-    estimate = fastMins + "-" + slowMins + " minutes";
+    estimate = fastMins + " - " + slowMins + " mins";
   }
   return estimate;
 };

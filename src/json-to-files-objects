@@ -2,7 +2,7 @@
 layout: false
 json_files:
     source_file: items/objects
-    filename_pattern: objects/:itemData.title
+    filename_pattern: object/:itemData.title
     layout: item.njk
     itemType: object
     rename_data_to: itemData

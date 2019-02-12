@@ -63,8 +63,8 @@
 {% macro insertPrevNextBtns() %}
 <nav class="prev-next-btns">
   <h2 class="screen-reader-text">Post navigation</h2>
-  {% if previous %}<a href="/{{ previous.path }}" rel="prev">{{ previous.title | default(previous.itemData.title) }}</a>{% endif %}
-  {% if next %}<a href="/{{ next.path }}" rel="next">{{ next.title  | default(next.itemData.title)}}</a>{%- endif %}
+  {% if previous %}<a href="/{{ previous.path }}" rel="prev">&lt;&nbsp;{{ previous.title | default(previous.itemData.title) }}</a>{% endif %}
+  {% if next %}<a href="/{{ next.path }}" rel="next">{{ next.title  | default(next.itemData.title)}}&nbsp;&gt;</a>{%- endif %}
 </nav>
 {% endmacro %}
 

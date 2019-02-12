@@ -46,6 +46,11 @@ body.wrapper {
   /*font-family: 'FG_Medium', 'Tahoma', 'Arial', 'Nimbus Sans L';*/
   .content {
     @include flex-grow(1);
+		h1 {
+      font-weight: lighter;
+			font-size: 2.5rem;
+      margin-bottom: $pad-med;
+		}
   }
   .site-header,
   .content,
@@ -65,7 +70,7 @@ body.wrapper {
         background-image: $title-image;
         background-size: cover;
         background-position: 0 0;
-        width: 9rem;
+        width: 11rem;
         height: 0;
         padding: calc(60 / 91 * 100%) 0 0 0;
       }
@@ -93,7 +98,7 @@ body.wrapper {
     .main-column {
       @include flex(2, 1, $main-col-min-width);
 			> article {
-				h2 {
+				h2, h3 {
 					margin-top: $pad-big;
 				}
 				> img,
@@ -102,7 +107,7 @@ body.wrapper {
 					max-width: 33%;
 					float: left;
 					clear: both;
-					padding-left: 0;
+					margin-left: 0;
 					padding-right: $pad-med;
 				}
 				figure {
@@ -110,8 +115,8 @@ body.wrapper {
 						width: 100%;
 					}
 					figcaption {
-						padding: $pad-med;
-						text-align: center;
+						padding: $pad-med 0 $pad-med 0;
+						text-align: right;
 						color: $text-dimmed-less;
 					}
 				}
@@ -160,11 +165,12 @@ h5,
 h6 {
   font-weight: bold;
 	text-transform: uppercase;
-	color: $text-dimmed-less;
+  color: $text-colour-strong;
 }
 /* consistent page padding (mobile) */
 .side-column,
 .main-column,
+.prev-next-btns,
 .site-footer,
 .site-header {
   padding: $pad-med $small-page-padding-right $pad-big $small-page-padding-left;
@@ -181,6 +187,7 @@ p,
 h2,
 h3 {
   margin-bottom: $pad-med;
+	font-weight: normal;
 }
 article > header,
 article > footer,
@@ -188,18 +195,14 @@ article + nav {
   margin-bottom: $pad-huge;
 }
 article > header {
-	margin-top: $pad-huge;
-	h1 {
-		font-size: 2rem;
-	}
 	span,
 	em {
 	/*	color: $text-dimmed-less;*/
 	}
 	span { /* date */
-		float: right;
 	}
 	em { /* reading time */
+		float: right;
 	}
 }
 article > footer {
@@ -320,7 +323,7 @@ aside.latest-posts {
 }
 .prev-next-btns {
   display: block;
-  margin-bottom: $pad-big;
+  width: 100%;
   overflow: auto; /* clear floated children */
 	a {
 		max-width: 45%;
@@ -439,7 +442,8 @@ a.icon.btn {
 /* ////////////////////////////////////////////////////////////////////////// */
 /*MAGNIFIER*/
 
-#magnifiableImage {
+#magnifiable-image {
+  max-width: 100%;
   width: $main-image-width-small;
   cursor: zoom-in;
 }

@@ -5,16 +5,15 @@
 
 {% block main %}
 
+  {{ insertPrevNextBtns() }}
+
   <div class="main-column">
-
-
-    {{ insertPrevNextBtns() }}
 
     <article>
       <header>
         <h1>{{ title }}</h1>
-        <em>{{ contents | striptags | wordcount | averageReadTime }} read time</em>
 				<span><meta itemprop="datePublished" content="{{ dateTime }}"><time datetime="{{ dateTime }}">{{ dateNice }}</time></span>
+        <em>{{ contents | striptags | wordcount | averageReadTime }} read time</em>
       </header>
 
       {{ contents | safe }}
@@ -24,9 +23,6 @@
         <span>tags {% for tag in tags -%}{{ comma() }}<a href="/topics/{{ tag.slug }}" rel="category tag">{{ tag.name }}</a>{% endfor %}</span>
       </footer>
     </article>
-
-    {{ insertPrevNextBtns() }}
-
 
     <aside class="latest-posts">
       <h3>Latest</h3>
@@ -39,6 +35,8 @@
       </ul>
     </aside>
 
-
   </div>
+
+  {{ insertPrevNextBtns() }}
+
 {% endblock %}
