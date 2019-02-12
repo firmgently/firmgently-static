@@ -13,7 +13,7 @@
       <header>
         <h1>{{ title }}</h1>
 				<span><meta itemprop="datePublished" content="{{ dateTime }}"><time datetime="{{ dateTime }}">{{ dateNice }}</time></span>
-        <em>{{ contents | striptags | wordcount | averageReadTime }} read time</em>
+        <em>{{ contents | striptags | wordcount | averageReadTime }} read</em>
       </header>
 
       {{ contents | safe }}
@@ -27,7 +27,7 @@
     <aside class="latest-posts">
       <h3>Latest</h3>
       <ul>
-        {%- for post in (collections.words) -%}
+        {%- for post in (collections.word) -%}
           {% if loop.index0 < data.config.consts.RECENT_POSTS_NUM_TO_SHOW -%}
             <li><a href="/{{ post.path | stripIndexFromPath }}">{{ post.title }}</a></li>
           {%- endif %}

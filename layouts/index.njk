@@ -21,7 +21,7 @@
     {% endif %}
     {%- endfor %}
   {% set count = 0 %}
-  {% for item in collections.words %}
+  {% for item in collections.word %}
     {% if count < data.config.consts.HOME_LATESTITEMS_PER_COLLECTION %}
       {% if not item.itemData.excludeFromHome %}
         {% set count = count + 1 %}
@@ -30,7 +30,7 @@
     {% endif %}
     {%- endfor %}
   {% set count = 0 %}
-  {% for item in collections.photos %}
+  {% for item in collections.photo %}
     {% if count < data.config.consts.HOME_LATESTITEMS_PER_COLLECTION %}
       {% if not item.itemData.excludeFromHome %}
         {% set count = count + 1 %}
@@ -39,7 +39,7 @@
     {% endif %}
     {%- endfor %}
   {% set count = 0 %}
-  {% for item in collections.objects %}
+  {% for item in collections.object %}
     {% if count < data.config.consts.HOME_LATESTITEMS_PER_COLLECTION %}
       {% if not item.itemData.excludeFromHome %}
         {% set count = count + 1 %}

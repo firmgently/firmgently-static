@@ -117,7 +117,7 @@
   {
     "id": "public_transport_10",
     "title": "Public Transport #10",
-    "tags": "art,land,scape,tree",
+    "tags": "art,earth,scape,tree",
     "desc": "<p>Number 10 in a series of 12 views out of bus and train windows.</p>",
     "materials": "Acrylic on canvas",
     "commentPrompt": "Are landscape paintings boring?",
@@ -131,7 +131,7 @@
   {
     "id": "public_transport_11",
     "title": "Public Transport #11",
-    "tags": "art,land,scape,tree",
+    "tags": "art,earth,scape,tree",
     "desc": "<p>Number 11 in a series of 12 views out of bus and train windows.</p>",
     "materials": "Acrylic on canvas",
     "commentPrompt": "Are landscape paintings boring?",
@@ -145,7 +145,7 @@
   {
     "id": "public_transport_12",
     "title": "Public Transport #12",
-    "tags": "art,land,scape",
+    "tags": "art,earth,scape,sun",
     "desc": "<p>Number 12 in a series of 12 views out of bus and train windows.</p>",
     "materials": "Acrylic on canvas",
     "commentPrompt": "Are landscape paintings boring?",
@@ -181,7 +181,7 @@
   {
     "id": "bosh",
     "title": "Life Tips: 3. BOSH: Perspective",
-    "tags": "art,land,scape",
+    "tags": "art,earth,scape",
     "desc": "<p>A pebble that is bigger than a person who is bigger than a tractor. Sometimes the little things can seem like a big deal. Othertimes we miss obvious important things.</p>",
     "materials": "Acrylic on Canvas",
     "w": "102",
@@ -201,6 +201,17 @@
     "date": "2016 07 30"
   },
   {
+    "id": "major",
+    "title": "Major",
+    "tags": "art,animal",
+    "desc": "<p>?????</p>",
+    "materials": "Acrylic on Canvas",
+    "w": "?????",
+    "h": "?????",
+    "d": "2",
+    "date": "2018 ?? ??"
+  },
+  {
     "id": "peachesChance",
     "title": "Peaches, Chance",
     "tags": "art,animal",
@@ -214,7 +225,7 @@
   {
     "id": "drift",
     "title": "Drift",
-    "tags": "art,sea,scape",
+    "tags": "art,water,scape,moon",
     "desc": "<p>Just...drift.</p><p>I used metallic paint to suggest reflected moonlight, there's an animated GIF to illustrate <a href=\"http://imgur.com/zumXilL\" target=\"_blank\">here</a>.</p>",
     "materials": "Acrylic on Canvas",
     "w": "76",
@@ -250,7 +261,7 @@
   {
     "id": "crawlTheCopse",
     "title": "Crawl the Copse (Eight Animals)",
-    "tags": "art,land,scape,tree",
+    "tags": "art,earth,scape,tree",
     "desc": "<p>I got into the detail and swirls in this piece. There are eight animals in the scene, you'll need to magnify to find them all.</p>",
     "materials": "Acrylic on Canvas",
     "w": "127",
@@ -262,7 +273,7 @@
   {
     "id": "limbo",
     "title": "Limbo: Painted or Unpainted",
-    "tags": "art,abstract,land,scape",
+    "tags": "art,abstract,earth,scape",
     "desc": "<p>I wasn't sure if I should put this in the artwork or the photography section but it's something I painted so this section seemed about right.</p><p>It's the plastic sheet I cover my wall and floor with to create my work area. Over the past few years it's become covered in paint that misses the canvas. So it's a subconscious acccidental background painting. I can definitely see a watery landscape here.</p>",
     "materials": "Acrylic on Plastic Tarp",
     "w": "80",
@@ -274,7 +285,7 @@
   {
     "id": "safeDirection",
     "title": "Safe Direction",
-    "tags": "art,sea,scape",
+    "tags": "art,water,scape",
     "desc": "<p>\"Art is a lie that makes us realise truth, at least the truth that is given us to understand.\" - Pablo P</p><p>I want you to think it looks real, then I want you to be disgusted by how messy it is. Magnify it if you don't believe me.</p>",
     "materials": "Acrylic on Canvas",
     "w": "102",
@@ -285,7 +296,7 @@
   {
     "id": "winterIsComing",
     "title": "Circles and Spikes",
-    "tags": "art,land,scape,tree",
+    "tags": "art,earth,scape,tree",
     "desc": "<p>The branch growth was created using semi-autonomous techniques, letting gravity pull drips of paint down the canvas (held upside-down).</p><p>The general aim was to recreate the feeling of hectic, confusing snow that makes vision difficult. I like the repeating circles in the snowdrops, berries and sun.</p>",
     "materials": "Acrylic on Canvas",
     "w": "102",
@@ -319,7 +330,7 @@
   {
     "id": "bleurgh",
     "title": "Morning. Bleurgh.",
-    "tags": "art,land,scape,tree",
+    "tags": "art,earth,scape,tree",
     "desc": "<p>I made heavy use of blurring (using acrylic matt gel to help make flat but translucent colours) hoping to create a dreamy mystical feel in this painting.</p>",
     "materials": "Acrylic, Matt Gel on Canvas",
     "w": "126",
@@ -354,7 +365,7 @@
   {
     "id": "tarpLandscape",
     "title": "Tarp Landscape",
-    "tags": "art,abstract,land,scape",
+    "tags": "art,abstract,earth,scape",
     "desc": "<p>A digitally-manipulated crop of the tarpaulin I use as a portable painting studio.</p>",
     "materials": "Painters' Tarpaulin, Photoshop",
     "w": "57",
@@ -390,7 +401,7 @@
   {
     "id": "fireAway",
     "title": "Fireaway",
-    "tags": "art,abstract,semiauto,tree",
+    "tags": "art,abstract,semiauto,tree,fire",
     "desc": "<p>Possibly because they let their computers tell them how to write, people sometimes get confused about where one word ends and another begins. \"I maybe going for a walk\", \"my dog scratches me alot, but I nevermind\"...such nasties as these cause me great distress. This is a trend I will not be able to reverse, so to keep the insanity-wolf from my door I have turned to exposure therapy.</p>",
     "materials": "Acrylic on Canvas",
     "w": "102",
@@ -402,7 +413,7 @@
   {
     "id": "southDownsCows",
     "title": "South Downs Cows",
-    "tags": "art,land,scape,animal",
+    "tags": "art,earth,scape,animal",
     "desc": "<p>Some cows. On a hill.</p>",
     "materials": "Acrylic on Canvas",
     "commentPrompt": "Are landscape paintings boring?",
@@ -415,7 +426,7 @@
   {
     "id": "goneSun",
     "title": "Gone Sun",
-    "tags": "art,land,scape",
+    "tags": "art,earth,scape,sun",
     "desc": "<p>Over the South Downs.</p>",
     "materials": "Acrylic on Canvas",
     "commentPrompt": "Are landscape paintings boring?",
@@ -439,7 +450,7 @@
   {
     "id": "holywell",
     "title": "Crab Tracks, Holywell",
-    "tags": "art,land,scape",
+    "tags": "art,earth,scape",
     "desc": "<p>The lonely path of a crab cuts through the serenery in this beach landscape.</p>",
     "materials": "Acrylic on Canvas",
     "commentPrompt": "Are landscape paintings boring?",
@@ -451,7 +462,7 @@
   {
     "id": "MontserratBlue",
     "title": "M. Blue",
-    "tags": "art,sea,scape",
+    "tags": "art,water,scape",
     "desc": "<p>Something I like to do with my painting is draw attention to the way our perceptual systems work.</p><p>Sometimes the viewer sees the piece from a distance or in a small thumbnail and thinks it might be a photo, then is surprised when seeing the brush strokes up-close at how messy or 'painted' it looks. A miniscule lesson in how things are not always as they seem.</p>",
     "materials": "Acrylic on canvas",
     "w": "40",
@@ -463,7 +474,7 @@
   {
     "id": "beautifulPlace",
     "title": "A Beautiful Place to Meet Lucifer",
-    "tags": "art,land,scape",
+    "tags": "art,earth,scape",
     "desc": "<p>A sacred place with a mystical atmosphere. Some have speculated that it was once used to worship that Bringer of Light, the Morning Star, Intellectualism, Enlightenment: <a href=\"http://en.wikipedia.org/wiki/Lucifer\" target=\"blank\">Lucifer</a>.</p>",
     "materials": "Acrylic on canvas",
     "w": "70",
@@ -475,7 +486,7 @@
   {
     "id": "lookingAtShoreham",
     "title": "Looking At Shoreham",
-    "tags": "art,land,sea,scape",
+    "tags": "art,earth,water,scape",
     "desc": "<p>Fairly loose rendering of this familiar view along Brighton seafront.</p><p>I'm particularly pleased with the red dot on the tower in the distance.</p>",
     "materials": "Acrylic on canvas",
     "w": "40",
@@ -487,7 +498,7 @@
   {
     "id": "path",
     "title": "Path #1",
-    "tags": "art,land,scape",
+    "tags": "art,earth,scape",
     "desc": "<p>This was painted on my computer using a digital pen and tablet, in an attempt to match the style I use in acrylic.</p>",
     "materials": "Wacom Tablet",
     "commentPrompt": "Are landscape paintings boring?",
@@ -501,7 +512,7 @@
   {
     "id": "foresty",
     "title": "Foresty",
-    "tags": "art,abstract,land,scape,tree",
+    "tags": "art,abstract,earth,scape,tree",
     "desc": "<p>I really tried to let go of my technique here.</p>",
     "materials": "Acrylic on MDF board",
     "commentPrompt": "Are landscape paintings boring?",
@@ -510,6 +521,114 @@
     "d": "2",
     "printsAvailable": "STANDARD",
     "date": "2012 07 19"
+  },
+  {
+    "id": "fractal-cosmos",
+    "title": "The Fractal Cosmos",
+    "tags": "art,abstract",
+    "desc": "<p>???</p>",
+    "materials": "Acrylic on canvas",
+    "w": "???",
+    "h": "???",
+    "d": "2",
+    "printsAvailable": "STANDARD",
+    "date": "???? ?? ??"
+  },
+  {
+    "id": "happy-caterpillar",
+    "title": "The Happy Caterpillar",
+    "tags": "art,abstract",
+    "desc": "<p>???</p>",
+    "materials": "Acrylic on canvas",
+    "w": "???",
+    "h": "???",
+    "d": "2",
+    "printsAvailable": "STANDARD",
+    "date": "???? ?? ??"
+  },
+  {
+    "id": "holographic-cosmos",
+    "title": "The Holographic Cosmos",
+    "tags": "art,abstract",
+    "desc": "<p>???</p>",
+    "materials": "Acrylic on canvas",
+    "w": "???",
+    "h": "???",
+    "d": "2",
+    "printsAvailable": "STANDARD",
+    "date": "???? ?? ??"
+  },
+  {
+    "id": "down-devils-dyke",
+    "title": "Down Devil's Dyke",
+    "tags": "art,tree,plant",
+    "desc": "<p>???</p>",
+    "materials": "Acrylic on canvas",
+    "w": "???",
+    "h": "???",
+    "d": "2",
+    "printsAvailable": "STANDARD",
+    "date": "???? ?? ??"
+  },
+  {
+    "id": "fire-and-water",
+    "title": "Fire + Water",
+    "tags": "art,water,scape,fire",
+    "desc": "<p>???</p>",
+    "materials": "Acrylic on canvas",
+    "w": "???",
+    "h": "???",
+    "d": "2",
+    "printsAvailable": "STANDARD",
+    "date": "???? ?? ??"
+  },
+  {
+    "id": "come-through",
+    "title": "Come Through",
+    "tags": "art,plant,scape,tree",
+    "desc": "<p>???</p>",
+    "materials": "Acrylic on canvas",
+    "w": "???",
+    "h": "???",
+    "d": "2",
+    "printsAvailable": "STANDARD",
+    "date": "???? ?? ??"
+  },
+  {
+    "id": "cmprssnsm-1",
+    "title": "Cmprssnsm #1",
+    "tags": "art,abstract,compressionism,fungi",
+    "desc": "<p>???</p>",
+    "materials": "Acrylic on canvas",
+    "w": "???",
+    "h": "???",
+    "d": "2",
+    "printsAvailable": "STANDARD",
+    "date": "???? ?? ??"
+  },
+  {
+    "id": "beacons-1",
+    "title": "Beacons #1",
+    "tags": "art,earth,scape",
+    "desc": "<p>???</p>",
+    "materials": "Acrylic on canvas",
+    "w": "???",
+    "h": "???",
+    "d": "2",
+    "printsAvailable": "STANDARD",
+    "date": "???? ?? ??"
+  },
+  {
+    "id": "beacons-2",
+    "title": "Beacons #2",
+    "tags": "art,earth,scape",
+    "desc": "<p>???</p>",
+    "materials": "Acrylic on canvas",
+    "w": "???",
+    "h": "???",
+    "d": "2",
+    "printsAvailable": "STANDARD",
+    "date": "???? ?? ??"
   },
   {
     "id": "inOneSide",
@@ -553,7 +672,7 @@
   {
     "id": "actualities",
     "title": "Actualities",
-    "tags": "art,abstract,semiauto,sea",
+    "tags": "art,abstract,semiauto,water",
     "desc": "<p>A night-flight over the sea of potentiality.</p>",
     "materials": "Acrylic on canvas",
     "commentPrompt": "Do you like abstract art or is it a waste of time?",
@@ -566,7 +685,7 @@
   {
     "id": "drownedLuckily",
     "title": "Drowned, Luckily",
-    "tags": "art,abstract,semiauto,sea",
+    "tags": "art,abstract,semiauto,water",
     "desc": "<p>Kittens? Sorrows? Feelings of insecurity?</p>",
     "materials": "Acrylic on canvas",
     "commentPrompt": "Do you like abstract art or is it a waste of time?",
@@ -578,7 +697,7 @@
   {
     "id": "neverglades",
     "title": "Neverglades",
-    "tags": "art,abstract,semiauto,land",
+    "tags": "art,abstract,semiauto,earth",
     "desc": "<p>Semi-controlled natural lines...satellite view/map view.</p>",
     "materials": "Acrylic on canvas",
     "commentPrompt": "Do you like abstract art or is it a waste of time?",
@@ -604,7 +723,7 @@
   {
     "id": "RideWavesMakeWaves",
     "title": "Ride Waves / Make Waves",
-    "tags": "art,abstract,semiauto,sea",
+    "tags": "art,abstract,semiauto,water",
     "desc": "<p>Smashing together, fusion, ripples, consequences.</p>",
     "materials": "Acrylic on canvas",
     "commentPrompt": "Do you like abstract art or is it a waste of time?",
@@ -692,7 +811,7 @@
   {
     "id": "jagger",
     "title": "Jagger",
-    "tags": "art,animal",
+    "tags": "art,water,animal",
     "desc": "<p>I loved that fish. I seem to remember that the gold acrylic I used was made from real gold, but that sounds ridiculous so I'm probably befuddled. The fish does glimmer as light moves across it anyway, unless I'm befuddling that too.</p><p>This got re-worked in 2012 when I removed the terrible old frame I had nailed to it years ago and found it to be discoloured underneath. I ended up repainting the background and much prefer the new version.</p>",
     "materials": "Acrylic",
     "w": "97",

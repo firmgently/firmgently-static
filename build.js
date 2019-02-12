@@ -106,11 +106,11 @@ const averageReadTime = function(numWords) {
     estimate;
 
   if (fastMins < 1) {
-    estimate = "less than a minute";
+    estimate = "less than a min";
   } else if (fastMins === slowMins) {
-		estimate = "about a minute";
+		estimate = "about a min";
 	} else {
-    estimate = fastMins + " - " + slowMins + " mins";
+    estimate = fastMins + " - " + slowMins + " min";
   }
   return estimate;
 };
@@ -282,26 +282,26 @@ metalsmith(__dirname)
   .use(collections({
     all: {
      pattern: [
-      'words/*/*.html',
+      'word/*/*.html',
       'art/*/*.html',
-      'photos/*/*.html',
-      'objects/*/*.html',
+      'photo/*/*.html',
+      'object/*/*.html',
       'web/*/*.html'
       ],
       sortBy: 'date',
       reverse: true
     },
-    words: 'words/*/*.html',
+    word: 'word/*/*.html',
     art: 'art/*/*.html',
-    photos: 'photos/*/*.html',
-    objects: 'objects/*/*.html',
+    photo: 'photo/*/*.html',
+    object: 'object/*/*.html',
     web: 'web/*/*.html'
   }))
   .use(timer('collections created'))
 
 	//
   .use(metadata({
-    'collections.words': {
+    'collections.word': {
       layout: 'post.njk'
     }
   }))

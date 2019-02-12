@@ -2,7 +2,7 @@
 {% extends "template.njk" %}
 
 {% block extraCSS -%}
-<link rel="stylesheet" href="/css/main-light.css">
+<link id="pagestyle" rel="stylesheet" href="/css/main-light.css">
 {%- endblock %}
 
 {% block main %}{{ contents | safe }}{% endblock %}

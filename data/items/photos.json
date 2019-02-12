@@ -2,7 +2,7 @@
   {
     "id": "yeastlings",
     "title": "Yeastlings",
-    "tags": "photo,abstract,weird",
+    "tags": "photo,abstract,weird,fungi",
     "desc": "<p>This is yeast proving.</p>",
     "excludeFromHome": "true",
     "printsAvailable": "STANDARD",
@@ -53,20 +53,6 @@
     "h": "2030",
     "d": "2",
     "date": "2015 01 15"
-  },
-  {
-    "id": "leech",
-    "title": "Leech",
-    "tags": "photo,animal",
-    "desc": "<p>Look at how pretty and colourful it is.</p>",
-    "excludeFromHome": "true",
-    "printsAvailable": "STANDARD",
-    "camera": "Panasonic GF1",
-    "location": "Devil's Dyke, Sussex",
-    "w": "2034",
-    "h": "1359",
-    "d": "2",
-    "date": "2014 09 25"
   },
   {
     "id": "mustard",
@@ -236,23 +222,9 @@
     "date": "2013 07 27"
   },
   {
-    "id": "doNotIgnoreMe",
-    "title": "Do Not Ignore Me",
-    "tags": "photo,abstract,weird",
-    "desc": "<p>Under the bridge.</p>",
-    "excludeFromHome": "true",
-    "printsAvailable": "STANDARD",
-    "camera": "Panasonic GF1",
-    "location": "Brighton, Sussex",
-    "w": "4158",
-    "h": "2193",
-    "d": "2",
-    "date": "2015 02 11"
-  },
-  {
     "id": "nightNotSwimming",
     "title": "Night Not Swimming",
-    "tags": "photo,abstract,land,scape",
+    "tags": "photo,abstract,earth,scape",
     "desc": "<p>Long exposure on an eerie night.</p>",
     "excludeFromHome": "true",
     "printsAvailable": "STANDARD",
@@ -262,20 +234,6 @@
     "h": "3116",
     "d": "2",
     "date": "2015 02 11"
-  },
-  {
-    "id": "gotToGetIn",
-    "title": "Got to Get In",
-    "tags": "photo,abstract,weird",
-    "desc": "<p>Coming up.</p>",
-    "excludeFromHome": "true",
-    "printsAvailable": "STANDARD",
-    "camera": "Pentax K5",
-    "location": "Brighton, Sussex",
-    "w": "4840",
-    "h": "3205",
-    "d": "2",
-    "date": "2015 01 17"
   },
   {
     "id": "bakedIce",
@@ -293,8 +251,8 @@
   {
     "id": "frozenCandle",
     "title": "Frozen Candle",
-    "tags": "photo,abstract,weird",
-    "desc": "<p>A scientific experiment to find out if it was possible to freeze a flame. Yes it did work, totally.</p>",
+    "tags": "photo,abstract,weird,fire",
+    "desc": "<p>A scientific experiment to find out if it was possible to freeze a flame. Yes it did work. Totally.</p>",
     "camera": "Fuji FinePix F810",
     "location": "Bow, London",
     "w": "1000",
@@ -432,7 +390,7 @@
   {
     "id": "alienFruit",
     "title": "Alien Fruit",
-    "tags": "photo,abstract,land,scape",
+    "tags": "photo,abstract,earth,scape",
     "desc": "<p>I'd love to know what it eventually hatched into.</p>",
     "camera": "Fuji FinePix F810",
     "location": "Goa",
@@ -444,7 +402,7 @@
   {
     "id": "flamingoBejewelled",
     "title": "Flaming Bejewelled",
-    "tags": "photo,abstract,plant",
+    "tags": "photo,abstract,plant,fire",
     "desc": "<p>It's over-saturated, covered in lens-flare and totally garish, but it loves me.</p>",
     "camera": "Fuji FinePix F810",
     "location": "London",
@@ -495,7 +453,7 @@
   {
     "id": "sunsetHairTentLongneckFliesOverhead",
     "title": "Sunset in Hair-tent, Longneck Flies Overhead",
-    "tags": "photo,abstract,weird",
+    "tags": "photo,sun,abstract,weird",
     "desc": "<p>Yeah that's right, that's what I'm calling it.</p>",
     "camera": "Fuji FinePix F810",
     "location": "Edinburgh",
@@ -533,7 +491,7 @@
   {
     "id": "sun2",
     "title": "Sun #2",
-    "tags": "photo,abstract,weird",
+    "tags": "photo,sun,abstract,weird",
     "desc": "<p>A hot drink of Swiss Bouillon.</p>",
     "camera": "Fuji FinePix F810",
     "location": "Finsbury Park, London",
@@ -546,7 +504,7 @@
   {
     "id": "sun3",
     "title": "Sun #3",
-    "tags": "photo,abstract,weird",
+    "tags": "photo,sun,abstract,weird",
     "desc": "<p>A liquidiser half-full of liquidised persimmon (Sharon fruit) was placed on top of a lamp and a camera was aimed down into it. This made far more sense than eating the flavourless buggers.</p>",
     "camera": "Fuji FinePix F810",
     "location": "Finsbury Park, London",
@@ -559,7 +517,7 @@
   {
     "id": "moon1",
     "title": "Moon #1",
-    "tags": "photo,abstract,weird",
+    "tags": "photo,moon,abstract,weird",
     "desc": "<p>This is the view looking down into an emptied cup of tea. The image was then inverted (like colour-reversal film or a negative effect) in Photoshop and the overall brightness levels were tweaked.</p>",
     "camera": "Fuji FinePix F810",
     "location": "Bow, London",
@@ -572,7 +530,7 @@
   {
     "id": "moon2",
     "title": "Moon #2",
-    "tags": "photo,abstract,weird",
+    "tags": "photo,moon,abstract,weird",
     "desc": "<p>A hazy moon drifts over a sparsely-scrubbed hillside.</p><p>Well actually this is my sparsely-scrubbed chinny-chin-chin, colour-inverted in Photoshop. The moon is a smoke-detector on the ceiling, and the whole image is flipped vertically.</p>",
     "camera": "Fuji FinePix F810",
     "location": "Bow, London",
@@ -598,7 +556,7 @@
   {
     "id": "pixelCloth",
     "title": "Pixel Cloth",
-    "tags": "photo,abstract,weird",
+    "tags": "photo,abstract,sun,weird,fire",
     "desc": "<p>This patterned cloth, backlit by the sun reminds me of fire. If you use the magnifier to zoom in you'll see how the design is pixelated.</p><p>I associate pixels with computers but the loom brought them into the world a long time before that and is <a href=\"http://en.wikipedia.org/wiki/Jacquard_loom\">linked to early computers in other ways</a> too.</p>",
     "camera": "Panasonic GF1",
     "location": "Brighton",

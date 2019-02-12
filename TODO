@@ -3,6 +3,8 @@
 [ ] data vs datetime, how to et duplicate into posts automatically
 [ ] Posted in WORD, SMALL-TEST <- links not working, 'topics/' hardcoded?
 [ ] 'more' text bg colour doesn't change with hover
+[ ] js for invert colours is not embedded correctly
+[ ] initial load on light css sometimes loads with no css or broken layout
 
 
 ## GENERAL
