@@ -4,8 +4,18 @@
 @import '_mixins.scss';
 @import '_font-face.scss';
 
+
 /* ////////////////////////////////////////////////////////////////////////// */
-/* CONTAINERS */
+/* COLOURS */
+
+$text-dimmed-main: mix($text-colour-main, $main-bg2, 40%);
+$text-dimmed-less: mix($text-colour-main, $main-bg2, 60%);
+$text-dimmed-slight: mix($text-colour-main, $main-bg2, 90%);
+
+
+
+/* ////////////////////////////////////////////////////////////////////////// */
+/*  */
 
 html,
 body {
@@ -50,7 +60,7 @@ body.wrapper {
     @include align-items(center);
     .title-image {
       background: none;
-			margin-bottom: $pad-med;
+      margin-bottom: $pad-med;
       img {
         display: inline-block;
         background-image: $title-image;
@@ -68,8 +78,19 @@ body.wrapper {
   .content {
     @include flexbox;
     @include flex-flow(row wrap);
+    margin-top: $pad-big;
+    font-size: 1.5rem;
+    line-height: 2rem;
     .side-column {
       @include flex(1, 1, $side-col-min-width);
+      h2 {
+        font-weight: lighter;
+        margin-top: $pad-big;
+        &:first-of-type {
+          margin-top: $pad-med;
+        }
+        color: $text-dimmed-slight;
+      }
     }
     .main-column {
       @include flex(2, 1, $main-col-min-width);
@@ -88,18 +109,24 @@ body.wrapper {
       color: $text-dimmed-less;
       a {
         clear: both;
-				vertical-align: text-top;
+        vertical-align: text-top;
         margin-right: $pad-big;
-				img {
-					.button {stroke: none; fill: red;}
-					.symbol {stroke: none; fill: black;}
-				}
+        img {
+          .button {
+            stroke: none;
+            fill: red;
+          }
+          .symbol {
+            stroke: none;
+            fill: black;
+          }
+        }
       }
-			> span {
-				color: $text-dimmed-main;
-				margin-left: $pad-big;
-				@include align-self(flex-start);
-			}
+      > span {
+        color: $text-dimmed-main;
+        margin-left: $pad-big;
+        @include align-self(flex-start);
+      }
     }
   }
 }
@@ -110,6 +137,7 @@ h4,
 h5,
 h6 {
   font-weight: bold;
+	text-transform: uppercase;
 }
 /* consistent page padding (mobile) */
 .side-column,
@@ -162,31 +190,30 @@ article > footer {
       bottom: 0;
       left: 0;
       right: 0;
-      &:hover {
-        border-color: $button-highlight-color;
-      }
       > figure {
         margin: 0;
         padding: 0;
         position: relative;
-				height: 100%;
+        height: 100%;
         z-index: 1;
         > img {
           width: 100%;
-          background-position: center;
-          background-size: cover;
           position: absolute;
           z-index: -1;
+					top: 0;
+					left: 0;
+					@include transition(all 0.2s ease-in 0.15s);
           @include border-radius($pad-sma);
         }
         > figcaption {
           padding: $pad-tiny;
-					position: absolute;
-					left: 0;
-					right: 0;
-					height: 1.5rem;
-					bottom: calc(1rem + (#{$pad-tiny}*2));
+          position: absolute;
+          left: 0;
+          right: 0;
+          height: 1.5rem;
+          bottom: calc(1rem + (#{$pad-tiny}* 2));
           > h2 {
+						font-weight: normal;
             padding: $pad-sma;
             margin-bottom: $pad-sma;
             @include border-radius(0 0 $pad-sma $pad-sma);
@@ -199,6 +226,17 @@ article > footer {
           }
         }
       }
+      &:hover {
+        border-color: $button-highlight-color;
+        > figure {
+          > img {
+            width: 200%;
+						top: -10%;
+						left: -50%;
+						@include transition(all 2s ease-out 0.25s);
+          }
+        }
+      }
       > h2,
       > p {
         text-transform: none;
@@ -208,27 +246,32 @@ article > footer {
       }
       > h2 {
         font-size: 1.66rem;
-				font-weight: lighter;
+        font-weight: lighter;
         font-style: italic;
         padding-right: 0.5rem;
-				line-height: 1.75rem;
+        line-height: 1.75rem;
       }
       > p {
         color: $text-colour-main;
         font-size: 1.25rem;
-				&:after {
-					content: 'more >>';
-					text-align: right;
-					display: inline-block;
-					color: $text-colour-alt;
-					@include gradient(top, rgba($button-bg-colour, 0), $button-bg-colour, $button-bg-colour);
-					position: absolute;
-					left: 0;
-					right: 0;
-					bottom: -1px; /* 0 leaves a gap, this fixes it */
-					padding-top: 3rem;
-					z-index: 1;
-				}
+        &:after {
+          content: 'more >>';
+          text-align: right;
+          display: inline-block;
+          color: $text-colour-alt;
+          @include gradient(
+            top,
+            rgba($button-bg-colour, 0),
+            $button-bg-colour,
+            $button-bg-colour
+          );
+          position: absolute;
+          left: 0;
+          right: 0;
+          bottom: -1px; /* 0 leaves a gap, this fixes it */
+          padding-top: 3rem;
+          z-index: 1;
+        }
       }
     }
   }
@@ -248,7 +291,7 @@ a,
 a:hover,
 a:active {
   text-decoration: none;
-  text-transform: uppercase;
+  /*text-transform: uppercase;*/
   color: $text-colour-alt;
   background-color: $button-bg-colour;
   position: relative;
@@ -270,13 +313,12 @@ nav.site-nav {
     @include flex-wrap(wrap);
     @include justify-content(flex-end);
     @include align-items(flex-end);
-		margin-top: 0-$pad-big;
-		max-width: $nav-max-width;
-		transform: rotate(-3deg);
+    margin-top: 0-$pad-big;
+    max-width: $nav-max-width;
+    transform: rotate(-3deg);
     li {
       display: inline-block;
-			/*margin-bottom: 0-$pad-sma;*/
-			margin-top: $pad-sma;
+      margin-top: $pad-sma;
       margin-right: $pad-med;
       &:first-of-type {
         /* title image */
@@ -285,8 +327,6 @@ nav.site-nav {
       }
       &:last-of-type {
         /* yin-yang symbol */
-        /*margin-bottom: 0-$pad-med;*/
-        /*margin-left: $pad-med;*/
       }
       /* set up nth-of-type(?n+?) cycle, creates --r vars, used to set rotation of inner <a> */
       @include cycle(
@@ -311,8 +351,8 @@ nav.site-nav {
       a,
       a:hover,
       a:active {
-        font-weight: bold;
         display: inline-block;
+				text-transform: uppercase;
         padding: 0.25rem 0.5rem;
         transform: rotate(var(--r));
         z-index: 0;
@@ -400,9 +440,9 @@ a.icon.btn {
     list-style-type: none;
     list-style-image: url(/images/light/bullet.png);
     padding: 0 $pad-big;
-		li {
-			display: inline-block;
-		}
+    li {
+      display: inline-block;
+    }
   }
   #hireMeAnim {
     cursor: default;

@@ -34,7 +34,7 @@
       {% set classattr = "" %}
     {% endif %}
     {# create tag markup #}
-    <li><a style="font-size: {{ word.wght | fontsizeFromTagWeight(0.66, 1.8, 20) }}rem" href="{{ word.pth }}"{{ classattr | safe }}>{{ word.ctg }}</a></li>
+    <li><a style="font-size: {{ word.wght | fontsizeFromTagWeight(0.66, 2, 10) }}rem" href="{{ word.pth }}"{{ classattr | safe }}>{{ word.ctg }}</a></li>
   {% endif %}
 {%- endfor %}
 {% endmacro %}
@@ -46,7 +46,7 @@
 <a href="/{{ item.path | stripIndexFromPath }}">
 {% if item.itemData %} {# standard item #}
 	<figure>
-		<img src="/images/shim.png" style="background-image: url('/images/items/thumbs/{{ item.itemData.id }}.jpg')" />
+		<img src="/images/items/thumbs/{{ item.itemData.id }}.jpg" />
 		<figcaption>
       <h2>{{ item.itemData.title }}</h2>
 		</figcaption>
