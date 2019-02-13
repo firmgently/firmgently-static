@@ -29,6 +29,7 @@ const sass = require('metalsmith-sass'); // SASS compilation
 const wordcloud = require('metalsmith-wordcloud'); // create wordcloud data from tags
 const feed = require('metalsmith-feed'); // create RSS feed
 const drafts = require('metalsmith-drafts'); // ignore posts marked as drafts
+const sitemap = require('metalsmith-sitemap'); // create sitemap
 const date_formatter = require('metalsmith-date-formatter'); // convert date formats for display
 
 
@@ -156,6 +157,8 @@ if (process.env.REBUILDIMAGES === "true") {
 }
 
 // used to name topic directory
+// ! IMPORTANT - changes to this directory name must be updated
+// in layouts/post.njk
 const topicDir = "by";
 
 
@@ -395,6 +398,15 @@ metalsmith(__dirname)
 		})
 	)
   .use(timer('RSS feed created'))
+
+// sitemap
+	.use(
+		sitemap({
+			hostname: "https://firmgently.co.uk",
+			omitIndex: true
+		})
+	)
+  .use(timer('sitemap.xml created'))
 
 //  .use(linkcheck({ verbose: true }))
 //  .use(timer('links checked'))

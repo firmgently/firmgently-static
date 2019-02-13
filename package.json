@@ -34,6 +34,7 @@
     "metalsmith-permalinks": "^2.0.0",
     "metalsmith-sass": "^1.6.0",
     "metalsmith-sharp": "^2.2.1",
+    "metalsmith-sitemap": "^1.2.2",
     "metalsmith-slug": "^0.2.1",
     "metalsmith-tags": "^2.0.0",
     "metalsmith-timer": "0.0.2",
