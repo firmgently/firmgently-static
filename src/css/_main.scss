@@ -247,7 +247,7 @@ aside.latest-posts {
           z-index: -1;
 					top: 0;
 					left: 0;
-					@include transition(all 12s ease-out 0.15s);
+					@include transition(all 36s ease-out 0.15s);
           @include border-radius($pad-sma);
         }
         > figcaption {
@@ -278,7 +278,7 @@ aside.latest-posts {
             width: 200%;
 						top: -10%;
 						left: -50%;
-						@include transition(all 12s ease-out 0.33s);
+						@include transition(all 36s ease-out 0.33s);
           }
         }
 				> p {
@@ -374,14 +374,14 @@ nav.site-nav {
     @include flex-wrap(wrap);
     @include justify-content(flex-end);
     @include align-items(flex-end);
-    margin-top: 0-$pad-big;
+    margin-top: 0-$pad-huge;
     max-width: $nav-max-width;
-    transform: rotate(-3deg);
-    margin-right: -2rem; /* fixes offset from twist/rotation */
+    transform: rotate(-5deg);
+    margin-right: -2.5rem; /* fixes offset from twist/rotation */
     li {
       display: inline-block;
       margin-top: $pad-sma;
-      margin-right: $pad-med;
+      margin-right: $pad-sma;
       &:first-of-type {
         /* title image */
         margin-bottom: 0-$pad-med;
@@ -393,7 +393,7 @@ nav.site-nav {
       /* set up nth-of-type(?n+?) cycle, creates --r vars, used to set rotation of inner <a> */
       @include cycle(
         --r,
-        13deg,
+        19deg,
         4deg,
         -7deg,
         0deg,

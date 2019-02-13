@@ -1,23 +1,24 @@
 ## BUGS
-[ ] 'more' text bg colour doesn't change with hover
+
 [ ] js for invert colours is not embedded correctly
 [ ] initial load on light css sometimes loads with no css or broken layout
 
 
 ## GENERAL
 
-
+[ ] magnifier
+  [ ] first click zooms to fill window
+    [ ] X btn
+    [ ] magnifying glass btn for full zoom
+  [ ] second click/hold zooms to full size, pan by dragging
+    [ ] close on release
+    [ ] X btn
 [ ] footer split/margin/padding when wrapping 
-[ ] use sass mixins for all grid stuff
 [ ] choose proper sizes and styles for srcset images
-[ ] look into built-in dark mode (CSS/Apple?)
 [ ] check image size/quality on home/topics pages
-[ ] stuckism quote on home page needs to be randomised client-side
 [ ] integrate data/config with build.js metadata
-[ ] dark CSS - link text is unreadable (low contrast)
 [ ] too many references to 'I' in item data
 [ ] contact page
-[ ] add comments under posts? decide
 [ ] make hire me animation match colours of site, constrain size
 [ ] add gitlab link
 [ ] add images to items in rss feed
@@ -28,3 +29,11 @@
 [ ] title image currently hard coded at 8rem
 [ ] style blockquotes (use bob ross article to test)
 [ ] remove outline from yinyang
+
+
+## LOW PRIORITY
+
+[ ] use sass mixins for all grid stuff
+[ ] stuckism quote on home page needs to be randomised client-side
+[ ] look into built-in dark mode (CSS/Apple?)
+[ ] add comments under posts? decide

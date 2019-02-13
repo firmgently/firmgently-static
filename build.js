@@ -39,8 +39,8 @@ const date_formatter = require('metalsmith-date-formatter'); // convert date for
 // to convert markdown images into figure/captions
 var markdownRenderer = new marked.Renderer();
 markdownRenderer.image = function (href, title, text) {
-	var suffix_ar = [ "_100w", "_500w", "_1000w" ],
-	dotIndex = href.lastIndexOf("."),
+	var suffix_ar = [ '_100w', '_500w', '_1000w' ],
+	dotIndex = href.lastIndexOf('.'),
 	p1 = href.substr(0, dotIndex),
 	p2 = href.substr(dotIndex),
 	src_ar = [], i, markup;
@@ -107,11 +107,11 @@ const averageReadTime = function(numWords) {
     estimate;
 
   if (fastMins < 1) {
-    estimate = "less than a min";
+    estimate = 'less than a min';
   } else if (fastMins === slowMins) {
-		estimate = "about a min";
+		estimate = 'about a min';
 	} else {
-    estimate = fastMins + " - " + slowMins + " min";
+    estimate = fastMins + ' - ' + slowMins + ' min';
   }
   return estimate;
 };
@@ -148,7 +148,7 @@ const engineOptions = {
 // else (default) ignore image dir and don't clean build dir
 var ignore_ar;
 var clean;
-if (process.env.REBUILDIMAGES === "true") {
+if (process.env.REBUILDIMAGES === 'true') {
   ignore_ar = [];
   clean = true;
 } else {
@@ -159,8 +159,8 @@ if (process.env.REBUILDIMAGES === "true") {
 // used to name topic directory
 // ! IMPORTANT - changes to this directory name must be updated
 // in layouts/post.njk
-const topicDir = "by";
-
+const topicDir = 'by';
+const hostname = 'https://firmgently.co.uk'
 
 metalsmith(__dirname)
   .ignore(ignore_ar)
@@ -170,7 +170,7 @@ metalsmith(__dirname)
   .metadata(
     {site: {
       title: 'Firm Gently',
-      url: 'https://firmgently.co.uk',
+      url: hostname,
       author: 'Mark Mayes'
     }}
   )
@@ -184,16 +184,16 @@ metalsmith(__dirname)
       methods: [
         { name: 'resize', args: [960, 960] },
         { name: 'resize', args: { fit: 'inside' } },
-        { name: 'toFormat', args: ['jpeg'] },
+        { name: 'jpeg', args: { quality: 80 } },
         { name: 'sharpen' }
       ]
     }, {
       src: 'images/items/hi_res/*.jpg',
       namingPattern: 'images/items/thumbs/{name}{ext}',
       methods: [
-        { name: 'resize', args: [300, 300] },
+        { name: 'resize', args: [250, 250] },
         { name: 'resize', args: { fit: 'inside' } },
-        { name: 'toFormat', args: ['jpeg'] },
+        { name: 'jpeg', args: { quality: 80 } },
         { name: 'sharpen' }
       ]
     }, {
@@ -202,7 +202,7 @@ metalsmith(__dirname)
       methods: [
         { name: 'resize', args: [300, 300] },
         { name: 'resize', args: { fit: 'outside' } },
-        { name: 'toFormat', args: ['jpeg'] },
+        { name: 'jpeg', args: { quality: 80 } },
         { name: 'sharpen' }
       ]
     }, {
@@ -211,7 +211,7 @@ metalsmith(__dirname)
       methods: [
         { name: 'resize', args: [600, 600] },
         { name: 'resize', args: { fit: 'outside' } },
-        { name: 'toFormat', args: ['jpeg'] },
+        { name: 'jpeg', args: { quality: 80 } },
         { name: 'sharpen' }
       ]
     }, {
@@ -220,7 +220,7 @@ metalsmith(__dirname)
       methods: [
         { name: 'resize', args: [900, 900] },
         { name: 'resize', args: { fit: 'outside' } },
-        { name: 'toFormat', args: ['jpeg'] },
+        { name: 'jpeg', args: { quality: 80 } },
         { name: 'sharpen' }
       ]
     }
@@ -265,7 +265,7 @@ metalsmith(__dirname)
 
 //
   .use(excerpts())
-  .use(timer("excerpts grabbed"))
+  .use(timer('excerpts grabbed'))
 
   //
   .use(drafts())
@@ -319,7 +319,7 @@ metalsmith(__dirname)
     reverse: false, // optional sort value on category, default is false
     path: '/' + topicDir // <- Notice that path is prefixed with slash for absolute path 
   }))
-  .use(timer("tag cloud analysed/created"))
+  .use(timer('tag cloud analysed/created'))
 
 // analyse tags and create tag pages
   .use(tags({
@@ -329,10 +329,10 @@ metalsmith(__dirname)
     sortBy: 'date',
     reverse: true,
     skipMetadata: false, // skip updating metalsmith's metadata object. useful for improving performance on large blogs
-    metadataKey: "tags", // default: `tags`
+    metadataKey: 'tags', // default: `tags`
     slug: { mode: 'rfc3986' }
   }))
-  .use(timer("topic pages created from tags"))
+  .use(timer('topic pages created from tags'))
   .use(permalinks({
 		relative: false,
     linksets: [{
@@ -375,7 +375,7 @@ metalsmith(__dirname)
 // tidy up outputted markup
   .use(beautify({
     indent_size: 2,
-    indent_char: " ",
+    indent_char: ' ',
     max_preserve_newlines: 0,
     extra_liners: '[head,body,/body,/html,header,section,footer]'
   }))
@@ -402,14 +402,14 @@ metalsmith(__dirname)
 // sitemap
 	.use(
 		sitemap({
-			hostname: "https://firmgently.co.uk",
+			hostname: hostname,
 			omitIndex: true
 		})
 	)
   .use(timer('sitemap.xml created'))
 
-//  .use(linkcheck({ verbose: true }))
-//  .use(timer('links checked'))
+  .use(linkcheck({ verbose: true }))
+  .use(timer('links checked'))
 
   .build(function (err) {
     if (err) { throw err; }
