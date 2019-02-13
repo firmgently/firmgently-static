@@ -281,6 +281,16 @@ aside.latest-posts {
 						@include transition(all 12s ease-out 0.33s);
           }
         }
+				> p {
+					&:after {
+						@include gradient(
+							top,
+							rgba($button-highlight-color, 0),
+							$button-highlight-color,
+							$button-highlight-color
+						);
+					}
+				}
       }
       > h2,
       > p {
