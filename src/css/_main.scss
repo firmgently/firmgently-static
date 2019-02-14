@@ -450,19 +450,29 @@ nav.site-nav {
     }
   }
 }
-.invert-colour {
+a.icon.btn.invert-colour {
   @include align-self(flex-end);
+  img {
+    background-image: $invert-icon-image;
+  }
+}
+a.icon.btn.feed {
+  img {
+    background-image: $feed-icon-image;
+  }
 }
 a.icon.btn {
   display: inline-block;
   background: none;
   @include opacity(0.8);
+  cursor: pointer;
   &:hover {
     @include opacity(1);
   }
   img {
     height: $icon-size;
     width: $icon-size;
+    background-size: 100%;
   }
 }
 

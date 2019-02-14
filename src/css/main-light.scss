@@ -26,6 +26,8 @@ $alert-bg-color-faded: mix($alert-bg-color, $overlay-bg, 40%);
 $textinput-shade: mix($textinput-bgcolor, #000000, 88%);
 $textinput-highlight: mix($textinput-bgcolor, #ffffff, 20%);
 
+$feed-icon-image: url(/images/light/feed-icon.svg); 
+$invert-icon-image: url(/images/light/yin-yang.svg); 
 $footer-bg-image: url(/images/light/footer_adorn.png); 
 $title-image: url(/images/light/fg_logo_tiny.png);
 $magnifier-image: url(/images/light/magEmptyBg.png);

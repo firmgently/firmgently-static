@@ -1,0 +1,6 @@
+<svg width="466" height="466" version="1.1" viewBox="-40 -40 80 80" xmlns="http://www.w3.org/2000/svg">
+  <circle id="yang-big" r="39"/>
+  <path id="yin-big" d="m0.99548 39.176a41.982 39.176 0 0 1 0-78.353 20.991 19.588 0 0 1 0 39.176 20.991 19.588 0 0 0 0 39.176" fill="#deeeff" stroke-width="1.0672"/>
+  <circle id="yin-small" cx="7.1054e-15" cy="19" r="8.125" fill="#deeeff" stroke-width="1.625"/>
+  <circle id="yang-small" cx="1.25" cy="-19" r="8.125" stroke-width="1.625"/>
+</svg>

@@ -1,0 +1,9 @@
+<svg id="RSSicon" width="256" height="256" version="1.1" viewBox="0 0 8 8" xmlns="http://www.w3.org/2000/svg">
+  <title>RSS feed icon</title>
+  <style type="text/css">.button {stroke: none; fill: white;}
+    .symbol {stroke: none; fill: black;}</style>
+  <rect id="bg" class="button" width="7.9651" height="7.9651" rx="1.593" fill="#deeeff"/>
+  <circle id="dot" class="symbol" cx="2" cy="6" r="1"/>
+  <path d="m1.2985 3.4621c2.3067-0.00176 3.4349 1.2136 3.2484 3.2037" fill="none" stroke="#000" stroke-linecap="round" stroke-width=".8796"/>
+  <path d="m1.2747 1.5715a4.5443 4.5443 0 0 1 0.65299-0.04716 4.5443 4.5443 0 0 1 4.5443 4.5443v0a4.5443 4.5443 0 0 1-0.035371 0.56588" fill="none" stroke="#000" stroke-linecap="round" stroke-width=".8796"/>
+</svg>
