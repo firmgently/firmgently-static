@@ -44,14 +44,19 @@ body.wrapper {
   color: $text-dimmed-less;
   font-family: 'Tahoma', 'Arial', 'Nimbus Sans L';
   /*font-family: 'FG_Medium', 'Tahoma', 'Arial', 'Nimbus Sans L';*/
+  form,
   .content {
     @include flex-grow(1);
-		h1 {
+    label,
+    h1 {
       font-weight: lighter;
+    }
+		h1 {
 			font-size: 3rem;
       margin-bottom: $pad-med;
 		}
   }
+  form,
   .site-header,
   .content,
   .site-footer {
@@ -79,6 +84,7 @@ body.wrapper {
       }
     }
   }
+  form,
   .content {
     @include flexbox;
     @include flex-flow(row wrap);
@@ -162,7 +168,8 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+label {
   font-weight: bold;
 	text-transform: uppercase;
   color: $text-colour-strong;
@@ -355,7 +362,7 @@ a,
 a:hover,
 a:active {
   text-decoration: none;
-  /*text-transform: uppercase;*/
+  text-transform: uppercase;
   color: $button-bg-colour-strong;
   background-color: $button-bg-colour;
   position: relative;
@@ -461,19 +468,31 @@ a.icon.btn {
 form {
   textarea,
   input {
-    background-color: $main-bg;
+    background-color: $button-bg-colour;
     color: $text-colour-strong2;
     border: none;
     font-size: 1.25rem;
     padding: $pad-sma;
+    width: $form-field-width;
     @include border-radius($pad-sma);
+  }
+  textarea {
+    height: 7rem
   }
   button,
   button:hover,
   button:active {
-      font-size: 1.25rem;
+    font-size: 1.25rem;
+    display: block;
+  }
+  label {
+    display: block;
+    margin-top: $pad-med;
+    &:first-child {
+      margin-top: 0;
     }
   }
+}
 
 
 /* ////////////////////////////////////////////////////////////////////////// */

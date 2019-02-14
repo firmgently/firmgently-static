@@ -4,18 +4,18 @@ bodyClass: contact
 permalink: false
 ---
 
-<form class="main-column" name="fg-contact-general" method="POST" data-netlify="true" action="/contact-success.html">
-	<div>
-		<label for="mailName">Name</label>
-		<input type="text" size="40" class="text" name="mailName" id="mailName" maxlength="50"/>
-		<label for="mailPhoneNo">Phone number</label>
-		<input type="tel" size="25" class="text" name="mailPhoneNo" id="mailPhoneNo" maxlength="15"/>
-		<label for="mailAddress">Email Address</label>
-		<input type="email" size="25" class="text" name="mailAddress" id="mailAddress" maxlength="50"/>
-	</div>
-	<div>
-		<label for="mailMessage">Type your message below</label>
-		<textarea class="text" name="mailMessage" id="mailMessage"></textarea>
-	</div>
-  <button type="submit">send message</button>
+<form name="fg-contact-general" method="POST" data-netlify="true" action="/contact-success.html">
+  <div class="side-column">
+    <label for="mailName">Name</label>
+    <input type="text" class="text" name="mailName" id="mailName" maxlength="50"/>
+    <label for="mailPhoneNo">Phone number</label>
+    <input type="tel" class="text" name="mailPhoneNo" id="mailPhoneNo" maxlength="15"/>
+    <label for="mailAddress">Email Address</label>
+    <input type="email" class="text" name="mailAddress" id="mailAddress" maxlength="50"/>
+  </div>
+  <div class="main-column">
+    <label for="mailMessage">Type your message below</label>
+    <textarea class="text" name="mailMessage" id="mailMessage"></textarea>
+    <button type="submit">send message</button>
+  </div>
 </form>
