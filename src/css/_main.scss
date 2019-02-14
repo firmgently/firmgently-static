@@ -183,8 +183,10 @@ label {
   padding: $pad-med $small-page-padding-right $pad-big $small-page-padding-left;
 }
 blockquote {
+  margin-top: $pad-med;
   margin-bottom: $pad-huge;
-  padding: $pad-med $pad-med;
+  padding: 0 $pad-med 0 $pad-med;
+  border-left: solid $pad-sma $main-bg;
   cite {
     margin-top: $pad-med;
     display: block;
@@ -363,6 +365,8 @@ a:hover,
 a:active {
   text-decoration: none;
   text-transform: uppercase;
+  padding-left: $pad-sma;
+  padding-right: $pad-sma;
   color: $button-bg-colour-strong;
   background-color: $button-bg-colour;
   position: relative;

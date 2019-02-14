@@ -15,7 +15,6 @@
     [ ] X btn
 [ ] footer split/margin/padding when wrapping 
 [ ] choose proper sizes and styles for srcset images
-[ ] integrate data/config with build.js metadata
 [ ] too many references to 'I' in item data
 [ ] make hire me animation match colours of site, constrain size
 [ ] add gitlab link
@@ -25,7 +24,6 @@
 ## CSS STYLING
 
 [ ] title image currently hard coded at 8rem
-[ ] style blockquotes (use bob ross article to test)
 [ ] remove outline from yinyang
 [ ] contact page
 

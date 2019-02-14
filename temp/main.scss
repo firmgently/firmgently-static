@@ -432,6 +432,8 @@ li a:focus,li a:active,a:focus,a:active{outline:none}
 
 
 blockquote {
+  padding: $pad-med;
+  border-left: solid $pad-sma $main-bg2;
   margin-bottom: $empad-huge;
   cite {margin-top: $empad-med; font-size: 0.9em; display: block;}
 }
