@@ -15,7 +15,6 @@
     [ ] X btn
 [ ] footer split/margin/padding when wrapping 
 [ ] choose proper sizes and styles for srcset images
-[ ] check image size/quality on home/topics pages
 [ ] integrate data/config with build.js metadata
 [ ] too many references to 'I' in item data
 [ ] contact page
