@@ -348,6 +348,9 @@ aside.latest-posts {
     float: right;
   }
 }
+button,
+button:hover,
+button:active,
 a,
 a:hover,
 a:active {
@@ -356,7 +359,10 @@ a:active {
   color: $button-bg-colour-strong;
   background-color: $button-bg-colour;
   position: relative;
+  border: none;
 }
+button:hover,
+button:active,
 a:hover,
 a:active {
   color: $text-colour-strong2;
@@ -448,6 +454,27 @@ a.icon.btn {
     width: $icon-size;
   }
 }
+
+
+/* ////////////////////////////////////////////////////////////////////////// */
+/* FORMS */
+form {
+  textarea,
+  input {
+    background-color: $main-bg;
+    color: $text-colour-strong2;
+    border: none;
+    font-size: 1.25rem;
+    padding: $pad-sma;
+    @include border-radius($pad-sma);
+  }
+  button,
+  button:hover,
+  button:active {
+      font-size: 1.25rem;
+    }
+  }
+
 
 /* ////////////////////////////////////////////////////////////////////////// */
 /*MAGNIFIER*/

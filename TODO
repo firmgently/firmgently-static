@@ -17,7 +17,6 @@
 [ ] choose proper sizes and styles for srcset images
 [ ] integrate data/config with build.js metadata
 [ ] too many references to 'I' in item data
-[ ] contact page
 [ ] make hire me animation match colours of site, constrain size
 [ ] add gitlab link
 [ ] add images to items in rss feed
@@ -28,6 +27,7 @@
 [ ] title image currently hard coded at 8rem
 [ ] style blockquotes (use bob ross article to test)
 [ ] remove outline from yinyang
+[ ] contact page
 
 
 ## LOW PRIORITY
