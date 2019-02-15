@@ -348,13 +348,24 @@ aside.latest-posts {
 		max-width: 45%;
 		overflow: hidden;
 		text-overflow: ellipsis;
-		/*white-space: nowrap;*/
 	}
   a:first-of-type {
     float: left;
   }
   a:last-of-type {
     float: right;
+  }
+}
+.side-column {
+  .prev-next-btns {
+    padding: 0;
+    a {
+      max-width: $side-col-min-width;
+      white-space: nowrap;
+      float: right;
+      clear: both;
+      margin-bottom: $pad-med;
+    }
   }
 }
 button,

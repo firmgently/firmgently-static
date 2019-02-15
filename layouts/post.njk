@@ -5,27 +5,6 @@
 
 {% block main %}
 
-  <div class="main-column">
-
-    <article>
-      <header>
-        <h1>{{ title }}</h1>
-				<span><meta itemprop="datePublished" content="{{ dateTime }}"><time datetime="{{ dateTime }}">{{ dateNice }}</time></span>
-        <em>{{ contents | striptags | wordcount | averageReadTime }} read</em>
-      </header>
-
-      {{ contents | safe }}
-
-      <footer>
-        {% set comma = joiner(", ") %}
-        <span>tags {% for tag in tags -%}{{ comma() }}<a href="/by/{{ tag.slug }}" rel="category tag">{{ tag.name }}</a>{% endfor %}</span>
-      </footer>
-    </article>
-
-
-  </div>
-
-
   <div class="side-column">
 		{{ insertPrevNextBtns() }}
     <aside class="latest-posts">
@@ -38,6 +17,21 @@
         {%- endfor -%}
       </ul>
     </aside>
+  </div>
+
+  <div class="main-column">
+    <article>
+      <header>
+        <h1>{{ title }}</h1>
+				<span><meta itemprop="datePublished" content="{{ dateTime }}"><time datetime="{{ dateTime }}">{{ dateNice }}</time></span>
+        <em>{{ contents | striptags | wordcount | averageReadTime }} read</em>
+      </header>
+      {{ contents | safe }}
+      <footer>
+        {% set comma = joiner(", ") %}
+        <span>tags {% for tag in tags -%}{{ comma() }}<a href="/by/{{ tag.slug }}" rel="category tag">{{ tag.name }}</a>{% endfor %}</span>
+      </footer>
+    </article>
   </div>
 
   {{ insertPrevNextBtns() }}

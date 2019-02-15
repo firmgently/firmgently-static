@@ -35,6 +35,16 @@
 
 
 {% block main %}
+   
+  <div class="side-column">
+    {{ insertPrevNextBtns() }}
+		<section class="item-details">
+			<h1 itemprop="http://www.schema.org/name">{{ itemData.title }}</h1>
+			<h3>{{ detail1 | safe }}</h3>
+			<h2>{{ detail2 | safe }}</h2>
+			<span itemprop="http://www.schema.org/description">{{ itemData.desc | safe }}</span>
+		</section>
+	</div>
 
 	<div class="main-column">
 		<div id="item-image">
@@ -43,18 +53,6 @@
 		<p class="alert magnify-prompt">mouse or slide over the picture to magnify it</p>
 		<a href="/downloadImage.php?id=fabric" class="download-wallpaper-btn">download wallpaper</a>
 	</div><!-- main-column -->
-
-   
-  <div class="side-column">
-  {{ insertPrevNextBtns() }}
-
-		<section class="item-details">
-			<h1 itemprop="http://www.schema.org/name">{{ itemData.title }}</h1>
-			<h3>{{ detail1 | safe }}</h3>
-			<h2>{{ detail2 | safe }}</h2>
-			<span itemprop="http://www.schema.org/description">{{ itemData.desc | safe }}</span>
-		</section>
-	</div>
 
 {% endblock %}
 

@@ -328,7 +328,7 @@ metalsmith(__dirname)
       layout: 'post.njk'
     }
   }))
-  .use(timer('metadata added to posts'))
+  .use(timer('metadata boilerplate added to posts'))
 
 // I'd have expected that `wordcloud` would need to come after `tags`
 // in the pipeline as it uses the tags. I was wrong.`tags` turns the
