@@ -66,6 +66,12 @@
   {% if previous %}<a href="/{{ previous.path }}" rel="prev">&lt;&nbsp;{{ previous.title | default(previous.itemData.title) }}</a>{% endif %}
   {% if next %}<a href="/{{ next.path }}" rel="next">{{ next.title  | default(next.itemData.title)}}&nbsp;&gt;</a>{%- endif %}
 </nav>
+
+
+
+{% if next == previous %}
+  <h1>!!! next == previous !!!</h1>
+{% endif %}
 {% endmacro %}
 
 

@@ -36,9 +36,17 @@
 
 {% block main %}
 
-  {{ insertPrevNextBtns() }}
+	<div class="main-column">
+		<div id="item-image">
+			<img id="magnifiable-image" alt="Click to magnify" src="/images/items/main/{{ itemData.id }}.jpg">
+		</div>
+		<p class="alert magnify-prompt">mouse or slide over the picture to magnify it</p>
+		<a href="/downloadImage.php?id=fabric" class="download-wallpaper-btn">download wallpaper</a>
+	</div><!-- main-column -->
+
    
   <div class="side-column">
+  {{ insertPrevNextBtns() }}
 
 		<section class="item-details">
 			<h1 itemprop="http://www.schema.org/name">{{ itemData.title }}</h1>
@@ -48,13 +56,6 @@
 		</section>
 	</div>
 
-	<div class="main-column">
-		<div id="item-image">
-			<img id="magnifiable-image" alt="Click to magnify" src="/images/items/main/{{ itemData.id }}.jpg">
-		</div>
-		<p class="alert magnify-prompt">mouse or slide over the picture to magnify it</p>
-		<a href="/downloadImage.php?id=fabric" class="download-wallpaper-btn">download wallpaper</a>
-	</div><!-- main-column -->
 {% endblock %}
 
 
