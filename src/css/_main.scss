@@ -52,7 +52,7 @@ body.wrapper {
       font-weight: lighter;
     }
 		h1 {
-			font-size: 3rem;
+			font-size: 2.66rem;
       margin-bottom: $pad-med;
 		}
   }
@@ -170,9 +170,15 @@ h4,
 h5,
 h6,
 label {
-  font-weight: bold;
+  font-weight: lighter;
 	text-transform: uppercase;
   color: $text-colour-strong;
+}
+h2 {
+  font-size: 2rem;
+}
+h3 {
+  font-size: 1.8rem;
 }
 /* consistent page padding (mobile) */
 .side-column,
@@ -196,7 +202,6 @@ p,
 h2,
 h3 {
   margin-bottom: $pad-med;
-	font-weight: normal;
 }
 article > header,
 article > footer,
@@ -220,6 +225,9 @@ article > footer {
 }
 aside.latest-posts {
 	margin-top: $pad-huge;
+  li {
+    margin-bottom: $pad-med;
+  }
 }
 .item-list-container {
   @include flexbox;
