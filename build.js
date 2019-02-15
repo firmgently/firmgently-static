@@ -279,26 +279,46 @@ metalsmith(__dirname)
 			pattern: 'words/:title'
     }]
 	}))
-  .use(timer('permalinked * posts *'))
+  .use(timer('permalinked POSTS'))
 
 // create collection lists
   .use(collections({
     all: {
-     pattern: [
-      'word/*/*.html',
-      'art/*/*.html',
-      'photo/*/*.html',
-      'object/*/*.html',
-      'web/*/*.html'
+      pattern: [
+        'word/*/*.html',
+        'art/*/*.html',
+        'photo/*/*.html',
+        'object/*/*.html',
+        'web/*/*.html'
       ],
       sortBy: 'date',
       reverse: true
     },
-    word: 'word/*/*.html',
-    art: 'art/*/*.html',
-    photo: 'photo/*/*.html',
-    object: 'object/*/*.html',
-    web: 'web/*/*.html'
+    word: {
+      pattern: 'word/*/*.html',
+      sortBy: 'date',
+      reverse: true
+    },
+    art: {
+      pattern: 'art/*/*.html',
+      sortBy: 'date',
+      reverse: true
+    },
+    photo: {
+      pattern: 'photo/*/*.html',
+      sortBy: 'date',
+      reverse: true
+    },
+    object: {
+      pattern: 'object/*/*.html',
+      sortBy: 'date',
+      reverse: true
+    },
+    web: {
+      pattern: 'web/*/*.html',
+      sortBy: 'date',
+      reverse: true
+    }
   }))
   .use(timer('collections created'))
 
@@ -340,7 +360,7 @@ metalsmith(__dirname)
 			pattern: topicDir + '/:title'
     }]
 	}))
-  .use(timer('permalinked * topics *'))
+  .use(timer('permalinked TOPICS'))
 
 	.use(date_formatter({
 		dates: [

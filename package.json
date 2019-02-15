@@ -26,7 +26,7 @@
     "metalsmith-drafts": "^0.1.0",
     "metalsmith-excerpts": "^1.2.0",
     "metalsmith-feed": "^1.0.0",
-    "metalsmith-json-to-files": "https://github.com/firmgently/metalsmith-json-to-files.git#data-renamer-and-passthrough-patch",
+    "metalsmith-json-to-files": "https://github.com/firmgently/metalsmith-json-to-files.git#data-passthrough-patch",
     "metalsmith-layouts": "^2.1.0",
     "metalsmith-linkcheck": "^0.3.4",
     "metalsmith-markdown": "^1.1.0",
