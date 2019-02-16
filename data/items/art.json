@@ -45,6 +45,28 @@
     "date": "2008 01 01"
   },
   {
+    "id": "the-bird",
+    "title": "The Bird",
+    "tags": "art,water,animal,scape",
+    "desc": "<p>???</p>",
+    "materials": "Acrylic on canvas",
+    "w": "60",
+    "h": "45",
+    "d": "2",
+    "date": "2018 09 12"
+  },
+  {
+    "id": "tara-and-ma",
+    "title": "Tara and her Ma",
+    "tags": "art,people",
+    "desc": "<p>???</p>",
+    "materials": "Acrylic on canvas",
+    "w": "40",
+    "h": "60",
+    "d": "2",
+    "date": "2017 10 05"
+  },
+  {
     "id": "abbey",
     "title": "The Abbey Gate",
     "tags": "art,building",
@@ -612,11 +634,11 @@
     "tags": "art,earth,scape",
     "desc": "<p>???</p>",
     "materials": "Acrylic on canvas",
-    "w": "???",
-    "h": "???",
+    "w": "70",
+    "h": "50",
     "d": "2",
     "printsAvailable": "STANDARD",
-    "date": "???? ?? ??"
+    "date": "2018 02 12"
   },
   {
     "id": "beacons-2",
@@ -624,11 +646,11 @@
     "tags": "art,earth,scape",
     "desc": "<p>???</p>",
     "materials": "Acrylic on canvas",
-    "w": "???",
-    "h": "???",
+    "w": "70",
+    "h": "50",
     "d": "2",
     "printsAvailable": "STANDARD",
-    "date": "???? ?? ??"
+    "date": "2018 02 12"
   },
   {
     "id": "inOneSide",
