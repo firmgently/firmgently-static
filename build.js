@@ -1,16 +1,8 @@
-/*jslint es6 */
-
-/*
- * Metalsmith build file
- * Build site with `npm start`
- */
-
 'use strict';
 
 const metalsmith = require('metalsmith'); // static site generator
 const debug = require('metalsmith-debug'); // debugging
 const markdown = require('metalsmith-markdown'); // convert markdown
-const marked = require('marked'); // helps create custom md renderer
 const layouts = require('metalsmith-layouts'); // templating (using Nunjucks here)
 const beautify = require('metalsmith-beautify'); // format outputted markup
 const data = require('metalsmith-data'); // import JSON data
@@ -32,117 +24,10 @@ const drafts = require('metalsmith-drafts'); // ignore posts marked as drafts
 const sitemap = require('metalsmith-sitemap'); // create sitemap
 const date_formatter = require('metalsmith-date-formatter'); // convert date formats for display
 
+const filters = require('./filters.js'); // nunjucks filters
+const custom_marked_renderer = require('./custom-marked-renderer.js'); 
 
 
-// metalsmith-markdown uses `marked` internally
-// get an instance of its renderer so we can customise it
-// to convert markdown images into figure/captions
-var markdownRenderer = new marked.Renderer();
-markdownRenderer.image = function (href, title, text) {
-	var suffix_ar = [ '_100w', '_500w', '_1000w' ],
-	dotIndex = href.lastIndexOf('.'),
-	p1 = href.substr(0, dotIndex),
-	p2 = href.substr(dotIndex),
-	src_ar = [], i, markup;
-
-	for (i = 0; i < suffix_ar.length; i++) {
-		src_ar[i] = p1 + suffix_ar[i] + p2;
-	}
-
-	if (title) {
-		markup = `<figure>
-			<img src="${href}" alt="${text}" title="${title}"
-				srcset="${src_ar[0]} 100w, ${src_ar[1]} 500w, ${src_ar[2]} 1000w"
-				sizes="(min-width: 900px) 1000px,
-					(max-width: 900px) and (min-width: 400px) 50em,
-					( not (orientation: portrait) ) 300px,
-					( (orientation: landscape) or (min-width: 1000px) ) 50vw, 
-					100vw">
-			<figcaption>
-				<p>${title}</p>
-			</figcaption>
-		</figure>`;
-	} else {
-		markup = `<img src="${href}" alt="${text}"
-			srcset="${src_ar[0]} 100w, ${src_ar[1]} 500w, ${src_ar[2]} 1000w"
-			sizes="(min-width: 900px) 1000px,
-				(max-width: 900px) and (min-width: 400px) 50em,
-				( not (orientation: portrait) ) 300px,
-				( (orientation: landscape) or (min-width: 1000px) ) 50vw, 
-				100vw">`;
-	}
-	return markup;
-};
-
-
-// string-manipulation functions
-const toLower = function(string) {
-  return string.toLowerCase();
-};
-const toUpper = function(string) {
-  return string.toUpperCase();
-};
-const spaceToDash = function(string) {
-  return string.replace(/\s+/g, '-');
-};
-
-// caclulate CSS font size for tag cloud
-const fontsizeFromTagWeight = function(weight, minSize, maxSize, numSizes) {
-  // numSize = number of descrete sizes available -
-  // can help aesthetically match various ranges of weights
-  var  stepSize = (maxSize - minSize) / numSizes,
-  size = minSize + (weight * stepSize);
-
-  if (size > maxSize) { size = maxSize; }
-  return size;
-};
-
-// calculate a rough estimate on time to read an article
-// based on the number of words it contains
-const averageReadTime = function(numWords) {
-  var lowAverageWPM = 200,
-    highAverageWPM = 300,
-    slowMins = Math.round(numWords / lowAverageWPM),
-    fastMins = Math.round(numWords / highAverageWPM),
-    estimate;
-
-  if (fastMins < 1) {
-    estimate = 'less than a min';
-  } else if (fastMins === slowMins) {
-		estimate = 'about a min';
-	} else {
-    estimate = fastMins + ' - ' + slowMins + ' min';
-  }
-  return estimate;
-};
-
-// vanity function to keep the URL clean - when linking
-// into a directory the index.html can be ommitted
-const stripIndexFromPath = function(path) {
-  // list of index files to strip -
-  // include the $ to only match at the end of a string
-  var indexRegExp_ar = [
-    'index.html$',
-    'index.htm$',
-    'index.php$'
-  ];
-  // join all regexps into a single expression separated by |
-  var regExp = new RegExp(indexRegExp_ar.join('|'), 'i');
-  return path.replace(regExp, '');
-};
-
-// wrapper to save repetition when passing options
-// into `use` functions
-const engineOptions = {
-  filters: {
-    toLower: toLower,
-    toUpper: toUpper,
-    fontsizeFromTagWeight: fontsizeFromTagWeight,
-    stripIndexFromPath: stripIndexFromPath,
-    averageReadTime: averageReadTime,
-    spaceToDash: spaceToDash
-  }
-};
 
 // if REBUILDIMAGES then include image directory and clean build dir
 // else (default) ignore image dir and don't clean build dir
@@ -160,7 +45,9 @@ if (process.env.REBUILDIMAGES === 'true') {
 // ! IMPORTANT - changes to this directory name must be updated
 // in layouts/post.njk
 const topicDir = 'by';
-const hostname = 'https://firmgently.co.uk'
+const hostname = 'https://firmgently.co.uk';
+
+
 
 metalsmith(__dirname)
   .ignore(ignore_ar)
@@ -249,7 +136,7 @@ metalsmith(__dirname)
   .use(timer('files created from JSON'))
 
 	.use(markdown({
-		renderer: markdownRenderer,
+		renderer: custom_marked_renderer.renderer,
 		headerIds: false // IMPORTANT essential otherwise build fails
 	}))
 	.use(timer('markdown converted'))
@@ -296,28 +183,23 @@ metalsmith(__dirname)
     },
     word: {
       pattern: 'word/*/*.html',
-      sortBy: 'date',
-      reverse: true
+      sortBy: 'date'
     },
     art: {
       pattern: 'art/*/*.html',
-      sortBy: 'date',
-      reverse: true
+      sortBy: 'date'
     },
     photo: {
       pattern: 'photo/*/*.html',
-      sortBy: 'date',
-      reverse: true
+      sortBy: 'date'
     },
     object: {
       pattern: 'object/*/*.html',
-      sortBy: 'date',
-      reverse: true
+      sortBy: 'date'
     },
     web: {
       pattern: 'web/*/*.html',
-      sortBy: 'date',
-      reverse: true
+      sortBy: 'date'
     }
   }))
   .use(timer('collections created'))
@@ -388,7 +270,16 @@ metalsmith(__dirname)
     engine: 'nunjucks',
     default: 'template.njk',
     suppressNoFilesError: true, // as we're using changed()
-    engineOptions: engineOptions
+    engineOptions: {
+			filters: {
+				toLower: filters.toLower,
+				toUpper: filters.toUpper,
+				fontsizeFromTagWeight: filters.fontsizeFromTagWeight,
+				stripIndexFromPath: filters.stripIndexFromPath,
+				averageReadTime: filters.averageReadTime,
+				spaceToDash: filters.spaceToDash
+			}
+		}
   }))
   .use(timer('templates inherited'))
 

@@ -231,13 +231,13 @@ aside.latest-posts {
 }
 .item-list-container {
   @include flexbox;
-  @include flex-wrap(wrap);
+  @include flex-wrap(wrap-reverse);
   @include flex-direction(row);
   @include align-content(center);
   @include justify-content(space-between);
   li {
     overflow-wrap: break-word;
-    @include flex(0, 1, $list-item-w);
+    @include flex(1, 0, $list-item-w);
     height: $list-item-h;
     overflow: hidden;
     margin: $pad-med $pad-med $pad-huge 0;

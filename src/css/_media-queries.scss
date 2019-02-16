@@ -1,4 +1,5 @@
 @supports (display: grid) {
+  /*
   .wrapper {
     display: grid;
     form,
@@ -16,26 +17,28 @@
         grid-column: span 1;
       }
     }
-  }
+  }*/
 }
 
 @media only screen and (min-width: 500px) {
-  /* consistent page padding */
-  .side-column,
-  .main-column,
-  .prev-next-btns,
-  .site-footer,
-  .site-header {
-    padding: $pad-med $page-padding-right $pad-big $page-padding-left;
-  }
   body.wrapper {
+    .side-column,
+    .main-column,
+    .prev-next-btns,
+    .site-footer,
     .site-header {
-			padding-bottom: 0;
+      padding: $pad-med $page-padding-right $pad-big $page-padding-left;
+    }
+    .site-header {
+      padding-bottom: 0;
+    }
+    .side-column {
+      padding-right: 0;
     }
     form,
     .content {
       .main-column {
-				padding-top: 0;
+        padding-top: 0;
       }
     }
   }
@@ -44,21 +47,20 @@
   }
 }
 @media only screen and (min-width: 800px) {
-  /* consistent page padding */
-  .side-column,
-  .main-column,
-  .prev-next-btns,
-  .site-footer,
-  .site-header {
-    padding: $pad-med $page-padding-right $pad-big $page-padding-left;
-  }
   body.wrapper {
+    .side-column,
+    .main-column,
+    .prev-next-btns,
+    .site-footer,
+    .site-header {
+      padding: $pad-med $page-padding-right $pad-big $page-padding-left;
+    }
     form,
     .content {
       .side-column {
-				text-align: right;
-				padding-right: $pad-med;
-				padding-left: $page-padding-right;
+        text-align: right;
+        padding-right: 0;
+        padding-left: $page-padding-right;
       }
     }
   }
