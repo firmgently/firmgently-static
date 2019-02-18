@@ -2,8 +2,9 @@
 
 
 {% macro insertStuckism() %}
-	<a href="http://www.stuckism.com/stuckistmanifesto.html">The Stuckists Manifesto</a>
-	{{ data.stuckism | random | safe }}
+	<a href="http://www.stuckism.com/stuckistmanifesto.html">
+		<h2>The Stuckists Manifesto</h2>&nbsp;<p>{{ data.stuckism | random | safe }}</p>
+	</a>
 {% endmacro %}
 
 
@@ -48,7 +49,7 @@
 		</div>
 	</li>
 
-	<li class="widget">{{ insertStuckism() }}</li>
+	<li class="widget stuckism">{{ insertStuckism() }}</li>
 
   </ul>
 </div>

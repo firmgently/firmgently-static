@@ -130,6 +130,9 @@ body.wrapper {
     }
     .widget {
       @include flex(1, 0, $side-col-min-width);
+			&.stuckism {
+				color: red;
+			}
     }
   }
   .site-footer {
