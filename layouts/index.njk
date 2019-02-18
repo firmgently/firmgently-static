@@ -1,8 +1,23 @@
 {% extends "fg-template.njk" %}
 
+
 {% macro insertStuckism() %}
 	<a href="http://www.stuckism.com/stuckistmanifesto.html">The Stuckists Manifesto</a>
 	{{ data.stuckism | random | safe }}
+{% endmacro %}
+
+
+{# draw images linking to work items #}
+{% macro insertHomeItems(collection, total) %}
+  {% set count = 0 %}
+  {% for item in collection %}
+    {% if count < total %}
+      {% if not item.itemData.excludeFromHome %}
+        {% set count = count + 1 %}
+        <li>{{ createItem(item) }}</li>
+      {% endif %}
+    {% endif %}
+    {%- endfor %}
 {% endmacro %}
 
 
@@ -15,43 +30,12 @@
 
 <div class="main-column">
   <ul class="item-list-container">
-	{# draw images linking to work items #}
-  {% set count = 0 %}
-  {% for item in collections.art %}
-    {% if count < data.config.consts.HOME_LATESTITEMS_PER_COLLECTION %}
-      {% if not item.itemData.excludeFromHome %}
-        {% set count = count + 1 %}
-        <li>{{ createItem(item) }}</li>
-      {% endif %}
-    {% endif %}
-    {%- endfor %}
-  {% set count = 0 %}
-  {% for item in collections.word %}
-    {% if count < data.config.consts.HOME_LATESTITEMS_PER_COLLECTION %}
-      {% if not item.itemData.excludeFromHome %}
-        {% set count = count + 1 %}
-        <li>{{ createItem(item) }}</li>
-      {% endif %}
-    {% endif %}
-    {%- endfor %}
-  {% set count = 0 %}
-  {% for item in collections.photo %}
-    {% if count < data.config.consts.HOME_LATESTITEMS_PER_COLLECTION %}
-      {% if not item.itemData.excludeFromHome %}
-        {% set count = count + 1 %}
-        <li>{{ createItem(item) }}</li>
-      {% endif %}
-    {% endif %}
-    {%- endfor %}
-  {% set count = 0 %}
-  {% for item in collections.object %}
-    {% if count < data.config.consts.HOME_LATESTITEMS_PER_COLLECTION %}
-      {% if not item.itemData.excludeFromHome %}
-        {% set count = count + 1 %}
-        <li>{{ createItem(item) }}</li>
-      {% endif %}
-    {% endif %}
-    {%- endfor %}
+	
+	{{ insertHomeItems(collections.art, data.config.consts.HOME_LATESTITEMS_PER_COLLECTION) }}
+	{{ insertHomeItems(collections.word, data.config.consts.HOME_LATESTITEMS_PER_COLLECTION) }}
+	{{ insertHomeItems(collections.photo, data.config.consts.HOME_LATESTITEMS_PER_COLLECTION) }}
+	{{ insertHomeItems(collections.object, data.config.consts.HOME_LATESTITEMS_PER_COLLECTION) }}
+
 	<li class="widget">
 		<div id="hireMe">
 			<a id="hireMeAnim"><img src="/images/hireMeSun.png"><h2>Hire me</h2></a>
@@ -67,10 +51,7 @@
 	<li class="widget">{{ insertStuckism() }}</li>
 
   </ul>
-
- 
 </div>
-
 
 
 {% endblock %}

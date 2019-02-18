@@ -29,11 +29,11 @@
 [ ] remove outline from yinyang
 [ ] contact page
 [ ] shrink header/nav height
+[ ] stuckism quote invisible
 
 
 ## LOW PRIORITY
 
 [ ] use sass mixins for all grid stuff
-[ ] stuckism quote on home page needs to be randomised client-side
 [ ] look into built-in dark mode (CSS/Apple?)
 [ ] add comments under posts? decide
