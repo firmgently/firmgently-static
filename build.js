@@ -183,23 +183,28 @@ metalsmith(__dirname)
     },
     word: {
       pattern: 'word/*/*.html',
-      sortBy: 'date'
+      sortBy: 'date',
+      reverse: true
     },
     art: {
       pattern: 'art/*/*.html',
-      sortBy: 'date'
+      sortBy: 'date',
+      reverse: true
     },
     photo: {
       pattern: 'photo/*/*.html',
-      sortBy: 'date'
+      sortBy: 'date',
+      reverse: true
     },
     object: {
       pattern: 'object/*/*.html',
-      sortBy: 'date'
+      sortBy: 'date',
+      reverse: true
     },
     web: {
       pattern: 'web/*/*.html',
-      sortBy: 'date'
+      sortBy: 'date',
+      reverse: true
     }
   }))
   .use(timer('collections created'))
