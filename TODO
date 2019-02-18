@@ -1,8 +1,5 @@
 ## BUGS
 
-[ ] js for invert colours is not embedded correctly
-[ ] media query breaks layout at medium sizes
-[ ] initial load on light css sometimes loads with no css or broken layout
 
 
 ## GENERAL
@@ -14,6 +11,7 @@
   [ ] second click/hold zooms to full size, pan by dragging
     [ ] close on release
     [ ] X btn
+[ ] dark/light version of site sits at 2 domains, yinyang just swaps domain
 [ ] too many references to 'I' in item data
 [ ] make hire me animation match colours of site, constrain size
 [ ] add gitlab link
@@ -34,3 +32,4 @@
 [ ] use sass mixins for all grid stuff
 [ ] look into built-in dark mode (CSS/Apple?)
 [ ] add comments under posts? decide
+[ ] rss icon light has black dot
