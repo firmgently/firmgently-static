@@ -324,8 +324,8 @@ metalsmith(__dirname)
 	)
   .use(timer('sitemap.xml created'))
 
-  .use(linkcheck({ verbose: true }))
-  .use(timer('links checked'))
+  //.use(linkcheck({ verbose: true }))
+  //.use(timer('links checked'))
 
   .build(function (err) {
     if (err) { throw err; }

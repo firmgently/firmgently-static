@@ -66,19 +66,13 @@
   {% if previous %}<a href="/{{ previous.path }}" rel="prev">&lt;&nbsp;{{ previous.title | default(previous.itemData.title) }}</a>{% endif %}
   {% if next %}<a href="/{{ next.path }}" rel="next">{{ next.title  | default(next.itemData.title)}}&nbsp;&gt;</a>{%- endif %}
 </nav>
+{% endmacro %}
 
 {% macro insertPageTags() %}
 <footer>
 	{% set comma = joiner(", ") %}
 	<span>tagged in {% for tag in tags -%}{{ comma() }}<a href="/by/{{ tag.slug }}" rel="category tag">{{ tag.name }}</a>{% endfor %}</span>
 </footer>
-{% endmacro %}
-
-
-
-{% if next == previous %}
-  <h1>!!! next == previous !!!</h1>
-{% endif %}
 {% endmacro %}
 
 

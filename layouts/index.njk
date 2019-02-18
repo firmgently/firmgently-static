@@ -1,5 +1,10 @@
 {% extends "fg-template.njk" %}
 
+{% macro insertStuckism() %}
+	<a href="http://www.stuckism.com/stuckistmanifesto.html">The Stuckists Manifesto</a>
+	{{ data.stuckism | random | safe }}
+{% endmacro %}
+
 
 {% block main %}
 
@@ -59,14 +64,9 @@
 		</div>
 	</li>
 
+	<li class="widget">{{ insertStuckism() }}</li>
 
-	<li class="widget">
-		<a href="http://www.stuckism.com/stuckistmanifesto.html">The Stuckists Manifesto</a>
-		"<strong>Stuckism proposes a model of art which is holistic.</strong> It is a meeting of the conscious and unconscious, thought and emotion, spiritual and material, private and public. Modernism is a school of fragmentation - one aspect of art is isolated and exaggerated to detriment of the whole. This is a fundamental distortion of the human experience and perpetrates an egocentric lie."
-	</li>
   </ul>
-
-
 
  
 </div>
