@@ -13,8 +13,6 @@
   [ ] second click/hold zooms to full size, pan by dragging
     [ ] close on release
     [ ] X btn
-[ ] footer split/margin/padding when wrapping 
-[ ] choose proper sizes and styles for srcset images
 [ ] too many references to 'I' in item data
 [ ] make hire me animation match colours of site, constrain size
 [ ] add gitlab link
@@ -26,10 +24,11 @@
 ## CSS STYLING
 
 [ ] title image currently hard coded at 8rem
+[ ] footer split/margin/padding when wrapping 
+[ ] choose proper sizes and styles for srcset images
 [ ] remove outline from yinyang
 [ ] contact page
 [ ] shrink header/nav height
-[ ] stuckism quote invisible
 
 
 ## LOW PRIORITY

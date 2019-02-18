@@ -1,6 +1,13 @@
 
 
 {# makes clickable tag cloud from cloud data #}
+{#
+	fontsizeFromTagWeight() filter:
+	weight of tag is piped in as the first parameter
+	bracket params are (minSize, maxSize, numSizes)
+	minSize, maxSize represent min/max values that can be returned
+	numSizes is how many different sizes will be available
+#}
 {% macro createTagCloud(cloud) %}
   {%- for word in cloud -%}
   {# look for data in this page which matches the tag #}
@@ -139,13 +146,6 @@
 <body class="wrapper{% if bodyClass %} {{ bodyClass }}{% endif %}">
   <a class="screen-reader-text" href="#main-content">Skip to main content</a>
 
-      {#
-        fontsizeFromTagWeight() filter:
-        weight of tag is piped in as the first parameter
-        bracket params are (minSize, maxSize, numSizes)
-        minSize, maxSize represent min/max values that can be returned
-        numSizes is how many different sizes will be available
-      #}
       <header class="site-header">
         <nav class="site-nav">
           <ul>
@@ -162,15 +162,18 @@
 			</section><!-- content -->
 
 
-  <footer class="site-footer">
-    <span>
-      <a class="feed icon btn" href="/rss.xml"><img src="/images/shim.png" alt="RSS Feed symbol"></a>
-			{{ sitedata.footer_quote | safe }}
-      <span>content and site&nbsp;<span class="copyright">&copy;</span>&nbsp;Mark Mayes</span>
-			<a href="/contact.html">contact me</a>
-    </span>
-  </footer>
-  
+			<footer class="site-footer">
+				<span>
+					<a class="feed icon btn" href="/rss.xml"><img src="/images/shim.png" alt="RSS Feed symbol"></a>
+					<a href="/contact.html">contact</a>
+					<a href="/privacy.html">privacy</a>
+				</span>
+				<span>
+					<p>to&nbsp;be inwardly&nbsp;firm and outwardly&nbsp;gentle is&nbsp;the&nbsp;way&nbsp;of true&nbsp;joy...</p>
+					<p>content and site&nbsp;<span class="copyright">&copy;</span>&nbsp;Mark Mayes</p>
+				</span>
+			</footer>
+
   {% block bodyEndScripts %}{% endblock %}
   
 </body>

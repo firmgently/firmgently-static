@@ -130,40 +130,33 @@ body.wrapper {
     }
     .widget {
       @include flex(1, 0, $side-col-min-width);
-			&.stuckism {
-				color: red;
-			}
     }
   }
   .site-footer {
     @include flexbox;
-    @include flex-flow(row nowrap);
+    @include flex-flow(column wrap);
     @include justify-content(flex-start);
     @include align-items(center);
     padding-top: $pad-footer-top;
-    > span:first-of-type {
+		span {
+			width: 100%;
+			margin-bottom: $pad-med;
+		}
+		p,
+		a {
+			margin-right: $pad-med;
+		}
+		p {
       color: $text-dimmed-less;
-      a {
-        clear: both;
-        vertical-align: text-top;
-        margin-right: $pad-big;
-        img {
-          .button {
-            stroke: none;
-            fill: red;
-          }
-          .symbol {
-            stroke: none;
-            fill: black;
-          }
-        }
-      }
-      > span {
+			margin-bottom: $pad-sma;
+			&:last-of-type {
         color: $text-dimmed-main;
-        margin-left: $pad-big;
-        @include align-self(flex-start);
-      }
-    }
+			}
+		}
+		a {
+			vertical-align: middle;
+			padding-left: 0;
+		}
   }
 }
 h1,
