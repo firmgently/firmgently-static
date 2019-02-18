@@ -27,7 +27,7 @@ The following is based on the console output from a typical build at the time of
 
 I've included the timings for each step below. It's important to note that my mid-winter development machine is a 5-year-old Android tablet running Debian in a chroot (it's surprisingly adept and I talk about it [here](/word/low-power-computing/)). It's not the fastest machine so the build times are a lot slower than they'd be on a more capable workstation. A full build on Netlify including image processing tends to take about 1 minute in total (vs >5 mins on the tablet).
 
-** Due to my slow machine and based on the Netlify build times you can probably presume the timings listed here are about 5x longer than what you'd experience on a decent modern workstation **
+**Due to my slow machine and based on the Netlify build times you can probably presume the timings listed here are about 5x slower than what you'd experience on a decent modern workstation**
 
 I also have a couple of specific build jobs defined, one which only recompiles CSS from SASS and another which builds the entire site but doesn't do the image processing. The latter is the job I use the most during development as I don't often need to add new images.
 
