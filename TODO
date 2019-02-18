@@ -24,9 +24,7 @@
 ## CSS STYLING
 
 [ ] title image currently hard coded at 8rem
-[ ] footer split/margin/padding when wrapping 
 [ ] choose proper sizes and styles for srcset images
-[ ] remove outline from yinyang
 [ ] contact page
 [ ] shrink header/nav height
 
