@@ -113,6 +113,9 @@ body.wrapper {
 					background-position: 0.5rem 0.9rem;
 					padding-left: $pad-med;
 					margin-bottom: $pad-huge;
+					li {
+						margin-bottom: $pad-med;
+					}
 				}
 				code {
 					background-color: $main-bg;
