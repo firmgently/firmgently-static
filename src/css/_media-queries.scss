@@ -35,9 +35,8 @@
     .side-column {
       padding-right: 0;
     }
-    form,
     .content {
-      .main-column {
+      > .main-column {
         padding-top: 0;
       }
     }

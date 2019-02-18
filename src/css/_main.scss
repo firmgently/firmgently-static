@@ -107,6 +107,16 @@ body.wrapper {
 				h2, h3 {
 					margin-top: $pad-big;
 				}
+				li {
+					background-image: $bullet-image;
+					background-repeat: no-repeat;
+					background-position: 0.5rem 0.9rem;
+					padding-left: $pad-med;
+					margin-bottom: $pad-huge;
+				}
+				code {
+					background-color: $main-bg;
+				}
 				> img,
 				> p > img,
 				figure {
@@ -149,6 +159,10 @@ body.wrapper {
 		p {
       color: $text-dimmed-less;
 			margin-bottom: $pad-sma;
+			&:first-of-type {
+				font-size: 1.3rem;
+				font-style: italic;
+			}
 			&:last-of-type {
         color: $text-dimmed-main;
 			}
@@ -572,7 +586,7 @@ form {
 }
 /* ////////////////////////////////////////////////////////////////////////// */
 /*HIRE ME ANIMATION*/
-#hireMe {
+#hire-me {
   margin-bottom: $pad-big;
   ul {
     list-style-type: none;
@@ -582,7 +596,7 @@ form {
       display: inline-block;
     }
   }
-  #hireMeAnim {
+  #hire-me-anim {
     cursor: default;
     padding: 0;
     width: 100%;
@@ -590,13 +604,12 @@ form {
     display: inline-block;
     overflow: hidden;
     position: relative;
-    background-color: #6c898f;
+    background-color: $main-bg;
     background-image: url(/images/hireMeStars.png);
     text-align: center;
     @include border-radius($pad-sma);
     @include transition(all $transition-speed-spin $transition-style-sink);
     h2 {
-      font-family: 'FG_HireMe', 'Tahoma', 'Arial', 'Nimbus Sans L';
       color: #ffff63;
       position: absolute;
       z-index: 3;
@@ -615,9 +628,11 @@ form {
     }
     img {
       position: absolute;
-      top: 30px;
+      top: 50%;
+			margin-top: -88px;
       left: 50%;
       margin-left: -88px;
+			transform: scale(3);
       @include transition(all $transition-speed-spin $transition-style-sink);
     }
     &:hover {
@@ -627,7 +642,7 @@ form {
         font-size: 5em;
       }
       img {
-        top: -10px;
+				transform: scale(1);
         @include animation(
           centred-spin $transition-speed-spin $transition-style-spin infinite
         );

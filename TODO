@@ -1,6 +1,7 @@
 ## BUGS
 
 [ ] js for invert colours is not embedded correctly
+[ ] media query breaks layout at medium sizes
 [ ] initial load on light css sometimes loads with no css or broken layout
 
 
@@ -17,15 +18,14 @@
 [ ] make hire me animation match colours of site, constrain size
 [ ] add gitlab link
 [ ] add images to items in rss feed
-[ ] privacy
 [ ] make flex fill up pages better
+[ ] home page add 'click to swap light/dark'
 
 
 ## CSS STYLING
 
 [ ] title image currently hard coded at 8rem
 [ ] choose proper sizes and styles for srcset images
-[ ] contact page
 [ ] shrink header/nav height
 
 
