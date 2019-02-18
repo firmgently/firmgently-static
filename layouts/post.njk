@@ -27,10 +27,8 @@
         <em>{{ contents | striptags | wordcount | averageReadTime }} read</em>
       </header>
       {{ contents | safe }}
-      <footer>
-        {% set comma = joiner(", ") %}
-        <span>tags {% for tag in tags -%}{{ comma() }}<a href="/by/{{ tag.slug }}" rel="category tag">{{ tag.name }}</a>{% endfor %}</span>
-      </footer>
+
+			{{ insertPageTags() }}
     </article>
   </div>
 
