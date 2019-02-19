@@ -115,7 +115,10 @@ metalsmith(__dirname)
   .use(timer('images processed'))
 
   .use(sass({
-    includePaths: ['css']
+    includePaths: ['css'],
+		sourceMap: true,
+    sourceMapContents: true,
+		outputStyle: 'compressed'
   }))
   .use(timer('SASS compiled'))
 
