@@ -56,7 +56,7 @@ metalsmith(__dirname)
   .clean(clean)
   .metadata(
     {site: {
-      title: 'Firm Gently',
+      title: 'Painting, Photography, Objects, Web | Firm Gently',
       url: hostname,
       author: 'Mark Mayes'
     }}
@@ -306,13 +306,12 @@ metalsmith(__dirname)
 			collection: 'all',
 			destination: 'rss.xml',
 			limit: false, // include all items
-			//image_url: ,
+			image_url: 'https://www.firmgently.co.uk/images/FGLogo_og.jpg',
 			preprocess: file => ({
 				...file,
 				// Make all titles uppercase
 				title: file.title || file.itemData.title,
 				categories: file.tags ? file.tags.map(tag => tag.name) : undefined,
-				image_url: file.share_thumbnail,
 				description:  (file.itemData ? file.itemData.desc : null) || file.contents
 			})
 		})
