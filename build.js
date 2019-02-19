@@ -296,7 +296,7 @@ metalsmith(__dirname)
     indent_size: 2,
     indent_char: ' ',
     max_preserve_newlines: 0,
-    extra_liners: '[head,body,/body,/html,header,section,footer]'
+    extra_liners: '[head,body,/body,/html,header,section,footer,script]'
   }))
   .use(timer('markup beautified'))
 
