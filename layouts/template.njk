@@ -78,12 +78,16 @@
 
 
 
+{% if itemData %}
+	{% set item_thumbnail = 'items/thumbs/' + itemData.id + ".jpg" %}
+{% endif %}
+
 {% set pageTitle = (itemData.title | default(title) | default(sitedata.site_name)) + sitedata.title_suffix %}
 {% set pageTitle_stripped = pageTitle | striptags %}
 {% set pageTitle_urlEncoded = pageTitle_stripped | urlencode %}
 {% set desc = itemData.desc | default(desc) | default(sitedata.site_desc) %}
 {% set desc_stripped = desc | striptags %}
-{% set share_thumbnail = itemData.share_thumbnail | default(share_thumbnail) | default(sitedata.share_thumbnail) %}
+{% set share_thumbnail = item_thumbnail | default(sitedata.share_thumbnail) %}
 {% set url = sitedata.domain + "/" + path %}
 
 
@@ -130,7 +134,7 @@
 
 			<footer class="site-footer">
 				<span>
-					<a class="feed icon btn" href="/rss.xml"><img src="/images/shim.png" alt="RSS Feed symbol"></a>
+					<a class="feed icon btn" href="/rss.html"><img src="/images/shim.png" alt="RSS Feed symbol"></a>
 					<a href="/contact.html">contact</a>
 					<a href="/privacy.html">privacy</a>
 				</span>

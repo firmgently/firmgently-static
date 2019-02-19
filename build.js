@@ -309,6 +309,7 @@ metalsmith(__dirname)
 				// Make all titles uppercase
 				title: file.title || file.itemData.title,
 				categories: file.tags,
+				image_url: file.share_thumbnail,
 				description:  (file.itemData ? file.itemData.desc : null) || file.contents
 			})
 		})
