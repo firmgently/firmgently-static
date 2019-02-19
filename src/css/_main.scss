@@ -425,15 +425,16 @@ nav.site-nav {
     @include align-items(flex-end);
     margin-top: 0-$pad-huge;
     max-width: $nav-max-width;
-    transform: rotate(-5deg);
+    /*transform: rotate(-3deg);*/
     margin-right: -2.5rem; /* fixes offset from twist/rotation */
     li {
       display: inline-block;
-      margin-top: $pad-sma;
+      margin-top: 0;
       margin-right: $pad-sma;
       &:first-of-type {
         /* title image */
-        margin-bottom: 0-$pad-med;
+        margin-top: $pad-big;
+        margin-bottom: 0-6rem;
         margin-right: $pad-med;
       }
       &:last-of-type {
@@ -442,20 +443,27 @@ nav.site-nav {
       /* set up nth-of-type(?n+?) cycle, creates --r vars, used to set rotation of inner <a> */
       @include cycle(
         --r,
-        19deg,
+        13deg,
         4deg,
         -7deg,
         0deg,
-        -10deg,
-        7deg,
-        -5deg,
+        -14deg,
+        17deg,
+        -9deg,
         14deg,
         0deg,
+        30deg,
         -10deg,
-        13deg,
-        -3deg,
+        21deg,
+        -37deg,
         8deg,
+        -19deg,
+        20deg,
         -10deg,
+        21deg,
+        -7deg,
+        8deg,
+        -19deg,
         7deg,
         -30deg
       );

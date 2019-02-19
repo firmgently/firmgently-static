@@ -2,6 +2,7 @@
 
 
 
+
 ## GENERAL
 
 [ ] magnifier
@@ -11,22 +12,25 @@
   [ ] second click/hold zooms to full size, pan by dragging
     [ ] close on release
     [ ] X btn
+
 [ ] dark/light version of site sits at 2 domains, yinyang just swaps domain
-[ ] too many references to 'I' in item data
-[ ] make hire me animation match colours of site, constrain size
-[ ] add gitlab link
-[ ] add images to items in rss feed
-[ ] make flex fill up pages better
 [ ] home page add text 'click to swap light/dark'
+
 
 
 ## CSS STYLING
 
 [ ] choose proper sizes and styles for srcset images
+[ ] make hire me animation match colours of site, constrain size
 [ ] shrink header/nav height
+[ ] make flex fill up pages better
+[ ] layout gets messed up with certain mediaqueries
+
 
 
 ## LOW PRIORITY
 
 [ ] use sass mixins for all grid stuff
+[ ] too many references to 'I' in item data
 [ ] add comments under posts? decide
+[ ] add gitlab link
