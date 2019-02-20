@@ -5,6 +5,7 @@ const debug = require('metalsmith-debug'); // debugging
 const markdown = require('metalsmith-markdown'); // convert markdown
 const layouts = require('metalsmith-layouts'); // templating (using Nunjucks here)
 const beautify = require('metalsmith-beautify'); // format outputted markup
+const uglify = require('metalsmith-uglify'); // uglify js
 const data = require('metalsmith-data'); // import JSON data
 const collections = require('metalsmith-collections'); // groups files together into collections
 const metadata = require('metalsmith-collection-metadata'); // add some defaults to collections
@@ -121,6 +122,11 @@ metalsmith(__dirname)
 		outputStyle: 'compressed'
   }))
   .use(timer('SASS compiled'))
+
+	.use(uglify({
+
+	}))
+  .use(timer('JS uglified'))
 
 // import JSON
 // creates data.config, data.items etc
