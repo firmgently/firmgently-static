@@ -68,14 +68,16 @@ body.wrapper {
     @include justify-content(flex-start);
     @include align-items(center);
     .title-image {
+			margin-top: $pad-big;
+			margin-bottom: 0;
+			margin-right: $pad-med;
       background: none;
-      margin-bottom: $pad-med;
       img {
         display: inline-block;
         background-image: $title-image;
         background-size: cover;
         background-position: 0 0;
-        width: 11rem;
+        width: 8rem;
         height: 0;
         padding: calc(60 / 91 * 100%) 0 0 0;
       }
@@ -88,7 +90,7 @@ body.wrapper {
   .content {
     @include flexbox;
     @include flex-flow(row wrap);
-    margin-top: $pad-big;
+    margin-top: $pad-sma;
     font-size: 1.5rem;
     line-height: 2.25rem;
     .side-column {
@@ -417,12 +419,12 @@ em {
   font-style: italic;
 }
 nav.site-nav {
+	@include flexbox;
   ul {
     @include flexbox;
     @include flex-wrap(wrap);
     @include justify-content(flex-end);
     @include align-items(flex-end);
-    margin-top: 0-$pad-huge;
     max-width: $nav-max-width;
     /*transform: rotate(-3deg);*/
     margin-right: -2.5rem; /* fixes offset from twist/rotation */
@@ -430,14 +432,7 @@ nav.site-nav {
       display: inline-block;
       margin-top: 0;
       margin-right: $pad-sma;
-      &:first-of-type {
-        /* title image */
-        margin-top: $pad-big;
-        margin-bottom: 0-6rem;
-        margin-right: $pad-med;
-      }
       &:last-of-type {
-        margin-bottom: 0-$pad-sma;
         /* yin-yang symbol */
       }
       /* set up nth-of-type(?n+?) cycle, creates --r vars, used to set rotation of inner <a> */
@@ -581,6 +576,10 @@ form {
   border: none;
   display: inline-block;
   position: relative;
+	&.loading {
+		-webkit-filter: grayscale(1);
+		filter: grayscale(1);
+	}
 }
 #loupe {
   border: dotted 1px $text-colour-strong2;

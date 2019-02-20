@@ -179,6 +179,7 @@ uk.co.firmgently.FGMagnify = (function () {
 
   loadHiResImage = function() {
     hiResImg.setAttribute("src", mainImg.src);
+    addClassname(hiResImg, "loading");
     hiResImg_inf.ldeStarted = true;
     ldingMsg.style.display = "inline-block";
     hiResImgPreload_el = document.createElement("img");
@@ -194,8 +195,8 @@ uk.co.firmgently.FGMagnify = (function () {
 
   
   onHiResImageLoad = function(e) {
+    removeClassname(hiResImg, "loading");
     hiResImg.setAttribute("src", hiResImgPreload_el.src);
-    //hiResImgPreload_el.parent.removeChild(hiResImgPreload_el);
     // display the hi-res image
     ldingMsg.style.display = "none";
     imgLdingMsg.style.display = "none";
