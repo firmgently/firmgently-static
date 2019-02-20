@@ -12,6 +12,7 @@ uk.co.firmgently.FGMagnify = (function () {
   var
   FGMAG_RFR_MS = 60, MAGSHOW_DELAY_MS = 600, 
   UPDATE_DELAY_MS = 100,
+  ZOOMED_IMAGE_WIDTH = 3000,
   IMAGESIZE_TOPMARGIN_NORMAL = 200, IMAGESIZE_TOPMARGIN_SMALL = 70,
   IMAGESIZE_LEFTMARGIN_SMALL = 70, IMAGESIZE_LEFTMARGIN_NORMAL = 100,
   IMGLDINGMSG_STR = "image loading...", LDINGMSG_STR = "magnifier loading...",
@@ -31,6 +32,7 @@ uk.co.firmgently.FGMagnify = (function () {
   calculateSizes,
   shwMag, hidMag, updMag, updateMousePos, updateMainImageMetrics,
   loadHiResImage, onHiResImageLoad,
+  hiResImgPreload_el,
   updateAllMeasurements,
   
   onResize, onScroll, onMainImgMouseOut, onMainImgMouseOver, onDocumentDragStart, onMainImgTouchStart,
@@ -147,15 +149,19 @@ uk.co.firmgently.FGMagnify = (function () {
   */
   
   shwMag = function() {
+    // TODO show wht needs to be shown regardless, but start
+    // hiRes load if necessary
     if ( ! hiResImg_inf.ldeStarted) {
       // lde hi-res image if this is the first attempt at shwing
       loadHiResImage();
-    } else if (hiResImg_inf.sizeAvailable && mag.style.display !== "inline-block") {
+    }
+   // else if (hiResImg_inf.sizeAvailable && mag.style.display !== "inline-block") {
       // shw what needs to be shwn
+    hiResImg.style.visibility = "visible";
       mag.style.display = "inline-block";
       loupe.style.display = "inline-block";
       magIsShowing = true;
-    }
+    //}
   };
   
   hidMag = function() {
@@ -172,25 +178,26 @@ uk.co.firmgently.FGMagnify = (function () {
   */
 
   loadHiResImage = function() {
-    hiResImg_inf.sizeAvailable = false;
+    hiResImg.setAttribute("src", mainImg.src);
     hiResImg_inf.ldeStarted = true;
     ldingMsg.style.display = "inline-block";
-
-    registerEventHandler(hiResImg, "load", onHiResImageLoad);
-    hiResImg.setAttribute("src", hiResImg_inf.path);
+    hiResImgPreload_el = document.createElement("img");
+    registerEventHandler(hiResImgPreload_el, "load", onHiResImageLoad);
+    hiResImgPreload_el.setAttribute("src", hiResImg_inf.path);
+    hiResImg_inf.sizeAvailable = true;
+    hiResImg.width = ZOOMED_IMAGE_WIDTH;
+    calculateSizes();
+    shwMag();
+    updateMag_tmr = setTimeout(updMag, FGMAG_RFR_MS);
   };
   
 
   
   onHiResImageLoad = function(e) {
-    hiResImg_inf.sizeAvailable = true;
-    siz_inf.magRealW = hiResImg.width;
-    ldingMsg.style.display = "none";
-    calculateSizes();
-    shwMag();
-    updateMag_tmr = setTimeout(updMag, FGMAG_RFR_MS);
+    hiResImg.setAttribute("src", hiResImgPreload_el.src);
+    //hiResImgPreload_el.parent.removeChild(hiResImgPreload_el);
     // display the hi-res image
-    hiResImg.style.visibility = "visible";
+    ldingMsg.style.display = "none";
     imgLdingMsg.style.display = "none";
   };
 
@@ -474,8 +481,8 @@ uk.co.firmgently.FGMagnify = (function () {
   onWindowLoad = function() {
     mainImageAspectRatio = mainImg.offsetWidth / mainImg.offsetHeight;
 
-    imageMainContainer_el = document.getElementById("itemImageMain");
-    itemDetails_el = document.getElementById("mainItemDetails");
+    imageMainContainer_el = document.getElementById("item-image");
+    itemDetails_el = document.getElementsByClassName("item-details")[0];
 
     updateMainImageMetrics();
     createHTML();
@@ -487,11 +494,13 @@ uk.co.firmgently.FGMagnify = (function () {
     registerEventHandler(document, "mousemove", updateMousePos);
     registerEventHandler(document, "touchmove", updateMousePos);
 
-    registerEventHandler(mainImg, "mouseover", onMainImgMouseOver);
+    registerEventHandler(mainImg, "mousedown", onMainImgMouseOver);
+    //registerEventHandler(mainImg, "mouseover", onMainImgMouseOver);
     registerEventHandler(mainImg, "touchstart", onMainImgTouchStart);
 
     registerEventHandler(mag, "mouseover", stopPropagation);
-    registerEventHandler(mainImg, "mouseout", onMainImgMouseOut);
+    registerEventHandler(document, "mouseup", onMainImgMouseOut);
+    //registerEventHandler(mainImg, "mouseout", onMainImgMouseOut);
     registerEventHandler(mainImg, "touchend", onMainImgMouseOut);
 
     registerEventHandler(document, "dragstart", onDocumentDragStart);  
@@ -509,10 +518,11 @@ uk.co.firmgently.FGMagnify = (function () {
     ---------------------------------------------------------
     */
     create: function(hiResPath, image_ob, useLightColours) { // create our magnifier
-      hiResImg_inf.path = hiResPath;
       mainImg = document.getElementById(image_ob);
+      hiResImg_inf.path = hiResPath;
       useLightColours = useLightColours;
       if (mainImg) {
+        //hiResImg_inf.path = mainImg.src;
         addClassname(mainImg, "invisible");
         registerEventHandler(window, "load", onWindowLoad);
       }

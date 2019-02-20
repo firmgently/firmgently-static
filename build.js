@@ -72,6 +72,7 @@ metalsmith(__dirname)
         { name: 'resize', args: [960, 960] },
         { name: 'resize', args: { fit: 'inside' } },
         { name: 'jpeg', args: { quality: 80 } },
+        { name: 'greyscale', args: { greyscale: true } },
         { name: 'sharpen' }
       ]
     }, {
