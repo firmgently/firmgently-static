@@ -4,13 +4,16 @@ module.exports = {
 		return string.toLowerCase();
 	},
 
+
 	toUpper: function(string) {
 		return string.toUpperCase();
 	},
 
+
 	spaceToDash: function(string) {
 		return string.replace(/\s+/g, '-');
 	},
+
 
 	// caclulate CSS font size for tag cloud
 	fontsizeFromTagWeight: function(weight, minSize, maxSize, numSizes) {
@@ -20,8 +23,9 @@ module.exports = {
 			size = minSize + (weight * stepSize);
 
 		if (size > maxSize) { size = maxSize; }
-		return size;
+		return Math.round(size * 100)/100;
 	},
+
 
 	// calculate a rough estimate on time to read an article
 	// based on the number of words it contains
@@ -41,6 +45,7 @@ module.exports = {
 		}
 		return estimate;
 	},
+
 
 	// vanity function to keep the URL clean - when linking
 	// into a directory the index.html can be ommitted
