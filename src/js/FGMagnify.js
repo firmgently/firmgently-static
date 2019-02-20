@@ -36,13 +36,17 @@ uk.co.firmgently.FGMagnify = (function () {
   onResize, onScroll, onStopInteraction, onStartInteraction, onMainImgTouchStart, onWindowLoad,
   createHTML, addClassname, removeClassname,
   logMsg, getWindowSizeArray, getWindowScrollPos,
-  stopPropagation, registerEventHandler, unregisterEventHandler;
+  clamp, stopPropagation, registerEventHandler, unregisterEventHandler;
 
 
 
   logMsg = function (msg) {
     return; // cancel logging for live
     if (window.console) { console.log(msg); }
+  };
+
+  clamp = function (num, min, max) {
+    return Math.min(Math.max(num, min), max);
   };
   
   removeClassname = function (element, name) {
@@ -110,20 +114,9 @@ uk.co.firmgently.FGMagnify = (function () {
   */  
   
   updateMag = function() { 
-    if ( ! hiResImg_inf.sizeAvailable) { return; } // loading has barely beged
-    var x, y;
-    x = mouse_inf.xMainImg;
-    y = mouse_inf.yMainImg;
-    if (x < loupeBnd_rct.left) {
-      x = loupeBnd_rct.left;
-    } else if (x > loupeBnd_rct.right) {
-      x = loupeBnd_rct.right;
-    }
-    if (y < loupeBnd_rct.top) {
-      y = loupeBnd_rct.top;
-    } else if (y > loupeBnd_rct.bottom) {
-      y = loupeBnd_rct.bottom;
-    }
+    var
+      x = clamp(mouse_inf.xMainImg, loupeBnd_rct.left, loupeBnd_rct.right),
+      y = clamp(mouse_inf.yMainImg, loupeBnd_rct.top, loupeBnd_rct.bottom);
     // set loupe position
     loupe.style.left = Math.round(x - size_inf.loupeHW - size_inf.loupeBorder) + "px";
     loupe.style.top = Math.round(y - size_inf.loupeHH - size_inf.loupeBorder) + "px";
@@ -142,13 +135,7 @@ uk.co.firmgently.FGMagnify = (function () {
   */
 
   showMag = function() {
-    // TODO show wht needs to be shown regardless, but start
-    // hiRes load if necessary
-    if ( ! hiResImg_inf.loadStarted) {
-      // load hi-res image if this is the first attempt at shwing
-      loadHiResImage();
-    }
-    // shw what needs to be shwn
+    if ( ! hiResImg_inf.loadStarted) { loadHiResImage(); }
     hiResImg.style.visibility = "visible";
     mag.style.display = "inline-block";
     loupe.style.display = "inline-block";
@@ -156,7 +143,6 @@ uk.co.firmgently.FGMagnify = (function () {
   };
   
   hideMag = function() {
-    // hid what needs to be hid
     mag.style.display = "none";
     loupe.style.display = "none";
     magIsShowing = false;
@@ -174,12 +160,11 @@ uk.co.firmgently.FGMagnify = (function () {
     // rather than having to wait for the hi-res to load
     hiResImg.setAttribute("src", mainImg.src);
     addClassname(hiResImg, "loading");
-    hiResImg_inf.loadStarted = true;
     loadingMsg.style.display = "inline-block";
     hiResImgPreload_el = document.createElement("img");
     registerEventHandler(hiResImgPreload_el, "load", onHiResImageLoad);
     hiResImgPreload_el.setAttribute("src", hiResImg_inf.path);
-    hiResImg_inf.sizeAvailable = true;
+    hiResImg_inf.loadStarted = true;
     hiResImg.width = ZOOMED_IMAGE_WIDTH;
     calculateSizes();
     showMag();
@@ -236,26 +221,26 @@ uk.co.firmgently.FGMagnify = (function () {
 
     switch (biggestSide) {
       case "top":
-        size_inf.magW = mainImg.offsetWidth - (size_inf.magBorder * 2);
+        size_inf.magW = mainImg.offsetWidth;
         size_inf.magH = biggestMeasurement;
         mag.style.left = size_inf.mainImgRealL + "px";
         mag.style.top = scrollPos + "px";
         break;
       case "right":
         size_inf.magW = biggestMeasurement - PAGE_MARGIN - (size_inf.magBorder * 2);
-        size_inf.magH = mainImg.offsetHeight - (size_inf.magBorder * 2);
+        size_inf.magH = mainImg.offsetHeight;
         mag.style.left = (size_inf.mainImgRealL + mainImg.offsetWidth) + "px";
         mag.style.top = size_inf.mainImgRealT + "px";
         break;
       case "bottom":
-        size_inf.magW = mainImg.offsetWidth - (size_inf.magBorder * 2);
+        size_inf.magW = mainImg.offsetWidth;
         size_inf.magH = biggestMeasurement;
         mag.style.left = size_inf.mainImgRealL + "px";
         mag.style.top = (size_inf.mainImgRealT + mainImg.offsetHeight) + "px";
         break;
       case "left":
         size_inf.magW = biggestMeasurement;
-        size_inf.magH = mainImg.offsetHeight - (size_inf.magBorder * 2);
+        size_inf.magH = mainImg.offsetHeight;
         mag.style.left = 0 + "px";
         mag.style.top = size_inf.mainImgRealT + "px";
         break;
@@ -386,25 +371,15 @@ uk.co.firmgently.FGMagnify = (function () {
   
   updateAllMeasurements = function() {
     var
-    winSize_ar, winHeight, imgWidth,
-    isSmallLayout = false;
-
+    winHeight, imgWidth,
     winSize_ar = getWindowSizeArray();
     
-    if (imageMainContainer_el.offsetTop > itemDetails_el.offsetTop) {
-      isSmallLayout = true;
-    }
-    
-    if (isSmallLayout) {
+    if (imageMainContainer_el.offsetTop > itemDetails_el.offsetTop) { // small layout
       winHeight = winSize_ar[1] - IMAGESIZE_TOPMARGIN_SMALL;
-    } else {
-      winHeight = winSize_ar[1] - IMAGESIZE_TOPMARGIN_NORMAL;
-    }
-    
-    if (isSmallLayout) {
       imgWidth = winSize_ar[0] - imageMainContainer_el.offsetLeft - IMAGESIZE_LEFTMARGIN_SMALL;
     } else {
       imgWidth = winSize_ar[0] - imageMainContainer_el.offsetLeft - IMAGESIZE_LEFTMARGIN_NORMAL;
+      winHeight = winSize_ar[1] - IMAGESIZE_TOPMARGIN_NORMAL;
     }
 
     while ((imgWidth / mainImageAspectRatio) > winHeight) {
@@ -488,7 +463,6 @@ uk.co.firmgently.FGMagnify = (function () {
       hiResImg_inf.path = hiResPath;
       useLightColours = useLightColours;
       if (mainImg) {
-        //hiResImg_inf.path = mainImg.src;
         addClassname(mainImg, "invisible");
         registerEventHandler(window, "load", onWindowLoad);
       }
