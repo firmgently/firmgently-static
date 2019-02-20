@@ -86,7 +86,7 @@ metalsmith(__dirname)
       ]
     }, {
       src: 'images/words/**.jpg',
-      namingPattern: '{dir}{name}_100w{ext}',
+      namingPattern: '{dir}{name}_300w{ext}',
       methods: [
         { name: 'resize', args: [300, 300] },
         { name: 'resize', args: { fit: 'outside' } },
@@ -95,7 +95,7 @@ metalsmith(__dirname)
       ]
     }, {
       src: 'images/words/**.jpg',
-      namingPattern: '{dir}{name}_500w{ext}',
+      namingPattern: '{dir}{name}_600w{ext}',
       methods: [
         { name: 'resize', args: [600, 600] },
         { name: 'resize', args: { fit: 'outside' } },
@@ -104,7 +104,7 @@ metalsmith(__dirname)
       ]
     }, {
       src: 'images/words/**.jpg',
-      namingPattern: '{dir}{name}_1000w{ext}',
+      namingPattern: '{dir}{name}_900w{ext}',
       methods: [
         { name: 'resize', args: [900, 900] },
         { name: 'resize', args: { fit: 'outside' } },
