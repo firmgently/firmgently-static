@@ -259,6 +259,7 @@ metalsmith(__dirname)
   .use(timer('permalinked TOPICS'))
 
 	.use(date_formatter({
+    suppressDeprecationWarnings: true,
 		dates: [
 			{
 				key: 'date',
