@@ -50,8 +50,8 @@
 		<div id="item-image">
 			<img id="magnifiable-image" alt="Click to magnify" src="/images/items/main/{{ itemData.id }}.jpg">
 		</div>
-		<p class="alert magnify-prompt">mouse or slide over the picture to magnify it</p>
-		<a href="/downloadImage.php?id=fabric" class="download-wallpaper-btn">download wallpaper</a>
+		<p class="alert magnify-prompt">drag picture to magnify</p>
+    <a href="/images/items/hi_res/{{ itemData.id }}.jpg" download="{{ itemData.title }} ({{ sitedata.site_name }})" class="download-wallpaper-btn">download wallpaper</a>
 		{{ insertPageTags() }}
 	</div><!-- main-column -->
 
