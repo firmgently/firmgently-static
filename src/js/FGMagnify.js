@@ -15,7 +15,7 @@ uk.co.firmgently.FGMagnify = (function () {
   ZOOMED_IMAGE_WIDTH = 3000,
   IMAGESIZE_TOPMARGIN_NORMAL = 200, IMAGESIZE_TOPMARGIN_SMALL = 70,
   IMAGESIZE_LEFTMARGIN_SMALL = 70, IMAGESIZE_LEFTMARGIN_NORMAL = 100,
-  IMGLDINGMSG_STR = "image loading...", LDINGMSG_STR = "magnifier loading...",
+  IMGLDINGMSG_STR = "hi-quality image loading...",
   LOUPEBG_RESIZE_DARK = "/images/dark/loupeBgResize.gif", LOUPEBG_RESIZE_LIGHT = "/images/light/loupeBgResize.gif",
   BORDERCOLOUR_LIMIT_DARK = "#007ffe", BORDERCOLOUR_LIMIT_LIGHT = "#ff8001",
   IMAGE_RESIZE_STEP = 10,
@@ -28,7 +28,7 @@ uk.co.firmgently.FGMagnify = (function () {
   itemDetails_el, imageMainContainer_el, mainColumn_el,
   magIsShowing,
   mag, magInner, loupe, mainImg, hiResImg,
-  loadingMsg, imgLoadingMsg, mainImageAspectRatio,
+  imgLoadingMsg, mainImageAspectRatio,
   calculateSizes, updateAllMeasurements,
   showMag, hideMag, updateMag, updateMousePos, updateMainImageMetrics,
   loadHiResImage, onHiResImageLoad, hiResImgPreload_el,
@@ -160,14 +160,15 @@ uk.co.firmgently.FGMagnify = (function () {
     // rather than having to wait for the hi-res to load
     hiResImg.setAttribute("src", mainImg.src);
     addClassname(hiResImg, "loading");
-    loadingMsg.style.display = "inline-block";
-    hiResImgPreload_el = document.createElement("img");
-    registerEventHandler(hiResImgPreload_el, "load", onHiResImageLoad);
-    hiResImgPreload_el.setAttribute("src", hiResImg_inf.path);
     hiResImg_inf.loadStarted = true;
     hiResImg.width = ZOOMED_IMAGE_WIDTH;
     calculateSizes();
-    showMag();
+    updateMag();
+
+    hiResImgPreload_el = document.createElement("img");
+    registerEventHandler(hiResImgPreload_el, "load", onHiResImageLoad);
+    hiResImgPreload_el.setAttribute("src", hiResImg_inf.path);
+
     updateMag_tmr = setTimeout(updateMag, FGMAG_RFR_MS);
   };
   
@@ -175,7 +176,6 @@ uk.co.firmgently.FGMagnify = (function () {
   onHiResImageLoad = function(e) {
     removeClassname(hiResImg, "loading");
     hiResImg.setAttribute("src", hiResImgPreload_el.src);
-    loadingMsg.style.display = "none";
     imgLoadingMsg.style.display = "none";
   };
 
@@ -319,19 +319,11 @@ uk.co.firmgently.FGMagnify = (function () {
     
     // create image loading message elements
     imgLoadingMsg = document.createElement("p");
-    imgLoadingMsg.id = "magImgLoadingMsg";
+    imgLoadingMsg.id = "mag-image-loading-message";
     imgLoadingMsg.className = "alert";
     mag.appendChild(imgLoadingMsg);
     msgText = document.createTextNode(IMGLDINGMSG_STR);
     imgLoadingMsg.appendChild(msgText);
-    loadingMsg = document.createElement("p");
-    loadingMsg.id = "magLoadingMsg";
-    loadingMsg.className = "alert";
-    parentElement.appendChild(loadingMsg);
-    msgText = document.createTextNode(LDINGMSG_STR);
-    loadingMsg.appendChild(msgText);
-    loadingMsg.style.left = (mainImg.offsetLeft + size_inf.mainImgBorder) + "px";
-    loadingMsg.style.top = (mainImg.offsetTop + size_inf.mainImgBorder) + "px";
     
     // make hi-res image inner container and attach it to outer container
     magInner = document.createElement("div");
@@ -348,7 +340,6 @@ uk.co.firmgently.FGMagnify = (function () {
     // appendChild or take style measurements from them
     loupe.style.display = "none";
     mag.style.display = "none";
-    loadingMsg.style.display = "none";
   };
   
   updateMainImageMetrics = function() {

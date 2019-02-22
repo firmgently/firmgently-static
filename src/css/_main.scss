@@ -554,6 +554,7 @@ form {
 #magnifiable-image {
   max-width: 100%;
   width: $main-image-width-small;
+  max-height: 95vh;
   cursor: zoom-in;
 }
 #mag {
@@ -589,14 +590,16 @@ form {
   cursor: all-scroll;
   background-image: url(/images/light/loupeBg.png);
 }
-#magImgLdingMsg,
-#magLdingMsg {
-  padding: $pad-med;
+#mag-image-loading-message {
+  padding: $pad-sma;
   position: absolute;
+  top: $pad-sma;
+  left: $pad-sma;
   line-height: 1.2em;
-}
-#magImgLdingMsg {
-  top: 12px;
+  z-index: 2;
+  font-weight: bold;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.6);
 }
 /* ////////////////////////////////////////////////////////////////////////// */
 /*HIRE ME ANIMATION*/
