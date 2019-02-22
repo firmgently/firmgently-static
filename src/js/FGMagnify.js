@@ -260,17 +260,17 @@ uk.co.firmgently.FGMagnify = (function () {
     loupe.style.width = size_inf.loupeW + "px";
     loupe.style.height = size_inf.loupeH + "px";
     // measure some more important elements
-    size_inf.hiResHW = hiResImg.width/2;
-    size_inf.hiResHH = hiResImg.height/2;
-    size_inf.loupeHW = size_inf.loupeW/2;
-    size_inf.loupeHH = size_inf.loupeH/2;
-    size_inf.magHW = size_inf.magW/2;
-    size_inf.magHH = size_inf.magH/2;
+    size_inf.hiResHW = hiResImg.width / 2;
+    size_inf.hiResHH = hiResImg.height / 2;
+    size_inf.loupeHW = size_inf.loupeW / 2;
+    size_inf.loupeHH = size_inf.loupeH / 2;
+    size_inf.magHW = size_inf.magW / 2;
+    size_inf.magHH = size_inf.magH / 2;
     // set up boundaries
     loupeBnd_rct.left = size_inf.loupeHW + size_inf.loupeBorder + size_inf.mainImgBorder;
-    loupeBnd_rct.right = (mainImg.offsetWidth - size_inf.loupeHW) + size_inf.loupeBorder - size_inf.mainImgBorder;
-    loupeBnd_rct.top = size_inf.loupeHH + size_inf.loupeBorder + size_inf.mainImgBorder;
-    loupeBnd_rct.bottom = (mainImg.offsetHeight - size_inf.loupeHH) + size_inf.loupeBorder - size_inf.mainImgBorder;
+    loupeBnd_rct.right = (mainImg.offsetWidth - size_inf.loupeHW) + (size_inf.loupeBorder * 2) + (size_inf.mainImgBorder);
+    loupeBnd_rct.top = size_inf.loupeHH + size_inf.loupeBorder + (size_inf.loupeBorder) + (size_inf.mainImgBorder);
+    loupeBnd_rct.bottom = (mainImg.offsetHeight - size_inf.loupeHH) + size_inf.loupeBorder;
     mainImg_rct.left = mainImg.offsetLeft + size_inf.magHW;
     mainImg_rct.right = mainImg.offsetLeft + mainImg.offsetWidth - size_inf.magHW;
     mainImg_rct.top = mainImg.offsetTop + size_inf.magHH;
@@ -279,8 +279,7 @@ uk.co.firmgently.FGMagnify = (function () {
   
   
   createHTML = function() {
-    var
-    parentElement, msgText;
+    var parentElement, msgText;
 
     // set light/dark
     if(useLightColours) {

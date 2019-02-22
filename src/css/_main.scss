@@ -91,7 +91,7 @@ body.wrapper {
     @include flexbox;
     @include flex-flow(row wrap);
     margin-top: $pad-sma;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     line-height: 2.25rem;
     .side-column {
       @include flex(1, 1, $side-col-min-width);
