@@ -21,7 +21,10 @@
   <div class="main-column">
     <article>
       <header>
-        <h1>{{ title }}</h1>
+        <h1 itemprop="headline">{{ title }}</h1>
+        <meta itemprop="author" content="Mark Mayes">
+        <meta itemprop="publisher" content="Firm Gently">
+        <meta itemprop="image" content="{{ sitedata.domain }}/images/{{ share_thumbnail }}">
 				<span><meta itemprop="datePublished" content="{{ dateTime }}"><time datetime="{{ dateTime }}">{{ dateNice }}</time></span>
         <em>{{ contents | striptags | wordcount | averageReadTime }} read</em>
       </header>
