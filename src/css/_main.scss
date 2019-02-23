@@ -4,15 +4,12 @@
 @import '_mixins.scss';
 @import '_font-face.scss';
 
-
 /* ////////////////////////////////////////////////////////////////////////// */
 /* COLOURS */
 
 $text-dimmed-main: mix($text-colour-main, $main-bg, 40%);
 $text-dimmed-less: mix($text-colour-main, $main-bg, 60%);
 $text-dimmed-slight: mix($text-colour-main, $main-bg, 90%);
-
-
 
 /* ////////////////////////////////////////////////////////////////////////// */
 /*  */
@@ -51,10 +48,10 @@ body.wrapper {
     h1 {
       font-weight: lighter;
     }
-		h1 {
-			font-size: 1.75rem;
+    h1 {
+      font-size: 1.75rem;
       margin-bottom: $pad-med;
-		}
+    }
   }
   form,
   .site-header,
@@ -68,7 +65,7 @@ body.wrapper {
     @include justify-content(flex-start);
     @include align-items(center);
     .title-image {
-			margin-bottom: 0;
+      margin-bottom: 0;
       background: none;
       img {
         display: inline-block;
@@ -101,55 +98,50 @@ body.wrapper {
           margin-top: $pad-med;
         }
       }
-      > footer {
-        margin-top: $pad-huge;
-        h3,
-        ul,
-        li {
-          display: inline;
-        }
-      }
     }
     .main-column {
       @include flex(2, 1, $main-col-min-width);
       order: 1;
-			> article {
-				h2, h3 {
-					margin-top: $pad-big;
-				}
-				li {
-					background-image: $bullet-image;
-					background-repeat: no-repeat;
-					background-position: 0.5rem 0.9rem;
-					padding-left: $pad-med;
-					margin-bottom: $pad-huge;
-					li {
-						margin-bottom: $pad-med;
-					}
-				}
-				code {
-					background-color: $main-bg;
-				}
-				> img,
-				> p > img,
-				figure {
-					max-width: 33%;
-					float: left;
-					clear: both;
-					margin-left: 0;
-					padding-right: $pad-med;
-				}
-				figure {
-					img {
-						width: 100%;
-					}
-					figcaption {
-						padding: $pad-med 0 $pad-med 0;
-						text-align: right;
-						color: $text-dimmed-less;
-					}
-				}
-			}
+      > article {
+        h2,
+        h3 {
+          margin-top: $pad-big;
+        }
+        > ul {
+          li {
+            background-image: $bullet-image;
+            background-repeat: no-repeat;
+            background-position: 0.5rem 0.9rem;
+            padding-left: $pad-med;
+            margin-bottom: $pad-huge;
+            li {
+              margin-bottom: $pad-med;
+            }
+          }
+        }
+        code {
+          background-color: $main-bg;
+        }
+        > img,
+        > p > img,
+        figure {
+          max-width: 33%;
+          float: left;
+          clear: both;
+          margin-left: 0;
+          padding-right: $pad-med;
+        }
+        figure {
+          img {
+            width: 100%;
+          }
+          figcaption {
+            padding: $pad-med 0 $pad-med 0;
+            text-align: right;
+            color: $text-dimmed-less;
+          }
+        }
+      }
     }
     .widget {
       @include flex(1, 0, $side-col-min-width);
@@ -161,30 +153,30 @@ body.wrapper {
     @include justify-content(flex-start);
     @include align-items(center);
     padding-top: $pad-footer-top;
-		span {
-			width: 100%;
-		}
-		p,
-		a {
-			margin-right: $pad-med;
-		}
-		p {
+    span {
+      width: 100%;
+    }
+    p,
+    a {
+      margin-right: $pad-med;
+    }
+    p {
       color: $text-dimmed-less;
-			margin-bottom: $pad-sma;
-			&:first-of-type {
-				font-size: 1.15rem;
-				font-style: italic;
+      margin-bottom: $pad-sma;
+      &:first-of-type {
+        font-size: 1.15rem;
+        font-style: italic;
         margin-bottom: $pad-med;
         margin-top: $pad-med;
-			}
-			&:last-of-type {
+      }
+      &:last-of-type {
         color: $text-dimmed-main;
-			}
-		}
-		a {
-			vertical-align: middle;
-			padding-left: 0;
-		}
+      }
+    }
+    a {
+      vertical-align: middle;
+      padding-left: 0;
+    }
   }
 }
 h1,
@@ -195,7 +187,7 @@ h5,
 h6,
 label {
   font-weight: lighter;
-	text-transform: uppercase;
+  text-transform: uppercase;
   color: $text-colour-strong;
 }
 h2 {
@@ -203,6 +195,14 @@ h2 {
 }
 h3 {
   font-size: 1.15rem;
+}
+footer.page-tags {
+  margin-top: $pad-huge;
+  h3,
+  ul,
+  li {
+    display: inline;
+  }
 }
 /* consistent page padding (mobile) */
 .side-column,
@@ -236,22 +236,24 @@ article + nav {
   margin-bottom: $pad-huge;
 }
 article > header {
-	span,
-	em {
+  span,
+  em {
     color: $text-colour-strong;
-	}
-	span { /* date */
-	}
-	em { /* reading time */
-		float: right;
-	}
+  }
+  span {
+    /* date */
+  }
+  em {
+    /* reading time */
+    float: right;
+  }
 }
 article > footer {
   margin-top: $pad-big;
-	clear: both;
+  clear: both;
 }
 aside.latest-posts {
-	margin-top: $pad-huge;
+  margin-top: $pad-huge;
   li {
     margin-bottom: $pad-med;
   }
@@ -289,9 +291,9 @@ aside.latest-posts {
           width: 100%;
           position: absolute;
           z-index: -1;
-					top: 0;
-					left: 0;
-					@include transition(all 36s ease-out 0.15s);
+          top: 0;
+          left: 0;
+          @include transition(all 36s ease-out 0.15s);
           @include border-radius($pad-sma);
         }
         > figcaption {
@@ -302,7 +304,7 @@ aside.latest-posts {
           height: 1.5rem;
           bottom: calc(1rem + (#{$pad-tiny}* 2));
           > h2 {
-						font-weight: normal;
+            font-weight: normal;
             padding: $pad-sma;
             margin-bottom: $pad-sma;
             @include border-radius(0 0 $pad-sma $pad-sma);
@@ -320,21 +322,21 @@ aside.latest-posts {
         > figure {
           > img {
             width: 200%;
-						top: -10%;
-						left: -50%;
-						@include transition(all 36s ease-out 0.33s);
+            top: -10%;
+            left: -50%;
+            @include transition(all 36s ease-out 0.33s);
           }
         }
-				> p {
-					&:after {
-						@include gradient(
-							top,
-							rgba($button-highlight-color, 0),
-							$button-highlight-color,
-							$button-highlight-color
-						);
-					}
-				}
+        > p {
+          &:after {
+            @include gradient(
+              top,
+              rgba($button-highlight-color, 0),
+              $button-highlight-color,
+              $button-highlight-color
+            );
+          }
+        }
       }
       > h2,
       > p {
@@ -380,11 +382,11 @@ aside.latest-posts {
   width: 100%;
   overflow: auto; /* clear floated children */
   margin-bottom: $pad-med;
-	a {
+  a {
     width: 100%;
     display: inline-block;
     text-align: center;
-	}
+  }
   a:first-of-type {
     /*text-align: right;*/
   }
@@ -392,12 +394,13 @@ aside.latest-posts {
     /*text-align: left;*/
   }
 }
+article,
 .side-column {
   .prev-next-btns {
     padding: 0;
     margin-top: $pad-huge;
     a {
-      white-space: nowrap;
+      /*white-space: nowrap;*/
       clear: both;
       margin-bottom: $pad-sma;
     }
@@ -436,7 +439,7 @@ em {
   font-style: italic;
 }
 nav.site-nav {
-	@include flexbox;
+  @include flexbox;
   ul {
     @include flexbox;
     @include flex-wrap(wrap);
@@ -483,8 +486,8 @@ nav.site-nav {
       a:hover,
       a:active {
         display: inline-block;
-				text-transform: uppercase;
-				font-weight: bold;
+        text-transform: uppercase;
+        font-weight: bold;
         padding: 0.25rem 0.5rem;
         transform: rotate(var(--r));
         z-index: 0;
@@ -529,7 +532,6 @@ a.icon.btn {
   }
 }
 
-
 /* ////////////////////////////////////////////////////////////////////////// */
 /* FORMS */
 form {
@@ -544,7 +546,7 @@ form {
     @include border-radius($pad-sma);
   }
   textarea {
-    height: 7rem
+    height: 7rem;
   }
   button,
   button:hover,
@@ -577,7 +579,7 @@ form {
 }
 
 #item-image {
-	position: relative;
+  position: relative;
 }
 
 /* ////////////////////////////////////////////////////////////////////////// */
@@ -609,10 +611,10 @@ form {
   border: none;
   display: inline-block;
   position: relative;
-	&.loading {
-		-webkit-filter: grayscale(1);
-		filter: grayscale(1);
-	}
+  &.loading {
+    -webkit-filter: grayscale(1);
+    filter: grayscale(1);
+  }
 }
 #loupe {
   border: dotted 1px $text-colour-strong2;
@@ -688,10 +690,10 @@ form {
     img {
       position: absolute;
       top: 50%;
-			margin-top: -88px;
+      margin-top: -88px;
       left: 50%;
       margin-left: -88px;
-			transform: scale(3);
+      transform: scale(3);
       @include transition(all $transition-speed-spin $transition-style-sink);
     }
     &:hover {
@@ -701,7 +703,7 @@ form {
         font-size: 5em;
       }
       img {
-				transform: scale(1);
+        transform: scale(1);
         @include animation(
           centred-spin $transition-speed-spin $transition-style-spin infinite
         );
@@ -720,7 +722,6 @@ body.home {
     }
   }
 }
-
 
 /* ////////////////////////////////////////////////////////////////////////// */
 /* */

@@ -70,7 +70,7 @@
 
 
 {% macro insertPageTags() %}
-<footer>
+<footer class="page-tags">
   <h3>tagged in</h3>
 	{#% set comma = joiner(', ') %#}
   <ul itemprop="keywords">{% for tag in tags -%}<li>{#{ comma() }#}<a href="/by/{{ tag.slug }}" rel="tag">{{ tag.name }}</a></li>{%- endfor %}</ul>
