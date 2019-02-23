@@ -22,6 +22,7 @@
 
 ## LOW PRIORITY
 
+[ ] strip exif
 [ ] use sass mixins for all grid stuff
 [ ] too many references to 'I' in item data
 [ ] add comments under posts? decide

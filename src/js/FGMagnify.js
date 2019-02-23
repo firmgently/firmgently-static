@@ -360,7 +360,7 @@ uk.co.firmgently.FGMagnify = (function () {
   };
   
   updateAllMeasurements = function() {
-    var
+    /*var
     winHeight, imgWidth,
     winSize_ar = getWindowSizeArray();
     
@@ -376,7 +376,7 @@ uk.co.firmgently.FGMagnify = (function () {
       imgWidth -= IMAGE_RESIZE_STEP;
     }
     mainImg.style.width = imgWidth + "px";
-
+*/
     calculateSizes();
   };
 

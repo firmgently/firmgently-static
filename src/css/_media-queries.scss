@@ -1,23 +1,4 @@
-@supports (display: grid) {
-  /*
-  .wrapper {
-    display: grid;
-    form,
-    .content {
-      display: grid;
-      grid-auto-columns: minmax(19rem, auto);
-      grid-auto-flow: column;
-      .side-column {
-        grid-column: span 2;
-      }
-      .main-column {
-        grid-column: span 2;
-      }
-      .widget {
-        grid-column: span 1;
-      }
-    }
-  }*/
+/*@supports (display: grid) {
 }
 
 @media only screen and (min-width: 500px) {
@@ -34,6 +15,9 @@
     }
     .side-column {
       padding-right: 0;
+    }
+    .site-footer {
+      padding-bottom: $pad-med;
     }
     .content {
       > .main-column {
@@ -54,6 +38,9 @@
     .site-header {
       padding: $pad-med $page-padding-right $pad-big $page-padding-left;
     }
+    .site-footer {
+      padding-bottom: $pad-med;
+    }
     form,
     .content {
       .side-column {
@@ -66,4 +53,4 @@
   #magnifiable-image {
     width: $main-image-width-large;
   }
-}
+}*/

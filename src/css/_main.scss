@@ -52,7 +52,7 @@ body.wrapper {
       font-weight: lighter;
     }
 		h1 {
-			font-size: 2.66rem;
+			font-size: 1.75rem;
       margin-bottom: $pad-med;
 		}
   }
@@ -68,16 +68,14 @@ body.wrapper {
     @include justify-content(flex-start);
     @include align-items(center);
     .title-image {
-			margin-top: $pad-big;
 			margin-bottom: 0;
-			margin-right: $pad-med;
       background: none;
       img {
         display: inline-block;
         background-image: $title-image;
         background-size: cover;
         background-position: 0 0;
-        width: 8rem;
+        width: 6rem;
         height: 0;
         padding: calc(60 / 91 * 100%) 0 0 0;
       }
@@ -92,9 +90,10 @@ body.wrapper {
     @include flex-flow(row wrap);
     margin-top: $pad-sma;
     font-size: 1.2rem;
-    line-height: 2.25rem;
+    line-height: 1.5rem;
     .side-column {
       @include flex(1, 1, $side-col-min-width);
+      order: 2;
       h2 {
         font-weight: lighter;
         margin-top: $pad-big;
@@ -102,9 +101,18 @@ body.wrapper {
           margin-top: $pad-med;
         }
       }
+      > footer {
+        margin-top: $pad-huge;
+        h3,
+        ul,
+        li {
+          display: inline;
+        }
+      }
     }
     .main-column {
       @include flex(2, 1, $main-col-min-width);
+      order: 1;
 			> article {
 				h2, h3 {
 					margin-top: $pad-big;
@@ -164,8 +172,10 @@ body.wrapper {
       color: $text-dimmed-less;
 			margin-bottom: $pad-sma;
 			&:first-of-type {
-				font-size: 1.3rem;
+				font-size: 1.15rem;
 				font-style: italic;
+        margin-bottom: $pad-med;
+        margin-top: $pad-med;
 			}
 			&:last-of-type {
         color: $text-dimmed-main;
@@ -189,10 +199,10 @@ label {
   color: $text-colour-strong;
 }
 h2 {
-  font-size: 2rem;
+  font-size: 1.33rem;
 }
 h3 {
-  font-size: 1.8rem;
+  font-size: 1.15rem;
 }
 /* consistent page padding (mobile) */
 .side-column,
@@ -200,7 +210,10 @@ h3 {
 .prev-next-btns,
 .site-footer,
 .site-header {
-  padding: $pad-med $small-page-padding-right $pad-big $small-page-padding-left;
+  padding: $pad-sma $small-page-padding-right $pad-big $small-page-padding-left;
+}
+.site-footer {
+  padding-bottom: $pad-med;
 }
 blockquote {
   margin-top: $pad-med;
@@ -366,27 +379,27 @@ aside.latest-posts {
   display: block;
   width: 100%;
   overflow: auto; /* clear floated children */
+  margin-bottom: $pad-med;
 	a {
-		max-width: 45%;
-		overflow: hidden;
-		text-overflow: ellipsis;
+    width: 100%;
+    display: inline-block;
+    text-align: center;
 	}
   a:first-of-type {
-    float: left;
+    /*text-align: right;*/
   }
   a:last-of-type {
-    float: right;
+    /*text-align: left;*/
   }
 }
 .side-column {
   .prev-next-btns {
     padding: 0;
+    margin-top: $pad-huge;
     a {
-      max-width: $side-col-min-width;
       white-space: nowrap;
-      float: right;
       clear: both;
-      margin-bottom: $pad-med;
+      margin-bottom: $pad-sma;
     }
   }
 }
@@ -398,12 +411,16 @@ a:hover,
 a:active {
   text-decoration: none;
   text-transform: uppercase;
-  padding-left: $pad-sma;
-  padding-right: $pad-sma;
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
   color: $button-bg-colour-strong;
   background-color: $button-bg-colour;
   position: relative;
   border: none;
+  font-size: 0.9em; /* em not rem - relative to parent font size */
+  padding-top: 0.05em;
+  padding-bottom: 0.05em;
+  @include transition(all $transition-speed-main $transition-style-main);
 }
 button:hover,
 button:active,
@@ -426,12 +443,12 @@ nav.site-nav {
     @include justify-content(flex-end);
     @include align-items(flex-end);
     max-width: $nav-max-width;
+    width: 100%;
     /*transform: rotate(-3deg);*/
     margin-right: -2.5rem; /* fixes offset from twist/rotation */
     li {
       display: inline-block;
       margin-top: 0;
-      margin-right: $pad-sma;
       &:last-of-type {
         /* yin-yang symbol */
       }
@@ -544,6 +561,21 @@ form {
   }
 }
 
+.item-details {
+  h2,
+  h3 {
+    display: inline;
+    font-style: italic;
+  }
+  h2 {
+    margin-right: $pad-med;
+  }
+  h2 + span {
+    margin-top: $pad-big;
+    display: block;
+  }
+}
+
 #item-image {
 	position: relative;
 }
@@ -600,6 +632,16 @@ form {
   font-weight: bold;
   color: #fff;
   background-color: rgba(0, 0, 0, 0.6);
+}
+.magnify-prompt {
+  margin-bottom: $pad-sma;
+  color: $text-colour-strong2;
+}
+.magnify-prompt,
+.download-wallpaper-btn {
+  width: 100%;
+  text-align: center;
+  display: inline-block;
 }
 /* ////////////////////////////////////////////////////////////////////////// */
 /*HIRE ME ANIMATION*/
@@ -667,6 +709,18 @@ form {
     }
   }
 }
+
+body.home {
+  .content {
+    .side-column {
+      order: 1;
+    }
+    .main-column {
+      order: 2;
+    }
+  }
+}
+
 
 /* ////////////////////////////////////////////////////////////////////////// */
 /* */
