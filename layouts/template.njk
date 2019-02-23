@@ -91,6 +91,7 @@
 {% set share_thumbnail = item_thumbnail | default(sitedata.share_thumbnail) %}
 {% set url = sitedata.domain + "/" + path %}
 
+{% set share_thumbnail_path = "https:" + sitedata.domain + "/images/" + share_thumbnail %}
 
 <!doctype html>
 <html>
@@ -106,7 +107,7 @@
   <title>{{ pageTitle }}</title>
 
   <link rel="shortcut icon" href="{{ sitedata.favicon }}">
-  <link rel="image_src" href="{{ sitedata.domain }}/images/{{ share_thumbnail }}">
+  <link rel="image_src" href="{{ share_thumbnail_path }}">
 
   {% block extraCSS %}{% endblock %}
 
