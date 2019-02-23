@@ -622,7 +622,7 @@ form {
   top: 50px;
   left: 50px;
   cursor: all-scroll;
-  background-image: url(/images/light/loupeBg.png);
+  background-image: $loupe;
 }
 #mag-image-loading-message {
   padding: $pad-sma;
