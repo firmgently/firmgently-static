@@ -1,1 +1,1 @@
-fg-template.njk  filter=invertcolours
+layouts/fg-template.njk  filter=invertcolours
