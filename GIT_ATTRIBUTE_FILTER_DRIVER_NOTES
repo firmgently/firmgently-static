@@ -55,3 +55,7 @@ Ok I see that running those commands actually updated `.git/confg` for me, addin
 At this point I don't understand how to apply this to only a single branch though (which is the entire point of this!).
 
 Ok I just tried a commit and a push and nothing seemed to happen at all - no string substitution on my working copy or the copy that got pushed to the remote repo. 
+
+I checked my perl (despite it being very simple) on the command line and that works
+I tried changing the pattern in `.gitattributes` from `fg-template.njk` to `layouts/fg-template.njk` (all the examples I've found online have been for filtering files by extension eg. `*.c` so I'm not sure if I'm using the pattern correctly)
+** THIS CHANGE/TEXT ADDED TO ALLOW A COMMIT**
