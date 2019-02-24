@@ -50,6 +50,7 @@ body.wrapper {
     }
     h1 {
       font-size: 1.75rem;
+      line-height: 1.85rem;
       margin-bottom: $pad-med;
     }
   }
@@ -382,16 +383,33 @@ aside.latest-posts {
   width: 100%;
   overflow: auto; /* clear floated children */
   margin-bottom: $pad-med;
-  a {
+  a,
+  a:link,
+  a:hover,
+  a:visited {
     width: 100%;
     display: inline-block;
     text-align: center;
-  }
-  a:first-of-type {
-    /*text-align: right;*/
-  }
-  a:last-of-type {
-    /*text-align: left;*/
+    line-height: 1.33rem;
+    padding: $pad-sma $pad-big;
+    &:after {
+      background: inherit;
+      position: absolute;
+      z-index: 2;
+      top: calc(50% -  0.6em);
+    }
+    &:first-of-type {
+      &:after {
+        content: "\25ba";
+        right: $pad-sma;
+      }
+    }
+    &:last-of-type {
+      &:after {
+        content: "\25c4";
+       left: $pad-sma;
+      }
+    }
   }
 }
 article,
@@ -580,15 +598,15 @@ form {
 
 #item-image {
   position: relative;
+  text-align: center;
 }
 
 /* ////////////////////////////////////////////////////////////////////////// */
 /*MAGNIFIER*/
 
 #magnifiable-image {
-  max-width: 100%;
-  width: $main-image-width-small;
-  max-height: 95vh;
+  max-width: 90vw;
+  max-height: 90vh;
   cursor: zoom-in;
 }
 #mag {
@@ -637,6 +655,7 @@ form {
 }
 .magnify-prompt {
   margin-bottom: $pad-sma;
+  margin-top: $pad-sma;
   color: $text-colour-strong2;
 }
 .magnify-prompt,
