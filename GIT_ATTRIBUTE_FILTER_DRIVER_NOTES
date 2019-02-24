@@ -1,0 +1,55 @@
++ in project root directory, create `.gitattributes` file (if it doesn't already exist)
+
+
++ contents of `.gitattributes`:
+```
+fg-template.njk  filter=invertcolours
+```
+meaning for files that match pattern (exact filename in this case) `fg-template.njk`
+run the `invertcolours` filter
+
+
++ define the filter in `.git/config`:
+```
+[filter "invertcolours"]
+  clean = swaptolight
+  smudge = swaptodark
+```
+from https://schacon.github.io/git/gitattributes.html
+"A filter driver consists of a clean command and a smudge command, either of which can be left unspecified. Upon checkout, when the smudge command is specified, the command is fed the blob object from its standard input, and its standard output is used to update the worktree file. Similarly, the clean command is used to convert the contents of worktree file upon checkin."
+
+
++ configure git to tell it about the smudge and clean commands
+`swaptolight` (clean)  and `swaptodark` (smudge) need to exist as commands in $PATH (`expand_date` in the example below) or (it seems?) can be specified as follows:
+```
+$ git config filter.dater.smudge expand_date
+$ git config filter.dater.clean 'perl -pe "s/\\\$Date[^\\\$]*\\\$/\\\$Date\\\$/"'
+```
+In my case, swapping dark to light is a simple string substitution in a specific file: 
+replace "FIRMGENTLY_SITEDATA_ID" with "GENTLYFIRM_SITEDATA_ID" in `layouts/fg-template.njk`
+This is all that needs to be done for the build process to build the "Gently Firm' (dark-on-light theme) version of the site.
+The 'specific file' part of that is already handled by what I did earlier in `.gitattributes`.
+
+In that example, perl is called with two options (from `perldoc perlrun`):
+-p: Places a printing loop around your command so that it acts on each
+    line of standard input. Used mostly so Perl can beat the
+    pants off awk in terms of power AND simplicity :-)
+-e: Allows you to provide the program as an argument rather
+    than in a file. You don't want to have to create a script
+    file for every little Perl one-liner.
+Ok this looks easy (lol), it seems like all I need to do is:
+```
+$ git config filter.invertcolours.smudge 'perl -pe "s/FIRMGENTLY_SITEDATA_ID/GENTLYFIRM_SITEDATA_ID/"'
+$ git config filter.invertcolours.clean 'perl -pe "s/GENTLYFIRM_SITEDATA_ID/FIRMGENTLY_SITEDATA_ID/"'
+```
+Ok I've done that... is something supposed to have happened? Well nothing has blown up so that's a start.
+Ok running those commands actually updated `.got/confg` for me, adding the following:
+```
+[filter "invertcolours"]
+	smudge = perl -pe \"s/FIRMGENTLY_SITEDATA_ID/GENTLYFIRM_SITEDATA_ID/\"
+	clean = perl -pe \"s/GENTLYFIRM_SITEDATA_ID/FIRMGENTLY_SITEDATA_ID/\"
+```
+
++ If I'm understanding correctly then when I check in or push `layouts/fg-template.njk` it should get 'smudged' (replace "FIRMGENTLY_SITEDATA_ID" with "GENTLYFIRM_SITEDATA_ID"), then when I check it out again, it should get 'cleaned' (string substituted back to what I began with).
+
+At this point I don't understand how to apply this to only a single branch though (which is the entire point of this!).
