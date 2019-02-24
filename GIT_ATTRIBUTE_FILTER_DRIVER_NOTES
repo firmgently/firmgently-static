@@ -58,3 +58,4 @@ Ok I just tried a commit and a push and nothing seemed to happen at all - no str
 
 I checked my perl (despite it being very simple) on the command line and that works
 I tried changing the pattern in `.gitattributes` from `fg-template.njk` to `layouts/fg-template.njk` (all the examples I've found online have been for filtering files by extension eg. `*.c` so I'm not sure if I'm using the pattern correctly)
+** THIS CHANGE/TEXT ADDED TO ALLOW A COMMIT**
