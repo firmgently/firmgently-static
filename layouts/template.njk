@@ -45,7 +45,12 @@
 <a href="/{{ item.path | stripIndexFromPath }}">
 {% if item.itemData %} {# standard item #}
 	<figure>
-		<img src="/images/items/thumbs/{{ item.itemData.id }}.jpg" />
+      {% if item.itemData.h > item.itemData.w %}
+        {% set imgClassMarkup = " class=\"portrait\"" %}
+      {% else %}
+        {% set imgClassMarkup = "" %}
+      {% endif %}
+      <img src="/images/items/thumbs/{{ item.itemData.id }}.jpg" {{ imgClassMarkup | safe }}/>
 		<figcaption>
       <h2>{{ item.itemData.title }}</h2>
 		</figcaption>

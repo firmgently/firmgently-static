@@ -290,10 +290,13 @@ aside.latest-posts {
         z-index: 1;
         > img {
           height: 100%;
+          width: 100%;
+          object-fit: cover;
+          object-position: 50% 50%;
+          &.portrait {
+          }
           position: absolute;
           z-index: -1;
-          top: 0;
-          left: 0;
           @include transition(all 36s ease-out 0.15s);
           @include border-radius($pad-sma);
         }
@@ -322,9 +325,9 @@ aside.latest-posts {
         border-color: $button-highlight-color;
         > figure {
           > img {
-            height: 200%;
-            top: -10%;
-            left: -50%;
+            transform: scale(2);
+            &.portrait {
+            }
             @include transition(all 36s ease-out 0.33s);
           }
         }
