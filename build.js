@@ -48,7 +48,7 @@ if (process.env.REBUILDIMAGES === 'true') {
 const topicDir = 'by';
 const hostname = 'https://firmgently.co.uk';
 
-
+console.log(process.env.THEME);
 
 metalsmith(__dirname)
   .ignore(ignore_ar)
