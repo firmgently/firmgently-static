@@ -55,13 +55,14 @@ metalsmith(__dirname)
   .source('./src/')
   .destination('./build/')
   .clean(clean)
-  .metadata(
-    {site: {
+  .metadata({
+    site: {
       title: 'Painting, Photography, Objects, Web | Firm Gently',
       url: hostname,
       author: 'Mark Mayes'
-    }}
-  )
+    },
+    theme: process.env.THEME
+  })
   .use(timer('initialised'))
 
 // process images

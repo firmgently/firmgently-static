@@ -8,8 +8,10 @@
   },
   "license": "GPL-3.0-only",
   "scripts": {
-    "start": "DEBUG=metalsmith-timer REBUILDIMAGES=true node ./build.js",
-    "noimages": "DEBUG=metalsmith-timer REBUILDIMAGES=false node ./build.js",
+    "start": "DEBUG=metalsmith-timer REBUILDIMAGES=true THEME=dark node ./build.js",
+    "start-inverted": "DEBUG=metalsmith-timer REBUILDIMAGES=true THEME=light node ./build.js",
+    "noimages": "DEBUG=metalsmith-timer REBUILDIMAGES=false THEME=dark node ./build.js",
+    "noimages-inverted": "DEBUG=metalsmith-timer REBUILDIMAGES=false THEME=light node ./build.js",
     "debug": "DEBUG=metalsmith:*,marked,metalsmith-slug,metalsmith-layouts,metalsmith-rewrite,metalsmith-data,metalsmith-json-to-files,metalsmith-permalinks,metalsmith-beautify,metalsmith-rename,metalsmith-collections,metalsmith-markdown REBUILDIMAGES=false node ./build.js"
   },
   "author": "Mark Mayes",
