@@ -3,5 +3,4 @@ npm-debug.log
 build
 .DS_Store
 .idea
-.gitignore
 layouts/fg-template.njk
