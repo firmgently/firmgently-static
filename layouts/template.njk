@@ -124,33 +124,33 @@
 <body class="wrapper{% if bodyClass %} {{ bodyClass }}{% endif %}">
   <a class="screen-reader-text" href="#main-content">Skip to main content</a>
 
-      <header class="site-header">
-        <nav class="site-nav">
-          <ul>
-            <li><a class="title-image" href="/"><img src="/images/shim.png" alt="{{ sitedata.simple_domain }}" title="{{ sitedata.simple_domain }}"></a></li>
-            {{ createTagCloud(cloud) }}
-            <li><a class="invert-colour icon btn" onclick="toggleLightDark();"><img src="/images/shim.png" alt="Yin Yang symbol"></a></li>
-          </ul>
-        </nav>
-      </header>
-      
-      
-      <section id="main-content"{% if microdata_type %}itemscope itemtype="{{ microdata_type }}" {% endif %}class="content">
-			{% block main %}{{ contents | safe }}{% endblock %}
-			</section><!-- content -->
+    <header class="site-header">
+      <nav class="site-nav">
+        <ul>
+          <li><a class="title-image" href="/"><img src="/images/shim.png" alt="{{ sitedata.simple_domain }}" title="{{ sitedata.simple_domain }}"></a></li>
+          {{ createTagCloud(cloud) }}
+          <li><a class="invert-colour icon btn" onclick="toggleLightDark();"><img src="/images/shim.png" alt="Yin Yang symbol"></a></li>
+        </ul>
+      </nav>
+    </header>
+    
+    
+    <section id="main-content"{% if microdata_type %}itemscope itemtype="{{ microdata_type }}" {% endif %}class="content">
+    {% block main %}{{ contents | safe }}{% endblock %}
+    </section><!-- content -->
 
 
-			<footer class="site-footer">
-				<span>
-					<a class="feed icon btn" href="/rss.html"><img src="/images/shim.png" alt="RSS Feed symbol"></a>
-					<a href="/contact.html">contact</a>
-					<a href="/privacy.html">privacy</a>
-				</span>
-				<span>
-					<p>to&nbsp;be inwardly&nbsp;firm and outwardly&nbsp;gentle is&nbsp;the&nbsp;way&nbsp;of true&nbsp;joy...</p>
-					<p>content and site&nbsp;<span class="copyright">&copy;</span>&nbsp;Mark Mayes</p>
-				</span>
-			</footer>
+    <footer class="site-footer">
+      <span>
+        <a class="feed icon btn" href="/rss.html"><img src="/images/shim.png" alt="RSS Feed symbol"></a>
+        <a href="/contact.html">contact</a>
+        <a href="/privacy.html">privacy</a>
+      </span>
+      <span>
+        <p>to&nbsp;be inwardly&nbsp;firm and outwardly&nbsp;gentle is&nbsp;the&nbsp;way&nbsp;of true&nbsp;joy...</p>
+        <p>content and site&nbsp;<span class="copyright">&copy;</span>&nbsp;Mark Mayes</p>
+      </span>
+    </footer>
 
   {% block bodyEndScripts %}{% endblock %}
   
