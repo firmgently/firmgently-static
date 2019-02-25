@@ -11,6 +11,7 @@
   },
   "firmgently_sitedata": {
     "domain": "//www.firmgently.co.uk",
+    "inverted_domain": "https://elegant-mcnulty-129e6d.netlify.com",
     "simple_domain": "firmgently.co.uk",
     "site_name": "Firm Gently",
     "css_path": "/css/main-dark.css",
@@ -21,6 +22,7 @@
   },
   "gentlyfirm_sitedata": {
     "domain": "//www.gentlyfirm.co.uk",
+    "inverted_domain": "https://xenodochial-shockley-58c3cd.netlify.com/",
     "simple_domain": "gentlyfirm.co.uk",
     "site_name": "Gently Firm",
     "css_path": "/css/main-light.css",
