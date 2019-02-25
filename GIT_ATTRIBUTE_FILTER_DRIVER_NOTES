@@ -43,7 +43,7 @@ $ git config filter.invertcolours.smudge 'perl -pe "s/FIRMGENTLY_SITEDATA_ID/GEN
 $ git config filter.invertcolours.clean 'perl -pe "s/GENTLYFIRM_SITEDATA_ID/FIRMGENTLY_SITEDATA_ID/"'
 ```
 Ok I've done that... is something supposed to have happened? Well nothing has blown up so that's a start.
-Ok running those commands actually updated `.got/confg` for me, adding the following:
+Ok I see that running those commands actually updated `.git/confg` for me, adding the following:
 ```
 [filter "invertcolours"]
 	smudge = perl -pe \"s/FIRMGENTLY_SITEDATA_ID/GENTLYFIRM_SITEDATA_ID/\"
@@ -53,3 +53,10 @@ Ok running those commands actually updated `.got/confg` for me, adding the follo
 + If I'm understanding correctly then when I check in or push `layouts/fg-template.njk` it should get 'smudged' (replace "FIRMGENTLY_SITEDATA_ID" with "GENTLYFIRM_SITEDATA_ID"), then when I check it out again, it should get 'cleaned' (string substituted back to what I began with).
 
 At this point I don't understand how to apply this to only a single branch though (which is the entire point of this!).
+
+Ok I just tried a commit and a push and nothing seemed to happen at all - no string substitution on my working copy or the copy that got pushed to the remote repo. 
+
+I checked my perl (despite it being very simple) on the command line and that works
+I tried changing the pattern in `.gitattributes` from `fg-template.njk` to `layouts/fg-template.njk` (all the examples I've found online have been for filtering files by extension eg. `*.c` so I'm not sure if I'm using the pattern correctly)
+** THIS CHANGE/TEXT ADDED TO ALLOW A COMMIT**
+** THIS CHANGE/TEXT ADDED TO ALLOW A COMMIT**
