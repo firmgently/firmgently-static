@@ -119,7 +119,7 @@ uk.co.firmgently.FGMagnify = (function () {
       y = clamp(mouse_info.yMainImg, loupeBnd_rct.top, loupeBnd_rct.bottom);
     // set loupe position
     loupe.style.left = mainImg.offsetLeft + Math.round(x - size_info.loupeHW - size_info.loupeBorder) + "px";
-    loupe.style.top = Math.round(y - size_info.loupeHH - size_info.loupeBorder) + "px";
+    loupe.style.top = mainImg.offsetTop + Math.round(y - size_info.loupeHH - size_info.loupeBorder) + "px";
     // set mag image position
     hiResImg.style.left = Math.round(size_info.magHW - ((x - size_info.mainImgBorder) * size_info.ratio)) + "px";
     hiResImg.style.top = Math.round(size_info.magHH - ((y - size_info.mainImgBorder) * size_info.ratio)) + "px";

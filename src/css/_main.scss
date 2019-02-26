@@ -599,9 +599,10 @@ form {
   }
 }
 
-#item-image {
+.item-image {
   position: relative;
   text-align: center;
+  padding-top: $pad-med;
 }
 
 /* ////////////////////////////////////////////////////////////////////////// */
