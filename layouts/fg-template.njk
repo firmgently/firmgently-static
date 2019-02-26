@@ -1,4 +1,8 @@
-{% set sitedata = data.config[data.config.consts.FIRMGENTLY_SITEDATA_ID] %}
+{% if theme == "light" %}
+  {% set sitedata = data.config[data.config.consts.GENTLYFIRM_SITEDATA_ID] %}
+{% else %}
+  {% set sitedata = data.config[data.config.consts.FIRMGENTLY_SITEDATA_ID] %}
+{% endif %}
 {% extends "template.njk" %}
 
 {% block main %}{{ contents | safe }}{% endblock %}
