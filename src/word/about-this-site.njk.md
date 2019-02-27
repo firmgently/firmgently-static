@@ -2,6 +2,7 @@
 title: 'This Site: The Making Of'
 date: 2019 02 18
 tags: word,geek,web,dev
+code: true
 ---
 
 ## The Tech Behind This Site
