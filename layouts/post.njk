@@ -2,6 +2,15 @@
 
 {% set microdata_type="http://schema.org/BlogPosting" %}
 
+{% block extraCSS %}
+  {% if code == true %}
+    {% if theme == "light" %}
+      <link id="pagestyle" rel="stylesheet" href="/css/solarized-light.css">
+    {% else %}
+      <link id="pagestyle" rel="stylesheet" href="/css/solarized-dark.css">
+    {% endif %}
+  {% endif %}
+{% endblock %}
 
 {% block main %}
 

@@ -24,6 +24,7 @@ const feed = require('metalsmith-feed'); // create RSS feed
 const drafts = require('metalsmith-drafts'); // ignore posts marked as drafts
 const sitemap = require('metalsmith-sitemap'); // create sitemap
 const date_formatter = require('metalsmith-date-formatter'); // convert date formats for display
+const code_highlight = require('metalsmith-code-highlight'); // convert date formats for display
 
 const filters = require('./filters.js'); // nunjucks filters
 const custom_marked_renderer = require('./custom-marked-renderer.js'); 
@@ -298,6 +299,9 @@ metalsmith(__dirname)
 		}
   }))
   .use(timer('templates inherited'))
+
+  .use(code_highlight())
+  .use(timer('code highlighted'))
 
 // tidy up outputted markup
   .use(beautify({

@@ -5,7 +5,6 @@
 
 ## GENERAL
 
-[ ] dark/light version of site sits at 2 domains, yinyang just swaps domain
 [ ] home page add text 'click to swap light/dark'
 
 
@@ -28,6 +27,8 @@
 [ ] too many references to 'I' in item data
 [ ] add comments under posts? decide
 [ ] add gitlab link
+
+
 
 [ ] magnifier
   [ ] first click zooms to fill window
