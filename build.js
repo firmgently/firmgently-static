@@ -24,7 +24,8 @@ const feed = require('metalsmith-feed'); // create RSS feed
 const drafts = require('metalsmith-drafts'); // ignore posts marked as drafts
 const sitemap = require('metalsmith-sitemap'); // create sitemap
 const date_formatter = require('metalsmith-date-formatter'); // convert date formats for display
-const code_highlight = require('metalsmith-code-highlight'); // convert date formats for display
+const code_highlight = require('metalsmith-code-highlight'); // marks up <code> html with classes
+const imagemin = require('metalsmith-imagemin'); // jpegoptim etc
 
 const filters = require('./filters.js'); // nunjucks filters
 const custom_marked_renderer = require('./custom-marked-renderer.js'); 
@@ -81,7 +82,7 @@ metalsmith(__dirname)
       src: 'images/items/hi_res/*.jpg',
       namingPattern: 'images/items/thumbs/{name}{ext}',
       methods: [
-        { name: 'resize', args: [250, 250] },
+        { name: 'resize', args: [350, 350] },
         { name: 'resize', args: { fit: 'inside' } },
         { name: 'jpeg', args: { quality: 80 } },
         { name: 'sharpen' }
@@ -126,7 +127,7 @@ metalsmith(__dirname)
   .use(timer('SASS compiled'))
 
 	.use(uglify({
-
+    compress: true
 	}))
   .use(timer('JS uglified'))
 

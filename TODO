@@ -22,6 +22,7 @@
 ## LOW PRIORITY
 
 [ ] strip exif
+[ ] proxess maxres images to 3000px
 [ ] add proper 'publisher' microdata to blog posts
 [ ] use sass mixins for all grid stuff
 [ ] too many references to 'I' in item data
