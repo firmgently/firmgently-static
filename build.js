@@ -303,7 +303,8 @@ metalsmith(__dirname)
   }))
   .use(timer('templates inherited'))
 
-  .use(isFullBuild ? code_highlight() : doNothing())
+  .use(code_highlight())
+  //.use(isFullBuild ? code_highlight() : doNothing())
   .use(isFullBuild ? timer('code highlighted') : doNothing())
 
 //
