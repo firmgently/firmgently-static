@@ -25,7 +25,6 @@ const drafts = require('metalsmith-drafts'); // ignore posts marked as drafts
 const sitemap = require('metalsmith-sitemap'); // create sitemap
 const date_formatter = require('metalsmith-date-formatter'); // convert date formats for display
 const code_highlight = require('metalsmith-code-highlight'); // marks up <code> html with classes
-const imagemin = require('metalsmith-imagemin'); // jpegoptim etc
 
 const filters = require('./filters.js'); // nunjucks filters
 const custom_marked_renderer = require('./custom-marked-renderer.js'); 
@@ -35,15 +34,21 @@ const custom_marked_renderer = require('./custom-marked-renderer.js');
 // if REBUILDIMAGES then include image directory and clean build dir
 // else (default) ignore image dir and don't clean build dir
 var ignore_ar;
-var clean;
+// isFullBuild is used to disable some plugins when doing a quick build
+// in conjunction with doNothing which gets called instead of a plugin we want to skip
+var isFullBuild;
+var doNothing = function() {
+  return function (files, metalsmith, done) {
+    done();
+  };
+};
 if (process.env.REBUILDIMAGES === 'true') {
   ignore_ar = [];
-  clean = true;
+  isFullBuild = true;
 } else {
   ignore_ar = [ '**/src/images/**' ];
-  clean = false;
-}
-
+  isFullBuild = false;
+} 
 // used to name topic directory
 // ! IMPORTANT - changes to this directory name must be updated
 // in layouts/post.njk
@@ -56,7 +61,7 @@ metalsmith(__dirname)
   .ignore(ignore_ar)
   .source('./src/')
   .destination('./build/')
-  .clean(clean)
+  .clean(isFullBuild)
   .metadata({
     site: {
       title: 'Painting, Photography, Objects, Web | Firm Gently',
@@ -126,10 +131,10 @@ metalsmith(__dirname)
   }))
   .use(timer('SASS compiled'))
 
-	.use(uglify({
+	.use(isFullBuild ? uglify({
     compress: true
-	}))
-  .use(timer('JS uglified'))
+	}) : doNothing())
+  .use(isFullBuild ? timer('JS uglified') : doNothing())
 
 // import JSON
 // creates data.config, data.items etc
@@ -162,15 +167,13 @@ metalsmith(__dirname)
   }))
   .use(timer('posts slugged and renamed'))
 
-//
   .use(excerpts())
   .use(timer('excerpts grabbed'))
 
-  //
   .use(drafts())
   .use(timer('drafts ignored'))
 
-// web.html => web/index.html
+// /word/web.html => /word/web/index.html
   .use(permalinks({
 		relative: false,
     linksets: [{
@@ -282,7 +285,6 @@ metalsmith(__dirname)
   .use(timer('dates formatted'))
 
 // fill in Nunjucks templates
-// ??? processes template inheritance ???
   .use(layouts({ 
     pattern: ['**/*.html'],
     engine: 'nunjucks',
@@ -301,10 +303,11 @@ metalsmith(__dirname)
   }))
   .use(timer('templates inherited'))
 
-  .use(code_highlight())
-  .use(timer('code highlighted'))
+  .use(isFullBuild ? code_highlight() : doNothing())
+  .use(isFullBuild ? timer('code highlighted') : doNothing())
 
-// tidy up outputted markup
+//
+//tidy up outputted markup
   .use(beautify({
     indent_size: 2,
     indent_char: ' ',
@@ -340,8 +343,8 @@ metalsmith(__dirname)
 	)
   .use(timer('sitemap.xml created'))
 
-  //.use(linkcheck({ verbose: true }))
-  //.use(timer('links checked'))
+  .use(isFullBuild ? linkcheck({ verbose: true }) : doNothing())
+  .use(isFullBuild ? timer('links checked') : doNothing())
 
   .build(function (err) {
     if (err) { throw err; }
