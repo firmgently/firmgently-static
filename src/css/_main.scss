@@ -87,8 +87,8 @@ body.wrapper {
     @include flexbox;
     @include flex-flow(row wrap);
     margin-top: $pad-sma;
-    font-size: 1.2rem;
-    line-height: 1.5rem;
+    font-size: 1.1rem;
+    line-height: 1.8rem;
     .side-column {
       @include flex(1, 1, $side-col-min-width);
       order: 2;
@@ -294,31 +294,40 @@ aside.latest-posts {
           width: 100%;
           object-fit: cover;
           object-position: 50% 50%;
-          &.portrait {
-          }
           position: absolute;
           z-index: -1;
           @include transition(all 36s ease-out 0.15s);
           @include border-radius($pad-sma);
         }
         > figcaption {
-          padding: $pad-tiny;
+          padding: 0;
           position: absolute;
           left: 0;
           right: 0;
-          height: 1.5rem;
-          bottom: calc(1rem + (#{$pad-tiny}* 2));
+          bottom: 0;
           > h2 {
-            font-weight: normal;
+            z-index: 2;
             padding: $pad-sma;
-            margin-bottom: $pad-sma;
-            @include border-radius(0 0 $pad-sma $pad-sma);
-            display: block;
-            background-color: rgba($button-highlight-color, 0.5);
-            text-transform: none;
+            padding-top: $pad-big;
             white-space: nowrap;
-            overflow: hidden;
             text-overflow: ellipsis;
+            &:before {
+              content: "";
+              display: inline-block;
+              color: $text-colour-alt;
+              @include gradient(
+                top,
+                rgba($button-bg-colour, 0),
+                $button-bg-colour,
+                $button-bg-colour
+              );
+              position: absolute;
+              left: 0;
+              right: 0;
+              bottom: -1px; /* 0 leaves a gap, this fixes it */
+              height: 3rem;
+              z-index: -1;
+            }
           }
         }
       }
@@ -327,9 +336,19 @@ aside.latest-posts {
         > figure {
           > img {
             transform: scale(2);
-            &.portrait {
-            }
             @include transition(all 36s ease-out 0.33s);
+          }
+          > figcaption {
+            > h2 {
+              &:before {
+                @include gradient(
+                  top,
+                  rgba($button-highlight-color, 0),
+                  $button-highlight-color,
+                  $button-highlight-color
+                );
+              }
+            }
           }
         }
         > p {
@@ -343,21 +362,21 @@ aside.latest-posts {
           }
         }
       }
-      > h2,
-      > p {
+      h2,
+      p {
         text-transform: none;
         margin: 0;
         padding: 0;
         display: inline;
       }
-      > h2 {
+      h2 {
         font-size: 1.66rem;
         font-weight: lighter;
         font-style: italic;
         padding-right: 0.5rem;
         line-height: 1.75rem;
       }
-      > p {
+      p {
         color: $text-colour-main;
         font-size: 1.25rem;
         &:after {
@@ -445,7 +464,10 @@ a:active {
   font-size: 0.9em; /* em not rem - relative to parent font size */
   padding-top: 0.05em;
   padding-bottom: 0.05em;
-  @include transition(background-color $transition-speed-main $transition-style-main);
+  @include transition(
+  color $transition-speed-main $transition-style-main,
+  background-color $transition-speed-main $transition-style-main
+  );
 }
 button:hover,
 button:active,
@@ -480,29 +502,29 @@ nav.site-nav {
       /* set up nth-of-type(?n+?) cycle, creates --r vars, used to set rotation of inner <a> */
       @include cycle(
         --r,
-        13deg,
+        15deg,
         4deg,
-        -7deg,
-        0deg,
+        -11deg,
+        5deg,
+        -18deg,
+        21deg,
         -14deg,
-        17deg,
-        -9deg,
-        14deg,
-        0deg,
-        30deg,
-        -10deg,
-        21deg,
-        -37deg,
-        8deg,
-        -19deg,
-        20deg,
-        -10deg,
-        21deg,
-        -7deg,
-        8deg,
-        -19deg,
+        18deg,
         7deg,
-        -30deg
+        33deg,
+        -15deg,
+        26deg,
+        -42deg,
+        12deg,
+        -22deg,
+        24deg,
+        -14deg,
+        24deg,
+        -13deg,
+        14deg,
+        -22deg,
+        11deg,
+        -32deg
       );
       a,
       a:hover,
@@ -531,7 +553,15 @@ nav.site-nav {
 a.icon.btn.invert-colour {
   @include align-self(flex-end);
   img {
+    position: absolute;
     background-image: $invert-icon-image;
+  }
+  &:hover {
+    img {
+      @include animation(
+      centred-spin $transition-speed-spin $transition-style-spin infinite
+      );
+    }
   }
 }
 a.icon.btn.feed {
@@ -542,15 +572,16 @@ a.icon.btn.feed {
 a.icon.btn {
   display: inline-block;
   background: none;
-  @include opacity(0.8);
   cursor: pointer;
-  &:hover {
-    @include opacity(1);
-  }
   img {
     height: $icon-size;
     width: $icon-size;
     background-size: 100%;
+    @include opacity(0.5);
+    @include transition(opacity $transition-speed-main $transition-style-main);
+    &:hover {
+      @include opacity(1);
+    }
   }
 }
 

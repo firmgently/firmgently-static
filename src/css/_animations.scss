@@ -106,9 +106,26 @@ $transition-style-sink: ease-out;
 
 
 @mixin centred-spin-frames() {
-  from { @include rotate(0, 50% 50%); }
+  //from { @include rotate(0, 50% 50%); }
   // 50% { @include rotate(180, 50% 50%); }
   to { @include rotate(359, 50% 50%); }
+}
+@mixin centred-spin-out-frames() {
+  to { @include rotate(0, 50% 50%); }
+  // 50% { @include rotate(180, 50% 50%); }
+  //from { @include rotate(359, 50% 50%); }
+}
+@-webkit-keyframes centred-spin-out {
+  @include centred-spin-out-frames;
+}
+@-moz-keyframes centred-spin-out {
+  @include centred-spin-out-frames;
+}
+@-o-keyframes centred-spin-out {
+  @include centred-spin-out-frames;
+}
+@keyframes centred-spin-out {
+  @include centred-spin-out-frames;
 }
 @-webkit-keyframes centred-spin {
   @include centred-spin-frames;
