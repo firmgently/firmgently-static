@@ -309,9 +309,10 @@ aside.latest-posts {
           bottom: 0;
           > h2 {
             z-index: 2;
-            padding: $pad-sma $pad-sma $pad-tiny $pad-sma;
+            padding: $pad-sma $pad-sma 0 $pad-sma;
             white-space: nowrap;
             text-overflow: ellipsis;
+            text-align: center;
             overflow: hidden;
             width: 100%;
             display: inline-block;

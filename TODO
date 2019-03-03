@@ -5,7 +5,6 @@
 
 ## GENERAL
 
-[ ] home page add text 'click to swap light/dark'
 
 
 
@@ -13,21 +12,29 @@
 
 [ ] make hire me animation match colours of site, constrain size
 [ ] shrink header/nav height
-[ ] make flex fill up pages better
 [ ] layout gets messed up with certain mediaqueries
-[ ] magnifier last argument is for light/dark
 
 
 
 ## LOW PRIORITY
 
-[ ] strip exif
-[ ] proxess maxres images to 3000px
 [ ] add proper 'publisher' microdata to blog posts
 [ ] use sass mixins for all grid stuff
 [ ] too many references to 'I' in item data
 [ ] add comments under posts? decide
 [ ] add gitlab link
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

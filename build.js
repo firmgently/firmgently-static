@@ -250,7 +250,7 @@ metalsmith(__dirname)
     path: topicDir + '/:tag.html', // path for result pages
     layout:'topic.njk',
     sortBy: 'date',
-    reverse: true,
+//    reverse: true,
     skipMetadata: false, // skip updating metalsmith's metadata object. useful for improving performance on large blogs
     metadataKey: 'tags', // default: `tags`
     slug: { mode: 'rfc3986' }
@@ -345,8 +345,8 @@ metalsmith(__dirname)
 	)
   .use(timer('sitemap.xml created'))
 
-  .use(isFullBuild ? linkcheck({ verbose: true }) : doNothing())
-  .use(isFullBuild ? timer('links checked') : doNothing())
+//  .use(isFullBuild ? linkcheck({ verbose: true }) : doNothing())
+//  .use(isFullBuild ? timer('links checked') : doNothing())
 
   .build(function (err) {
     if (err) { throw err; }
