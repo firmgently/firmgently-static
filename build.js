@@ -66,7 +66,8 @@ metalsmith(__dirname)
     site: {
       title: 'Painting, Photography, Objects, Web | Firm Gently',
       url: hostname,
-      author: 'Mark Mayes'
+      author: 'Mark Mayes',
+      description: "Art, photos and blog of Mark Mayes"
     },
     theme: process.env.THEME
   })

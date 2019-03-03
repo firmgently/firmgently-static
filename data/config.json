@@ -6,7 +6,7 @@
     "GENTLYFIRM_SITEDATA_ID": "gentlyfirm_sitedata",
     "HOME_LATESTITEMS_TOTAL": 12,
     "HOME_LATESTITEMS_PER_COLLECTION": 2,
-    "RECENT_POSTS_NUM_TO_SHOW": 3,
+    "RECENT_POSTS_NUM_TO_SHOW": 5,
     "TRUNCATE_EXCERPT_CHARS": 100
   },
   "firmgently_sitedata": {
@@ -17,9 +17,7 @@
     "css_path": "/css/main-dark.css",
     "invert_prompt": "light mode",
     "theme": "dark",
-    "title_suffix": " | Painting, Photography, Objects, Web | Firm Gently",
     "favicon": "/images/dark/favicon.png",
-    "site_desc": "Art, photograpy and writing by Mark Mayes",
     "share_thumbnail": "FGLogo_og.jpg"
   },
   "gentlyfirm_sitedata": {
@@ -30,9 +28,7 @@
     "css_path": "/css/main-light.css",
     "invert_prompt": "dark mode",
     "theme": "light",
-    "title_suffix": " | Painting, Photography, Words | Gently Firm",
     "favicon": "/images/light/favicon.png",
-    "site_desc": "Art, photograpy and writing by Mark Mayes",
     "share_thumbnail": "GFLogo_og.jpg"
   }
 }
