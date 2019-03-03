@@ -268,10 +268,10 @@ uk.co.firmgently.FGMagnify = (function () {
     size_info.magHW = size_info.magW / 2;
     size_info.magHH = size_info.magH / 2;
     // set up boundaries
-    loupeBnd_rct.left = size_info.loupeHW + size_info.loupeBorder + size_info.mainImgBorder;
-    loupeBnd_rct.right = (mainImg.offsetWidth - size_info.loupeHW) + (size_info.loupeBorder * 2) + (size_info.mainImgBorder);
-    loupeBnd_rct.top = size_info.loupeHH + size_info.loupeBorder + (size_info.loupeBorder) + (size_info.mainImgBorder);
-    loupeBnd_rct.bottom = (mainImg.offsetHeight - size_info.loupeHH) + (size_info.loupeBorder * 2) + size_info.mainImgBorder;
+    loupeBnd_rct.left = size_info.loupeHW + size_info.loupeBorder + size_info.loupeBorder + size_info.mainImgBorder;
+    loupeBnd_rct.right = (mainImg.offsetWidth - size_info.loupeHW) + (size_info.loupeBorder * 2) - (size_info.mainImgBorder);
+    loupeBnd_rct.top = size_info.loupeHH + size_info.loupeBorder + size_info.loupeBorder + size_info.mainImgBorder;
+    loupeBnd_rct.bottom = (mainImg.offsetHeight - size_info.loupeHH) + (size_info.loupeBorder * 2) - size_info.mainImgBorder;
     mainImg_rct.left = mainImg.offsetLeft + size_info.magHW;
     mainImg_rct.right = mainImg.offsetLeft + mainImg.offsetWidth - size_info.magHW;
     mainImg_rct.top = mainImg.offsetTop + size_info.magHH;

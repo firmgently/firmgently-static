@@ -39,8 +39,7 @@ body.wrapper {
   min-height: 100%;
   background-color: $main-bg2;
   color: $text-dimmed-less;
-  font-family: 'Tahoma', 'Arial', 'Nimbus Sans L';
-  /*font-family: 'FG_Medium', 'Tahoma', 'Arial', 'Nimbus Sans L';*/
+  font-family: 'fg_medium', 'Tahoma', 'Arial', 'Nimbus Sans L';
   form,
   .content {
     @include flex-grow(1);
@@ -88,7 +87,7 @@ body.wrapper {
     @include flex-flow(row wrap);
     margin-top: $pad-sma;
     font-size: 1.1rem;
-    line-height: 1.8rem;
+    line-height: 2.25rem;
     .side-column {
       @include flex(1, 1, $side-col-min-width);
       order: 2;
@@ -650,6 +649,7 @@ form {
   max-width: 90vw;
   max-height: 80vh;
   cursor: zoom-in;
+  border: solid $pad-tiny $text-colour-strong;
 }
 #mag {
   z-index: 9999;
@@ -732,6 +732,7 @@ form {
     @include border-radius($pad-sma);
     @include transition(all $transition-speed-spin $transition-style-sink);
     h2 {
+      font-family: 'fg_hireme', 'Tahoma', 'Arial', 'Nimbus Sans L';
       color: #ffff63;
       position: absolute;
       z-index: 3;
