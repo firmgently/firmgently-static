@@ -279,6 +279,7 @@ aside.latest-posts {
       display: inline-block;
       position: absolute;
       border: solid $pad-med $button-bg-colour;
+      padding: 0;
       top: 0;
       bottom: 0;
       left: 0;
@@ -296,7 +297,8 @@ aside.latest-posts {
           object-position: 50% 50%;
           position: absolute;
           z-index: -1;
-          @include transition(all 36s ease-out 0.15s);
+          margin-top: 0 - ($list-item-title-height / 2);
+          @include transition(transform 36s ease-out 0.15s);
           @include border-radius($pad-sma);
         }
         > figcaption {
@@ -307,10 +309,13 @@ aside.latest-posts {
           bottom: 0;
           > h2 {
             z-index: 2;
-            padding: $pad-sma;
-            padding-top: $pad-big;
+            padding: $pad-sma $pad-sma $pad-tiny $pad-sma;
             white-space: nowrap;
             text-overflow: ellipsis;
+            overflow: hidden;
+            width: 100%;
+            display: inline-block;
+            vertical-align: bottom;
             &:before {
               content: "";
               display: inline-block;
@@ -325,7 +330,7 @@ aside.latest-posts {
               left: 0;
               right: 0;
               bottom: -1px; /* 0 leaves a gap, this fixes it */
-              height: 3rem;
+              height: $list-item-title-height;
               z-index: -1;
             }
           }
@@ -336,7 +341,7 @@ aside.latest-posts {
         > figure {
           > img {
             transform: scale(2);
-            @include transition(all 36s ease-out 0.33s);
+            @include transition(transform 36s ease-out 0.33s);
           }
           > figcaption {
             > h2 {
