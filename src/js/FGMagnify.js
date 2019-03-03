@@ -15,12 +15,13 @@ uk.co.firmgently.FGMagnify = (function () {
   ZOOMED_IMAGE_WIDTH = 3000,
   IMAGESIZE_TOPMARGIN_NORMAL = 200, IMAGESIZE_TOPMARGIN_SMALL = 70,
   IMAGESIZE_LEFTMARGIN_SMALL = 70, IMAGESIZE_LEFTMARGIN_NORMAL = 100,
+  THEME_LIGHT = "light", THEME_DARK = "dark",
   IMGLDINGMSG_STR = "hi-quality image loading...",
   LOUPEBG_RESIZE_DARK = "/images/dark/loupeBgResize.gif", LOUPEBG_RESIZE_LIGHT = "/images/light/loupeBgResize.gif",
   BORDERCOLOUR_LIMIT_DARK = "#007ffe", BORDERCOLOUR_LIMIT_LIGHT = "#ff8001",
   IMAGE_RESIZE_STEP = 10,
   PAGE_MARGIN = 20,
-  useLightColours,
+  theme,
   updateMag_tmr, magShow_tmr, onScroll_tmr, onResize_tmr,
   loupeBnd_rct = {}, mainImg_rct = {},
   hiResImg_info = {}, colours_info = {}, size_info = {}, mouse_info = {},
@@ -282,7 +283,7 @@ uk.co.firmgently.FGMagnify = (function () {
     var parentElement, msgText;
 
     // set light/dark
-    if(useLightColours) {
+    if(theme === THEME_LIGHT) {
       colours_info.borderLimit = BORDERCOLOUR_LIMIT_LIGHT;
       loupeBgResize = LOUPEBG_RESIZE_LIGHT;
       colours_info.attract = BORDERCOLOUR_LIMIT_LIGHT;
@@ -448,10 +449,10 @@ uk.co.firmgently.FGMagnify = (function () {
                   PUBLIC
     ---------------------------------------------------------
     */
-    create: function(hiResPath, image_ob, useLightColours) { // create our magnifier
+    create: function(hiResPath, image_ob, theme) { // create our magnifier
       mainImg = document.getElementById(image_ob);
       hiResImg_info.path = hiResPath;
-      useLightColours = useLightColours;
+      theme = theme;
       if (mainImg) {
         addClassname(mainImg, "invisible");
         registerEventHandler(window, "load", onWindowLoad);
